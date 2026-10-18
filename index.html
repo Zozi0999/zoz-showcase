@@ -510,7 +510,15 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
 .brand-mark svg{width:100%;height:100%;display:block}
 .brand-word{font-family:var(--mono);font-weight:700;font-size:1.6rem;letter-spacing:1px;color:#fff;line-height:1}
 .brand-word span{color:var(--accent)}
-@media(max-width:600px){.brand-cell{padding:22px 14px}.brand-word{font-size:1.25rem}.brand-mark{width:26px;height:26px}}</style>
+@media(max-width:600px){.brand-cell{padding:22px 14px}.brand-word{font-size:1.25rem}.brand-mark{width:26px;height:26px}}
+/* marquee: left, then back right */
+.brand-strip{display:block;position:relative;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.brand-track{display:flex;width:max-content;animation:brandSlide 18s ease-in-out infinite alternate}
+.brand-strip:hover .brand-track{animation-play-state:paused}
+.brand-cell{flex:0 0 auto;min-width:300px;border-right:1px solid var(--border)}
+@keyframes brandSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:600px){.brand-cell{min-width:220px}}
+@media(prefers-reduced-motion:reduce){.brand-track{animation:none}}</style>
 </head>
 <body>
 
