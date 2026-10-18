@@ -528,7 +528,18 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
 .brand-strip{cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .brand-strip.dragging{cursor:grabbing}
 .brand-strip *{-webkit-user-drag:none}
-</style>
+
+/* doc gallery robustness */
+.doc-card{cursor:pointer}
+.doc-card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.doc-img-box.img-failed::after{content:"Screenshot could not load - tap to retry";position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-family:var(--mono);font-size:.78rem;text-align:center;padding:16px}
+.doc-lightbox-content{position:relative}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:40px;height:40px;border-radius:50%;border:1px solid var(--border-strong);background:rgba(7,11,17,.85);color:var(--text);cursor:pointer;display:grid;place-items:center;transition:.2s}
+.lb-nav:hover{border-color:var(--accent-line);color:var(--accent)}
+.lb-prev{left:12px}.lb-next{right:12px}
+.doc-lightbox-content img{touch-action:pan-y pinch-zoom}
+@media(hover:none){.doc-zoom-hint{opacity:1;transform:none}}
+@media(max-width:600px){.lb-nav{width:34px;height:34px}.lb-prev{left:6px}.lb-next{right:6px}.doc-lightbox{padding:8px}}</style>
 </head>
 <body>
 
@@ -753,7 +764,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 1 -->
       <div class="doc-card" data-doc-index="0">
         <div class="doc-img-box" onclick="openLightbox(0)">
-          <img src="docs_img/doc1_cockpit.png" alt="ZOZ Router Cockpit & Gateway Interface" loading="lazy">
+          <img src="docs_img/doc1_cockpit.png" alt="ZOZ Router Cockpit & Gateway Interface" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 01</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
@@ -772,7 +783,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 2 -->
       <div class="doc-card" data-doc-index="1">
         <div class="doc-img-box" onclick="openLightbox(1)">
-          <img src="docs_img/doc2_attachments.png" alt="Multi-Modal Ingestion & Attachments Menu" loading="lazy">
+          <img src="docs_img/doc2_attachments.png" alt="Multi-Modal Ingestion & Attachments Menu" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 02</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
@@ -791,7 +802,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 3 -->
       <div class="doc-card" data-doc-index="2">
         <div class="doc-img-box" onclick="openLightbox(2)">
-          <img src="docs_img/doc3_creativetools.png" alt="Integrated Generative Creative AI Tools" loading="lazy">
+          <img src="docs_img/doc3_creativetools.png" alt="Integrated Generative Creative AI Tools" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 03</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
@@ -810,7 +821,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 4 -->
       <div class="doc-card" data-doc-index="3">
         <div class="doc-img-box" onclick="openLightbox(3)">
-          <img src="docs_img/doc4_skills.png" alt="Command Palette & Neural Skills Popover" loading="lazy">
+          <img src="docs_img/doc4_skills.png" alt="Command Palette & Neural Skills Popover" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 04</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
@@ -829,7 +840,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 5 -->
       <div class="doc-card" data-doc-index="4">
         <div class="doc-img-box" onclick="openLightbox(4)">
-          <img src="docs_img/doc5_websiteoutput.png" alt="Dynamic Website Output Format Selector" loading="lazy">
+          <img src="docs_img/doc5_websiteoutput.png" alt="Dynamic Website Output Format Selector" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 05</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
@@ -848,7 +859,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 6 -->
       <div class="doc-card" data-doc-index="5">
         <div class="doc-img-box" onclick="openLightbox(5)">
-          <img src="docs_img/doc6_customurl.png" alt="Integrated Neural CLI & Web Terminal" loading="lazy">
+          <img src="docs_img/doc6_customurl.png" alt="Integrated Neural CLI & Web Terminal" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 06</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
@@ -867,7 +878,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 7 -->
       <div class="doc-card" data-doc-index="6">
         <div class="doc-img-box" onclick="openLightbox(6)">
-          <img src="docs_img/doc7_settings.png" alt="Cloudflare WAN Remote Access & PIN Gate" loading="lazy">
+          <img src="docs_img/doc7_settings.png" alt="Cloudflare WAN Remote Access & PIN Gate" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 07</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
@@ -886,7 +897,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 8 -->
       <div class="doc-card" data-doc-index="7">
         <div class="doc-img-box" onclick="openLightbox(7)">
-          <img src="docs_img/doc8_canvasview.png" alt="Dual-Pane Split Terminal Cockpit" loading="lazy">
+          <img src="docs_img/doc8_canvasview.png" alt="Dual-Pane Split Terminal Cockpit" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 08</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
@@ -905,7 +916,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 9 -->
       <div class="doc-card" data-doc-index="8">
         <div class="doc-img-box" onclick="openLightbox(8)">
-          <img src="docs_img/doc9_livewebpreview.png" alt="Live In-Chat Interactive Web Preview" loading="lazy">
+          <img src="docs_img/doc9_livewebpreview.png" alt="Live In-Chat Interactive Web Preview" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 09</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
@@ -924,7 +935,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 10 -->
       <div class="doc-card" data-doc-index="9">
         <div class="doc-img-box" onclick="openLightbox(9)">
-          <img src="docs_img/doc10_fullscreenstudio.png" alt="Full-Screen Web Studio & AI Co-Pilot Canvas" loading="lazy">
+          <img src="docs_img/doc10_fullscreenstudio.png" alt="Full-Screen Web Studio & AI Co-Pilot Canvas" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 10</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
@@ -1138,7 +1149,7 @@ start.bat</pre>
         <i class="fas fa-xmark"></i>
       </button>
     </div>
-    <div class="doc-lightbox-content">
+    <div class="doc-lightbox-content"><button type="button" class="lb-nav lb-prev" id="lbPrev" aria-label="Previous screenshot"><i class="fas fa-chevron-left"></i></button><button type="button" class="lb-nav lb-next" id="lbNext" aria-label="Next screenshot"><i class="fas fa-chevron-right"></i></button>
       <img id="lightboxImg" src="" alt="High-Resolution Preview">
     </div>
     <div class="doc-lightbox-desc" id="lightboxDesc">
@@ -1483,6 +1494,54 @@ window.addEventListener('keydown', (e) => {
     requestAnimationFrame(frame);
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();
+</script>
+<script>
+/* Documentation gallery: every card opens its screenshot reliably, with retry, prev/next and swipe */
+(function(){
+  var cur=0;
+  window.docImgRetry=function(img){
+    var tries=+(img.getAttribute('data-tries')||0);
+    if(tries<2){ img.setAttribute('data-tries',tries+1); var base=img.getAttribute('src').split('?')[0]; setTimeout(function(){ img.src=base+'?r='+Date.now(); },600*(tries+1)); }
+    else if(img.parentElement) img.parentElement.classList.add('img-failed');
+  };
+  var baseOpen=window.openLightbox;
+  window.openLightbox=function(i){ cur=+i; baseOpen(cur); };
+  function step(d){
+    var n=(typeof docItems!=='undefined')?docItems.length:10;
+    cur=(cur+d+n)%n; baseOpen(cur);
+  }
+  var p=document.getElementById('lbPrev'),n=document.getElementById('lbNext');
+  if(p) p.addEventListener('click',function(e){e.stopPropagation();step(-1);});
+  if(n) n.addEventListener('click',function(e){e.stopPropagation();step(1);});
+  window.addEventListener('keydown',function(e){
+    var m=document.getElementById('docLightbox'); if(!m||!m.classList.contains('active')) return;
+    if(e.key==='ArrowLeft') step(-1); else if(e.key==='ArrowRight') step(1);
+  });
+  // swipe inside lightbox
+  var box=document.querySelector('.doc-lightbox-content'),sx=null;
+  if(box){
+    box.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+    box.addEventListener('touchend',function(e){ if(sx===null) return; var dx=e.changedTouches[0].clientX-sx; sx=null; if(Math.abs(dx)>60) step(dx<0?1:-1); });
+  }
+  // whole card is clickable (image, text, touch, keyboard)
+  document.querySelectorAll('.doc-card').forEach(function(c){
+    var i=+c.getAttribute('data-doc-index');
+    c.setAttribute('tabindex','0'); c.setAttribute('role','button');
+    c.addEventListener('click',function(e){ if(e.target.closest('.doc-img-box')) return; window.openLightbox(i); });
+    c.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); window.openLightbox(i); } });
+  });
+  // tapping a failed image retries it
+  document.querySelectorAll('.doc-img-box').forEach(function(b){
+    b.addEventListener('click',function(){ var im=b.querySelector('img'); if(b.classList.contains('img-failed')&&im){ b.classList.remove('img-failed'); im.setAttribute('data-tries',0); window.docImgRetry(im); } });
+  });
+  // always reset the "related screenshots" highlight when switching tabs
+  var st=window.switchTab;
+  window.switchTab=function(id){
+    document.querySelectorAll('.doc-card').forEach(function(c){c.classList.remove('doc-highlight','doc-dim');});
+    var bar=document.getElementById('docFilterBar'); if(bar) bar.classList.remove('show');
+    return st.apply(this,arguments);
+  };
 })();
 </script>
 </body>
