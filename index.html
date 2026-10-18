@@ -428,6 +428,30 @@ kbd{
 .chip i{color:var(--accent)}
 .chip:hover{color:var(--text);border-color:var(--accent-line)}
 
+/* Creator Story Inside Profile */
+.creator-story-box{
+  margin-top:28px;padding-top:24px;border-top:1px solid var(--border);
+  display:flex;flex-direction:column;gap:14px;text-align:left;
+}
+.csb-item{
+  background:var(--bg2);border:1px solid var(--border);border-radius:8px;
+  padding:16px 18px;transition:border-color .2s;
+}
+.csb-item:hover{border-color:var(--accent-line)}
+.csb-item h4{
+  font-family:var(--mono);font-size:.86rem;color:var(--text);font-weight:600;
+  margin-bottom:6px;display:flex;align-items:center;gap:8px;
+}
+.csb-item h4 i{color:var(--accent);font-size:.8rem}
+.csb-item p{color:var(--muted);font-size:.86rem;line-height:1.75;margin:0}
+.csb-item code{font-family:var(--mono);font-size:.78rem;color:var(--accent);background:var(--accent-dim);padding:1px 5px;border-radius:3px}
+.csb-quote{
+  background:var(--accent-dim);border:1px solid var(--accent-line);border-radius:8px;
+  padding:16px 18px;text-align:center;margin-top:4px;
+}
+.csb-quote p{font-size:.9rem;color:var(--text);font-style:italic;margin-bottom:6px;line-height:1.7}
+.csb-quote span{font-family:var(--mono);font-size:.74rem;color:var(--accent)}
+
 /* FOOTER */
 footer{border-top:1px solid var(--border);padding:40px 4% 28px;text-align:center;background:var(--bg2)}
 .footer-logo{font-family:var(--mono);font-weight:700;font-size:1.1rem;letter-spacing:.5px;color:var(--text);margin-bottom:10px}
@@ -539,91 +563,6 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
 .lb-prev{left:12px}.lb-next{right:12px}
 .doc-lightbox-content img{touch-action:pan-y pinch-zoom}
 @media(hover:none){.doc-zoom-hint{opacity:1;transform:none}}
-/* ===== LEFT SIDEBAR & CREATOR HIGHLIGHTS ===== */
-.nav-brand-group{display:flex;align-items:center;gap:12px}
-.nav-creator-btn{
-  background:rgba(46,230,166,.08);border:1px solid var(--accent-line);border-radius:6px;
-  color:var(--accent);padding:5px 11px;font-family:var(--mono);font-size:.74rem;font-weight:600;
-  cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:.2s;text-decoration:none;
-}
-.nav-creator-btn:hover{background:var(--accent);color:#04120c;border-color:var(--accent)}
-.nav-creator-btn .ncb-badge{background:var(--bg3);color:var(--text);border:1px solid var(--border-strong);padding:1px 5px;border-radius:4px;font-size:.66rem}
-
-/* Author pill SMK tag */
-.author-pill{cursor:pointer;transition:border-color .2s,background .2s}
-.author-pill:hover{border-color:var(--accent-line);background:var(--bg3)}
-.author-tag-smk{
-  display:inline-flex;align-items:center;gap:5px;background:var(--accent-dim);border:1px solid var(--accent-line);
-  color:var(--accent);padding:2px 8px;border-radius:999px;font-family:var(--mono);font-size:.72rem;font-weight:600;margin:0 4px;
-}
-
-/* Sidebar Creator Card */
-.sidebar-creator-card{
-  background:var(--bg3);border:1px solid var(--border-strong);border-radius:10px;
-  padding:12px 14px;margin-bottom:8px;cursor:pointer;transition:border-color .2s,background .2s;
-  display:flex;align-items:center;gap:12px;list-style:none;
-}
-.sidebar-creator-card:hover{border-color:var(--accent-line);background:rgba(46,230,166,.08)}
-.scc-avatar-box{position:relative;width:40px;height:40px;flex-shrink:0}
-.scc-avatar{width:100%;height:100%;border-radius:50%;object-fit:cover;border:1px solid var(--accent-line)}
-.scc-info{display:flex;flex-direction:column;flex-grow:1;min-width:0;text-align:left}
-.scc-kicker{font-family:var(--mono);font-size:.65rem;color:var(--accent);letter-spacing:.5px;text-transform:uppercase;font-weight:600;display:flex;align-items:center;gap:4px}
-.scc-name{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.scc-sub{font-family:var(--mono);font-size:.7rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.scc-arrow{font-size:.75rem;color:var(--faint);transition:transform .2s;margin-left:auto}
-.sidebar-creator-card:hover .scc-arrow{color:var(--accent);transform:translateX(3px)}
-
-/* Creator Section Badges & Story Grid */
-.dev-badges-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:0 auto 16px}
-.dev-badge{
-  font-family:var(--mono);font-size:.74rem;padding:4px 12px;border-radius:999px;
-  background:var(--accent-dim);border:1px solid var(--accent-line);color:var(--accent);
-  display:inline-flex;align-items:center;gap:6px;font-weight:600;
-}
-.story-container{max-width:1000px;margin:38px auto 0}
-.story-head{text-align:center;margin-bottom:28px}
-.story-head h3{font-family:var(--mono);font-size:clamp(1.15rem,2.5vw,1.5rem);color:var(--text);font-weight:700;letter-spacing:-.3px;margin:8px 0}
-.story-head p{color:var(--muted);font-size:.92rem;max-width:700px;margin:0 auto}
-.story-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;margin-bottom:32px}
-.story-card{
-  background:var(--card);border:1px solid var(--border);border-radius:10px;padding:24px 20px;
-  position:relative;display:flex;gap:16px;transition:border-color .2s,background .2s;
-}
-.story-card:hover{border-color:var(--accent-line);background:var(--bg3)}
-.sc-num{
-  font-family:var(--mono);font-size:1.3rem;font-weight:800;color:var(--accent);
-  line-height:1;opacity:.65;flex-shrink:0;padding-top:2px;
-}
-.sc-content h4{font-family:var(--mono);font-size:.88rem;color:var(--text);font-weight:700;margin-bottom:8px;line-height:1.4}
-.sc-content p{color:var(--muted);font-size:.86rem;line-height:1.75}
-.sc-content p code{font-family:var(--mono);font-size:.8rem;color:var(--accent);background:var(--accent-dim);padding:1px 5px;border-radius:3px}
-
-.story-quote-box{
-  background:var(--bg2);border:1px solid var(--accent-line);border-radius:12px;
-  padding:32px 28px;text-align:center;position:relative;max-width:880px;margin:0 auto;
-}
-.sq-mark{font-size:1.5rem;color:var(--accent);margin-bottom:12px;opacity:.8}
-.sq-text{
-  font-family:var(--sans);font-size:1.02rem;line-height:1.8;color:var(--text);
-  font-style:italic;max-width:760px;margin:0 auto 18px;
-}
-.sq-author{display:flex;flex-direction:column;gap:2px}
-.sq-author strong{font-family:var(--mono);font-size:.92rem;color:var(--accent);letter-spacing:.5px}
-.sq-author span{font-family:var(--mono);font-size:.76rem;color:var(--muted)}
-
-@media(max-width:960px){
-  .nav-creator-btn{padding:4px 8px;font-size:.7rem}
-  .nav-creator-btn .ncb-badge{display:none}
-  .nav-links{
-    position:fixed;top:56px;left:0 !important;right:auto !important;
-    width:min(86vw,340px) !important;height:calc(100vh - 56px);
-    background:#0a0f17 !important;flex-direction:column;align-items:stretch;
-    padding:16px 14px 28px;gap:4px;transform:translateX(-105%) !important;transition:transform .3s ease !important;
-    border-right:1px solid var(--border-strong) !important;border-left:none !important;
-    z-index:999;overflow-y:auto;box-shadow:20px 0 40px rgba(0,0,0,.6);
-  }
-  .nav-links.open{transform:translateX(0) !important}
-}
 @media(max-width:600px){.lb-nav{width:34px;height:34px}.lb-prev{left:6px}.lb-next{right:6px}.doc-lightbox{padding:8px}}</style>
 </head>
 <body>
@@ -632,40 +571,23 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
 
 <!-- NAVBAR -->
 <nav>
-  <div class="nav-brand-group">
-    <button class="menu-btn" id="menuBtn" aria-label="Toggle Navigation"><i class="fas fa-bars"></i></button>
-    <a href="#overview" class="logo" data-tab-target="overview">
-      <span class="hex"><svg viewBox="22 22 52 50" xmlns="http://www.w3.org/2000/svg" fill="#2ee6a6" aria-hidden="true"><rect x="22" y="22" width="52" height="10"/><rect x="54" y="32" width="20" height="10"/><rect x="40" y="42" width="20" height="10"/><rect x="26" y="52" width="20" height="10"/><rect x="22" y="62" width="52" height="10"/></svg></span>
-      ZOZ <span>ROUTER</span>
-    </a>
-    <button type="button" class="nav-creator-btn" data-tab-target="developer" title="Meet the 16-Year-Old Creator">
-      <i class="fas fa-user-graduate"></i>
-      <span class="ncb-label">Creator <span class="ncb-badge">16yo SMK</span></span>
-    </button>
-  </div>
+  <a href="#overview" class="logo" data-tab-target="overview">
+    <span class="hex"><svg viewBox="22 22 52 50" xmlns="http://www.w3.org/2000/svg" fill="#2ee6a6" aria-hidden="true"><rect x="22" y="22" width="52" height="10"/><rect x="54" y="32" width="20" height="10"/><rect x="40" y="42" width="20" height="10"/><rect x="26" y="52" width="20" height="10"/><rect x="22" y="62" width="52" height="10"/></svg></span>
+    ZOZ <span>ROUTER</span>
+  </a>
   <ul class="nav-links" id="navLinks">
-    <li class="sidebar-creator-card" data-tab-target="developer">
-      <div class="scc-avatar-box">
-        <img src="zoz.png" alt="Zozi Atul Azimi" class="scc-avatar">
-      </div>
-      <div class="scc-info">
-        <span class="scc-kicker"><i class="fas fa-graduation-cap"></i> 16-Year-Old Creator</span>
-        <strong class="scc-name">Zozi Atul Azimi</strong>
-        <span class="scc-sub">SMK Student â€¢ Indonesia</span>
-      </div>
-      <i class="fas fa-arrow-right scc-arrow"></i>
-    </li>
     <li class="nav-group">Menu</li>
     <li><a class="nav-tab" data-tab="overview"><i class="fas fa-house"></i><span class="nl"><b>Overview</b><small>What is ZOZ Router</small></span></a></li>
     <li><a class="nav-tab" data-tab="features"><i class="fas fa-layer-group"></i><span class="nl"><b>Features</b><small>What it can do</small></span></a></li>
     <li><a class="nav-tab" data-tab="documentation"><i class="fas fa-images"></i><span class="nl"><b>Screenshots</b><small>See the interface</small></span></a></li>
     <li><a class="nav-tab" data-tab="installation"><i class="fas fa-download"></i><span class="nl"><b>Install</b><small>Set up in minutes</small></span></a></li>
-    <li><a class="nav-tab" data-tab="developer"><i class="fas fa-user-graduate"></i><span class="nl"><b>Creator Story</b><small>16-yo Indonesian SMK Student</small></span></a></li>
+    <li><a class="nav-tab" data-tab="developer"><i class="fas fa-user-graduate"></i><span class="nl"><b>Creator Profile</b><small>16-yo SMK Student (Indonesia)</small></span></a></li>
     <li class="nav-group">Links</li>
     <li><a href="https://github.com/Zozi0999/zoz_router" target="_blank" rel="noopener" class="nav-gh-btn"><i class="fab fa-github"></i><span class="nl"><b>GitHub</b><small>Source code</small></span></a></li>
     <li><a href="https://www.linkedin.com/in/zozi-atul-azimi-656108404" target="_blank" rel="noopener" class="nav-li-btn"><i class="fa-brands fa-linkedin"></i><span class="nl"><b>LinkedIn</b><small>Contact</small></span></a></li>
   </ul>
   <div class="nav-backdrop" id="navBackdrop"></div>
+  <button class="menu-btn" id="menuBtn" aria-label="Toggle Navigation"><i class="fas fa-bars"></i></button>
 </nav>
 
 <!-- ========================================================================= -->
@@ -687,19 +609,17 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
         A unified <strong>command cockpit</strong> orchestrating local <strong>Ollama</strong> models, cloud <strong>OpenRouter</strong> flagships, and <strong>Native Windows ConPTY Terminal</strong> with seamless Cloudflare WAN remote access.
       </p>
       
-      <div class="author-pill" data-tab-target="developer" title="Click to read full story of 16-year-old creator Zozi Atul Azimi">
-        <i class="fas fa-crown"></i>
-        Architected &amp; Created by: <span class="author-name">Zozi Atul Azimi</span>
-        <span class="author-tag-smk"><i class="fas fa-graduation-cap"></i> 16-yo SMK Student (Indonesia)</span>
+      <div class="author-pill">
+        <i class="fas fa-crown" ></i>
+        Architected &amp; Created by: <span class="author-name">Zozi Atul Azimi</span> <span style="color:var(--accent);font-family:var(--mono);font-size:.78rem;font-weight:600;margin-left:4px;">(16yo SMK Student, Indonesia)</span>
         <div class="author-pill-links">
-          <a href="https://www.linkedin.com/in/zozi-atul-azimi-656108404" target="_blank" class="pill-social-link li" onclick="event.stopPropagation()">
+          <a href="https://www.linkedin.com/in/zozi-atul-azimi-656108404" target="_blank" class="pill-social-link li">
             <i class="fa-brands fa-linkedin"></i> LinkedIn
           </a>
-          <a href="https://github.com/Zozi0999" target="_blank" class="pill-social-link gh" onclick="event.stopPropagation()">
+          <a href="https://github.com/Zozi0999" target="_blank" class="pill-social-link gh">
             <i class="fab fa-github"></i> GitHub
           </a>
         </div>
-      </div>
       </div>
 
       <div class="brand-strip" aria-label="Z21 Router, Google Antigravity and Google Chrome"><div class="brand-track"><div class="brand-cell"><span class="brand-mark"><svg viewBox="22 22 52 50" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true"><rect x="22" y="22" width="52" height="10"/><rect x="54" y="32" width="20" height="10"/><rect x="40" y="42" width="20" height="10"/><rect x="26" y="52" width="20" height="10"/><rect x="22" y="62" width="52" height="10"/></svg></span><span class="brand-word">Z21 <span>ROUTER</span></span></div><div class="brand-cell"><span class="brand-mark brand-ag"><svg viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="5" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="3" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="4" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="5" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="6" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="2" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="3" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="4" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="5" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="6" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="7" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="2" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="3" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="6" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="7" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="1" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="2" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="7" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="8" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="1" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="2" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="7" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="8" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="0" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="0" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="7" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="7" width="1.02" height="1.02" fill="#4a8cf0"/></svg></span><span class="brand-word brand-word-ag">Google Antigravity</span></div><div class="brand-cell"><span class="brand-mark brand-sq"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#ea4335"/><g transform="rotate(120 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#fbbc04"/></g><g transform="rotate(240 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#34a853"/></g><circle cx="24" cy="24" r="11" fill="#fff"/><circle cx="24" cy="24" r="8.2" fill="#4285f4"/></svg></span><span class="brand-word brand-word-ag">Google Chrome</span></div><div class="brand-cell"><span class="brand-mark"><svg viewBox="22 22 52 50" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true"><rect x="22" y="22" width="52" height="10"/><rect x="54" y="32" width="20" height="10"/><rect x="40" y="42" width="20" height="10"/><rect x="26" y="52" width="20" height="10"/><rect x="22" y="62" width="52" height="10"/></svg></span><span class="brand-word">Z21 <span>ROUTER</span></span></div><div class="brand-cell"><span class="brand-mark brand-ag"><svg viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="5" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="3" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="4" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="5" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="6" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="2" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="3" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="4" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="5" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="6" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="7" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="2" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="3" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="6" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="7" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="1" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="2" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="7" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="8" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="1" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="2" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="7" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="8" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="0" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="0" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="7" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="7" width="1.02" height="1.02" fill="#4a8cf0"/></svg></span><span class="brand-word brand-word-ag">Google Antigravity</span></div><div class="brand-cell"><span class="brand-mark brand-sq"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#ea4335"/><g transform="rotate(120 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#fbbc04"/></g><g transform="rotate(240 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#34a853"/></g><circle cx="24" cy="24" r="11" fill="#fff"/><circle cx="24" cy="24" r="8.2" fill="#4285f4"/></svg></span><span class="brand-word brand-word-ag">Google Chrome</span></div><div class="brand-cell"><span class="brand-mark"><svg viewBox="22 22 52 50" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true"><rect x="22" y="22" width="52" height="10"/><rect x="54" y="32" width="20" height="10"/><rect x="40" y="42" width="20" height="10"/><rect x="26" y="52" width="20" height="10"/><rect x="22" y="62" width="52" height="10"/></svg></span><span class="brand-word">Z21 <span>ROUTER</span></span></div><div class="brand-cell"><span class="brand-mark brand-ag"><svg viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="5" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="3" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="4" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="5" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="6" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="2" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="3" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="4" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="5" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="6" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="7" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="2" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="3" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="6" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="7" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="1" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="2" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="7" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="8" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="1" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="2" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="7" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="8" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="0" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="0" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="7" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="7" width="1.02" height="1.02" fill="#4a8cf0"/></svg></span><span class="brand-word brand-word-ag">Google Antigravity</span></div><div class="brand-cell"><span class="brand-mark brand-sq"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#ea4335"/><g transform="rotate(120 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#fbbc04"/></g><g transform="rotate(240 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#34a853"/></g><circle cx="24" cy="24" r="11" fill="#fff"/><circle cx="24" cy="24" r="8.2" fill="#4285f4"/></svg></span><span class="brand-word brand-word-ag">Google Chrome</span></div><div class="brand-cell"><span class="brand-mark"><svg viewBox="22 22 52 50" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true"><rect x="22" y="22" width="52" height="10"/><rect x="54" y="32" width="20" height="10"/><rect x="40" y="42" width="20" height="10"/><rect x="26" y="52" width="20" height="10"/><rect x="22" y="62" width="52" height="10"/></svg></span><span class="brand-word">Z21 <span>ROUTER</span></span></div><div class="brand-cell"><span class="brand-mark brand-ag"><svg viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="5" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="3" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="4" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="5" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="6" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="2" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="3" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="4" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="5" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="6" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="7" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="2" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="3" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="6" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="7" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="1" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="2" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="7" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="8" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="1" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="2" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="7" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="8" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="0" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="0" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="7" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="7" width="1.02" height="1.02" fill="#4a8cf0"/></svg></span><span class="brand-word brand-word-ag">Google Antigravity</span></div><div class="brand-cell"><span class="brand-mark brand-sq"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#ea4335"/><g transform="rotate(120 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#fbbc04"/></g><g transform="rotate(240 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#34a853"/></g><circle cx="24" cy="24" r="11" fill="#fff"/><circle cx="24" cy="24" r="8.2" fill="#4285f4"/></svg></span><span class="brand-word brand-word-ag">Google Chrome</span></div></div></div>
@@ -1177,17 +1097,15 @@ start.bat</pre>
   </div>
 
   <!-- ===================================================================== -->
-  <!-- ===================================================================== -->
   <!-- TAB 6: DEVELOPER & SYSTEM ARCHITECT PROFILE                           -->
   <!-- ===================================================================== -->
   <div class="tab-pane" id="tab-developer">
     <div class="sec-head">
-      <span class="kicker">// The Mind Behind the Workstation</span>
-      <h2>MEET THE 16-YEAR-OLD ARCHITECT</h2>
-      <p>How an Indonesian Vocational High School (SMK) student engineered an autonomous local-first AI gateway, virtual console multiplexer, and encrypted WAN remote workstation from scratch.</p>
+      <span class="kicker">// The Mind Behind the Code</span>
+      <h2>CREATOR &amp; SYSTEM ARCHITECT</h2>
+      <p>Meet the 16-year-old vocational high school student from Indonesia who built ZOZ ROUTER from scratch.</p>
     </div>
 
-    <!-- MAIN CREATOR PROFILE HERO -->
     <div class="dev-section">
       <div class="dev-inner">
         <div class="avatar">
@@ -1195,16 +1113,11 @@ start.bat</pre>
             <img src="zoz.png" alt="Zozi Atul Azimi" class="avatar-img">
           </div>
         </div>
-        <div class="dev-badges-row">
-          <span class="dev-badge"><i class="fas fa-graduation-cap"></i> 16 Years Old</span>
-          <span class="dev-badge"><i class="fas fa-school"></i> SMK Vocational Student</span>
-          <span class="dev-badge"><i class="fas fa-location-dot"></i> Indonesia</span>
-          <span class="dev-badge"><i class="fas fa-code"></i> Solo Systems Architect</span>
-        </div>
-        <h2 style="margin-top: 4px;">ZOZI ATUL AZIMI</h2>
-        <div class="alias">âŒ LEAD SYSTEM ARCHITECT &amp; CREATOR OF ZOZ ROUTER âŒ</div>
+        <span class="kicker">// System Creator</span>
+        <h2>ZOZI ATUL AZIMI</h2>
+        <div class="alias">⌁ 16-YEAR-OLD SMK STUDENT &amp; SOLE ARCHITECT ⌁</div>
         <p class="desc">
-          Behind <strong>ZOZ ROUTER</strong> is not an enterprise engineering department or a venture-backed tech corporation, but <strong>Zozi Atul Azimi</strong> &mdash; a 16-year-old vocational high school student from Indonesia. Driven by an insatiable curiosity for low-level operating system mechanics, virtual terminal multiplexing, and sovereign local neural computation, Zozi designed, architected, and programmed the entire platform independently from his workstation laptop.
+          Behind <strong>ZOZ ROUTER</strong> is not an enterprise software department or a Silicon Valley team, but <strong>Zozi Atul Azimi</strong> &mdash; a 16-year-old vocational high school (SMK) student from Indonesia. Driven by an insatiable curiosity for low-level operating system mechanics, virtual terminal multiplexing, and sovereign neural computation, Zozi designed, architected, and programmed the entire platform independently from his workstation laptop.
         </p>
 
         <!-- OFFICIAL LINKS WITH LINKEDIN & GITHUB -->
@@ -1224,103 +1137,51 @@ start.bat</pre>
         </div>
 
         <div class="dev-chips">
-          <span class="chip"><i class="fas fa-microchip"></i> 16-Year-Old Architect</span>
-          <span class="chip"><i class="fas fa-school"></i> Indonesian Vocational Student (SMK)</span>
-          <span class="chip"><i class="fab fa-node-js"></i> Zero-Dependency Backend</span>
+          <span class="chip"><i class="fas fa-graduation-cap"></i> 16 Years Old</span>
+          <span class="chip"><i class="fas fa-school"></i> Vocational Student (SMK)</span>
+          <span class="chip"><i class="fas fa-location-dot"></i> Indonesia</span>
           <span class="chip"><i class="fas fa-terminal"></i> Native Windows ConPTY</span>
-          <span class="chip"><i class="fas fa-shield-halved"></i> 5-Pillar BioEndocrine Matrix</span>
+          <span class="chip"><i class="fab fa-node-js"></i> Zero-Dependency Backend</span>
           <span class="chip"><i class="fas fa-cloud"></i> Cloudflare WAN Tunnel</span>
-          <span class="chip"><i class="fas fa-palette"></i> Minimal Dark UI Design</span>
+          <span class="chip"><i class="fas fa-shield-halved"></i> BioEndocrine Health Matrix</span>
         </div>
-      </div>
-    </div>
 
-    <!-- THE ORIGIN & ENGINEERING JOURNEY STORY -->
-    <div class="story-container">
-      <div class="story-head">
-        <span class="kicker">// The Journey &amp; Engineering Philosophy</span>
-        <h3>THE STORY: FROM AN INDONESIAN CLASSROOM TO A SOVEREIGN AI WORKSTATION</h3>
-        <p>A testament to self-taught persistence, engineering curiosity, and the relentless pursuit of computing autonomy.</p>
-      </div>
-
-      <div class="story-grid">
-        <!-- STORY 1 -->
-        <div class="story-card">
-          <div class="sc-num">01</div>
-          <div class="sc-content">
-            <h4>The Curious 16-Year-Old in Vocational School (SMK)</h4>
+        <!-- PROFILE STORY CARD -->
+        <div class="creator-story-box">
+          <div class="csb-item">
+            <h4><i class="fas fa-book-open"></i> The Journey from an Indonesian SMK Classroom</h4>
             <p>
-              While most teenagers spend their evenings casually gaming or scrolling feeds, Zozi was captivated by operating system fundamentals, kernel consoles, and neural computation. As an active vocational high school (SMK) student in Indonesia, he spent countless late nights studying how processes communicate, how Windows handles terminal pseudo-consoles, and how modern LLMs process streaming tokens. Technical documentation and open-source code became his personal classroom.
+              While many teenagers spend their free time on mobile gaming, Zozi spent late nights studying low-level systems programming, terminal pseudo-consoles, and asynchronous network streams. Armed with a standard workstation laptop in Indonesia, he turned open-source repositories and deep technical specs into his personal curriculum.
             </p>
+          </div>
+
+          <div class="csb-item">
+            <h4><i class="fas fa-wifi"></i> Born from Real Need: Remote Tunneling from School</h4>
+            <p>
+              The zero-trust Cloudflare WAN Remote Access was created out of real daily necessity: Zozi needed a way to monitor long-running terminal builds and AI jobs on his laptop at home directly from his smartphone while sitting at his desk at school, complete with 6-digit PIN security and QR-code camera pairing.
+            </p>
+          </div>
+
+          <div class="csb-item">
+            <h4><i class="fas fa-microchip"></i> Wrestling with Windows ConPTY Internals</h4>
+            <p>
+              Refusing to build just another web wrapper, Zozi integrated directly with Windows ConPTY via native bindings (<code>node-pty</code>) and duplex Server-Sent Events, creating a split terminal cockpit with zero-click <em>Focus-Follows-Mouse</em> and active pane glow.
+            </p>
+          </div>
+
+          <div class="csb-item">
+            <h4><i class="fas fa-lock"></i> Radical Local-First Digital Sovereignty</h4>
+            <p>
+              Frustrated by cloud-locked AI tools that harvest private code data and demand recurring subscriptions, Zozi designed the system to run sovereign offline models with Ollama, falling back to OpenRouter cloud flagships only when deep frontier reasoning is required.
+            </p>
+          </div>
+
+          <div class="csb-quote">
+            <p>"True engineering is not defined by age or formal credentials. It is defined by the relentless curiosity to understand every byte under the hood and build tools you truly own."</p>
+            <span>&mdash; <strong>Zozi Atul Azimi</strong>, 16-Year-Old Creator of ZOZ ROUTER</span>
           </div>
         </div>
 
-        <!-- STORY 2 -->
-        <div class="story-card">
-          <div class="sc-num">02</div>
-          <div class="sc-content">
-            <h4>Born from Real Need: Remote Tunneling from School</h4>
-            <p>
-              One of ZOZ ROUTER's most defining innovations &mdash; the zero-config Cloudflare WAN Remote Access &mdash; was born directly out of Zozi's daily student life. Sitting in his vocational school classroom with only a smartphone, he wanted to supervise heavy AI builds and long-running terminal scripts running on his laptop at home. Instead of using complex commercial VPNs, he engineered a native duplex SSE tunnel directly accessible from his phone camera via 1-click QR code pairing and 6-digit cryptographic PIN authentication.
-            </p>
-          </div>
-        </div>
-
-        <!-- STORY 3 -->
-        <div class="story-card">
-          <div class="sc-num">03</div>
-          <div class="sc-content">
-            <h4>Wrestling with Windows ConPTY Virtual Console APIs</h4>
-            <p>
-              Rather than settling for basic web command shells, at age 16 Zozi dove deep into Microsoft Windows Pseudo Console (ConPTY) APIs via <code>node-pty</code>. He engineered an integrated dual-pane split console featuring raw ANSI escape sequence rendering, bidirectional Server-Sent Events, and a frictionless <em>Focus-Follows-Mouse (Hover-to-Focus)</em> mechanism with active pane glowing &mdash; delivering a terminal experience comparable to top-tier commercial software.
-            </p>
-          </div>
-        </div>
-
-        <!-- STORY 4 -->
-        <div class="story-card">
-          <div class="sc-num">04</div>
-          <div class="sc-content">
-            <h4>Radical Local-First Digital Sovereignty</h4>
-            <p>
-              Frustrated by modern tools that lock developers into expensive subscriptions and harvest confidential code telemetry, Zozi founded ZOZ ROUTER on the principle of absolute digital sovereignty. By prioritizing offline local intelligence via Ollama, users can run private, confidential neural workflows with zero telemetry, zero fees, and complete data ownership &mdash; seamlessly falling back to OpenRouter cloud models only when deep frontier reasoning is required.
-            </p>
-          </div>
-        </div>
-
-        <!-- STORY 5 -->
-        <div class="story-card">
-          <div class="sc-num">05</div>
-          <div class="sc-content">
-            <h4>Biomimetic 5-Pillar Self-Healing (BioEndocrine)</h4>
-            <p>
-              Recognizing that long-running web consoles often suffer from UI decay, button obstruction, or broken token streams, Zozi created an autonomous watchdog engine inspired by the human endocrine balance. Performing continuous 405-point connectome audits, the system automatically detects and repairs viewport blowouts, tag leaks, and UI obstacles in real-time without interrupting active work.
-            </p>
-          </div>
-        </div>
-
-        <!-- STORY 6 -->
-        <div class="story-card">
-          <div class="sc-num">06</div>
-          <div class="sc-content">
-            <h4>Proving Excellence Has No Age Requirement</h4>
-            <p>
-              ZOZ ROUTER stands as living proof from Indonesia that deep engineering capabilities, systems architecture, and AI tooling are not reserved for corporate tech giants. With grit, a workstation laptop, and an uncompromising drive to build, a 16-year-old vocational student crafted a production-grade workstation that empowers developers to command both local and cloud intelligence with absolute sovereignty.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PERSONAL QUOTE BOX -->
-      <div class="story-quote-box">
-        <div class="sq-mark"><i class="fas fa-quote-left"></i></div>
-        <p class="sq-text">
-          "True engineering is never defined by age, formal credentials, or corporate titles. It is defined by the relentless curiosity to understand every single byte under the hood, and the discipline to build tools that grant creators total sovereignty over their machines. Greetings to developers around the world from an SMK student in Indonesia."
-        </p>
-        <div class="sq-author">
-          <strong>Zozi Atul Azimi</strong>
-          <span>16-Year-Old Creator &amp; Lead Architect of ZOZ ROUTER</span>
-        </div>
       </div>
     </div>
 
