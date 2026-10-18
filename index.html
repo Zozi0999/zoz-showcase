@@ -491,7 +491,18 @@ footer .sig{color:var(--muted);margin-top:12px;font-size:.88rem}
     opacity:0;pointer-events:none;transition:opacity .25s;display:block;
   }
   .nav-links.open ~ .nav-backdrop{opacity:1;pointer-events:auto}
-}</style>
+}
+/* clickable engine tags -> related screenshots */
+button.engine-tag{cursor:pointer;font:inherit;font-family:var(--mono);font-size:.74rem;font-weight:500;transition:.2s}
+button.engine-tag:hover,button.engine-tag:focus-visible{border-color:var(--accent-line);color:var(--text);background:var(--accent-dim);outline:none}
+.engine-tag .tag-go{font-size:.65rem;color:var(--faint);transition:.2s;margin-left:2px}
+button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
+.doc-card.doc-highlight{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 0 0 6px var(--accent-dim);transition:box-shadow .3s,border-color .3s}
+.doc-card.doc-dim{opacity:.45;transition:opacity .3s}
+.doc-filter-bar{display:none;max-width:1250px;margin:0 auto 18px;padding:10px 16px;border:1px solid var(--accent-line);background:var(--accent-dim);border-radius:8px;font-family:var(--mono);font-size:.78rem;color:var(--text);align-items:center;justify-content:space-between;gap:12px}
+.doc-filter-bar.show{display:flex}
+.doc-filter-bar button{background:transparent;border:1px solid var(--border-strong);color:var(--accent);border-radius:6px;padding:4px 12px;font-family:var(--mono);font-size:.74rem;cursor:pointer}
+.doc-filter-bar button:hover{background:var(--accent-dim);border-color:var(--accent-line)}</style>
 </head>
 <body>
 
@@ -551,10 +562,10 @@ footer .sig{color:var(--muted);margin-top:12px;font-size:.88rem}
       </div>
 
       <div class="engine-tags">
-        <div class="engine-tag tag-ollama"><i class="fas fa-hippo"></i> Ollama — Local Offline Engine</div>
-        <div class="engine-tag tag-or"><i class="fas fa-bolt"></i> OpenRouter — Cloud Gateway</div>
-        <div class="engine-tag tag-pty"><i class="fas fa-terminal"></i> Native Windows ConPTY</div>
-        <div class="engine-tag tag-tunnel"><i class="fas fa-cloud"></i> Cloudflare WAN Remote</div>
+        <button type="button" class="engine-tag tag-ollama" data-docs="0" title="See related screenshots"><i class="fas fa-hippo"></i> Ollama — Local Offline Engine <i class="fas fa-arrow-right tag-go"></i></button>
+        <button type="button" class="engine-tag tag-or" data-docs="0,3" title="See related screenshots"><i class="fas fa-bolt"></i> OpenRouter — Cloud Gateway <i class="fas fa-arrow-right tag-go"></i></button>
+        <button type="button" class="engine-tag tag-pty" data-docs="5,7" title="See related screenshots"><i class="fas fa-terminal"></i> Native Windows ConPTY <i class="fas fa-arrow-right tag-go"></i></button>
+        <button type="button" class="engine-tag tag-tunnel" data-docs="6" title="See related screenshots"><i class="fas fa-cloud"></i> Cloudflare WAN Remote <i class="fas fa-arrow-right tag-go"></i></button>
       </div>
 
       <div class="cta-group">
@@ -709,6 +720,7 @@ footer .sig{color:var(--muted);margin-top:12px;font-size:.88rem}
     </div>
 
     <!-- DOCUMENTATION SCREENSHOT GALLERY GRID -->
+    <div class="doc-filter-bar" id="docFilterBar"><span id="docFilterLabel"></span><button type="button" id="docFilterClear">Show all</button></div>
     <div class="doc-gallery">
       <!-- DOC CARD 1 -->
       <div class="doc-card" data-doc-index="0">
@@ -1366,6 +1378,33 @@ window.addEventListener('keydown', (e) => {
   function close(){ if(nl&&nl.classList.contains('open')){ nl.classList.remove('open'); if(mb) mb.innerHTML='<i class="fas fa-bars"></i>'; } }
   if(bd) bd.addEventListener('click',close);
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+})();(function(){
+  var bar=document.getElementById('docFilterBar'),lbl=document.getElementById('docFilterLabel');
+  function clear(){
+    document.querySelectorAll('.doc-card').forEach(function(c){c.classList.remove('doc-highlight','doc-dim');});
+    if(bar) bar.classList.remove('show');
+  }
+  document.getElementById('docFilterClear').addEventListener('click',clear);
+  document.querySelectorAll('button.engine-tag[data-docs]').forEach(function(tag){
+    tag.addEventListener('click',function(){
+      var ids=tag.getAttribute('data-docs').split(',');
+      var name=tag.textContent.replace(/\s+/g,' ').trim();
+      switchTab('documentation');
+      clear();
+      var first=null;
+      document.querySelectorAll('.doc-card').forEach(function(c){
+        if(ids.indexOf(c.getAttribute('data-doc-index'))>-1){ c.classList.add('doc-highlight'); if(!first) first=c; }
+        else c.classList.add('doc-dim');
+      });
+      lbl.textContent='Showing screenshots related to: '+name;
+      bar.classList.add('show');
+      setTimeout(function(){
+        window.scrollTo({top:(first?first.getBoundingClientRect().top+window.scrollY-90:0),behavior:'smooth'});
+      },80);
+    });
+  });
+  // leaving the gallery tab resets the highlight
+  document.querySelectorAll('.nav-tab').forEach(function(n){n.addEventListener('click',clear);});
 })();</script>
 </body>
 </html>
