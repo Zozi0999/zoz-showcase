@@ -458,7 +458,40 @@ footer .sig{color:var(--muted);margin-top:12px;font-size:.88rem}
   .doc-gallery{grid-template-columns:1fr}
   .feat-grid{grid-template-columns:1fr}
 }
-</style>
+
+/* ===== NAV v2: clear labels, grouped, readable drawer ===== */
+.nl{display:inline-flex;flex-direction:column;line-height:1.25;text-align:left}
+.nl b{font-weight:500}
+.nl small{display:none}
+.nav-group{display:none}
+.nav-backdrop{display:none}
+@media(min-width:961px){
+  .nav-links .nav-gh-btn,.nav-links .nav-li-btn{margin-left:4px}
+  .nav-links .nav-li-btn .nl b,.nav-links .nav-gh-btn .nl b{font-weight:500}
+}
+@media(max-width:960px){
+  nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:#070b11}
+  .nav-links{
+    background:#0a0f17 !important;width:min(86vw,340px);padding:16px 14px 28px;gap:4px;
+    box-shadow:-20px 0 40px rgba(0,0,0,.6);
+  }
+  .nav-group{
+    display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--faint);padding:14px 10px 6px;
+  }
+  .nav-group:first-child{padding-top:4px}
+  .nav-links a{padding:12px;gap:14px;border:1px solid transparent;border-radius:10px}
+  .nav-links a i{width:20px;text-align:center;font-size:1rem;opacity:1;color:var(--accent)}
+  .nl b{font-size:.95rem;color:var(--text);font-family:var(--sans);font-weight:600}
+  .nl small{display:block;font-size:.76rem;color:var(--muted);font-family:var(--sans);margin-top:1px}
+  .nav-links a.active{background:var(--accent-dim);border-color:var(--accent-line)}
+  .nav-links a.active .nl b{color:var(--accent)}
+  .nav-backdrop{
+    position:fixed;inset:56px 0 0 0;background:rgba(0,0,0,.6);z-index:998;
+    opacity:0;pointer-events:none;transition:opacity .25s;display:block;
+  }
+  .nav-links.open ~ .nav-backdrop{opacity:1;pointer-events:auto}
+}</style>
 </head>
 <body>
 
@@ -471,23 +504,18 @@ footer .sig{color:var(--muted);margin-top:12px;font-size:.88rem}
     ZOZ <span>ROUTER</span>
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a class="nav-tab" data-tab="overview"><i class="fas fa-house"></i> Overview</a></li>
-    <li><a class="nav-tab" data-tab="features"><i class="fas fa-microchip"></i> Features</a></li>
-    <li><a class="nav-tab" data-tab="documentation"><i class="fas fa-book-open"></i> Documentation</a></li>
-    <li><a class="nav-tab" data-tab="installation"><i class="fas fa-download"></i> Installation</a></li>
-    <li><a class="nav-tab" data-tab="commands"><i class="fas fa-terminal"></i> Commands</a></li>
-    <li><a class="nav-tab" data-tab="developer"><i class="fa-solid fa-user-astronaut"></i> Developer</a></li>
-    <li>
-      <a href="https://www.linkedin.com/in/zozi-atul-azimi-656108404" target="_blank" class="nav-li-btn" title="LinkedIn Profile">
-        <i class="fa-brands fa-linkedin"></i> LinkedIn
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/Zozi0999/zoz_router" target="_blank" class="nav-gh-btn">
-        <i class="fab fa-github"></i> GitHub <span>★ Star</span>
-      </a>
-    </li>
+    <li class="nav-group">Menu</li>
+    <li><a class="nav-tab" data-tab="overview"><i class="fas fa-house"></i><span class="nl"><b>Overview</b><small>What is ZOZ Router</small></span></a></li>
+    <li><a class="nav-tab" data-tab="features"><i class="fas fa-layer-group"></i><span class="nl"><b>Features</b><small>What it can do</small></span></a></li>
+    <li><a class="nav-tab" data-tab="documentation"><i class="fas fa-images"></i><span class="nl"><b>Screenshots</b><small>See the interface</small></span></a></li>
+    <li><a class="nav-tab" data-tab="installation"><i class="fas fa-download"></i><span class="nl"><b>Install</b><small>Set up in minutes</small></span></a></li>
+    <li><a class="nav-tab" data-tab="commands"><i class="fas fa-terminal"></i><span class="nl"><b>Commands</b><small>Shortcuts &amp; CLI</small></span></a></li>
+    <li><a class="nav-tab" data-tab="developer"><i class="fas fa-user"></i><span class="nl"><b>About</b><small>Who built it</small></span></a></li>
+    <li class="nav-group">Links</li>
+    <li><a href="https://github.com/Zozi0999/zoz_router" target="_blank" rel="noopener" class="nav-gh-btn"><i class="fab fa-github"></i><span class="nl"><b>GitHub</b><small>Source code</small></span></a></li>
+    <li><a href="https://www.linkedin.com/in/zozi-atul-azimi-656108404" target="_blank" rel="noopener" class="nav-li-btn"><i class="fa-brands fa-linkedin"></i><span class="nl"><b>LinkedIn</b><small>Contact</small></span></a></li>
   </ul>
+  <div class="nav-backdrop" id="navBackdrop"></div>
   <button class="menu-btn" id="menuBtn" aria-label="Toggle Navigation"><i class="fas fa-bars"></i></button>
 </nav>
 
@@ -1421,6 +1449,11 @@ function handleLightboxBackdrop(e) {
 window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeLightbox();
 });
-</script>
+(function(){
+  var nl=document.getElementById('navLinks'),bd=document.getElementById('navBackdrop'),mb=document.getElementById('menuBtn');
+  function close(){ if(nl&&nl.classList.contains('open')){ nl.classList.remove('open'); if(mb) mb.innerHTML='<i class="fas fa-bars"></i>'; } }
+  if(bd) bd.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+})();</script>
 </body>
 </html>
