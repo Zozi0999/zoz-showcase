@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZOZ ROUTER — Neural AI Multi-Engine &amp; Command Terminal Gateway</title>
+<meta name="description" content="ZOZ ROUTER is an advanced Neural Void Cyberpunk web gateway orchestrating local Ollama models, cloud OpenRouter flagships, and real-time native Windows ConPTY terminal with Cloudflare WAN remote access. Architected by Zozi Atul Azimi.">
+<meta name="author" content="Zozi Atul Azimi">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800;900&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{
+  --bg:#03040b;
+  --bg2:#080a18;
+  --bg3:#0e122b;
+  --card:#0a0d22;
+  --card-border:rgba(56,189,248,.18);
+  --cyan:#22d3ee;
+  --neon:#38bdf8;
+  --purple:#818cf8;
+  --magenta:#e879f9;
+  --amber:#fbbf24;
+  --green:#34d399;
+  --red:#f43f5e;
+  --linkedin:#0a66c2;
+  --text:#f1f5f9;
+  --muted:#94a3b8;
+  --border:rgba(56,189,248,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Rajdhani',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  line-height:1.6;
+}
+
+/* ===== BACKGROUND EFFECTS ===== */
+.bg-grid{
+  position:fixed;inset:0;z-index:-3;
+  background-image:
+    linear-gradient(rgba(56,189,248,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(56,189,248,.04) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse at 50% 10%,black 40%,transparent 85%);
+}
+.bg-glow{
+  position:fixed;z-index:-2;border-radius:50%;filter:blur(140px);opacity:.32;pointer-events:none;
+}
+.glow1{width:600px;height:600px;background:#0284c7;top:-180px;left:-120px}
+.glow2{width:550px;height:550px;background:#7e22ce;top:35%;right:-180px}
+.glow3{width:500px;height:500px;background:#059669;bottom:-150px;left:25%}
+.scanline{
+  position:fixed;inset:0;z-index:9999;pointer-events:none;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,.15) 0px,rgba(0,0,0,.15) 1px,transparent 1px,transparent 3px);
+  opacity:.25;
+}
+
+/* ===== NAVBAR ===== */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 5%;
+  background:rgba(3,4,11,.88);
+  backdrop-filter:blur(22px);
+  border-bottom:1px solid var(--border);
+}
+.logo{
+  font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.35rem;
+  letter-spacing:2px;color:#fff;display:flex;align-items:center;gap:12px;
+  text-decoration:none;
+}
+.logo .hex{
+  width:36px;height:36px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--cyan),var(--purple));
+  color:#03040b;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+  font-size:1rem;animation:pulseGlow 2.5s infinite alternate;
+}
+@keyframes pulseGlow{from{box-shadow:0 0 8px var(--cyan)}to{box-shadow:0 0 22px var(--magenta)}}
+.logo span{background:linear-gradient(90deg,var(--cyan),var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+.nav-links{display:flex;gap:4px;list-style:none;align-items:center}
+.nav-links a{
+  text-decoration:none;color:var(--muted);font-weight:600;font-size:.92rem;
+  padding:8px 14px;border-radius:8px;transition:.3s;letter-spacing:.5px;
+  display:inline-flex;align-items:center;gap:8px;cursor:pointer;
+}
+.nav-links a:hover{color:var(--cyan);background:rgba(34,211,238,.08);text-shadow:0 0 10px var(--cyan)}
+.nav-links a.active{
+  color:#fff;background:linear-gradient(135deg,rgba(34,211,238,.2),rgba(129,140,248,.25));
+  border:1px solid var(--cyan);box-shadow:0 0 16px rgba(34,211,238,.35);
+}
+
+.nav-gh-btn{
+  background:linear-gradient(135deg,rgba(34,211,238,.12),rgba(129,140,248,.18)) !important;
+  border:1px solid rgba(56,189,248,.4) !important;
+  color:#fff !important;
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'JetBrains Mono',monospace;font-size:.82rem !important;
+  padding:7px 16px !important;border-radius:8px !important;transition:.3s !important;
+}
+.nav-gh-btn:hover{
+  background:var(--cyan) !important;color:#03040b !important;
+  box-shadow:0 0 20px rgba(34,211,238,.6) !important;transform:translateY(-2px);
+}
+.nav-li-btn{
+  background:rgba(10,102,194,.16) !important;
+  border:1px solid rgba(10,102,194,.4) !important;
+  color:#38bdf8 !important;
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:.92rem !important;padding:7px 14px !important;border-radius:8px !important;
+  transition:.3s !important;
+}
+.nav-li-btn:hover{
+  background:#0a66c2 !important;color:#fff !important;
+  box-shadow:0 0 18px rgba(10,102,194,.6) !important;transform:translateY(-2px);
+}
+.menu-btn{display:none;background:none;border:none;color:var(--cyan);font-size:1.4rem;cursor:pointer}
+
+/* ===== TAB PANES CONTAINER ===== */
+.tab-content-wrapper{
+  margin-top:64px;
+  min-height:calc(100vh - 160px);
+  position:relative;
+}
+.tab-pane{
+  display:none;
+  opacity:0;
+  transform:translateY(16px);
+  transition:opacity .35s ease, transform .35s ease;
+  padding:30px 5% 80px;
+}
+.tab-pane.active{
+  display:block;
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===== TAB FOOTER NAV (PAGINATION) ===== */
+.tab-footer-nav{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  margin-top:60px;padding-top:30px;border-top:1px solid var(--border);
+  flex-wrap:wrap;
+}
+.tab-nav-btn{
+  background:rgba(10,13,32,.9);border:1px solid var(--border);border-radius:50px;
+  padding:12px 26px;color:var(--cyan);font-family:'Rajdhani',sans-serif;font-weight:700;
+  font-size:.96rem;cursor:pointer;transition:.3s;display:inline-flex;align-items:center;gap:10px;
+  text-decoration:none;
+}
+.tab-nav-btn:hover{
+  background:var(--cyan);color:#03040b;box-shadow:0 0 20px rgba(34,211,238,.6);
+  transform:translateY(-2px);
+}
+.tab-nav-btn.prev{color:var(--purple);border-color:rgba(129,140,248,.4)}
+.tab-nav-btn.prev:hover{background:var(--purple);color:#03040b;box-shadow:0 0 20px rgba(129,140,248,.6)}
+
+/* ===== HERO (INSIDE OVERVIEW TAB) ===== */
+.hero-box{
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;padding:40px 0 60px;position:relative;
+}
+.badge{
+  display:inline-flex;align-items:center;gap:10px;
+  border:1px solid var(--border);background:rgba(56,189,248,.08);
+  padding:8px 22px;border-radius:50px;font-size:.85rem;font-weight:700;
+  color:var(--cyan);letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;
+}
+.badge .dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.2}}
+h1{
+  font-family:'Orbitron',sans-serif;font-size:clamp(2.5rem,7.5vw,5.2rem);
+  font-weight:900;letter-spacing:3px;line-height:1.1;margin-bottom:14px;
+}
+h1 .grad{
+  background:linear-gradient(135deg,#fff 20%,var(--cyan) 60%,var(--purple) 90%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 45px rgba(34,211,238,.35));
+}
+.subtitle{
+  font-size:clamp(1.1rem,2.2vw,1.4rem);color:var(--muted);max-width:850px;
+  margin:0 auto 28px;font-weight:500;line-height:1.7;
+}
+.subtitle strong{color:#fff}
+
+.author-pill{
+  display:inline-flex;align-items:center;gap:12px;background:rgba(14,18,44,.9);
+  border:1px solid rgba(251,191,36,.35);padding:10px 24px;border-radius:50px;
+  font-size:.96rem;color:#fde68a;margin-bottom:28px;flex-wrap:wrap;justify-content:center;
+}
+.author-pill .author-name{color:#fff;font-weight:700}
+.author-pill-links{display:inline-flex;gap:10px;align-items:center;margin-left:6px}
+.pill-social-link{
+  display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:50px;
+  font-size:.82rem;font-family:'JetBrains Mono',monospace;text-decoration:none;
+  transition:.25s;font-weight:600;
+}
+.pill-social-link.li{
+  background:rgba(10,102,194,.25);color:#38bdf8;border:1px solid rgba(10,102,194,.5);
+}
+.pill-social-link.li:hover{
+  background:#0a66c2;color:#fff;box-shadow:0 0 14px rgba(10,102,194,.7);
+}
+.pill-social-link.gh{
+  background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.25);
+}
+.pill-social-link.gh:hover{
+  background:#fff;color:#03040b;box-shadow:0 0 14px rgba(255,255,255,.6);
+}
+
+.engine-tags{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:34px}
+.engine-tag{
+  padding:8px 18px;border-radius:8px;font-family:'JetBrains Mono',monospace;
+  font-size:.82rem;font-weight:600;display:flex;align-items:center;gap:8px;
+  border:1px solid var(--border);background:rgba(8,10,26,.8);
+}
+.tag-ollama{color:var(--amber);border-color:rgba(251,191,36,.35);background:rgba(251,191,36,.06)}
+.tag-or{color:var(--cyan);border-color:rgba(34,211,238,.35);background:rgba(34,211,238,.06)}
+.tag-pty{color:var(--green);border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.06)}
+.tag-tunnel{color:var(--magenta);border-color:rgba(232,121,249,.35);background:rgba(232,121,249,.06)}
+
+.cta-group{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:50px}
+.btn{
+  padding:14px 28px;border-radius:8px;font-family:'Rajdhani',sans-serif;
+  font-weight:700;font-size:1.05rem;cursor:pointer;text-decoration:none;
+  display:inline-flex;align-items:center;gap:10px;transition:.3s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing:.5px;border:none;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--cyan),var(--neon));
+  color:#03040b;box-shadow:0 0 30px rgba(34,211,238,.45);
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 0 45px rgba(34,211,238,.75);color:#03040b}
+.btn-github{
+  background:linear-gradient(135deg,#1f2937,#111827);color:#fff;
+  border:1px solid rgba(255,255,255,.2);box-shadow:0 0 25px rgba(0,0,0,.6);
+}
+.btn-github:hover{transform:translateY(-3px);border-color:var(--cyan);box-shadow:0 0 30px rgba(34,211,238,.35)}
+.btn-linkedin{
+  background:linear-gradient(135deg,#0a66c2,#004182);color:#fff;
+  border:1px solid rgba(10,102,194,.5);box-shadow:0 0 25px rgba(10,102,194,.4);
+}
+.btn-linkedin:hover{transform:translateY(-3px);box-shadow:0 0 35px rgba(10,102,194,.7)}
+.btn-ghost{
+  background:rgba(10,13,32,.75);color:var(--text);border:1px solid var(--border);
+}
+.btn-ghost:hover{background:rgba(34,211,238,.1);color:var(--cyan);border-color:var(--cyan);transform:translateY(-3px)}
+
+/* HERO TERMINAL PREVIEW */
+.hero-terminal{
+  width:100%;max-width:960px;background:#030511;border:1px solid var(--card-border);
+  border-radius:14px;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,.7),0 0 40px rgba(34,211,238,.12);
+  text-align:left;margin:10px auto 0;
+}
+.term-topbar{
+  background:rgba(10,13,32,.95);padding:12px 18px;border-bottom:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.term-dots{display:flex;gap:7px}
+.term-dot{width:11px;height:11px;border-radius:50%}
+.term-dot.r{background:#f43f5e}
+.term-dot.y{background:#fbbf24}
+.term-dot.g{background:#34d399}
+.term-title{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--muted)}
+.term-badges{display:flex;gap:8px}
+.t-badge{
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;padding:2px 8px;border-radius:4px;
+  background:rgba(34,211,238,.1);color:var(--cyan);border:1px solid rgba(34,211,238,.3);
+}
+.term-screen{
+  padding:22px;font-family:'JetBrains Mono',monospace;font-size:.88rem;
+  line-height:1.75;color:#cbd5e1;overflow-x:auto;background:#02030a;
+}
+.t-cyan{color:var(--cyan)}
+.t-green{color:var(--green)}
+.t-purple{color:var(--purple)}
+.t-magenta{color:var(--magenta)}
+.t-amber{color:var(--amber)}
+.t-dim{color:#475569}
+
+/* SECTION HEADINGS */
+.sec-head{text-align:center;max-width:820px;margin:0 auto 46px}
+.kicker{
+  color:var(--cyan);font-size:.84rem;letter-spacing:3px;text-transform:uppercase;
+  font-weight:700;font-family:'Orbitron',sans-serif;margin-bottom:8px;display:inline-block;
+}
+h2{
+  font-family:'Orbitron',sans-serif;font-size:clamp(1.9rem,4vw,2.8rem);
+  font-weight:900;letter-spacing:1px;margin-bottom:14px;color:#fff;
+}
+.sec-head p{color:var(--muted);font-size:1.05rem;line-height:1.7}
+
+/* ABOUT GRID & STATS */
+.about-grid{
+  display:grid;grid-template-columns:1.4fr 1fr;gap:28px;max-width:1200px;margin:0 auto;
+}
+.about-card{
+  background:rgba(10,13,32,.85);border:1px solid var(--border);border-radius:18px;
+  padding:36px;box-shadow:0 12px 35px rgba(0,0,0,.5);
+}
+.about-card h3{
+  font-family:'Orbitron',sans-serif;font-size:1.35rem;color:var(--cyan);
+  margin-bottom:16px;display:flex;align-items:center;gap:12px;
+}
+.about-card p{color:var(--muted);font-size:1.02rem;line-height:1.8;margin-bottom:16px}
+.about-card p strong{color:#fff}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.stat{
+  background:linear-gradient(135deg,rgba(14,18,44,.85),rgba(8,10,26,.95));
+  border:1px solid var(--border);border-radius:16px;padding:26px;text-align:center;
+  transition:.3s;display:flex;flex-direction:column;justify-content:center;
+}
+.stat:hover{border-color:var(--cyan);transform:translateY(-3px);box-shadow:0 0 25px rgba(34,211,238,.2)}
+.stat .num{
+  font-family:'Orbitron',sans-serif;font-size:2.4rem;font-weight:900;
+  background:linear-gradient(90deg,var(--cyan),var(--purple));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.stat .lbl{color:var(--muted);font-size:.88rem;letter-spacing:1px;text-transform:uppercase;margin-top:6px}
+
+/* FEATURES GRID */
+.feat-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:24px;
+  max-width:1250px;margin:0 auto;
+}
+.feat{
+  background:rgba(10,13,32,.85);border:1px solid var(--border);border-radius:16px;
+  padding:32px 28px;transition:all .35s ease;display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
+}
+.feat::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+  opacity:0;transition:.3s;
+}
+.feat:hover{
+  transform:translateY(-5px);border-color:var(--cyan);box-shadow:0 14px 40px rgba(0,0,0,.6),0 0 25px rgba(34,211,238,.18);
+}
+.feat:hover::before{opacity:1}
+.feat .ico{
+  width:52px;height:52px;border-radius:12px;display:grid;place-items:center;
+  font-size:1.45rem;margin-bottom:20px;
+}
+.i-cyan{background:rgba(34,211,238,.12);color:var(--cyan);border:1px solid rgba(34,211,238,.3)}
+.i-purple{background:rgba(129,140,248,.12);color:var(--purple);border:1px solid rgba(129,140,248,.3)}
+.i-green{background:rgba(52,211,153,.12);color:var(--green);border:1px solid rgba(52,211,153,.3)}
+.i-magenta{background:rgba(232,121,249,.12);color:var(--magenta);border:1px solid rgba(232,121,249,.3)}
+.i-amber{background:rgba(251,191,36,.12);color:var(--amber);border:1px solid rgba(251,191,36,.3)}
+.feat h4{font-family:'Orbitron',sans-serif;font-size:1.15rem;margin-bottom:12px;color:#fff}
+.feat p{color:var(--muted);font-size:.96rem;line-height:1.7;flex-grow:1;margin-bottom:18px}
+.feat-tag{
+  font-family:'JetBrains Mono',monospace;font-size:.76rem;
+  color:var(--cyan);background:rgba(34,211,238,.08);padding:4px 10px;border-radius:4px;
+  align-self:flex-start;border:1px solid rgba(34,211,238,.2);
+}
+
+/* VISUAL DOCUMENTATION GALLERY & LIGHTBOX */
+.doc-gallery{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:28px;
+  max-width:1300px;margin:0 auto;
+}
+.doc-card{
+  background:rgba(10,13,32,.9);border:1px solid var(--border);border-radius:18px;
+  overflow:hidden;box-shadow:0 12px 35px rgba(0,0,0,.5);
+  display:flex;flex-direction:column;transition:all .35s ease;
+  position:relative;
+}
+.doc-card:hover{
+  border-color:var(--cyan);transform:translateY(-5px);
+  box-shadow:0 18px 45px rgba(0,0,0,.7),0 0 28px rgba(34,211,238,.2);
+}
+.doc-img-box{
+  position:relative;overflow:hidden;background:#030511;aspect-ratio:16/9;
+  border-bottom:1px solid var(--border);cursor:pointer;
+}
+.doc-img-box img{
+  width:100%;height:100%;object-fit:cover;object-position:top;
+  transition:transform .4s ease;display:block;
+}
+.doc-card:hover .doc-img-box img{
+  transform:scale(1.04);
+}
+.doc-overlay-badge{
+  position:absolute;top:12px;left:12px;
+  background:rgba(3,4,11,.88);backdrop-filter:blur(10px);
+  border:1px solid var(--border);border-radius:50px;
+  padding:4px 12px;font-family:'Orbitron',sans-serif;font-size:.76rem;
+  font-weight:700;color:var(--cyan);letter-spacing:1px;
+}
+.doc-zoom-hint{
+  position:absolute;bottom:12px;right:12px;
+  background:rgba(3,4,11,.88);backdrop-filter:blur(8px);
+  border:1px solid rgba(56,189,248,.3);border-radius:8px;
+  padding:5px 12px;font-family:'Rajdhani',sans-serif;font-size:.84rem;
+  font-weight:700;color:#cbd5e1;display:flex;align-items:center;gap:6px;
+  opacity:0;transform:translateY(6px);transition:.3s;
+}
+.doc-card:hover .doc-zoom-hint{
+  opacity:1;transform:translateY(0);
+}
+.doc-body{
+  padding:24px 22px;display:flex;flex-direction:column;flex-grow:1;
+}
+.doc-body h3{
+  font-family:'Orbitron',sans-serif;font-size:1.15rem;font-weight:800;
+  color:#fff;margin-bottom:10px;line-height:1.4;letter-spacing:.5px;
+}
+.doc-body p{
+  color:var(--muted);font-size:.95rem;line-height:1.7;margin-bottom:18px;flex-grow:1;
+}
+.doc-pills{display:flex;gap:8px;flex-wrap:wrap}
+.doc-pill{
+  font-family:'JetBrains Mono',monospace;font-size:.74rem;padding:4px 10px;border-radius:6px;
+  background:rgba(34,211,238,.08);color:var(--cyan);border:1px solid rgba(34,211,238,.2);
+}
+
+/* LIGHTBOX MODAL */
+.doc-lightbox{
+  position:fixed;inset:0;z-index:99999;
+  background:rgba(2,3,8,.92);backdrop-filter:blur(24px);
+  display:none;align-items:center;justify-content:center;
+  padding:24px;opacity:0;transition:opacity .3s ease;
+}
+.doc-lightbox.active{
+  display:flex;opacity:1;
+}
+.doc-lightbox-dialog{
+  max-width:1200px;width:100%;max-height:94vh;
+  background:linear-gradient(160deg,rgba(14,18,44,.96),rgba(8,10,26,.98));
+  border:1px solid var(--border);border-radius:18px;
+  display:flex;flex-direction:column;overflow:hidden;
+  box-shadow:0 25px 70px rgba(0,0,0,.9),0 0 50px rgba(34,211,238,.25);
+}
+.doc-lightbox-head{
+  padding:14px 22px;border-bottom:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(10,13,32,.95);
+}
+.doc-lightbox-title{
+  font-family:'Orbitron',sans-serif;font-size:1.1rem;font-weight:800;
+  color:var(--cyan);display:flex;align-items:center;gap:10px;
+}
+.doc-lightbox-close{
+  background:rgba(244,63,94,.12);border:1px solid rgba(244,63,94,.3);
+  color:#f43f5e;width:34px;height:34px;border-radius:50%;cursor:pointer;
+  display:grid;place-items:center;font-size:1.1rem;transition:.25s;
+}
+.doc-lightbox-close:hover{
+  background:#f43f5e;color:#fff;box-shadow:0 0 16px rgba(244,63,94,.6);
+}
+.doc-lightbox-content{
+  padding:16px;overflow-y:auto;text-align:center;background:#02030a;
+}
+.doc-lightbox-content img{
+  max-width:100%;max-height:68vh;object-fit:contain;border-radius:10px;
+  box-shadow:0 8px 30px rgba(0,0,0,.8);border:1px solid rgba(56,189,248,.15);
+}
+.doc-lightbox-desc{
+  padding:14px 24px 18px;background:rgba(10,13,32,.95);border-top:1px solid var(--border);
+  color:var(--muted);font-size:.98rem;line-height:1.6;
+}
+
+/* HOW TO & INSTALLATION */
+.install-container{display:flex;flex-direction:column;gap:28px;max-width:1050px;margin:0 auto}
+.install-step{
+  background:rgba(10,13,32,.85);border:1px solid var(--border);border-radius:16px;overflow:hidden;
+}
+.install-head{
+  display:flex;justify-content:space-between;align-items:center;padding:18px 26px;
+  background:linear-gradient(90deg,rgba(56,189,248,.12),transparent);
+  border-bottom:1px solid var(--border);
+}
+.install-head-left{display:flex;align-items:center;gap:14px}
+.install-head .step-num{
+  width:34px;height:34px;border-radius:8px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--cyan),var(--purple));color:#03040b;
+  font-family:'Orbitron',sans-serif;font-weight:900;font-size:.95rem;
+}
+.install-head h4{font-family:'Orbitron',sans-serif;font-size:1.05rem;color:var(--cyan);letter-spacing:.5px}
+.install-body{padding:24px 26px}
+.install-body p{color:var(--muted);font-size:.98rem;margin-bottom:14px}
+pre{
+  background:#02030a;border:1px solid rgba(56,189,248,.2);border-radius:10px;
+  padding:46px 20px 18px 20px;overflow-x:auto;font-family:'JetBrains Mono',monospace;
+  font-size:.88rem;color:var(--green);position:relative;line-height:1.7;
+}
+pre .cm{color:#64748b}
+pre .kw{color:var(--magenta)}
+pre .str{color:var(--amber)}
+.copy-btn{
+  position:absolute;top:10px;right:10px;background:rgba(56,189,248,.14);border:1px solid var(--border);
+  color:var(--cyan);border-radius:6px;padding:6px 14px;font-size:.78rem;cursor:pointer;
+  font-family:'Rajdhani',sans-serif;font-weight:700;transition:.25s;
+}
+.copy-btn:hover{background:var(--cyan);color:#03040b;box-shadow:0 0 12px var(--cyan)}
+
+/* GITHUB HERO BANNER */
+.gh-banner{
+  background:linear-gradient(135deg,rgba(17,24,39,.95),rgba(3,7,18,.98));
+  border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:48px 40px;
+  text-align:center;position:relative;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.8);
+  margin-top:40px;
+}
+.gh-banner::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 0%,rgba(56,189,248,.15),transparent 70%);
+}
+.gh-banner-inner{position:relative;z-index:2}
+.gh-banner h3{
+  font-family:'Orbitron',sans-serif;font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:900;margin-bottom:14px;color:#fff;
+}
+.gh-banner p{color:var(--muted);max-width:700px;margin:0 auto 28px;font-size:1.05rem}
+.gh-banner-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* STRUCTURE TREE */
+.tree-wrap{background:#02030a;border:1px solid var(--border);border-radius:14px;padding:30px;overflow-x:auto;max-width:1050px;margin:0 auto 36px}
+.tree-wrap pre{border:none;background:transparent;padding:0;font-size:.9rem;line-height:1.9;color:var(--muted)}
+.tree-wrap .fname{color:var(--cyan);font-weight:600}
+.tree-wrap .fcom{color:#64748b}
+
+/* TABLES */
+.table-wrap{
+  overflow-x:auto;border:1px solid var(--border);border-radius:14px;
+  background:rgba(8,10,26,.6);max-width:1050px;margin:0 auto 36px;
+}
+table{width:100%;border-collapse:collapse;min-width:540px}
+th,td{padding:16px 24px;text-align:left;border-bottom:1px solid rgba(56,189,248,.1)}
+th{
+  background:linear-gradient(90deg,rgba(56,189,248,.15),rgba(129,140,248,.1));
+  font-family:'Orbitron',sans-serif;font-size:.85rem;letter-spacing:1.5px;color:var(--cyan);text-transform:uppercase;
+}
+tr:last-child td{border-bottom:none}
+tbody tr{transition:.25s}
+tbody tr:hover{background:rgba(56,189,248,.05)}
+kbd{
+  background:#0e122b;border:1px solid var(--border);border-bottom-width:3px;border-radius:6px;
+  padding:5px 12px;font-family:'JetBrains Mono',monospace;font-size:.84rem;color:var(--amber);
+}
+
+/* DEVELOPER SECTION */
+.dev-section{
+  background:linear-gradient(150deg,rgba(129,140,248,.1),rgba(232,121,249,.08),rgba(8,10,26,.95));
+  border:1px solid rgba(129,140,248,.35);border-radius:22px;padding:60px 40px;
+  text-align:center;position:relative;overflow:hidden;max-width:1150px;margin:0 auto;
+  box-shadow:0 24px 60px rgba(0,0,0,.7);
+}
+.dev-section::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 15% 15%,rgba(56,189,248,.14),transparent 50%),
+             radial-gradient(circle at 85% 85%,rgba(232,121,249,.14),transparent 50%);
+}
+.dev-inner{position:relative;z-index:2}
+.avatar{
+  width:144px;height:144px;margin:0 auto 24px;border-radius:50%;
+  background:conic-gradient(from 180deg,var(--cyan),var(--purple),var(--magenta),var(--cyan));
+  padding:4px;animation:spinHalo 9s linear infinite;
+  box-shadow:0 0 35px rgba(34,211,238,.35);
+}
+@keyframes spinHalo{to{transform:rotate(360deg)}}
+.avatar .inner{
+  width:100%;height:100%;border-radius:50%;background:#03040b;
+  overflow:hidden;
+  animation:spinHalo 9s linear infinite reverse;
+  display:flex;align-items:center;justify-content:center;
+}
+.avatar-img{
+  width:100%;height:100%;object-fit:cover;object-position:center;
+  border-radius:50%;display:block;
+}
+.dev-section .kicker{color:var(--amber);letter-spacing:4px;text-transform:uppercase;font-size:.84rem;font-weight:700}
+.dev-section h2{
+  font-family:'Orbitron',sans-serif;font-size:clamp(1.8rem,4.5vw,2.7rem);font-weight:900;
+  margin:12px 0 6px;background:linear-gradient(90deg,var(--cyan),var(--purple),var(--magenta));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.dev-section .alias{color:var(--purple);font-weight:700;letter-spacing:3px;font-size:1.1rem;margin-bottom:22px}
+.dev-section .desc{color:var(--muted);max-width:820px;margin:0 auto 30px;font-size:1.05rem;line-height:1.8}
+
+.dev-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+.dev-link-btn{
+  padding:12px 24px;border-radius:50px;font-family:'Rajdhani',sans-serif;font-weight:700;
+  font-size:.95rem;text-decoration:none;transition:.3s;display:inline-flex;align-items:center;gap:10px;
+  border:1px solid var(--border);background:rgba(56,189,248,.08);color:var(--cyan);
+}
+.dev-link-btn:hover{
+  background:var(--cyan);color:#03040b;transform:translateY(-3px);
+  box-shadow:0 0 24px rgba(56,189,248,.6);
+}
+.dev-link-btn.li{
+  background:rgba(10,102,194,.18);color:#38bdf8;border-color:rgba(10,102,194,.5);
+}
+.dev-link-btn.li:hover{
+  background:#0a66c2;color:#fff;box-shadow:0 0 24px rgba(10,102,194,.7);
+}
+.dev-link-btn.gh{
+  background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2);
+}
+.dev-link-btn.gh:hover{background:#fff;color:#03040b;box-shadow:0 0 24px rgba(255,255,255,.5)}
+
+.dev-chips{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.chip{
+  padding:9px 20px;border-radius:50px;font-size:.88rem;font-weight:700;
+  border:1px solid var(--border);background:rgba(56,189,248,.06);color:var(--muted);
+  display:flex;align-items:center;gap:8px;transition:.3s;
+}
+.chip:hover{color:var(--cyan);border-color:var(--cyan);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{
+  border-top:1px solid var(--border);padding:45px 5% 30px;text-align:center;
+  background:rgba(3,4,11,.96);
+}
+.footer-logo{
+  font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.5rem;letter-spacing:3px;
+  background:linear-gradient(90deg,var(--cyan),var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:12px;
+}
+footer p{color:var(--muted);font-size:.95rem}
+footer .sig{color:var(--purple);margin-top:14px;font-size:.98rem;font-weight:600}
+.footer-links{display:flex;gap:22px;justify-content:center;margin:22px 0 12px;flex-wrap:wrap}
+.footer-links a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.92rem;transition:.3s;cursor:pointer}
+.footer-links a:hover{color:var(--cyan);text-shadow:0 0 10px var(--cyan)}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .about-grid{grid-template-columns:1fr}
+  .nav-links{
+    position:fixed;top:60px;right:0;width:min(82vw,340px);height:calc(100vh - 60px);
+    background:rgba(3,4,11,.98);backdrop-filter:blur(22px);flex-direction:column;
+    padding:30px 24px;gap:8px;transform:translateX(105%);transition:.35s;
+    border-left:1px solid var(--border);z-index:999;
+  }
+  .nav-links.open{transform:translateX(0)}
+  .nav-links a{padding:14px;font-size:1.05rem;border-bottom:1px solid rgba(56,189,248,.08);width:100%}
+  .menu-btn{display:block}
+}
+@media(max-width:600px){
+  .stats{grid-template-columns:1fr 1fr}
+  .dev-section{padding:40px 20px}
+  .tab-pane{padding:20px 4% 60px}
+  .hero-terminal{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-glow glow1"></div>
+<div class="bg-glow glow2"></div>
+<div class="bg-glow glow3"></div>
+<div class="scanline"></div>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#overview" class="logo" data-tab-target="overview">
+    <span class="hex"><i class="fas fa-bolt"></i></span>
+    ZOZ <span>ROUTER</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a class="nav-tab" data-tab="overview"><i class="fas fa-house"></i> Overview</a></li>
+    <li><a class="nav-tab" data-tab="features"><i class="fas fa-microchip"></i> Features</a></li>
+    <li><a class="nav-tab" data-tab="documentation"><i class="fas fa-book-open"></i> Documentation</a></li>
+    <li><a class="nav-tab" data-tab="installation"><i class="fas fa-download"></i> Installation</a></li>
+    <li><a class="nav-tab" data-tab="commands"><i class="fas fa-terminal"></i> Commands</a></li>
+    <li><a class="nav-tab" data-tab="developer"><i class="fa-solid fa-user-astronaut"></i> Developer</a></li>
+    <li>
+      <a href="https://www.linkedin.com/in/zozi-atul-azimi-656108404" target="_blank" class="nav-li-btn" title="LinkedIn Profile">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/Zozi0999/zoz_router" target="_blank" class="nav-gh-btn">
+        <i class="fab fa-github"></i> GitHub <span>★ Star</span>
+      </a>
+    </li>
+  </ul>
+  <button class="menu-btn" id="menuBtn" aria-label="Toggle Navigation"><i class="fas fa-bars"></i></button>
+</nav>
+
+<!-- ========================================================================= -->
+<!-- TAB CONTENT WRAPPER (EACH SECTION IS AN INDEPENDENT CLICKABLE TAB VIEW)    -->
+<!-- ========================================================================= -->
+<div class="tab-content-wrapper">
+
+  <!-- ===================================================================== -->
+  <!-- TAB 1: OVERVIEW & SYSTEM DEFINITION                                   -->
+  <!-- ===================================================================== -->
+  <div class="tab-pane active" id="tab-overview">
+    <span id="overview"></span>
+    <!-- HERO HEADER -->
+    <header class="hero-box">
+      <div class="badge"><span class="dot"></span> v335 • Quantum Orbital Edition • Production Ready</div>
+      <h1><span class="grad">ZOZ ROUTER</span></h1>
+      <p class="subtitle">
+        A futuristic <strong>Neural Void Cyberpunk</strong> command cockpit orchestrating local <strong>Ollama</strong> models, cloud <strong>OpenRouter</strong> flagships, and <strong>Native Windows ConPTY Terminal</strong> with seamless Cloudflare WAN remote access.
+      </p>
+      
+      <div class="author-pill">
+        <i class="fas fa-crown" style="color: var(--amber);"></i>
+        Architected &amp; Created by: <span class="author-name">Zozi Atul Azimi</span>
+        <div class="author-pill-links">
+          <a href="https://www.linkedin.com/in/zozi-atul-azimi-656108404" target="_blank" class="pill-social-link li">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://github.com/Zozi0999" target="_blank" class="pill-social-link gh">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="engine-tags">
+        <div class="engine-tag tag-ollama"><i class="fas fa-hippo"></i> Ollama — Local Offline Engine</div>
+        <div class="engine-tag tag-or"><i class="fas fa-bolt"></i> OpenRouter — Cloud Gateway</div>
+        <div class="engine-tag tag-pty"><i class="fas fa-terminal"></i> Native Windows ConPTY</div>
+        <div class="engine-tag tag-tunnel"><i class="fas fa-cloud"></i> Cloudflare WAN Remote</div>
+      </div>
+
+      <div class="cta-group">
+        <a href="https://github.com/Zozi0999/zoz_router" target="_blank" class="btn btn-github">
+          <i class="fab fa-github"></i> Open GitHub Repository
+        </a>
+        <button class="btn btn-primary" data-tab-target="installation">
+          <i class="fas fa-download"></i> Installation Guide
+        </button>
+        <button class="btn btn-ghost" data-tab-target="features">
+          <i class="fas fa-compass"></i> Explore Feature Arsenal
+        </button>
+      </div>
+
+      <!-- HERO TERMINAL PREVIEW -->
+      <div class="hero-terminal">
+        <div class="term-topbar">
+          <div class="term-dots">
+            <span class="term-dot r"></span>
+            <span class="term-dot y"></span>
+            <span class="term-dot g"></span>
+          </div>
+          <span class="term-title">zoz-router // powershell.exe --ConPTY (Port 4040)</span>
+          <div class="term-badges">
+            <span class="t-badge"><i class="fas fa-wifi"></i> Online</span>
+            <span class="t-badge"><i class="fas fa-heart-pulse"></i> 100% Dopamine</span>
+          </div>
+        </div>
+        <div class="term-screen">
+          <span class="t-magenta">[!] Omega System Profile Loaded zozi [!]</span><br>
+          <span class="t-cyan">Windows PowerShell (Bypass ExecutionPolicy) • Dual-Pane Split Ready</span><br>
+          <span class="t-green">PS C:\Users\user&gt;</span> <span class="t-cyan">zoz-router --status</span><br>
+          <span class="t-dim">-------------------------------------------------------------</span><br>
+          [Core Gateway]   : <span class="t-green">ACTIVE (http://localhost:4040)</span><br>
+          [Ollama Local]   : <span class="t-green">CONNECTED (qwen2.5:7b, deepseek-r1:8b)</span><br>
+          [OpenRouter]     : <span class="t-cyan">READY (claude-3.5-sonnet, gpt-4o, llama-3.3-70b)</span><br>
+          [Terminal Engine]: <span class="t-amber">ConPTY Native Duplex + Cloudflare Tunnel Active</span><br>
+          [BioEndocrine]   : <span class="t-green">5-Pillar Matrix Harmonious (405/405 Receptors Verified)</span><br>
+          <span class="t-dim">-------------------------------------------------------------</span><br>
+          <span class="t-green">PS C:\Users\user&gt;</span> <span class="t-cyan">agy --version</span><br>
+          Google Antigravity CLI v1.4.0 (Windows ConPTY Seamless Session)<br>
+          <span class="t-green">PS C:\Users\user&gt;</span> <span style="animation: blink 1s infinite;">_</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ARCHITECTURE & PHILOSOPHY -->
+    <div class="sec-head" style="margin-top: 40px;">
+      <span class="kicker">// System Architecture</span>
+      <h2>HYBRID AI GATEWAY &amp; NATIVE OS TERMINAL</h2>
+      <p>Why choose between local offline privacy and frontier cloud intelligence when you can command both simultaneously within a unified cyberpunk cockpit?</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <h3><i class="fas fa-circle-nodes"></i> CODE SOVEREIGNTY ARCHITECTURE</h3>
+        <p><strong>ZOZ ROUTER</strong> was designed, engineered, and brought to life by <strong>Zozi Atul Azimi</strong> to fulfill the ultimate developer imperative: an integrated workstation bridging local neural computing, frontier cloud intelligence, and full native operating system control.</p>
+        <p>🦙 <strong>Ollama Local-First:</strong> Run sovereign open-weights neural models completely offline with zero subscription cost and zero telemetry or privacy leaks.</p>
+        <p>⚡ <strong>OpenRouter Cloud Flagship:</strong> Instantly gateway into hundreds of world-class cloud models with automatic fallback whenever deep scientific reasoning is required.</p>
+        <p>💻 <strong>Integrated ConPTY &amp; WAN Tunnel:</strong> Full Windows terminal inside your browser, reachable remotely from your smartphone on the go via Cloudflare tunnels guarded by cryptographic 6-digit PIN authentication.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="num">2+</span><span class="lbl">Orchestration Engines</span></div>
+        <div class="stat"><span class="num">405</span><span class="lbl">Connectome Receptors</span></div>
+        <div class="stat"><span class="num">0 ms</span><span class="lbl">Local Bridge Overhead</span></div>
+        <div class="stat"><span class="num">v335</span><span class="lbl">Current Production</span></div>
+      </div>
+    </div>
+
+    <!-- TAB FOOTER NAVIGATION -->
+    <div class="tab-footer-nav">
+      <div></div>
+      <button class="tab-nav-btn next" data-tab-target="features">
+        Next: Feature Arsenal <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- TAB 2: FEATURES ARSENAL                                               -->
+  <!-- ===================================================================== -->
+  <div class="tab-pane" id="tab-features">
+    <div class="sec-head">
+      <span class="kicker">// Arsenal of Capabilities</span>
+      <h2>INDUSTRY-GRADE FEATURE SUITE</h2>
+      <p>Every subsystem is precision-engineered for zero-latency execution, unyielding uptime, and resilient autonomous self-healing.</p>
+    </div>
+
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="ico i-cyan"><i class="fas fa-terminal"></i></div>
+        <h4>Neural CLI Terminal Engine</h4>
+        <p>Seamless native Windows ConPTY integration via <code>node-pty</code> and duplex SSE streaming. Features multi-tab isolation, dual-pane split view with zero-click <em>Focus-Follows-Mouse (Hover-to-Focus)</em>, Active Pane Glow, and lossless state preservation.</p>
+        <span class="feat-tag">ConPTY • SSE • xterm.js</span>
+      </div>
+
+      <div class="feat">
+        <div class="ico i-amber"><i class="fas fa-cloud"></i></div>
+        <h4>Cloudflare WAN Remote Access</h4>
+        <p>Control your workstation laptop at home directly from your smartphone anywhere. Automated <code>cloudflared</code> binary orchestration, cryptographic 6-digit PIN session guard, 1-click camera QR auto-pairing, and an ergonomic mobile Touch Keybar with haptic feedback.</p>
+        <span class="feat-tag">Mobile-to-Desktop WAN • PIN Gate</span>
+      </div>
+
+      <div class="feat">
+        <div class="ico i-green"><i class="fas fa-dna"></i></div>
+        <h4>Dual-Channel BioEndocrine v2</h4>
+        <p>Autonomous biomimetic 5-Pillar health matrix: continuous DOM connectome audits (405 verified receptors), model API error detection, broken text sanitization (Mojibake &amp; tag leak suppression), viewport blowout prevention, and physical button obstruction self-healing.</p>
+        <span class="feat-tag">5-Pillar Health • Self-Healing</span>
+      </div>
+
+      <div class="feat">
+        <div class="ico i-purple"><i class="fas fa-palette"></i></div>
+        <h4>Canvas Overview</h4>
+        <p>Real-time visual artifact rendering and scratchpad laboratory. Test HTML, CSS, SVG, Mermaid diagrams, and JavaScript widgets live in a sandboxed interactive canvas with instantaneous preview and multi-tab scratch files.</p>
+        <span class="feat-tag">Live Canvas • Sandbox Execution</span>
+      </div>
+
+      <div class="feat">
+        <div class="ico i-magenta"><i class="fas fa-globe"></i></div>
+        <h4>Deep Careful Custom URL Website</h4>
+        <p>Automated autonomous research agent capable of executing multi-source search queries, scraping structured documentation, aggregating citations, and synthesizing technical reports directly into markdown artifacts.</p>
+        <span class="feat-tag">Multi-Source • Citation Engine</span>
+      </div>
+
+      <div class="feat">
+        <div class="ico i-cyan"><i class="fas fa-keyboard"></i></div>
+        <h4>Interactive AI Auto Enter Gate</h4>
+        <p>Regex-based prompt recognition engine for interactive AI CLIs (Claude Code, Gemini CLI, Antigravity CLI / Inquirer). Automates confirmations (<code>[Y/n]</code>, <code>Accept file edit?</code>, <code>Allow creation?</code>) with zero-click convenience.</p>
+        <span class="feat-tag">Auto Enter • Hands-Free Coding</span>
+      </div>
+    </div>
+
+    <!-- TAB FOOTER NAVIGATION -->
+    <div class="tab-footer-nav">
+      <button class="tab-nav-btn prev" data-tab-target="overview">
+        <i class="fas fa-arrow-left"></i> Previous: Overview
+      </button>
+      <button class="tab-nav-btn next" data-tab-target="documentation">
+        Next: Visual Documentation <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- TAB 3: VISUAL DOCUMENTATION & INTERFACE SHOWCASE                      -->
+  <!-- ===================================================================== -->
+  <div class="tab-pane" id="tab-documentation">
+    <div class="sec-head">
+      <span class="kicker">// Interface Tour &amp; Visual Documentation</span>
+      <h2>VISUAL DOCUMENTATION &amp; COCKPIT SHOWCASE</h2>
+      <p>High-resolution walkthrough of ZOZ ROUTER's neural gateway, multi-modal ingestion system, creative AI suite, native ConPTY terminal, and Cloudflare WAN remote access. Click any capture to open full-screen inspection.</p>
+    </div>
+
+    <!-- DOCUMENTATION SCREENSHOT GALLERY GRID -->
+    <div class="doc-gallery">
+      <!-- DOC CARD 1 -->
+      <div class="doc-card" data-doc-index="0">
+        <div class="doc-img-box" onclick="openLightbox(0)">
+          <img src="docs_img/doc1_cockpit.png" alt="ZOZ Router Cockpit & Gateway Interface" loading="lazy">
+          <div class="doc-overlay-badge">DOC // 01</div>
+          <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
+        </div>
+        <div class="doc-body">
+          <h3>ZOZ Router Cockpit &amp; Gateway Interface</h3>
+          <p>The primary neural gateway cockpit. Features instant model switching (Gemini 2.5 Flash, Ollama offline local LLMs, OpenRouter flagships), real-time session telemetry, live engine status badges, and expandable sidebar navigation.</p>
+          <div class="doc-pills">
+            <span class="doc-pill">Cockpit Gateway</span>
+            <span class="doc-pill">Model Selector</span>
+            <span class="doc-pill">Telemetry Indicator</span>
+            <span class="doc-pill">Real-Time Chat</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DOC CARD 2 -->
+      <div class="doc-card" data-doc-index="1">
+        <div class="doc-img-box" onclick="openLightbox(1)">
+          <img src="docs_img/doc2_attachments.png" alt="Multi-Modal Ingestion & Attachments Menu" loading="lazy">
+          <div class="doc-overlay-badge">DOC // 02</div>
+          <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
+        </div>
+        <div class="doc-body">
+          <h3>Multi-Modal Ingestion &amp; Attachments Menu</h3>
+          <p>Versatile media upload menu popover. Take live photos directly via connected hardware camera (Ambil Foto), upload images from your local system gallery (Galeri Foto), or inject codebase files and structured documents (Dokumen &amp; File) directly into the model context.</p>
+          <div class="doc-pills">
+            <span class="doc-pill">Camera Input</span>
+            <span class="doc-pill">Photo Gallery</span>
+            <span class="doc-pill">Code &amp; Docs Ingestion</span>
+            <span class="doc-pill">Multi-Modal</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DOC CARD 3 -->
+      <div class="doc-card" data-doc-index="2">
+        <div class="doc-img-box" onclick="openLightbox(2)">
+          <img src="docs_img/doc3_creativetools.png" alt="Integrated Generative Creative AI Tools" loading="lazy">
+          <div class="doc-overlay-badge">DOC // 03</div>
+          <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
+        </div>
+        <div class="doc-body">
+          <h3>Integrated Generative Creative AI Tools</h3>
+          <p>Specialized rapid creative suite accessible straight from the prompt composer. Generate high-quality AI images (Buat Gambar AI), execute neural photo-to-photo editing (Edit Foto Img2Img), synthesize music tracks (Buat Musik AI), and perform deep YouTube video searches.</p>
+          <div class="doc-pills">
+            <span class="doc-pill">AI Image Gen</span>
+            <span class="doc-pill">Img2Img Neural</span>
+            <span class="doc-pill">Music Synthesis</span>
+            <span class="doc-pill">YouTube Research</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DOC CARD 4 -->
+      <div class="doc-card" data-doc-index="3">
+        <div class="doc-img-box" onclick="openLightbox(3)">
+          <img src="docs_img/doc4_skills.png" alt="Command Palette & Neural Skills Popover" loading="lazy">
+          <div class="doc-overlay-badge">DOC // 04</div>
+          <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
+        </div>
+        <div class="doc-body">
+          <h3>Command Palette &amp; Neural Skills Popover</h3>
+          <p>Instant skill command invocation popover. Quickly trigger specialized neural pipelines: <code>/diagram</code> for Mermaid architecture charts, <code>/website</code> for responsive web generators, <code>/dokumen</code> for structured documentation, <code>/deep-research</code> for multi-source search, and <code>/autonomous</code> for multi-step agent execution.</p>
+          <div class="doc-pills">
+            <span class="doc-pill">Slash Skills</span>
+            <span class="doc-pill">Mermaid Diagrams</span>
+            <span class="doc-pill">Deep Research</span>
+            <span class="doc-pill">Autonomous Agents</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DOC CARD 5 -->
+      <div class="doc-card" data-doc-index="4">
+        <div class="doc-img-box" onclick="openLightbox(4)">
+          <img src="docs_img/doc5_websiteoutput.png" alt="Dynamic Website Output Format Selector" loading="lazy">
+          <div class="doc-overlay-badge">DOC // 05</div>
+          <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
+        </div>
+        <div class="doc-body">
+          <h3>Dynamic Website Output Format Selector</h3>
+          <p>Interactive code delivery modal. Select between instant sandboxed interactive live preview (File Siap Pratinjau) to test generated web applications in real-time, or formatted in-chat raw source code inspection (Tampilkan Kode di Percakapan) for developer audit.</p>
+          <div class="doc-pills">
+            <span class="doc-pill">Live Sandbox Preview</span>
+            <span class="doc-pill">Code Inspection</span>
+            <span class="doc-pill">Dual-Mode Output</span>
+            <span class="doc-pill">HTML/CSS/JS Engine</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DOC CARD 6 -->
+      <div class="doc-card" data-doc-index="5">
+        <div class="doc-img-box" onclick="openLightbox(5)">
+          <img src="docs_img/doc6_customurl.png" alt="Integrated Neural CLI & Web Terminal" loading="lazy">
+          <div class="doc-overlay-badge">DOC // 06</div>
+          <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
+        </div>
+        <div class="doc-body">
+          <h3>Integrated Neural CLI &amp; Web Terminal</h3>
+          <p>Full-featured native Windows ConPTY terminal inside the browser over duplex Server-Sent Events. Includes multi-tab session management, font scaling (13px), sync modes (Auto Y, Win Sync), remote tunneling triggers, and execution without terminal freezes.</p>
+          <div class="doc-pills">
+            <span class="doc-pill">Windows ConPTY</span>
+            <span class="doc-pill">Multi-Tab CLI</span>
+            <span class="doc-pill">xterm.js Canvas</span>
+            <span class="doc-pill">Duplex SSE Stream</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DOC CARD 7 -->
+      <div class="doc-card" data-doc-index="6">
+        <div class="doc-img-box" onclick="openLightbox(6)">
+          <img src="docs_img/doc7_settings.png" alt="Cloudflare WAN Remote Access & PIN Gate" loading="lazy">
+          <div class="doc-overlay-badge">DOC // 07</div>
+          <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
+        </div>
+        <div class="doc-body">
+          <h3>Cloudflare WAN Remote Access &amp; PIN Gate</h3>
+          <p>Zero-trust encrypted remote gateway. Automatically spins up Cloudflare HTTPS/WSS tunnels, guarded by a cryptographic 6-digit session security PIN and seamless mobile camera QR code auto-pairing to operate your home workstation on the move.</p>
+          <div class="doc-pills">
+            <span class="doc-pill">Cloudflare Tunnel</span>
+            <span class="doc-pill">6-Digit PIN Gate</span>
+            <span class="doc-pill">Mobile QR Pairing</span>
+            <span class="doc-pill">Zero-Port Forward</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DOC CARD 8 -->
+      <div class="doc-card" data-doc-index="7">
+        <div class="doc-img-box" onclick="openLightbox(7)">
+          <img src="docs_img/doc8_canvasview.png" alt="Dual-Pane Split Terminal Cockpit" loading="lazy">
+          <div class="doc-overlay-badge">DOC // 08</div>
+          <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
+        </div>
+        <div class="doc-body">
+          <h3>Dual-Pane Split Terminal Cockpit</h3>
+          <p>High-productivity split terminal mode. Run concurrent PowerShell sessions side-by-side with zero-click Focus-Follows-Mouse (Hover-to-Focus), active pane neon borders, and synchronized background daemons.</p>
+          <div class="doc-pills">
+            <span class="doc-pill">Dual-Pane Split</span>
+            <span class="doc-pill">Focus-Follows-Mouse</span>
+            <span class="doc-pill">Active Pane Glow</span>
+            <span class="doc-pill">Parallel Daemons</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DOC CARD 9 -->
+      <div class="doc-card" data-doc-index="8">
+        <div class="doc-img-box" onclick="openLightbox(8)">
+          <img src="docs_img/doc9_livewebpreview.png" alt="Live In-Chat Interactive Web Preview" loading="lazy">
+          <div class="doc-overlay-badge">DOC // 09</div>
+          <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
+        </div>
+        <div class="doc-body">
+          <h3>Live In-Chat Interactive Web Preview</h3>
+          <p>Seamless inline web execution sandbox. Directly renders fully responsive HTML/CSS/JavaScript websites and web apps inside the conversational stream, with instant action buttons for Live Preview (Pratinjau), Export (Ekspor), Share, and dark/light mode toggle alongside the docked terminal.</p>
+          <div class="doc-pills">
+            <span class="doc-pill">Inline Web Engine</span>
+            <span class="doc-pill">Live Preview Sandbox</span>
+            <span class="doc-pill">HTML/CSS/JS Canvas</span>
+            <span class="doc-pill">One-Click Export</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DOC CARD 10 -->
+      <div class="doc-card" data-doc-index="9">
+        <div class="doc-img-box" onclick="openLightbox(9)">
+          <img src="docs_img/doc10_fullscreenstudio.png" alt="Full-Screen Web Studio & AI Co-Pilot Canvas" loading="lazy">
+          <div class="doc-overlay-badge">DOC // 10</div>
+          <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
+        </div>
+        <div class="doc-body">
+          <h3>Full-Screen Web Studio &amp; AI Co-Pilot Canvas</h3>
+          <p>Expansive professional web development studio. Inspect raw source code (&lt;/&gt; Kode), test live responsive layouts (Pratinjau), iterate in real-time with AI assistant chat (Tanya AI), export production bundles, and monitor execution via docked native terminal.</p>
+          <div class="doc-pills">
+            <span class="doc-pill">Full-Screen Studio</span>
+            <span class="doc-pill">Source Code Inspector</span>
+            <span class="doc-pill">AI Co-Pilot</span>
+            <span class="doc-pill">Docked Terminal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB FOOTER NAVIGATION -->
+    <div class="tab-footer-nav">
+      <button class="tab-nav-btn prev" data-tab-target="features">
+        <i class="fas fa-arrow-left"></i> Previous: Features
+      </button>
+      <button class="tab-nav-btn next" data-tab-target="installation">
+        Next: Installation Guide <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- TAB 4: INSTALLATION & DEPLOYMENT GUIDE                                -->
+  <!-- ===================================================================== -->
+  <div class="tab-pane" id="tab-installation">
+    <div class="sec-head">
+      <span class="kicker">// Setup &amp; Deployment</span>
+      <h2>HOW TO INSTALL &amp; RUN</h2>
+      <p>Follow these straightforward steps to clone the official GitHub repository and launch ZOZ ROUTER on your computer.</p>
+    </div>
+
+    <div class="install-container">
+      <!-- STEP 1 -->
+      <div class="install-step">
+        <div class="install-head">
+          <div class="install-head-left">
+            <span class="step-num">1</span>
+            <h4>CLONE REPOSITORY FROM GITHUB</h4>
+          </div>
+          <a href="https://github.com/Zozi0999/zoz_router" target="_blank" class="nav-gh-btn"><i class="fab fa-github"></i> Visit Repo</a>
+        </div>
+        <div class="install-body">
+          <p>Open your terminal or Command Prompt, then run <code>git clone</code> to download the complete source code from the official GitHub repository:</p>
+          <pre><button class="copy-btn" data-copy="git clone https://github.com/Zozi0999/zoz_router.git&#10;cd zoz_router">Copy</button><span class="cm"># Clone official repository by Zozi Atul Azimi</span>
+<span class="kw">git clone</span> <span class="str">https://github.com/Zozi0999/zoz_router.git</span>
+<span class="kw">cd</span> zoz_router</pre>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="install-step">
+        <div class="install-head">
+          <div class="install-head-left">
+            <span class="step-num">2</span>
+            <h4>INSTALL DEPENDENCIES</h4>
+          </div>
+        </div>
+        <div class="install-body">
+          <p>ZOZ ROUTER is architected on top of lightweight Node.js native primitives. Execute <code>npm install</code> to install the required <code>node-pty</code> terminal engine:</p>
+          <pre><button class="copy-btn" data-copy="npm install">Copy</button><span class="cm"># Install node-pty ConPTY virtual console engine</span>
+<span class="kw">npm</span> install</pre>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="install-step">
+        <div class="install-head">
+          <div class="install-head-left">
+            <span class="step-num">3</span>
+            <h4>LAUNCH THE APPLICATION</h4>
+          </div>
+        </div>
+        <div class="install-body">
+          <p>You can launch ZOZ ROUTER via the automated 1-click batch launcher or directly with Node.js:</p>
+          <p><strong>Option A (Recommended 1-Click):</strong> Double-click <code>start.bat</code> in the project directory:</p>
+          <pre><button class="copy-btn" data-copy="start.bat">Copy</button><span class="cm"># 1-Click Windows execution bypass launcher</span>
+start.bat</pre>
+          <p style="margin-top:14px;"><strong>Option B (Manual CLI):</strong> Run server daemon directly:</p>
+          <pre><button class="copy-btn" data-copy="node server.js">Copy</button><span class="cm"># Direct Node.js daemon start</span>
+<span class="kw">node</span> server.js</pre>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="install-step">
+        <div class="install-head">
+          <div class="install-head-left">
+            <span class="step-num">4</span>
+            <h4>ACCESS COCKPIT &amp; WAN REMOTE</h4>
+          </div>
+        </div>
+        <div class="install-body">
+          <p>Open your browser and navigate to the local portal:</p>
+          <pre><button class="copy-btn" data-copy="http://localhost:4040">Copy</button><span class="str">http://localhost:4040</span></pre>
+          <p style="margin-top:14px;">To access your terminal from your smartphone while traveling, click <strong>"🌐 Cloudflare WAN Tunnel"</strong> in the top-right toolbar, enter your 6-digit PIN, and scan the pairing QR code directly with your phone camera!</p>
+        </div>
+      </div>
+
+      <!-- GITHUB HERO BANNER -->
+      <div class="gh-banner">
+        <div class="gh-banner-inner">
+          <div class="badge" style="margin-bottom:16px"><i class="fab fa-github"></i> Open Source Repository</div>
+          <h3>STAR &amp; FORK ON GITHUB</h3>
+          <p>Support the engineering journey of ZOZ ROUTER by starring the official repository, tracking new flagship releases, and participating in discussions.</p>
+          <div class="gh-banner-btns">
+            <a href="https://github.com/Zozi0999/zoz_router" target="_blank" class="btn btn-primary">
+              <i class="fab fa-github"></i> github.com/Zozi0999/zoz_router
+            </a>
+            <a href="https://github.com/Zozi0999/zoz_router/stargazers" target="_blank" class="btn btn-ghost">
+              <i class="fas fa-star" style="color:var(--amber)"></i> Star on GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/zozi-atul-azimi-656108404" target="_blank" class="btn btn-linkedin">
+              <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB FOOTER NAVIGATION -->
+    <div class="tab-footer-nav">
+      <button class="tab-nav-btn prev" data-tab-target="documentation">
+        <i class="fas fa-arrow-left"></i> Previous: Documentation
+      </button>
+      <button class="tab-nav-btn next" data-tab-target="commands">
+        Next: Terminal &amp; CLI <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- TAB 5: COMMANDS, SHORTCUTS & STRUCTURE                                -->
+  <!-- ===================================================================== -->
+  <div class="tab-pane" id="tab-commands">
+    <div class="sec-head">
+      <span class="kicker">// Architecture &amp; Shortcuts</span>
+      <h2>TERMINAL COMMANDS &amp; STRUCTURE</h2>
+      <p>Master your workflow with global keyboard bindings, directory layout, and CLI parameters.</p>
+    </div>
+
+    <!-- STRUCTURE TREE -->
+    <div class="tree-wrap">
+      <pre>
+<span class="fname">C:\Users\user\zoz-router\</span>
+├── <span class="fname">server.js</span>               <span class="fcom"># Core Node.js backend: ConPTY, Duplex SSE, Cloudflare Tunnel, PNA CORS</span>
+├── <span class="fname">start.bat</span>               <span class="fcom"># 1-Click production Windows launcher with ExecutionPolicy bypass</span>
+├── <span class="fname">index.html</span>              <span class="fcom"># Main cockpit interface with Neural Void Cyberpunk UI</span>
+├── <span class="fname">app.js</span>                  <span class="fcom"># Client runtime: Ollama, OpenRouter, BioEndocrine v2, Touch Keybar</span>
+├── <span class="fname">style.css</span>                <span class="fcom"># Cyberpunk styling system, glassmorphism, responsive queries</span>
+├── <span class="fname">package.json</span>             <span class="fcom"># Manifest: node-pty &amp; engine specifications</span>
+├── <span class="fname">README.md</span>                <span class="fcom"># Official GitHub documentation by Zozi Atul Azimi</span>
+└── <span class="fname">public/</span>                  <span class="fcom"># Production mirror web assets</span>
+      </pre>
+    </div>
+
+    <!-- SHORTCUTS TABLE -->
+    <div class="sec-head" style="margin-top: 30px;">
+      <span class="kicker">// Terminal Productivity</span>
+      <h2>ERGONOMIC SHORTCUTS</h2>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Shortcut / Action</th>
+            <th>Target Function</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><kbd>Hover / Mouse Enter</kbd></td>
+            <td>Focus-Follows-Mouse</td>
+            <td>Switch keyboard focus instantly between split panes without clicking.</td>
+          </tr>
+          <tr>
+            <td><kbd>Ctrl + Shift + T</kbd></td>
+            <td>New Terminal Tab</td>
+            <td>Spawn an isolated PowerShell ConPTY session with separate state.</td>
+          </tr>
+          <tr>
+            <td><kbd>Ctrl + Shift + W</kbd></td>
+            <td>Close Active Tab</td>
+            <td>Safely terminate active terminal session and cleanup resources.</td>
+          </tr>
+          <tr>
+            <td><kbd>Ctrl + \</kbd></td>
+            <td>Toggle Split View</td>
+            <td>Divide terminal area into dual synchronized panes (Left / Right).</td>
+          </tr>
+          <tr>
+            <td><kbd>⚡ Auto Y</kbd></td>
+            <td>AI Auto Enter Gate</td>
+            <td>Toggle automated interactive confirmation for AI CLI operations.</td>
+          </tr>
+          <tr>
+            <td><kbd>🌊 Enter</kbd></td>
+            <td>Direct Enter Flush</td>
+            <td>Send newline keystroke directly to the active ConPTY session.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- TAB FOOTER NAVIGATION -->
+    <div class="tab-footer-nav">
+      <button class="tab-nav-btn prev" data-tab-target="installation">
+        <i class="fas fa-arrow-left"></i> Previous: Installation
+      </button>
+      <button class="tab-nav-btn next" data-tab-target="developer">
+        Next: System Architect <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- TAB 6: DEVELOPER & SYSTEM ARCHITECT PROFILE                           -->
+  <!-- ===================================================================== -->
+  <div class="tab-pane" id="tab-developer">
+    <div class="sec-head">
+      <span class="kicker">// The Lead Architect</span>
+      <h2>SYSTEM CREATOR &amp; ARCHITECT</h2>
+      <p>The sovereign mind behind the architecture, design, and implementation of ZOZ ROUTER.</p>
+    </div>
+
+    <div class="dev-section">
+      <div class="dev-inner">
+        <div class="avatar">
+          <div class="inner">
+            <img src="zoz.png" alt="Zozi Atul Azimi" class="avatar-img">
+          </div>
+        </div>
+        <span class="kicker">// The Mind Behind the Code</span>
+        <h2>ZOZI ATUL AZIMI</h2>
+        <div class="alias">⌁ LEAD SYSTEM ARCHITECT &amp; CREATOR ⌁</div>
+        <p class="desc">
+          The <strong>ZOZ ROUTER</strong> platform was architected, engineered, and independently brought to life by <strong>Zozi Atul Azimi</strong>. Built on the philosophy of digital sovereignty and unbounded computing freedom, fusing zero-dependency Node.js backend orchestration, real-time ConPTY virtual console multiplexing, Dual-Channel BioEndocrine self-healing biomimetic systems, and an immersive Neural Void Cyberpunk interface.
+        </p>
+
+        <!-- OFFICIAL LINKS WITH LINKEDIN & GITHUB -->
+        <div class="dev-links">
+          <a href="https://www.linkedin.com/in/zozi-atul-azimi-656108404" target="_blank" class="dev-link-btn li">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn: Zozi Atul Azimi
+          </a>
+          <a href="https://github.com/Zozi0999" target="_blank" class="dev-link-btn gh">
+            <i class="fab fa-github"></i> GitHub: @Zozi0999
+          </a>
+          <a href="https://github.com/Zozi0999/zoz_router" target="_blank" class="dev-link-btn">
+            <i class="fas fa-code-branch"></i> Repository: zoz_router
+          </a>
+          <a href="mailto:zoziazimi@gmail.com" class="dev-link-btn">
+            <i class="fas fa-envelope"></i> zoziazimi@gmail.com
+          </a>
+        </div>
+
+        <div class="dev-chips">
+          <span class="chip"><i class="fas fa-microchip"></i> Lead AI System Architect</span>
+          <span class="chip"><i class="fab fa-node-js"></i> Zero-Dependency Backend</span>
+          <span class="chip"><i class="fas fa-terminal"></i> Native Windows ConPTY</span>
+          <span class="chip"><i class="fas fa-shield-halved"></i> BioEndocrine Health Matrix</span>
+          <span class="chip"><i class="fas fa-cloud"></i> Cloudflare WAN Tunnel</span>
+          <span class="chip"><i class="fas fa-palette"></i> Cyberpunk Visual Design</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB FOOTER NAVIGATION -->
+    <div class="tab-footer-nav">
+      <button class="tab-nav-btn prev" data-tab-target="commands">
+        <i class="fas fa-arrow-left"></i> Previous: Commands
+      </button>
+      <button class="tab-nav-btn next" data-tab-target="overview">
+        Back to Overview <i class="fas fa-arrow-up"></i>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========================================================================= -->
+<!-- LIGHTBOX MODAL VIEWER FOR DOCUMENTATION SCREENSHOTS                       -->
+<!-- ========================================================================= -->
+<div class="doc-lightbox" id="docLightbox" onclick="handleLightboxBackdrop(event)">
+  <div class="doc-lightbox-dialog">
+    <div class="doc-lightbox-head">
+      <div class="doc-lightbox-title" id="lightboxTitle">
+        <i class="fas fa-camera"></i> Screenshot Preview
+      </div>
+      <button class="doc-lightbox-close" onclick="closeLightbox()" aria-label="Close Preview">
+        <i class="fas fa-xmark"></i>
+      </button>
+    </div>
+    <div class="doc-lightbox-content">
+      <img id="lightboxImg" src="" alt="High-Resolution Preview">
+    </div>
+    <div class="doc-lightbox-desc" id="lightboxDesc">
+      Screenshot description and details.
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">⚡ ZOZ ROUTER</div>
+  <p>Neural AI Multi-Engine &amp; Command Terminal Gateway — Local Ollama &amp; Cloud OpenRouter Orchestrator.</p>
+  
+  <div class="footer-links">
+    <a data-tab-target="overview">Overview</a>
+    <a data-tab-target="features">Features</a>
+    <a data-tab-target="documentation">Documentation &amp; Visuals</a>
+    <a data-tab-target="installation">Installation</a>
+    <a data-tab-target="commands">Shortcuts &amp; CLI</a>
+    <a data-tab-target="developer">System Architect</a>
+    <a href="https://www.linkedin.com/in/zozi-atul-azimi-656108404" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+    <a href="https://github.com/Zozi0999/zoz_router" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
+  </div>
+  
+  <p class="sig">Architected and Developed by <strong>Zozi Atul Azimi</strong> — <em>Code Sovereignty Engine</em>.</p>
+</footer>
+
+<script>
+// =========================================================================
+// 1. TAB-BASED SPA NAVIGATION ENGINE (CLICK TABS - NO FORCED SCROLL)
+// =========================================================================
+const validTabs = ['overview', 'features', 'documentation', 'installation', 'commands', 'developer'];
+
+function switchTab(tabId) {
+  if (!validTabs.includes(tabId)) tabId = 'overview';
+
+  const targetPane = document.getElementById('tab-' + tabId);
+  if (!targetPane) return;
+
+  // 1. Hide all tab panes, show active
+  document.querySelectorAll('.tab-pane').forEach(pane => {
+    pane.classList.remove('active');
+  });
+  targetPane.classList.add('active');
+
+  // 2. Synchronize Navbar Tabs
+  document.querySelectorAll('.nav-tab').forEach(btn => {
+    if (btn.getAttribute('data-tab') === tabId) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+
+  // 3. Update URL hash without scroll jumps
+  if (history.pushState) {
+    history.pushState(null, null, '#' + tabId);
+  } else {
+    location.hash = '#' + tabId;
+  }
+
+  // 4. Smooth scroll to top of content area
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // 5. Close mobile navigation drawer if open
+  const navLinks = document.getElementById('navLinks');
+  const menuBtn = document.getElementById('menuBtn');
+  if (navLinks && navLinks.classList.contains('open')) {
+    navLinks.classList.remove('open');
+    if (menuBtn) menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+  }
+}
+
+// Attach event listeners for all elements with data-tab or data-tab-target
+document.querySelectorAll('.nav-tab').forEach(tabBtn => {
+  tabBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const tabId = tabBtn.getAttribute('data-tab');
+    switchTab(tabId);
+  });
+});
+
+document.querySelectorAll('[data-tab-target]').forEach(el => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    const tabId = el.getAttribute('data-tab-target');
+    switchTab(tabId);
+  });
+});
+
+// Handle initial URL hash on load
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = (window.location.hash || '').replace('#', '').trim();
+  if (validTabs.includes(hash)) {
+    switchTab(hash);
+  } else {
+    switchTab('overview');
+  }
+});
+
+// Handle browser Back / Forward buttons
+window.addEventListener('hashchange', () => {
+  const hash = (window.location.hash || '').replace('#', '').trim();
+  if (validTabs.includes(hash)) {
+    switchTab(hash);
+  }
+});
+
+// =========================================================================
+// 2. MOBILE MENU TOGGLE
+// =========================================================================
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+if (menuBtn && navLinks) {
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    menuBtn.innerHTML = navLinks.classList.contains('open')
+      ? '<i class="fas fa-xmark"></i>'
+      : '<i class="fas fa-bars"></i>';
+  });
+}
+
+// =========================================================================
+// 3. MULTI-TIER ROBUST CLIPBOARD ENGINE (Works on file:// and non-HTTPS)
+// =========================================================================
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const text = btn.getAttribute('data-copy');
+    if (!text) return;
+
+    function markSuccess() {
+      const old = btn.textContent;
+      btn.textContent = '✓ Copied!';
+      btn.style.background = '#34d399';
+      btn.style.color = '#03040b';
+      setTimeout(() => {
+        btn.textContent = old;
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 1800);
+    }
+
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+      navigator.clipboard.writeText(text).then(markSuccess).catch(() => {
+        fallbackExecCopy(text, markSuccess);
+      });
+    } else {
+      fallbackExecCopy(text, markSuccess);
+    }
+  });
+});
+
+function fallbackExecCopy(text, callback) {
+  try {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.top = '0';
+    ta.style.left = '0';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    const successful = document.execCommand('copy');
+    document.body.removeChild(ta);
+    if (successful && callback) callback();
+  } catch (err) {
+    console.warn('Fallback copy failed:', err);
+  }
+}
+
+// =========================================================================
+// 4. DOCUMENTATION LIGHTBOX MODAL VIEWER ENGINE
+// =========================================================================
+const docItems = [
+  {
+    src: 'docs_img/doc1_cockpit.png',
+    title: 'DOC #01 — ZOZ Router Cockpit & Gateway Interface',
+    desc: 'The primary neural gateway cockpit. Features instant model switching (Gemini 2.5 Flash, Ollama offline local LLMs, OpenRouter flagships), real-time session telemetry, live engine status badges, and expandable sidebar navigation.'
+  },
+  {
+    src: 'docs_img/doc2_attachments.png',
+    title: 'DOC #02 — Multi-Modal Ingestion & Attachments Menu',
+    desc: 'Versatile media upload menu popover. Take live photos directly via connected hardware camera (Ambil Foto), upload images from your local system gallery (Galeri Foto), or inject codebase files and structured documents (Dokumen & File) directly into the model context.'
+  },
+  {
+    src: 'docs_img/doc3_creativetools.png',
+    title: 'DOC #03 — Integrated Generative Creative AI Tools',
+    desc: 'Specialized rapid creative suite accessible straight from the prompt composer. Generate high-quality AI images (Buat Gambar AI), execute neural photo-to-photo editing (Edit Foto Img2Img), synthesize music tracks (Buat Musik AI), and perform deep YouTube video searches.'
+  },
+  {
+    src: 'docs_img/doc4_skills.png',
+    title: 'DOC #04 — Command Palette & Neural Skills Popover',
+    desc: 'Instant skill command invocation popover. Quickly trigger specialized neural pipelines: /diagram for Mermaid architecture charts, /website for responsive web generators, /dokumen for structured documentation, /deep-research for multi-source search, and /autonomous for multi-step agent execution.'
+  },
+  {
+    src: 'docs_img/doc5_websiteoutput.png',
+    title: 'DOC #05 — Dynamic Website Output Format Selector',
+    desc: 'Interactive code delivery modal. Select between instant sandboxed interactive live preview (File Siap Pratinjau) to test generated web applications in real-time, or formatted in-chat raw source code inspection (Tampilkan Kode di Percakapan) for developer audit.'
+  },
+  {
+    src: 'docs_img/doc6_customurl.png',
+    title: 'DOC #06 — Integrated Neural CLI & Web Terminal',
+    desc: 'Full-featured native Windows ConPTY terminal inside the browser over duplex Server-Sent Events. Includes multi-tab session management, font scaling (13px), sync modes (Auto Y, Win Sync), remote tunneling triggers, and execution without terminal freezes.'
+  },
+  {
+    src: 'docs_img/doc7_settings.png',
+    title: 'DOC #07 — Cloudflare WAN Remote Access & PIN Gate',
+    desc: 'Zero-trust encrypted remote gateway. Automatically spins up Cloudflare HTTPS/WSS tunnels, guarded by a cryptographic 6-digit session security PIN and seamless mobile camera QR code auto-pairing to operate your home workstation on the move.'
+  },
+  {
+    src: 'docs_img/doc8_canvasview.png',
+    title: 'DOC #08 — Dual-Pane Split Terminal Cockpit',
+    desc: 'High-productivity split terminal mode. Run concurrent PowerShell sessions side-by-side with zero-click Focus-Follows-Mouse (Hover-to-Focus), active pane neon borders, and synchronized background daemons.'
+  },
+  {
+    src: 'docs_img/doc9_livewebpreview.png',
+    title: 'DOC #09 — Live In-Chat Interactive Web Preview',
+    desc: 'Seamless inline web execution sandbox. Directly renders fully responsive HTML/CSS/JavaScript websites and web apps inside the conversational stream, with instant action buttons for Live Preview (Pratinjau), Export (Ekspor), Share, and dark/light mode toggle alongside the docked terminal.'
+  },
+  {
+    src: 'docs_img/doc10_fullscreenstudio.png',
+    title: 'DOC #10 — Full-Screen Web Studio & AI Co-Pilot Canvas',
+    desc: 'Expansive professional web development studio. Inspect raw source code (</> Kode), test live responsive layouts (Pratinjau), iterate in real-time with AI assistant chat (Tanya AI), export production bundles, and monitor execution via docked native terminal.'
+  }
+];
+
+function openLightbox(index) {
+  const doc = docItems[index];
+  if (!doc) return;
+  const modal = document.getElementById('docLightbox');
+  const img = document.getElementById('lightboxImg');
+  const title = document.getElementById('lightboxTitle');
+  const desc = document.getElementById('lightboxDesc');
+
+  if (img && title && desc && modal) {
+    img.src = doc.src;
+    img.alt = doc.title;
+    title.innerHTML = '<i class="fas fa-image"></i> ' + doc.title;
+    desc.textContent = doc.desc;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeLightbox() {
+  const modal = document.getElementById('docLightbox');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+function handleLightboxBackdrop(e) {
+  if (e.target.id === 'docLightbox') {
+    closeLightbox();
+  }
+}
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
+</body>
+</html>
