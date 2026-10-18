@@ -1,6 +1,6 @@
 # ⚡ ZOZ ROUTER — Official Showcase & Landing Page Website
 
-> **Lead Architect & Creator:** **Zozi Atul Azimi**  
+> **Lead Architect & Creator:** **Zozi Atul Azimi** (16-Year-Old Vocational High School / SMK Student from Indonesia)  
 > **Official LinkedIn:** [`https://www.linkedin.com/in/zozi-atul-azimi-656108404`](https://www.linkedin.com/in/zozi-atul-azimi-656108404)  
 > **Official GitHub:** [`https://github.com/Zozi0999`](https://github.com/Zozi0999)  
 > **Core Repository:** [`https://github.com/Zozi0999/zoz_router`](https://github.com/Zozi0999/zoz_router)  
