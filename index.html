@@ -509,7 +509,6 @@ footer .sig{color:var(--muted);margin-top:12px;font-size:.88rem}
     <li><a class="nav-tab" data-tab="features"><i class="fas fa-layer-group"></i><span class="nl"><b>Features</b><small>What it can do</small></span></a></li>
     <li><a class="nav-tab" data-tab="documentation"><i class="fas fa-images"></i><span class="nl"><b>Screenshots</b><small>See the interface</small></span></a></li>
     <li><a class="nav-tab" data-tab="installation"><i class="fas fa-download"></i><span class="nl"><b>Install</b><small>Set up in minutes</small></span></a></li>
-    <li><a class="nav-tab" data-tab="commands"><i class="fas fa-terminal"></i><span class="nl"><b>Commands</b><small>Shortcuts &amp; CLI</small></span></a></li>
     <li><a class="nav-tab" data-tab="developer"><i class="fas fa-user"></i><span class="nl"><b>About</b><small>Who built it</small></span></a></li>
     <li class="nav-group">Links</li>
     <li><a href="https://github.com/Zozi0999/zoz_router" target="_blank" rel="noopener" class="nav-gh-btn"><i class="fab fa-github"></i><span class="nl"><b>GitHub</b><small>Source code</small></span></a></li>
@@ -1016,94 +1015,8 @@ start.bat</pre>
       <button class="tab-nav-btn prev" data-tab-target="documentation">
         <i class="fas fa-arrow-left"></i> Previous: Documentation
       </button>
-      <button class="tab-nav-btn next" data-tab-target="commands">
-        Next: Terminal &amp; CLI <i class="fas fa-arrow-right"></i>
-      </button>
-    </div>
-  </div>
-
-  <!-- ===================================================================== -->
-  <!-- TAB 5: COMMANDS, SHORTCUTS & STRUCTURE                                -->
-  <!-- ===================================================================== -->
-  <div class="tab-pane" id="tab-commands">
-    <div class="sec-head">
-      <span class="kicker">// Architecture &amp; Shortcuts</span>
-      <h2>TERMINAL COMMANDS &amp; STRUCTURE</h2>
-      <p>Master your workflow with global keyboard bindings, directory layout, and CLI parameters.</p>
-    </div>
-
-    <!-- STRUCTURE TREE -->
-    <div class="tree-wrap">
-      <pre>
-<span class="fname">C:\Users\user\zoz-router\</span>
-├── <span class="fname">server.js</span>               <span class="fcom"># Core Node.js backend: ConPTY, Duplex SSE, Cloudflare Tunnel, PNA CORS</span>
-├── <span class="fname">start.bat</span>               <span class="fcom"># 1-Click production Windows launcher with ExecutionPolicy bypass</span>
-├── <span class="fname">index.html</span>              <span class="fcom"># Main cockpit interface</span>
-├── <span class="fname">app.js</span>                  <span class="fcom"># Client runtime: Ollama, OpenRouter, BioEndocrine v2, Touch Keybar</span>
-├── <span class="fname">style.css</span>                <span class="fcom"># Styling system and responsive queries</span>
-├── <span class="fname">package.json</span>             <span class="fcom"># Manifest: node-pty &amp; engine specifications</span>
-├── <span class="fname">README.md</span>                <span class="fcom"># Official GitHub documentation by Zozi Atul Azimi</span>
-└── <span class="fname">public/</span>                  <span class="fcom"># Production mirror web assets</span>
-      </pre>
-    </div>
-
-    <!-- SHORTCUTS TABLE -->
-    <div class="sec-head" style="margin-top: 30px;">
-      <span class="kicker">// Terminal Productivity</span>
-      <h2>ERGONOMIC SHORTCUTS</h2>
-    </div>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Shortcut / Action</th>
-            <th>Target Function</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><kbd>Hover / Mouse Enter</kbd></td>
-            <td>Focus-Follows-Mouse</td>
-            <td>Switch keyboard focus instantly between split panes without clicking.</td>
-          </tr>
-          <tr>
-            <td><kbd>Ctrl + Shift + T</kbd></td>
-            <td>New Terminal Tab</td>
-            <td>Spawn an isolated PowerShell ConPTY session with separate state.</td>
-          </tr>
-          <tr>
-            <td><kbd>Ctrl + Shift + W</kbd></td>
-            <td>Close Active Tab</td>
-            <td>Safely terminate active terminal session and cleanup resources.</td>
-          </tr>
-          <tr>
-            <td><kbd>Ctrl + \</kbd></td>
-            <td>Toggle Split View</td>
-            <td>Divide terminal area into dual synchronized panes (Left / Right).</td>
-          </tr>
-          <tr>
-            <td><kbd>⚡ Auto Y</kbd></td>
-            <td>AI Auto Enter Gate</td>
-            <td>Toggle automated interactive confirmation for AI CLI operations.</td>
-          </tr>
-          <tr>
-            <td><kbd>🌊 Enter</kbd></td>
-            <td>Direct Enter Flush</td>
-            <td>Send newline keystroke directly to the active ConPTY session.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- TAB FOOTER NAVIGATION -->
-    <div class="tab-footer-nav">
-      <button class="tab-nav-btn prev" data-tab-target="installation">
-        <i class="fas fa-arrow-left"></i> Previous: Installation
-      </button>
       <button class="tab-nav-btn next" data-tab-target="developer">
-        Next: System Architect <i class="fas fa-arrow-right"></i>
+        Next: About <i class="fas fa-arrow-right"></i>
       </button>
     </div>
   </div>
@@ -1161,8 +1074,8 @@ start.bat</pre>
 
     <!-- TAB FOOTER NAVIGATION -->
     <div class="tab-footer-nav">
-      <button class="tab-nav-btn prev" data-tab-target="commands">
-        <i class="fas fa-arrow-left"></i> Previous: Commands
+      <button class="tab-nav-btn prev" data-tab-target="installation">
+        <i class="fas fa-arrow-left"></i> Previous: Installation
       </button>
       <button class="tab-nav-btn next" data-tab-target="overview">
         Back to Overview <i class="fas fa-arrow-up"></i>
@@ -1204,8 +1117,7 @@ start.bat</pre>
     <a data-tab-target="features">Features</a>
     <a data-tab-target="documentation">Documentation &amp; Visuals</a>
     <a data-tab-target="installation">Installation</a>
-    <a data-tab-target="commands">Shortcuts &amp; CLI</a>
-    <a data-tab-target="developer">System Architect</a>
+    <a data-tab-target="developer">About</a>
     <a href="https://www.linkedin.com/in/zozi-atul-azimi-656108404" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
     <a href="https://github.com/Zozi0999/zoz_router" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
   </div>
@@ -1217,7 +1129,7 @@ start.bat</pre>
 // =========================================================================
 // 1. TAB-BASED SPA NAVIGATION ENGINE (CLICK TABS - NO FORCED SCROLL)
 // =========================================================================
-const validTabs = ['overview', 'features', 'documentation', 'installation', 'commands', 'developer'];
+const validTabs = ['overview', 'features', 'documentation', 'installation', 'developer'];
 
 function switchTab(tabId) {
   if (!validTabs.includes(tabId)) tabId = 'overview';
