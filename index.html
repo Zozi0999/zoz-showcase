@@ -513,12 +513,12 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
 @media(max-width:600px){.brand-cell{padding:22px 14px}.brand-word{font-size:1.25rem}.brand-mark{width:26px;height:26px}}
 /* marquee: left, then back right */
 .brand-strip{display:block;position:relative;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.brand-track{display:flex;width:max-content;animation:brandSlide 18s ease-in-out infinite alternate}
-.brand-strip:hover .brand-track{animation-play-state:paused}
+.brand-track{display:flex;width:max-content;will-change:transform}
+
 .brand-cell{flex:0 0 auto;min-width:300px;border-right:1px solid var(--border)}
 @keyframes brandSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:600px){.brand-cell{min-width:220px}}
-@media(prefers-reduced-motion:reduce){.brand-track{animation:none}}
+
 .brand-ag{width:40px;height:32px;color:inherit}.brand-word-ag{font-family:var(--sans);font-weight:600;font-size:1.4rem;letter-spacing:-.2px}
 @media(max-width:600px){.brand-ag{width:32px;height:26px}.brand-word-ag{font-size:1.1rem}}
 
@@ -1429,6 +1429,22 @@ window.addEventListener('keydown', (e) => {
   });
   // leaving the gallery tab resets the highlight
   document.querySelectorAll('.nav-tab').forEach(function(n){n.addEventListener('click',clear);});
+})();(function(){
+  var track=document.querySelector('.brand-track'); if(!track) return;
+  var strip=track.parentElement,x=0,last=null,paused=false,speed=55; // px per second, moves left
+  strip.addEventListener('mouseenter',function(){paused=true;});
+  strip.addEventListener('mouseleave',function(){paused=false;});
+  function frame(ts){
+    if(last===null) last=ts;
+    var dt=Math.min((ts-last)/1000,.1); last=ts;
+    if(!paused){
+      var half=track.scrollWidth/2;
+      x+=speed*dt; if(half>0 && x>=half) x-=half;
+      track.style.transform='translate3d('+(-x)+'px,0,0)';
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
 })();</script>
 </body>
 </html>
