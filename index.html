@@ -575,8 +575,103 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
 .lb-nav:hover{border-color:var(--accent-line);color:var(--accent)}
 .lb-prev{left:12px}.lb-next{right:12px}
 .doc-lightbox-content img{touch-action:pan-y pinch-zoom}
-@media(hover:none){.doc-zoom-hint{opacity:1;transform:none}}
-@media(max-width:600px){.lb-nav{width:34px;height:34px}.lb-prev{left:6px}.lb-next{right:6px}.doc-lightbox{padding:8px}}</style>
+@media(max-width:600px){.lb-nav{width:34px;height:34px}.lb-prev{left:6px}.lb-next{right:6px}.doc-lightbox{padding:8px}}
+
+/* REPOSITORY REAL-TIME UPDATE NOTICE MODAL */
+.repo-modal{
+  position:fixed;inset:0;background:rgba(3,6,10,.84);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  z-index:9999;display:none;align-items:center;justify-content:center;
+  padding:18px;opacity:0;transition:opacity .25s ease;
+}
+.repo-modal.active{display:flex;opacity:1}
+.repo-modal-dialog{
+  background:var(--card);border:1px solid var(--accent-line);
+  box-shadow:0 24px 60px rgba(0,0,0,.75), 0 0 35px rgba(46,230,166,.12);
+  border-radius:14px;max-width:540px;width:100%;overflow:hidden;
+  animation:repoModalPop .25s cubic-bezier(.16,1,.3,1);
+  display:flex;flex-direction:column;
+}
+@keyframes repoModalPop{
+  from{transform:scale(.94);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+.repo-modal-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 20px;background:var(--bg2);border-bottom:1px solid var(--border);
+}
+.repo-modal-brand{
+  display:flex;align-items:center;gap:10px;
+}
+.repo-modal-mark{
+  width:24px;height:24px;color:var(--accent);display:inline-flex;
+}
+.repo-modal-brand-text{
+  font-family:var(--mono);font-size:.84rem;font-weight:700;letter-spacing:1px;color:var(--text);
+}
+.repo-modal-brand-text span{color:var(--accent)}
+.repo-modal-close{
+  background:transparent;border:1px solid var(--border);color:var(--muted);
+  width:32px;height:32px;border-radius:6px;cursor:pointer;display:grid;place-items:center;
+  transition:.2s;
+}
+.repo-modal-close:hover{border-color:var(--accent);color:var(--accent)}
+.repo-modal-body{
+  padding:22px 22px 18px;display:flex;flex-direction:column;gap:14px;
+}
+.repo-modal-kicker{
+  font-family:var(--mono);font-size:.72rem;color:var(--accent);letter-spacing:1.5px;
+  text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;
+}
+.repo-modal-title{
+  font-size:1.18rem;font-weight:700;line-height:1.35;color:var(--text);margin:0;
+  letter-spacing:-.2px;
+}
+.repo-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(46,230,166,.08);border:1px solid rgba(46,230,166,.25);
+  padding:4px 12px;border-radius:999px;font-family:var(--mono);
+  font-size:.7rem;color:var(--accent);font-weight:600;width:fit-content;
+}
+.repo-dot{
+  width:7px;height:7px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 8px var(--accent);animation:repoDotPulse 1.8s infinite;
+}
+@keyframes repoDotPulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.4;transform:scale(.8)}
+}
+.repo-notice-text{
+  color:var(--muted);font-size:.88rem;line-height:1.6;margin:0;
+}
+.repo-notice-box{
+  background:#05080d;border:1px solid var(--border);border-left:3px solid var(--accent);
+  border-radius:8px;padding:12px 14px;display:flex;gap:12px;align-items:flex-start;
+}
+.repo-notice-box .rnb-icon{
+  color:var(--accent);font-size:1.2rem;margin-top:2px;flex-shrink:0;
+}
+.repo-notice-box .rnb-content{
+  display:flex;flex-direction:column;gap:3px;font-size:.82rem;line-height:1.5;
+}
+.repo-notice-box .rnb-content strong{
+  color:var(--text);font-weight:600;
+}
+.repo-notice-box .rnb-content span{
+  color:var(--muted);
+}
+.repo-modal-foot{
+  display:flex;align-items:center;justify-content:flex-end;gap:10px;
+  padding:14px 20px;background:var(--bg2);border-top:1px solid var(--border);flex-wrap:wrap;
+}
+.repo-modal-foot .btn{
+  padding:9px 16px;font-size:.82rem;cursor:pointer;
+}
+@media(max-width:480px){
+  .repo-modal-foot{justify-content:stretch}
+  .repo-modal-foot .btn{flex:1;justify-content:center}
+}
+</style>
 </head>
 <body>
 
@@ -1335,6 +1430,59 @@ start.bat</pre>
   </div>
 </div>
 
+<!-- ========================================================================= -->
+<!-- REAL-TIME REPOSITORY ACTIVE UPDATE NOTICE MODAL                            -->
+<!-- ========================================================================= -->
+<div class="repo-modal" id="repoNoticeModal" role="dialog" aria-modal="true" aria-labelledby="repoModalTitle">
+  <div class="repo-modal-dialog">
+    <div class="repo-modal-head">
+      <div class="repo-modal-brand">
+        <span class="repo-modal-mark">
+          <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" fill="#2ee6a6" aria-hidden="true">
+            <path d="M10 26V12h14M72 12h14v14M10 70v14h14M72 84h14V70" fill="none" stroke="#2ee6a6" stroke-opacity=".55" stroke-width="2"/>
+            <rect x="22" y="22" width="52" height="10"/>
+            <rect x="54" y="32" width="20" height="10"/>
+            <rect x="40" y="42" width="20" height="10"/>
+            <rect x="26" y="52" width="20" height="10"/>
+            <rect x="22" y="62" width="52" height="10"/>
+          </svg>
+        </span>
+        <span class="repo-modal-brand-text">ZOZ <span>ROUTER</span></span>
+      </div>
+      <button type="button" class="repo-modal-close" id="repoModalClose" aria-label="Close Notice">
+        <i class="fas fa-xmark"></i>
+      </button>
+    </div>
+    <div class="repo-modal-body">
+      <div class="repo-badge">
+        <span class="repo-dot"></span> LIVE CODEBASE • CONTINUOUS ROLLING COMMITS
+      </div>
+      <div>
+        <span class="repo-modal-kicker">// Real-Time Repository Notice</span>
+        <h3 class="repo-modal-title" id="repoModalTitle">REPOSITORY IS ACTIVELY UPDATING IN REAL-TIME</h3>
+      </div>
+      <p class="repo-notice-text">
+        Our official core repository is receiving <strong>continuous real-time updates</strong>. We are actively shipping code enhancements, optimizations, and internal features directly to the codebase on an ongoing basis.
+      </p>
+      <div class="repo-notice-box">
+        <div class="rnb-icon"><i class="fas fa-cloud-arrow-down"></i></div>
+        <div class="rnb-content">
+          <strong>No need to wait for a future milestone!</strong>
+          <span>If you are comfortable with live rolling updates, you can clone or download the current working build right now without waiting for upcoming version releases.</span>
+        </div>
+      </div>
+    </div>
+    <div class="repo-modal-foot">
+      <button type="button" class="btn btn-ghost" id="repoModalCancel">
+        Stay on Showcase
+      </button>
+      <button type="button" class="btn btn-primary" id="repoModalConfirm">
+        <i class="fab fa-github"></i> Proceed to Repository (OK) <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">ZOZ <span>ROUTER</span></div>
@@ -1744,6 +1892,66 @@ window.addEventListener('keydown', (e) => {
     var bar=document.getElementById('docFilterBar'); if(bar) bar.classList.remove('show');
     return st.apply(this,arguments);
   };
+})();
+
+// =========================================================================
+// 5. REPOSITORY REAL-TIME ACTIVE UPDATE NOTICE ENGINE
+// =========================================================================
+(function(){
+  var modal = document.getElementById('repoNoticeModal');
+  var confirmBtn = document.getElementById('repoModalConfirm');
+  var cancelBtn = document.getElementById('repoModalCancel');
+  var closeBtn = document.getElementById('repoModalClose');
+  var targetUrl = 'https://github.com/Zozi0999/zoz_router';
+
+  function openRepoModal(url) {
+    if (url) targetUrl = url;
+    if (modal) {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeRepoModal() {
+    if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Intercept all links targeting the zoz_router repository
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href');
+    if (href && (href.indexOf('github.com/Zozi0999/zoz_router') > -1)) {
+      e.preventDefault();
+      openRepoModal(href);
+    }
+  });
+
+  if (confirmBtn) {
+    confirmBtn.addEventListener('click', function() {
+      var urlToOpen = targetUrl;
+      closeRepoModal();
+      window.open(urlToOpen, '_blank', 'noopener,noreferrer');
+    });
+  }
+
+  if (cancelBtn) cancelBtn.addEventListener('click', closeRepoModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeRepoModal);
+
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeRepoModal();
+    });
+  }
+
+  window.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+      closeRepoModal();
+    }
+  });
 })();
 </script>
 </body>
