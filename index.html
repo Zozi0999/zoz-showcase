@@ -502,7 +502,15 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
 .doc-filter-bar{display:none;max-width:1250px;margin:0 auto 18px;padding:10px 16px;border:1px solid var(--accent-line);background:var(--accent-dim);border-radius:8px;font-family:var(--mono);font-size:.78rem;color:var(--text);align-items:center;justify-content:space-between;gap:12px}
 .doc-filter-bar.show{display:flex}
 .doc-filter-bar button{background:transparent;border:1px solid var(--border-strong);color:var(--accent);border-radius:6px;padding:4px 12px;font-family:var(--mono);font-size:.74rem;cursor:pointer}
-.doc-filter-bar button:hover{background:var(--accent-dim);border-color:var(--accent-line)}</style>
+.doc-filter-bar button:hover{background:var(--accent-dim);border-color:var(--accent-line)}
+/* company logo strip */
+.brand-strip{display:flex;justify-content:center;width:100%;max-width:880px;margin:0 auto 28px;border:1px solid var(--border);border-radius:10px;background:var(--card);overflow:hidden}
+.brand-cell{flex:1;display:flex;align-items:center;justify-content:center;gap:14px;padding:30px 20px;color:#fff}
+.brand-mark{width:34px;height:34px;display:block;color:var(--accent)}
+.brand-mark svg{width:100%;height:100%;display:block}
+.brand-word{font-family:var(--mono);font-weight:700;font-size:1.6rem;letter-spacing:1px;color:#fff;line-height:1}
+.brand-word span{color:var(--accent)}
+@media(max-width:600px){.brand-cell{padding:22px 14px}.brand-word{font-size:1.25rem}.brand-mark{width:26px;height:26px}}</style>
 </head>
 <body>
 
@@ -560,6 +568,8 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
           </a>
         </div>
       </div>
+
+      <div class="brand-strip" aria-label="Company"><div class="brand-cell"><span class="brand-mark"><svg viewBox="22 22 52 50" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true"><rect x="22" y="22" width="52" height="10"/><rect x="54" y="32" width="20" height="10"/><rect x="40" y="42" width="20" height="10"/><rect x="26" y="52" width="20" height="10"/><rect x="22" y="62" width="52" height="10"/></svg></span><span class="brand-word">Z21 <span>ROUTER</span></span></div></div>
 
       <div class="engine-tags">
         <button type="button" class="engine-tag tag-ollama" data-docs="0" title="See related screenshots"><i class="fas fa-hippo"></i> Ollama — Local Offline Engine <i class="fas fa-arrow-right tag-go"></i></button>
