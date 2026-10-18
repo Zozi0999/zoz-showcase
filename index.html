@@ -524,6 +524,10 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
 
 .brand-sq{width:36px;height:36px;color:inherit}
 @media(max-width:600px){.brand-sq{width:28px;height:28px}}
+
+.brand-strip{cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.brand-strip.dragging{cursor:grabbing}
+.brand-strip *{-webkit-user-drag:none}
 </style>
 </head>
 <body>
@@ -1429,22 +1433,57 @@ window.addEventListener('keydown', (e) => {
   });
   // leaving the gallery tab resets the highlight
   document.querySelectorAll('.nav-tab').forEach(function(n){n.addEventListener('click',clear);});
-})();(function(){
-  var track=document.querySelector('.brand-track'); if(!track) return;
-  var strip=track.parentElement,x=0,last=null,paused=false,speed=55; // px per second, moves left
-  strip.addEventListener('mouseenter',function(){paused=true;});
-  strip.addEventListener('mouseleave',function(){paused=false;});
-  function frame(ts){
-    if(last===null) last=ts;
-    var dt=Math.min((ts-last)/1000,.1); last=ts;
-    if(!paused){
-      var half=track.scrollWidth/2;
-      x+=speed*dt; if(half>0 && x>=half) x-=half;
-      track.style.transform='translate3d('+(-x)+'px,0,0)';
+})();</script>
+<script>
+/* Z21 logo marquee: auto-scrolls left, can be dragged/swiped with smooth inertia */
+(function(){
+  function init(){
+    var track=document.querySelector('.brand-track'); if(!track) return;
+    var strip=track.parentElement;
+    var x=0, inertia=0, auto=55, dragging=false, hover=false;
+    var startX=0, startOff=0, lastX=0, lastT=0, vel=0, last=null;
+    function half(){ return track.scrollWidth/2; }
+    function wrap(v){ var h=half(); return h>0 ? ((v%h)+h)%h : v; }
+    function render(){ track.style.transform='translate3d('+(-x)+'px,0,0)'; }
+    strip.addEventListener('pointerdown',function(e){
+      dragging=true; inertia=0; vel=0;
+      startX=lastX=e.clientX; startOff=x; lastT=performance.now();
+      strip.classList.add('dragging');
+      try{ strip.setPointerCapture(e.pointerId); }catch(_){}
+    });
+    strip.addEventListener('pointermove',function(e){
+      if(!dragging) return;
+      var now=performance.now(), dt=Math.max(now-lastT,1);
+      x=wrap(startOff-(e.clientX-startX));
+      var inst=-(e.clientX-lastX)/dt*1000;      // px/s, + = moving left
+      vel=vel*.6+inst*.4;                        // smoothed release velocity
+      lastX=e.clientX; lastT=now; render();
+    });
+    function end(){
+      if(!dragging) return; dragging=false;
+      strip.classList.remove('dragging');
+      inertia=Math.max(-3000,Math.min(3000,vel)); // fling continues, then decays
+    }
+    strip.addEventListener('pointerup',end);
+    strip.addEventListener('pointercancel',end);
+    strip.addEventListener('mouseenter',function(){hover=true;});
+    strip.addEventListener('mouseleave',function(){hover=false;});
+    function frame(ts){
+      if(last===null) last=ts;
+      var dt=Math.min((ts-last)/1000,.05); last=ts;
+      if(!dragging){
+        var v=(hover?0:auto)+inertia;
+        x=wrap(x+v*dt);
+        inertia*=Math.exp(-dt*3.2);               // smooth friction
+        if(Math.abs(inertia)<1) inertia=0;
+        render();
+      }
+      requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
   }
-  requestAnimationFrame(frame);
-})();</script>
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();
+</script>
 </body>
 </html>
