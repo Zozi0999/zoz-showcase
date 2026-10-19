@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZOZ ROUTER — Neural AI Multi-Engine &amp; Command Terminal Gateway</title>
-<meta name="description" content="ZOZ ROUTER is an advanced AI gateway orchestrating Ollama Cloud free models, OpenRouter credit-based cloud flagships, and real-time native Windows ConPTY terminal with Cloudflare WAN remote access. Architected by Zozi Atul Azimi.">
+<title>ZOZ ROUTER — AI Gateway &amp; Web Terminal</title>
+<meta name="description" content="ZOZ ROUTER is a self-hosted AI gateway that puts free Ollama Cloud models and paid OpenRouter models in one place, with a built-in Windows terminal you can open from your phone through a Cloudflare tunnel. Built by Zozi Atul Azimi.">
 <meta name="author" content="Zozi Atul Azimi">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -569,7 +569,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
 /* doc gallery robustness */
 .doc-card{cursor:pointer}
 .doc-card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.doc-img-box.img-failed::after{content:"Screenshot could not load - tap to retry";position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-family:var(--mono);font-size:.78rem;text-align:center;padding:16px}
+.doc-img-box.img-failed::after{content:"Couldn't load this screenshot. Tap to retry.";position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-family:var(--mono);font-size:.78rem;text-align:center;padding:16px}
 .doc-lightbox-content{position:relative}
 .lb-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:40px;height:40px;border-radius:50%;border:1px solid var(--border-strong);background:rgba(7,11,17,.85);color:var(--text);cursor:pointer;display:grid;place-items:center;transition:.2s}
 .lb-nav:hover{border-color:var(--accent-line);color:var(--accent)}
@@ -689,14 +689,14 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
     <li><a class="nav-tab" data-tab="features"><i class="fas fa-layer-group"></i><span class="nl"><b>Features</b><small>What it can do</small></span></a></li>
     <li><a class="nav-tab" data-tab="documentation"><i class="fas fa-images"></i><span class="nl"><b>Screenshots</b><small>See the interface</small></span></a></li>
     <li><a class="nav-tab" data-tab="installation"><i class="fas fa-download"></i><span class="nl"><b>Install</b><small>Set up in minutes</small></span></a></li>
-    <li><a class="nav-tab" data-tab="developer"><i class="fas fa-user-graduate"></i><span class="nl"><b>Creator Profile</b><small>16-yo SMK Student (Indonesia)</small></span></a></li>
+    <li><a class="nav-tab" data-tab="developer"><i class="fas fa-user-graduate"></i><span class="nl"><b>Creator Profile</b><small>16-year-old SMK student</small></span></a></li>
     <li class="nav-group">Links</li>
     <li><a href="https://github.com/Zozi0999/zoz_router" target="_blank" rel="noopener" class="nav-gh-btn"><i class="fab fa-github"></i><span class="nl"><b>GitHub</b><small>Source code</small></span></a></li>
     <li><a href="https://www.linkedin.com/in/zozi-atul-azimi-656108404" target="_blank" rel="noopener" class="nav-li-btn"><i class="fa-brands fa-linkedin"></i><span class="nl"><b>LinkedIn</b><small>Contact</small></span></a></li>
   </ul>
   <div class="nav-backdrop" id="navBackdrop"></div>
   <div class="nav-right">
-    <button type="button" class="nav-creator-btn" data-tab-target="developer" title="Meet the 16-Year-Old Creator">
+    <button type="button" class="nav-creator-btn" data-tab-target="developer" title="About the creator">
       <i class="fas fa-user-graduate"></i>
       <span>Creator</span>
     </button>
@@ -717,15 +717,15 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
     <!-- HERO HEADER -->
     <header class="hero-box">
       <div class="hero-logo"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" fill="#2ee6a6" aria-hidden="true"><path d="M10 26V12h14M72 12h14v14M10 70v14h14M72 84h14V70" fill="none" stroke="#2ee6a6" stroke-opacity=".55" stroke-width="2"/><rect x="22" y="22" width="52" height="10"/><rect x="54" y="32" width="20" height="10"/><rect x="40" y="42" width="20" height="10"/><rect x="26" y="52" width="20" height="10"/><rect x="22" y="62" width="52" height="10"/></svg></div>
-      <div class="badge"><span class="dot"></span> We do not have a version</div>
+      <div class="badge"><span class="dot"></span> No versioned release yet</div>
       <h1><span class="grad">ZOZ ROUTER</span></h1>
       <p class="subtitle">
-        A unified <strong>command cockpit</strong> orchestrating free-tier <strong>Ollama Cloud</strong> models, credit-based <strong>OpenRouter</strong> cloud flagships, and <strong>Native Windows ConPTY Terminal</strong> with seamless Cloudflare WAN remote access.
+        One dashboard for chatting with free <strong>Ollama Cloud</strong> models and paid <strong>OpenRouter</strong> models, plus a real <strong>Windows terminal</strong> in your browser that you can also open from your phone through Cloudflare.
       </p>
       
       <div class="author-pill">
         <i class="fas fa-crown" ></i>
-        Architected &amp; Created by: <span class="author-name">Zozi Atul Azimi</span> <span style="color:var(--accent);font-family:var(--mono);font-size:.78rem;font-weight:600;margin-left:4px;">(16yo SMK Student, Indonesia)</span>
+        Made by <span class="author-name">Zozi Atul Azimi</span> <span style="color:var(--accent);font-family:var(--mono);font-size:.78rem;font-weight:600;margin-left:4px;">(16, SMK student, Indonesia)</span>
         <div class="author-pill-links">
           <a href="https://www.linkedin.com/in/zozi-atul-azimi-656108404" target="_blank" class="pill-social-link li">
             <i class="fa-brands fa-linkedin"></i> LinkedIn
@@ -739,21 +739,21 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <div class="brand-strip" aria-label="Z21 Router, Google Antigravity and Google Chrome"><div class="brand-track"><div class="brand-cell"><span class="brand-mark"><svg viewBox="22 22 52 50" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true"><rect x="22" y="22" width="52" height="10"/><rect x="54" y="32" width="20" height="10"/><rect x="40" y="42" width="20" height="10"/><rect x="26" y="52" width="20" height="10"/><rect x="22" y="62" width="52" height="10"/></svg></span><span class="brand-word">Z21 <span>ROUTER</span></span></div><div class="brand-cell"><span class="brand-mark brand-ag"><svg viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="5" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="3" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="4" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="5" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="6" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="2" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="3" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="4" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="5" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="6" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="7" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="2" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="3" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="6" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="7" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="1" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="2" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="7" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="8" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="1" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="2" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="7" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="8" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="0" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="0" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="7" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="7" width="1.02" height="1.02" fill="#4a8cf0"/></svg></span><span class="brand-word brand-word-ag">Google Antigravity</span></div><div class="brand-cell"><span class="brand-mark brand-sq"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#ea4335"/><g transform="rotate(120 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#fbbc04"/></g><g transform="rotate(240 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#34a853"/></g><circle cx="24" cy="24" r="11" fill="#fff"/><circle cx="24" cy="24" r="8.2" fill="#4285f4"/></svg></span><span class="brand-word brand-word-ag">Google Chrome</span></div><div class="brand-cell"><span class="brand-mark"><svg viewBox="22 22 52 50" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true"><rect x="22" y="22" width="52" height="10"/><rect x="54" y="32" width="20" height="10"/><rect x="40" y="42" width="20" height="10"/><rect x="26" y="52" width="20" height="10"/><rect x="22" y="62" width="52" height="10"/></svg></span><span class="brand-word">Z21 <span>ROUTER</span></span></div><div class="brand-cell"><span class="brand-mark brand-ag"><svg viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="5" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="3" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="4" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="5" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="6" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="2" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="3" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="4" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="5" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="6" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="7" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="2" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="3" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="6" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="7" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="1" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="2" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="7" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="8" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="1" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="2" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="7" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="8" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="0" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="0" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="7" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="7" width="1.02" height="1.02" fill="#4a8cf0"/></svg></span><span class="brand-word brand-word-ag">Google Antigravity</span></div><div class="brand-cell"><span class="brand-mark brand-sq"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#ea4335"/><g transform="rotate(120 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#fbbc04"/></g><g transform="rotate(240 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#34a853"/></g><circle cx="24" cy="24" r="11" fill="#fff"/><circle cx="24" cy="24" r="8.2" fill="#4285f4"/></svg></span><span class="brand-word brand-word-ag">Google Chrome</span></div><div class="brand-cell"><span class="brand-mark"><svg viewBox="22 22 52 50" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true"><rect x="22" y="22" width="52" height="10"/><rect x="54" y="32" width="20" height="10"/><rect x="40" y="42" width="20" height="10"/><rect x="26" y="52" width="20" height="10"/><rect x="22" y="62" width="52" height="10"/></svg></span><span class="brand-word">Z21 <span>ROUTER</span></span></div><div class="brand-cell"><span class="brand-mark brand-ag"><svg viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="5" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="3" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="4" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="5" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="6" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="2" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="3" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="4" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="5" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="6" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="7" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="2" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="3" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="6" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="7" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="1" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="2" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="7" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="8" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="1" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="2" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="7" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="8" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="0" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="0" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="7" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="7" width="1.02" height="1.02" fill="#4a8cf0"/></svg></span><span class="brand-word brand-word-ag">Google Antigravity</span></div><div class="brand-cell"><span class="brand-mark brand-sq"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#ea4335"/><g transform="rotate(120 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#fbbc04"/></g><g transform="rotate(240 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#34a853"/></g><circle cx="24" cy="24" r="11" fill="#fff"/><circle cx="24" cy="24" r="8.2" fill="#4285f4"/></svg></span><span class="brand-word brand-word-ag">Google Chrome</span></div><div class="brand-cell"><span class="brand-mark"><svg viewBox="22 22 52 50" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true"><rect x="22" y="22" width="52" height="10"/><rect x="54" y="32" width="20" height="10"/><rect x="40" y="42" width="20" height="10"/><rect x="26" y="52" width="20" height="10"/><rect x="22" y="62" width="52" height="10"/></svg></span><span class="brand-word">Z21 <span>ROUTER</span></span></div><div class="brand-cell"><span class="brand-mark brand-ag"><svg viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="5" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="3" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="4" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="5" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="6" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="2" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="3" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="4" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="5" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="6" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="7" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="2" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="3" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="6" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="7" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="1" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="2" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="7" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="8" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="1" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="2" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="7" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="8" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="0" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="0" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="7" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="7" width="1.02" height="1.02" fill="#4a8cf0"/></svg></span><span class="brand-word brand-word-ag">Google Antigravity</span></div><div class="brand-cell"><span class="brand-mark brand-sq"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#ea4335"/><g transform="rotate(120 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#fbbc04"/></g><g transform="rotate(240 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#34a853"/></g><circle cx="24" cy="24" r="11" fill="#fff"/><circle cx="24" cy="24" r="8.2" fill="#4285f4"/></svg></span><span class="brand-word brand-word-ag">Google Chrome</span></div></div></div>
 
       <div class="engine-tags">
-        <button type="button" class="engine-tag tag-ollama" data-docs="0,10,11" title="See related screenshots"><i class="fas fa-hippo"></i> Ollama Cloud — Free Tier Engine <i class="fas fa-arrow-right tag-go"></i></button>
-        <button type="button" class="engine-tag tag-or" data-docs="0,3,10" title="See related screenshots"><i class="fas fa-bolt"></i> OpenRouter — Credit-Based Cloud <i class="fas fa-arrow-right tag-go"></i></button>
-        <button type="button" class="engine-tag tag-pty" data-docs="5,7,14" title="See related screenshots"><i class="fas fa-terminal"></i> Native Windows ConPTY <i class="fas fa-arrow-right tag-go"></i></button>
-        <button type="button" class="engine-tag tag-tunnel" data-docs="6,11,14" title="See related screenshots"><i class="fas fa-cloud"></i> Cloudflare WAN Remote <i class="fas fa-arrow-right tag-go"></i></button>
+        <button type="button" class="engine-tag tag-ollama" data-docs="0,10,11" title="See related screenshots"><i class="fas fa-hippo"></i> Ollama Cloud — free models <i class="fas fa-arrow-right tag-go"></i></button>
+        <button type="button" class="engine-tag tag-or" data-docs="0,3,10" title="See related screenshots"><i class="fas fa-bolt"></i> OpenRouter — paid credits <i class="fas fa-arrow-right tag-go"></i></button>
+        <button type="button" class="engine-tag tag-pty" data-docs="5,7,14" title="See related screenshots"><i class="fas fa-terminal"></i> Windows terminal (ConPTY) <i class="fas fa-arrow-right tag-go"></i></button>
+        <button type="button" class="engine-tag tag-tunnel" data-docs="6,11,14" title="See related screenshots"><i class="fas fa-cloud"></i> Remote access via Cloudflare <i class="fas fa-arrow-right tag-go"></i></button>
       </div>
 
       <div class="cta-group">
         <a href="https://github.com/Zozi0999/zoz_router" target="_blank" class="btn btn-github">
-          <i class="fab fa-github"></i> Open GitHub Repository
+          <i class="fab fa-github"></i> View on GitHub
         </a>
         <button class="btn btn-primary" data-tab-target="installation">
-          <i class="fas fa-download"></i> Installation Guide
+          <i class="fas fa-download"></i> How to Install
         </button>
         <button class="btn btn-ghost" data-tab-target="features">
-          <i class="fas fa-compass"></i> Explore Feature Arsenal
+          <i class="fas fa-compass"></i> See Features
         </button>
       </div>
 
@@ -780,10 +780,10 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
           [Ollama Cloud]   : <span class="t-green">CONNECTED (Free Tier: qwen2.5:7b, deepseek-r1:8b)</span><br>
           [OpenRouter]     : <span class="t-cyan">READY (Credit Tier: claude-3.5-sonnet, gpt-4o, llama-3.3-70b)</span><br>
           [Terminal Engine]: <span class="t-amber">ConPTY Native Duplex + Cloudflare Tunnel Active</span><br>
-          [BioEndocrine]   : <span class="t-green">5-Pillar Matrix Harmonious (405/405 Receptors Verified)</span><br>
+          [BioEndocrine]   : <span class="t-green">All checks passed (405/405)</span><br>
           <span class="t-dim">-------------------------------------------------------------</span><br>
           <span class="t-green">PS C:\Users\user&gt;</span> <span class="t-cyan">agy --version</span><br>
-          Google Antigravity CLI v1.4.0 (Windows ConPTY Seamless Session)<br>
+          Google Antigravity CLI v1.4.0<br>
           <span class="t-green">PS C:\Users\user&gt;</span> <span style="animation: blink 1s infinite;">_</span>
         </div>
       </div>
@@ -791,24 +791,24 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
 
     <!-- ARCHITECTURE & PHILOSOPHY -->
     <div class="sec-head" style="margin-top: 40px;">
-      <span class="kicker">// System Architecture</span>
-      <h2>UNIFIED CLOUD AI GATEWAY &amp; NATIVE OS TERMINAL</h2>
-      <p>Why choose between free cloud models and frontier credit models when you can command both seamlessly within a single cockpit?</p>
+      <span class="kicker">// How It Works</span>
+      <h2>ONE PLACE FOR CLOUD AI AND YOUR TERMINAL</h2>
+      <p>Free models for everyday tasks, paid models when you need something stronger, and your own computer's terminal, all in the same window.</p>
     </div>
 
     <div class="about-grid">
       <div class="about-card">
-        <h3><i class="fas fa-circle-nodes"></i> CLOUD AI DUAL-TIER ARCHITECTURE</h3>
-        <p><strong>ZOZ ROUTER</strong> was designed, engineered, and brought to life by <strong>Zozi Atul Azimi</strong> to fulfill the ultimate developer imperative: an integrated workstation bridging free and credit-based cloud neural computing, frontier AI intelligence, and full native operating system control.</p>
-        <p>🦙 <strong>Ollama Cloud (Free Tier):</strong> Run high-performance cloud-hosted open models completely free of charge with zero local compute strain and instant response.</p>
-        <p>⚡ <strong>OpenRouter Cloud (Credit Tier):</strong> Pay-as-you-go credit access into hundreds of world-class frontier models with automatic fallback whenever deep reasoning is required.</p>
-        <p>💻 <strong>Integrated ConPTY &amp; WAN Tunnel:</strong> Full Windows terminal inside your browser, reachable remotely from your smartphone on the go via Cloudflare tunnels guarded by cryptographic 6-digit PIN authentication.</p>
+        <h3><i class="fas fa-circle-nodes"></i> TWO TIERS OF CLOUD AI</h3>
+        <p><strong>ZOZ ROUTER</strong> is a personal project by <strong>Zozi Atul Azimi</strong>. He wanted one place to use free and paid AI models side by side, and to control his own computer from the same screen.</p>
+        <p>🦙 <strong>Ollama Cloud (free):</strong> Open models hosted in the cloud. They cost nothing and don't use your laptop's CPU or GPU.</p>
+        <p>⚡ <strong>OpenRouter (paid credits):</strong> Hundreds of models, including the big commercial ones. You only pay for what you use, so it's there when a task needs more reasoning power.</p>
+        <p>💻 <strong>Terminal and remote access:</strong> A full Windows terminal inside the browser. Through a Cloudflare tunnel you can open it from your phone, protected by a 6-digit PIN.</p>
       </div>
       <div class="stats">
-        <div class="stat"><span class="num">2+</span><span class="lbl">Orchestration Engines</span></div>
-        <div class="stat"><span class="num">405</span><span class="lbl">Connectome Receptors</span></div>
-        <div class="stat"><span class="num">Free</span><span class="lbl">Ollama Cloud Tier</span></div>
-        <div class="stat"><span class="num">N/A</span><span class="lbl">We do not have a version</span></div>
+        <div class="stat"><span class="num">2</span><span class="lbl">AI Providers</span></div>
+        <div class="stat"><span class="num">405</span><span class="lbl">UI Health Checks</span></div>
+        <div class="stat"><span class="num">Free</span><span class="lbl">Ollama Cloud Models</span></div>
+        <div class="stat"><span class="num">Rolling</span><span class="lbl">No version number yet</span></div>
       </div>
     </div>
 
@@ -816,7 +816,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
     <div class="tab-footer-nav">
       <div></div>
       <button class="tab-nav-btn next" data-tab-target="features">
-        Next: Feature Arsenal <i class="fas fa-arrow-right"></i>
+        Next: Features <i class="fas fa-arrow-right"></i>
       </button>
     </div>
   </div>
@@ -826,52 +826,52 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
   <!-- ===================================================================== -->
   <div class="tab-pane" id="tab-features">
     <div class="sec-head">
-      <span class="kicker">// Arsenal of Capabilities</span>
-      <h2>INDUSTRY-GRADE FEATURE SUITE</h2>
-      <p>Every subsystem is precision-engineered for zero-latency execution, unyielding uptime, and resilient autonomous self-healing.</p>
+      <span class="kicker">// Features</span>
+      <h2>WHAT IT CAN DO</h2>
+      <p>The main parts of ZOZ ROUTER and what each one is for.</p>
     </div>
 
     <div class="feat-grid">
       <div class="feat">
         <div class="ico i-cyan"><i class="fas fa-terminal"></i></div>
-        <h4>Neural CLI Terminal Engine</h4>
-        <p>Seamless native Windows ConPTY integration via <code>node-pty</code> and duplex SSE streaming. Features multi-tab isolation, dual-pane split view with zero-click <em>Focus-Follows-Mouse (Hover-to-Focus)</em>, Active Pane Glow, and lossless state preservation.</p>
+        <h4>Built-in Terminal</h4>
+        <p>A real Windows terminal (ConPTY through <code>node-pty</code>) streamed to the browser over SSE. It supports multiple tabs and a split view where the pane under your mouse gets focus automatically, so you don't have to click back and forth. Your sessions stay intact when you switch tabs.</p>
         <span class="feat-tag">ConPTY • SSE • xterm.js</span>
       </div>
 
       <div class="feat">
         <div class="ico i-amber"><i class="fas fa-cloud"></i></div>
-        <h4>Cloudflare WAN Remote Access</h4>
-        <p>Control your workstation laptop at home directly from your smartphone anywhere. Automated <code>cloudflared</code> binary orchestration, cryptographic 6-digit PIN session guard, 1-click camera QR auto-pairing, and an ergonomic mobile Touch Keybar with haptic feedback.</p>
-        <span class="feat-tag">Mobile-to-Desktop WAN • PIN Gate</span>
+        <h4>Remote Access with Cloudflare</h4>
+        <p>Use your laptop at home from your phone, wherever you are. ZOZ ROUTER starts <code>cloudflared</code> for you, locks the session with a 6-digit PIN, and pairs your phone when you scan a QR code. On mobile you also get a touch keybar (with vibration feedback) for keys like Ctrl, Tab and the arrows.</p>
+        <span class="feat-tag">Phone to PC • PIN lock</span>
       </div>
 
       <div class="feat">
         <div class="ico i-green"><i class="fas fa-dna"></i></div>
-        <h4>Dual-Channel BioEndocrine v2</h4>
-        <p>Autonomous biomimetic 5-Pillar health matrix: continuous DOM connectome audits (405 verified receptors), model API error detection, broken text sanitization (Mojibake &amp; tag leak suppression), viewport blowout prevention, and physical button obstruction self-healing.</p>
-        <span class="feat-tag">5-Pillar Health • Self-Healing</span>
+        <h4>BioEndocrine Self-Check v2</h4>
+        <p>A background checker that keeps the interface working. It runs 405 checks on the page, catches model API errors, cleans up garbled text (mojibake) and leaked tags, stops the layout from spilling off the screen, and fixes buttons that end up hidden behind other elements.</p>
+        <span class="feat-tag">5 check areas • Auto-fix</span>
       </div>
 
       <div class="feat">
         <div class="ico i-purple"><i class="fas fa-palette"></i></div>
-        <h4>Canvas Overview</h4>
-        <p>Real-time visual artifact rendering and scratchpad laboratory. Test HTML, CSS, SVG, Mermaid diagrams, and JavaScript widgets live in a sandboxed interactive canvas with instantaneous preview and multi-tab scratch files.</p>
-        <span class="feat-tag">Live Canvas • Sandbox Execution</span>
+        <h4>Canvas</h4>
+        <p>A scratchpad for trying out HTML, CSS, SVG, Mermaid diagrams and small JavaScript widgets. The code runs in a sandbox and the preview updates right away. You can keep several scratch files open in tabs.</p>
+        <span class="feat-tag">Live preview • Sandbox</span>
       </div>
 
       <div class="feat">
         <div class="ico i-magenta"><i class="fas fa-globe"></i></div>
-        <h4>Deep Careful Custom URL Website</h4>
-        <p>Automated autonomous research agent capable of executing multi-source search queries, scraping structured documentation, aggregating citations, and synthesizing technical reports directly into markdown artifacts.</p>
-        <span class="feat-tag">Multi-Source • Citation Engine</span>
+        <h4>Deep Research (Custom URLs)</h4>
+        <p>A research agent that searches several sources, reads the pages you point it to, collects citations, and writes everything up as a Markdown report.</p>
+        <span class="feat-tag">Multiple sources • Citations</span>
       </div>
 
       <div class="feat">
         <div class="ico i-cyan"><i class="fas fa-keyboard"></i></div>
-        <h4>Interactive AI Auto Enter Gate</h4>
-        <p>Regex-based prompt recognition engine for interactive AI CLIs (Claude Code, Gemini CLI, Antigravity CLI / Inquirer). Automates confirmations (<code>[Y/n]</code>, <code>Accept file edit?</code>, <code>Allow creation?</code>) with zero-click convenience.</p>
-        <span class="feat-tag">Auto Enter • Hands-Free Coding</span>
+        <h4>Auto Enter for AI CLIs</h4>
+        <p>Spots confirmation prompts from AI coding tools like Claude Code, Gemini CLI and Antigravity CLI (for example <code>[Y/n]</code>, <code>Accept file edit?</code> or <code>Allow creation?</code>) and answers them for you, so long jobs don't stall waiting for a keypress.</p>
+        <span class="feat-tag">Auto Enter • Hands-free</span>
       </div>
     </div>
 
@@ -881,7 +881,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
         <i class="fas fa-arrow-left"></i> Previous: Overview
       </button>
       <button class="tab-nav-btn next" data-tab-target="documentation">
-        Next: Visual Documentation <i class="fas fa-arrow-right"></i>
+        Next: Screenshots <i class="fas fa-arrow-right"></i>
       </button>
     </div>
   </div>
@@ -891,9 +891,9 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
   <!-- ===================================================================== -->
   <div class="tab-pane" id="tab-documentation">
     <div class="sec-head">
-      <span class="kicker">// Interface Tour &amp; Visual Documentation</span>
-      <h2>VISUAL DOCUMENTATION &amp; COCKPIT SHOWCASE</h2>
-      <p>Comprehensive 15-screenshot walkthrough covering desktop workstation cockpits, multi-modal ingestion, creative AI suite, split ConPTY terminal, and real-time mobile WAN remote access with live Ollama Cloud inference. Click any capture to open full-screen inspection.</p>
+      <span class="kicker">// Screenshots</span>
+      <h2>A LOOK AT THE INTERFACE</h2>
+      <p>15 screenshots from desktop and mobile: the main chat, file uploads, creative tools, the split terminal, and remote access from a phone running Ollama Cloud models. Click any image to see it full size.</p>
     </div>
 
     <!-- DOCUMENTATION SCREENSHOT GALLERY GRID -->
@@ -902,18 +902,18 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 1 -->
       <div class="doc-card" data-doc-index="0">
         <div class="doc-img-box" onclick="openLightbox(0)">
-          <img src="docs_img/doc1_cockpit.png" alt="ZOZ Router Cockpit & Gateway Interface" decoding="async" onerror="docImgRetry(this)">
+          <img src="docs_img/doc1_cockpit.png" alt="Main Dashboard" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 01</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
         <div class="doc-body">
-          <h3>ZOZ Router Cockpit &amp; Gateway Interface</h3>
-          <p>The primary neural gateway cockpit. Features instant model switching (Gemini 2.5 Flash, Ollama Cloud free models, OpenRouter credit flagships), real-time session telemetry, live engine status badges, and expandable sidebar navigation.</p>
+          <h3>Main Dashboard</h3>
+          <p>The main chat screen. Switch models instantly (Gemini 2.5 Flash, free Ollama Cloud models, paid OpenRouter models), see session stats and engine status at a glance, and open the sidebar for everything else.</p>
           <div class="doc-pills">
-            <span class="doc-pill">Cockpit Gateway</span>
-            <span class="doc-pill">Model Selector</span>
-            <span class="doc-pill">Telemetry Indicator</span>
-            <span class="doc-pill">Real-Time Chat</span>
+            <span class="doc-pill">Dashboard</span>
+            <span class="doc-pill">Model Picker</span>
+            <span class="doc-pill">Session Stats</span>
+            <span class="doc-pill">Live Chat</span>
           </div>
         </div>
       </div>
@@ -921,18 +921,18 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 2 -->
       <div class="doc-card" data-doc-index="1">
         <div class="doc-img-box" onclick="openLightbox(1)">
-          <img src="docs_img/doc2_attachments.png" alt="Multi-Modal Ingestion & Attachments Menu" decoding="async" onerror="docImgRetry(this)">
+          <img src="docs_img/doc2_attachments.png" alt="File &amp; Photo Uploads" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 02</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
         <div class="doc-body">
-          <h3>Multi-Modal Ingestion &amp; Attachments Menu</h3>
-          <p>Versatile media upload menu popover. Take live photos directly via connected hardware camera (Ambil Foto), upload images from your local system gallery (Galeri Foto), or inject codebase files and structured documents (Dokumen &amp; File) directly into the model context.</p>
+          <h3>File &amp; Photo Uploads</h3>
+          <p>The attachment menu. Take a photo with your camera (Ambil Foto), pick one from your gallery (Galeri Foto), or attach code files and documents (Dokumen &amp; File) so the model can read them.</p>
           <div class="doc-pills">
-            <span class="doc-pill">Camera Input</span>
+            <span class="doc-pill">Camera</span>
             <span class="doc-pill">Photo Gallery</span>
-            <span class="doc-pill">Code &amp; Docs Ingestion</span>
-            <span class="doc-pill">Multi-Modal</span>
+            <span class="doc-pill">Code &amp; Docs</span>
+            <span class="doc-pill">Multimodal</span>
           </div>
         </div>
       </div>
@@ -940,18 +940,18 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 3 -->
       <div class="doc-card" data-doc-index="2">
         <div class="doc-img-box" onclick="openLightbox(2)">
-          <img src="docs_img/doc3_creativetools.png" alt="Integrated Generative Creative AI Tools" decoding="async" onerror="docImgRetry(this)">
+          <img src="docs_img/doc3_creativetools.png" alt="Creative AI Tools" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 03</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
         <div class="doc-body">
-          <h3>Integrated Generative Creative AI Tools</h3>
-          <p>Specialized rapid creative suite accessible straight from the prompt composer. Generate high-quality AI images (Buat Gambar AI), execute neural photo-to-photo editing (Edit Foto Img2Img), synthesize music tracks (Buat Musik AI), and perform deep YouTube video searches.</p>
+          <h3>Creative AI Tools</h3>
+          <p>Creative tools you can open right from the message box: generate images (Buat Gambar AI), edit a photo with img2img (Edit Foto Img2Img), make music (Buat Musik AI), and search YouTube.</p>
           <div class="doc-pills">
-            <span class="doc-pill">AI Image Gen</span>
-            <span class="doc-pill">Img2Img Neural</span>
-            <span class="doc-pill">Music Synthesis</span>
-            <span class="doc-pill">YouTube Research</span>
+            <span class="doc-pill">Image Generation</span>
+            <span class="doc-pill">Img2Img</span>
+            <span class="doc-pill">Music</span>
+            <span class="doc-pill">YouTube Search</span>
           </div>
         </div>
       </div>
@@ -959,18 +959,18 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 4 -->
       <div class="doc-card" data-doc-index="3">
         <div class="doc-img-box" onclick="openLightbox(3)">
-          <img src="docs_img/doc4_skills.png" alt="Command Palette & Neural Skills Popover" decoding="async" onerror="docImgRetry(this)">
+          <img src="docs_img/doc4_skills.png" alt="Slash Commands" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 04</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
         <div class="doc-body">
-          <h3>Command Palette &amp; Neural Skills Popover</h3>
-          <p>Instant skill command invocation popover. Quickly trigger specialized neural pipelines: <code>/diagram</code> for Mermaid architecture charts, <code>/website</code> for responsive web generators, <code>/dokumen</code> for structured documentation, <code>/deep-research</code> for multi-source search, and <code>/autonomous</code> for multi-step agent execution.</p>
+          <h3>Slash Commands</h3>
+          <p>Type <code>/</code> to see the available skills: <code>/diagram</code> for Mermaid diagrams, <code>/website</code> to build a web page, <code>/dokumen</code> for documents, <code>/deep-research</code> for research across several sources, and <code>/autonomous</code> for multi-step agent tasks.</p>
           <div class="doc-pills">
-            <span class="doc-pill">Slash Skills</span>
+            <span class="doc-pill">Slash Commands</span>
             <span class="doc-pill">Mermaid Diagrams</span>
             <span class="doc-pill">Deep Research</span>
-            <span class="doc-pill">Autonomous Agents</span>
+            <span class="doc-pill">Agents</span>
           </div>
         </div>
       </div>
@@ -978,18 +978,18 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 5 -->
       <div class="doc-card" data-doc-index="4">
         <div class="doc-img-box" onclick="openLightbox(4)">
-          <img src="docs_img/doc5_websiteoutput.png" alt="Dynamic Website Output Format Selector" decoding="async" onerror="docImgRetry(this)">
+          <img src="docs_img/doc5_websiteoutput.png" alt="Website Output Options" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 05</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
         <div class="doc-body">
-          <h3>Dynamic Website Output Format Selector</h3>
-          <p>Interactive code delivery modal. Select between instant sandboxed interactive live preview (File Siap Pratinjau) to test generated web applications in real-time, or formatted in-chat raw source code inspection (Tampilkan Kode di Percakapan) for developer audit.</p>
+          <h3>Website Output Options</h3>
+          <p>When the AI builds a website, you choose how to get it: open it as a live preview in a sandbox (File Siap Pratinjau), or show the source code in the chat (Tampilkan Kode di Percakapan).</p>
           <div class="doc-pills">
-            <span class="doc-pill">Live Sandbox Preview</span>
-            <span class="doc-pill">Code Inspection</span>
-            <span class="doc-pill">Dual-Mode Output</span>
-            <span class="doc-pill">HTML/CSS/JS Engine</span>
+            <span class="doc-pill">Live Preview</span>
+            <span class="doc-pill">View Code</span>
+            <span class="doc-pill">Two Modes</span>
+            <span class="doc-pill">HTML/CSS/JS</span>
           </div>
         </div>
       </div>
@@ -997,18 +997,18 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 6 -->
       <div class="doc-card" data-doc-index="5">
         <div class="doc-img-box" onclick="openLightbox(5)">
-          <img src="docs_img/doc6_customurl.png" alt="Integrated Neural CLI & Web Terminal" decoding="async" onerror="docImgRetry(this)">
+          <img src="docs_img/doc6_customurl.png" alt="Web Terminal" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 06</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
         <div class="doc-body">
-          <h3>Integrated Neural CLI &amp; Web Terminal</h3>
-          <p>Full-featured native Windows ConPTY terminal inside the browser over duplex Server-Sent Events. Includes multi-tab session management, font scaling (13px), sync modes (Auto Y, Win Sync), remote tunneling triggers, and execution without terminal freezes.</p>
+          <h3>Web Terminal</h3>
+          <p>A full Windows terminal (ConPTY) in the browser, streamed over Server-Sent Events. It has multiple tabs, adjustable font size (13px here), sync options (Auto Y, Win Sync), a button to start the remote tunnel, and it doesn't freeze on long-running commands.</p>
           <div class="doc-pills">
             <span class="doc-pill">Windows ConPTY</span>
-            <span class="doc-pill">Multi-Tab CLI</span>
-            <span class="doc-pill">xterm.js Canvas</span>
-            <span class="doc-pill">Duplex SSE Stream</span>
+            <span class="doc-pill">Multiple Tabs</span>
+            <span class="doc-pill">xterm.js</span>
+            <span class="doc-pill">SSE Streaming</span>
           </div>
         </div>
       </div>
@@ -1016,18 +1016,18 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 7 -->
       <div class="doc-card" data-doc-index="6">
         <div class="doc-img-box" onclick="openLightbox(6)">
-          <img src="docs_img/doc7_settings.png" alt="Cloudflare WAN Remote Access & PIN Gate" decoding="async" onerror="docImgRetry(this)">
+          <img src="docs_img/doc7_settings.png" alt="Remote Access &amp; PIN Lock" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 07</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
         <div class="doc-body">
-          <h3>Cloudflare WAN Remote Access &amp; PIN Gate</h3>
-          <p>Zero-trust encrypted remote gateway. Automatically spins up Cloudflare HTTPS/WSS tunnels, guarded by a cryptographic 6-digit session security PIN and seamless mobile camera QR code auto-pairing to operate your home workstation on the move.</p>
+          <h3>Remote Access &amp; PIN Lock</h3>
+          <p>Starts a Cloudflare tunnel (HTTPS/WSS) so you can reach your home computer from anywhere. Each session is locked with a 6-digit PIN, and you connect your phone by scanning a QR code. No port forwarding needed.</p>
           <div class="doc-pills">
             <span class="doc-pill">Cloudflare Tunnel</span>
-            <span class="doc-pill">6-Digit PIN Gate</span>
-            <span class="doc-pill">Mobile QR Pairing</span>
-            <span class="doc-pill">Zero-Port Forward</span>
+            <span class="doc-pill">6-Digit PIN</span>
+            <span class="doc-pill">QR Pairing</span>
+            <span class="doc-pill">No Port Forwarding</span>
           </div>
         </div>
       </div>
@@ -1035,18 +1035,18 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 8 -->
       <div class="doc-card" data-doc-index="7">
         <div class="doc-img-box" onclick="openLightbox(7)">
-          <img src="docs_img/doc8_canvasview.png" alt="Dual-Pane Split Terminal Cockpit" decoding="async" onerror="docImgRetry(this)">
+          <img src="docs_img/doc8_canvasview.png" alt="Split Terminal" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 08</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
         <div class="doc-body">
-          <h3>Dual-Pane Split Terminal Cockpit</h3>
-          <p>High-productivity split terminal mode. Run concurrent PowerShell sessions side-by-side with zero-click Focus-Follows-Mouse (Hover-to-Focus), active pane neon borders, and synchronized background daemons.</p>
+          <h3>Split Terminal</h3>
+          <p>Run two PowerShell sessions side by side. The pane under your mouse gets focus automatically, the active pane is outlined so you always know where you're typing, and both sessions keep running in the background.</p>
           <div class="doc-pills">
-            <span class="doc-pill">Dual-Pane Split</span>
-            <span class="doc-pill">Focus-Follows-Mouse</span>
-            <span class="doc-pill">Active Pane Glow</span>
-            <span class="doc-pill">Parallel Daemons</span>
+            <span class="doc-pill">Split View</span>
+            <span class="doc-pill">Focus Follows Mouse</span>
+            <span class="doc-pill">Active Pane Outline</span>
+            <span class="doc-pill">Two Sessions</span>
           </div>
         </div>
       </div>
@@ -1054,17 +1054,17 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 9 -->
       <div class="doc-card" data-doc-index="8">
         <div class="doc-img-box" onclick="openLightbox(8)">
-          <img src="docs_img/doc9_livewebpreview.png" alt="Live In-Chat Interactive Web Preview" decoding="async" onerror="docImgRetry(this)">
+          <img src="docs_img/doc9_livewebpreview.png" alt="Website Preview in Chat" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 09</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
         <div class="doc-body">
-          <h3>Live In-Chat Interactive Web Preview</h3>
-          <p>Seamless inline web execution sandbox. Directly renders fully responsive HTML/CSS/JavaScript websites and web apps inside the conversational stream, with instant action buttons for Live Preview (Pratinjau), Export (Ekspor), Share, and dark/light mode toggle alongside the docked terminal.</p>
+          <h3>Website Preview in Chat</h3>
+          <p>Websites the AI builds show up right in the chat as a working preview. Buttons let you open the preview (Pratinjau), export it (Ekspor), share it, or switch between dark and light mode, with the terminal docked below.</p>
           <div class="doc-pills">
-            <span class="doc-pill">Inline Web Engine</span>
-            <span class="doc-pill">Live Preview Sandbox</span>
-            <span class="doc-pill">HTML/CSS/JS Canvas</span>
+            <span class="doc-pill">In-Chat Preview</span>
+            <span class="doc-pill">Sandbox</span>
+            <span class="doc-pill">HTML/CSS/JS</span>
             <span class="doc-pill">One-Click Export</span>
           </div>
         </div>
@@ -1073,17 +1073,17 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 10 -->
       <div class="doc-card" data-doc-index="9">
         <div class="doc-img-box" onclick="openLightbox(9)">
-          <img src="docs_img/doc10_fullscreenstudio.png" alt="Full-Screen Web Studio & AI Co-Pilot Canvas" decoding="async" onerror="docImgRetry(this)">
+          <img src="docs_img/doc10_fullscreenstudio.png" alt="Full-Screen Web Studio" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 10</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
         <div class="doc-body">
-          <h3>Full-Screen Web Studio &amp; AI Co-Pilot Canvas</h3>
-          <p>Expansive professional web development studio. Inspect raw source code (&lt;/&gt; Kode), test live responsive layouts (Pratinjau), iterate in real-time with AI assistant chat (Tanya AI), export production bundles, and monitor execution via docked native terminal.</p>
+          <h3>Full-Screen Web Studio</h3>
+          <p>A bigger workspace for web projects. Read the code (&lt;/&gt; Kode), test the layout (Pratinjau), ask the AI for changes (Tanya AI), export the files, and watch the output in the docked terminal.</p>
           <div class="doc-pills">
-            <span class="doc-pill">Full-Screen Studio</span>
-            <span class="doc-pill">Source Code Inspector</span>
-            <span class="doc-pill">AI Co-Pilot</span>
+            <span class="doc-pill">Full Screen</span>
+            <span class="doc-pill">Code View</span>
+            <span class="doc-pill">AI Assistant</span>
             <span class="doc-pill">Docked Terminal</span>
           </div>
         </div>
@@ -1092,18 +1092,18 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 11 -->
       <div class="doc-card" data-doc-index="10">
         <div class="doc-img-box" onclick="openLightbox(10)">
-          <img src="docs_img/doc11_modelcatalog.jpg" alt="Real-Time Live Model Catalog & OpenRouter Credits" decoding="async" onerror="docImgRetry(this)">
+          <img src="docs_img/doc11_modelcatalog.jpg" alt="Model Catalog &amp; OpenRouter Credits" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 11</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
         <div class="doc-body">
-          <h3>Real-Time Live Model Catalog &amp; OpenRouter Credits</h3>
-          <p>Direct API model catalog switcher. Live tab toggle between Model Ollama Cloud (31 free models) and Model OpenRouter (464 credit-based models). Displays live OpenRouter balance telemetry ($2.00 USD), quick category filters (Semua, Favorit, Free, Reasoning, Fast, Flagship), batch-inference selectors, and custom model ID prompt entry.</p>
+          <h3>Model Catalog &amp; OpenRouter Credits</h3>
+          <p>Browse models straight from the providers' APIs. Switch between Ollama Cloud (31 free models) and OpenRouter (464 paid models), check your OpenRouter balance ($2.00 in this screenshot), filter by category (Semua, Favorit, Free, Reasoning, Fast, Flagship), select several models at once, or type in a model ID yourself.</p>
           <div class="doc-pills">
             <span class="doc-pill">Ollama Cloud (31)</span>
             <span class="doc-pill">OpenRouter (464)</span>
-            <span class="doc-pill">Credit Balance ($)</span>
-            <span class="doc-pill">Live API Catalog</span>
+            <span class="doc-pill">Credit Balance</span>
+            <span class="doc-pill">Live Model List</span>
           </div>
         </div>
       </div>
@@ -1111,18 +1111,18 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 12 -->
       <div class="doc-card" data-doc-index="11">
         <div class="doc-img-box" onclick="openLightbox(11)">
-          <img src="docs_img/doc12_mobilechat.jpg" alt="Mobile Responsive Cockpit & Gemma Cloud Chat" decoding="async" onerror="docImgRetry(this)">
+          <img src="docs_img/doc12_mobilechat.jpg" alt="Mobile Chat with Gemma" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 12</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
         <div class="doc-body">
-          <h3>Mobile Responsive Cockpit &amp; Gemma Cloud Chat</h3>
-          <p>Ultra-responsive mobile viewport running seamless cloud inference via WAN Remote Access. Highlights Gemma 4:31b on Ollama Cloud with real-time latency indicators (1.18s, 29.7 tps), quick copy/edit message actions, conversational threading, and ergonomic bottom prompt input.</p>
+          <h3>Mobile Chat with Gemma</h3>
+          <p>ZOZ ROUTER on a phone over remote access, chatting with Gemma 4:31b on Ollama Cloud. Each reply shows how fast it was (1.18 s, 29.7 tokens/s), with buttons to copy or edit messages and the input box at the bottom where your thumb can reach it.</p>
           <div class="doc-pills">
-            <span class="doc-pill">Mobile Responsive</span>
+            <span class="doc-pill">Mobile</span>
             <span class="doc-pill">Gemma 4:31b</span>
             <span class="doc-pill">Ollama Cloud (29.7 tps)</span>
-            <span class="doc-pill">WAN Remote</span>
+            <span class="doc-pill">Remote Access</span>
           </div>
         </div>
       </div>
@@ -1130,15 +1130,15 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 13 -->
       <div class="doc-card" data-doc-index="12">
         <div class="doc-img-box" onclick="openLightbox(12)">
-          <img src="docs_img/doc13_mobileskills.jpg" alt="Mobile Slash Command Palette & Neural Skills Popover" decoding="async" onerror="docImgRetry(this)">
+          <img src="docs_img/doc13_mobileskills.jpg" alt="Slash Commands on Mobile" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 13</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
         <div class="doc-body">
-          <h3>Mobile Slash Command Palette &amp; Neural Skills Popover</h3>
-          <p>Touch-optimized mobile command tray. Instantly invoke autonomous pipelines: /website for HTML/JS/3D landing page generation with live preview, /dokumen for PDF/Word exports, /deep-research for custom URL scraping, /web-search for Google real-time synthesis, /autonomous for zero-setup agent loops, and /gambar for Flux/SDXL high-res art.</p>
+          <h3>Slash Commands on Mobile</h3>
+          <p>The skills menu, sized for touch: /website builds a landing page with live preview, /dokumen exports PDF or Word files, /deep-research reads custom URLs, /web-search searches Google, /autonomous runs an agent loop, and /gambar generates images with Flux or SDXL.</p>
           <div class="doc-pills">
-            <span class="doc-pill">Mobile Skills Tray</span>
+            <span class="doc-pill">Mobile Menu</span>
             <span class="doc-pill">/website</span>
             <span class="doc-pill">/dokumen</span>
             <span class="doc-pill">/deep-research</span>
@@ -1150,18 +1150,18 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 14 -->
       <div class="doc-card" data-doc-index="13">
         <div class="doc-img-box" onclick="openLightbox(13)">
-          <img src="docs_img/doc14_mobileattachments.jpg" alt="Mobile Hardware Camera & Multi-Modal Ingestion Popover" decoding="async" onerror="docImgRetry(this)">
+          <img src="docs_img/doc14_mobileattachments.jpg" alt="Camera &amp; Uploads on Mobile" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 14</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
         <div class="doc-body">
-          <h3>Mobile Hardware Camera &amp; Multi-Modal Ingestion Popover</h3>
-          <p>Touch-optimized multi-modal file ingestion drawer. Snap real-time photos straight from device hardware camera (Ambil Foto), upload images from phone storage gallery (Galeri Foto), or inject codebase scripts, JSON, and documents (Dokumen &amp; File) into active neural context.</p>
+          <h3>Camera &amp; Uploads on Mobile</h3>
+          <p>The attachment drawer on a phone. Take a photo with the camera (Ambil Foto), pick one from your gallery (Galeri Foto), or attach scripts, JSON and documents (Dokumen &amp; File) to the conversation.</p>
           <div class="doc-pills">
-            <span class="doc-pill">Camera Hardware</span>
-            <span class="doc-pill">Mobile Gallery</span>
+            <span class="doc-pill">Camera</span>
+            <span class="doc-pill">Phone Gallery</span>
             <span class="doc-pill">Code &amp; Files</span>
-            <span class="doc-pill">Multi-Modal Drawer</span>
+            <span class="doc-pill">Attachments</span>
           </div>
         </div>
       </div>
@@ -1169,18 +1169,18 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <!-- DOC CARD 15 -->
       <div class="doc-card" data-doc-index="14">
         <div class="doc-img-box" onclick="openLightbox(14)">
-          <img src="docs_img/doc15_mobileterminal.jpg" alt="Mobile Native Windows ConPTY Terminal & Touch Keybar" decoding="async" onerror="docImgRetry(this)">
+          <img src="docs_img/doc15_mobileterminal.jpg" alt="Mobile Terminal &amp; Touch Keybar" decoding="async" onerror="docImgRetry(this)">
           <div class="doc-overlay-badge">DOC // 15</div>
           <div class="doc-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> View Fullscreen</div>
         </div>
         <div class="doc-body">
-          <h3>Mobile Native Windows ConPTY Terminal &amp; Touch Keybar</h3>
-          <p>Zero-compromise Windows PowerShell ConPTY terminal streaming directly to mobile browsers via duplex SSE. Features multi-tab session switching (Terminal 1, Terminal 2, + Tab Baru), live Leviathan Orbital Omega profile integration, and full ergonomic touch keybar (ESC, TAB, CTRL, ALT, arrows, ^C, ^L, Auto Y, Paste).</p>
+          <h3>Mobile Terminal &amp; Touch Keybar</h3>
+          <p>The Windows PowerShell terminal running in a phone browser. Switch between tabs (Terminal 1, Terminal 2, + Tab Baru) and use the touch keybar for keys a phone keyboard doesn't have: ESC, TAB, CTRL, ALT, arrows, ^C, ^L, Auto Y and Paste. The screenshot also shows the custom Leviathan Orbital Omega shell profile.</p>
           <div class="doc-pills">
-            <span class="doc-pill">Mobile ConPTY</span>
+            <span class="doc-pill">Mobile Terminal</span>
             <span class="doc-pill">Touch Keybar</span>
-            <span class="doc-pill">PowerShell Duplex</span>
-            <span class="doc-pill">Leviathan Omega Profile</span>
+            <span class="doc-pill">PowerShell</span>
+            <span class="doc-pill">Custom Profile</span>
           </div>
         </div>
       </div>
@@ -1204,7 +1204,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
     <div class="sec-head">
       <span class="kicker">// Setup &amp; Deployment</span>
       <h2>HOW TO INSTALL &amp; RUN</h2>
-      <p>Follow these straightforward steps to clone the official GitHub repository and launch ZOZ ROUTER on your computer.</p>
+      <p>Clone the repository, install the dependencies, and start the server. It only takes a few minutes.</p>
     </div>
 
     <div class="install-container">
@@ -1218,8 +1218,8 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
           <a href="https://github.com/Zozi0999/zoz_router" target="_blank" class="nav-gh-btn"><i class="fab fa-github"></i> Visit Repo</a>
         </div>
         <div class="install-body">
-          <p>Open your terminal or Command Prompt, then run <code>git clone</code> to download the complete source code from the official GitHub repository:</p>
-          <pre><button class="copy-btn" data-copy="git clone https://github.com/Zozi0999/zoz_router.git&#10;cd zoz_router">Copy</button><span class="cm"># Clone official repository by Zozi Atul Azimi</span>
+          <p>Open a terminal or Command Prompt and run <code>git clone</code> to download the source code:</p>
+          <pre><button class="copy-btn" data-copy="git clone https://github.com/Zozi0999/zoz_router.git&#10;cd zoz_router">Copy</button><span class="cm"># Download the repository</span>
 <span class="kw">git clone</span> <span class="str">https://github.com/Zozi0999/zoz_router.git</span>
 <span class="kw">cd</span> zoz_router</pre>
         </div>
@@ -1234,8 +1234,8 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
           </div>
         </div>
         <div class="install-body">
-          <p>ZOZ ROUTER is architected on top of lightweight Node.js native primitives. Execute <code>npm install</code> to install the required <code>node-pty</code> terminal engine:</p>
-          <pre><button class="copy-btn" data-copy="npm install">Copy</button><span class="cm"># Install node-pty ConPTY virtual console engine</span>
+          <p>ZOZ ROUTER runs on Node.js. Run <code>npm install</code> to install its dependencies, including <code>node-pty</code>, which powers the terminal:</p>
+          <pre><button class="copy-btn" data-copy="npm install">Copy</button><span class="cm"># Installs node-pty (Windows terminal support)</span>
 <span class="kw">npm</span> install</pre>
         </div>
       </div>
@@ -1249,12 +1249,12 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
           </div>
         </div>
         <div class="install-body">
-          <p>You can launch ZOZ ROUTER via the automated 1-click batch launcher or directly with Node.js:</p>
-          <p><strong>Option A (Recommended 1-Click):</strong> Double-click <code>start.bat</code> in the project directory:</p>
-          <pre><button class="copy-btn" data-copy="start.bat">Copy</button><span class="cm"># 1-Click Windows execution bypass launcher</span>
+          <p>Start ZOZ ROUTER with the batch file, or run it with Node.js yourself:</p>
+          <p><strong>Option A (recommended):</strong> Double-click <code>start.bat</code> in the project folder:</p>
+          <pre><button class="copy-btn" data-copy="start.bat">Copy</button><span class="cm"># Windows launcher</span>
 start.bat</pre>
-          <p style="margin-top:14px;"><strong>Option B (Manual CLI):</strong> Run server daemon directly:</p>
-          <pre><button class="copy-btn" data-copy="node server.js">Copy</button><span class="cm"># Direct Node.js daemon start</span>
+          <p style="margin-top:14px;"><strong>Option B (manual):</strong> Start the server from the terminal:</p>
+          <pre><button class="copy-btn" data-copy="node server.js">Copy</button><span class="cm"># Start the server with Node.js</span>
 <span class="kw">node</span> server.js</pre>
         </div>
       </div>
@@ -1264,22 +1264,22 @@ start.bat</pre>
         <div class="install-head">
           <div class="install-head-left">
             <span class="step-num">4</span>
-            <h4>ACCESS COCKPIT &amp; WAN REMOTE</h4>
+            <h4>OPEN THE DASHBOARD</h4>
           </div>
         </div>
         <div class="install-body">
-          <p>Open your browser and navigate to the local portal:</p>
+          <p>Open this address in your browser:</p>
           <pre><button class="copy-btn" data-copy="http://localhost:4040">Copy</button><span class="str">http://localhost:4040</span></pre>
-          <p style="margin-top:14px;">To access your terminal from your smartphone while traveling, click <strong>"🌐 Cloudflare WAN Tunnel"</strong> in the top-right toolbar, enter your 6-digit PIN, and scan the pairing QR code directly with your phone camera!</p>
+          <p style="margin-top:14px;">To use it from your phone, click <strong>"🌐 Cloudflare WAN Tunnel"</strong> in the top-right toolbar, set a 6-digit PIN, and scan the QR code with your phone's camera.</p>
         </div>
       </div>
 
       <!-- GITHUB HERO BANNER -->
       <div class="gh-banner">
         <div class="gh-banner-inner">
-          <div class="badge" style="margin-bottom:16px"><i class="fab fa-github"></i> Open Source Repository</div>
-          <h3>STAR &amp; FORK ON GITHUB</h3>
-          <p>Support the engineering journey of ZOZ ROUTER by starring the official repository, tracking new flagship releases, and participating in discussions.</p>
+          <div class="badge" style="margin-bottom:16px"><i class="fab fa-github"></i> Open Source</div>
+          <h3>STAR IT ON GITHUB</h3>
+          <p>If ZOZ ROUTER is useful to you, a star on GitHub helps a lot. You can also follow new updates there and open an issue if something breaks.</p>
           <div class="gh-banner-btns">
             <a href="https://github.com/Zozi0999/zoz_router" target="_blank" class="btn btn-primary">
               <i class="fab fa-github"></i> github.com/Zozi0999/zoz_router
@@ -1298,10 +1298,10 @@ start.bat</pre>
     <!-- TAB FOOTER NAVIGATION -->
     <div class="tab-footer-nav">
       <button class="tab-nav-btn prev" data-tab-target="documentation">
-        <i class="fas fa-arrow-left"></i> Previous: Documentation
+        <i class="fas fa-arrow-left"></i> Previous: Screenshots
       </button>
       <button class="tab-nav-btn next" data-tab-target="developer">
-        Next: About <i class="fas fa-arrow-right"></i>
+        Next: Creator <i class="fas fa-arrow-right"></i>
       </button>
     </div>
   </div>
@@ -1311,9 +1311,9 @@ start.bat</pre>
   <!-- ===================================================================== -->
   <div class="tab-pane" id="tab-developer">
     <div class="sec-head">
-      <span class="kicker">// The Mind Behind the Code</span>
-      <h2>CREATOR &amp; SYSTEM ARCHITECT</h2>
-      <p>Meet the 16-year-old Indonesian SMK student who engineered and built ZOZ ROUTER entirely on his own.</p>
+      <span class="kicker">// Who Made This</span>
+      <h2>ABOUT THE CREATOR</h2>
+      <p>ZOZ ROUTER was built by one person: a 16-year-old SMK student from Indonesia.</p>
     </div>
 
     <div class="dev-section">
@@ -1323,11 +1323,11 @@ start.bat</pre>
             <img src="zoz.png" alt="Zozi Atul Azimi" class="avatar-img">
           </div>
         </div>
-        <span class="kicker">// System Creator</span>
+        <span class="kicker">// Creator</span>
         <h2>ZOZI ATUL AZIMI</h2>
-        <div class="alias">⌁ 16-YEAR-OLD SMK STUDENT &amp; SOLE ARCHITECT ⌁</div>
+        <div class="alias">⌁ 16-YEAR-OLD SMK STUDENT · SOLO DEVELOPER ⌁</div>
         <p class="desc">
-          Behind <strong>ZOZ ROUTER</strong> is not an enterprise software department or a Silicon Valley team, but <strong>Zozi Atul Azimi</strong> &mdash; an ambitious 16-year-old SMK student from Indonesia. Driven by an insatiable curiosity for low-level operating system mechanics, virtual terminal multiplexing, and sovereign neural computation, he designed, architected, and programmed the entire platform independently on his workstation laptop.
+          There's no company or team behind <strong>ZOZ ROUTER</strong>. It's made by <strong>Zozi Atul Azimi</strong>, a 16-year-old SMK student in Indonesia. He got curious about how terminals work under the hood, how programs stream data to each other, and how to use AI without being tied to one provider. That curiosity turned into this project, which he designed and coded by himself on his own laptop.
         </p>
 
         <!-- OFFICIAL LINKS WITH LINKEDIN & GITHUB -->
@@ -1347,48 +1347,48 @@ start.bat</pre>
         </div>
 
         <div class="dev-chips">
-          <span class="chip"><i class="fas fa-user-graduate"></i> Indonesian SMK Student</span>
+          <span class="chip"><i class="fas fa-user-graduate"></i> SMK Student</span>
           <span class="chip"><i class="fas fa-graduation-cap"></i> 16 Years Old</span>
           <span class="chip"><i class="fas fa-location-dot"></i> Indonesia</span>
-          <span class="chip"><i class="fas fa-terminal"></i> Native Windows ConPTY</span>
-          <span class="chip"><i class="fab fa-node-js"></i> Zero-Dependency Backend</span>
+          <span class="chip"><i class="fas fa-terminal"></i> Windows ConPTY</span>
+          <span class="chip"><i class="fab fa-node-js"></i> Node.js Backend</span>
           <span class="chip"><i class="fas fa-cloud"></i> Cloudflare WAN Tunnel</span>
-          <span class="chip"><i class="fas fa-shield-halved"></i> BioEndocrine Health Matrix</span>
+          <span class="chip"><i class="fas fa-shield-halved"></i> BioEndocrine Self-Check</span>
         </div>
 
         <!-- PROFILE STORY CARD -->
         <div class="creator-story-box">
           <div class="csb-item">
-            <h4><i class="fas fa-book-open"></i> The Journey from an Indonesian SMK Classroom</h4>
+            <h4><i class="fas fa-book-open"></i> Learning on His Own</h4>
             <p>
-              While many teenagers spend their free time on mobile gaming, this young Indonesian SMK student spent late nights studying low-level systems programming, terminal pseudo-consoles, and asynchronous network streams. Armed with a standard workstation laptop in Indonesia, he turned open-source repositories and deep technical specs into his personal curriculum.
+              While a lot of people his age spend their free time gaming, Zozi spent late nights reading about systems programming, pseudo-consoles and network streams. With just an ordinary laptop, he learned by reading open-source code and technical documentation.
             </p>
           </div>
 
           <div class="csb-item">
-            <h4><i class="fas fa-wifi"></i> Born from Real Need: Remote Tunneling from School</h4>
+            <h4><i class="fas fa-wifi"></i> Built Out of Need: Checking His Laptop from School</h4>
             <p>
-              The zero-trust Cloudflare WAN Remote Access was created out of real daily necessity: Zozi needed a way to monitor long-running terminal builds and AI jobs on his laptop at home directly from his smartphone while sitting at his desk at school, complete with 6-digit PIN security and QR-code camera pairing.
+              The remote access feature came from a real problem. Zozi wanted to keep an eye on long builds and AI jobs running on his laptop at home while he was at school. So he added a Cloudflare tunnel, a 6-digit PIN, and QR-code pairing for his phone.
             </p>
           </div>
 
           <div class="csb-item">
-            <h4><i class="fas fa-microchip"></i> Wrestling with Windows ConPTY Internals</h4>
+            <h4><i class="fas fa-microchip"></i> Working Directly with Windows ConPTY</h4>
             <p>
-              Refusing to settle for just another web wrapper, he integrated directly with Windows ConPTY via native bindings (<code>node-pty</code>) and duplex Server-Sent Events, creating a split terminal cockpit with zero-click <em>Focus-Follows-Mouse</em> and active pane glow entirely by himself.
+              Instead of making yet another simple web wrapper, he connected straight to Windows ConPTY through <code>node-pty</code> and streamed it to the browser with Server-Sent Events. The split terminal, where focus follows your mouse and the active pane is outlined, is all his own work.
             </p>
           </div>
 
           <div class="csb-item">
-            <h4><i class="fas fa-cloud-bolt"></i> Unified Cloud AI Architecture: Free &amp; Credit Tiers</h4>
+            <h4><i class="fas fa-cloud-bolt"></i> Free and Paid AI, Side by Side</h4>
             <p>
-              Rather than locking users into expensive single-provider subscriptions, he architected a dual cloud AI strategy: utilizing Ollama Cloud for high-speed free tier open-weight models, while orchestrating OpenRouter cloud flagships with pay-as-you-go credits whenever frontier deep reasoning is required.
+              He didn't want to be stuck paying for one expensive subscription. So ZOZ ROUTER uses Ollama Cloud for free open models, and OpenRouter with pay-as-you-go credits when a task needs a stronger model.
             </p>
           </div>
 
           <div class="csb-quote">
-            <p>"True engineering is not defined by age or formal credentials. It is defined by the relentless curiosity to understand every byte under the hood and build tools you truly own."</p>
-            <span>&mdash; <strong>Zozi Atul Azimi</strong>, 16-Year-Old SMK Student &amp; Creator of ZOZ ROUTER</span>
+            <p>"You don't need to be a certain age or have a degree to build real software. You just need to be curious enough to keep digging until you understand how it works."</p>
+            <span>&mdash; <strong>Zozi Atul Azimi</strong>, creator of ZOZ ROUTER</span>
           </div>
         </div>
 
@@ -1455,29 +1455,29 @@ start.bat</pre>
     </div>
     <div class="repo-modal-body">
       <div class="repo-badge">
-        <span class="repo-dot"></span> LIVE CODEBASE • CONTINUOUS ROLLING COMMITS
+        <span class="repo-dot"></span> ACTIVE DEVELOPMENT • FREQUENT COMMITS
       </div>
       <div>
-        <span class="repo-modal-kicker">// Real-Time Repository Notice</span>
-        <h3 class="repo-modal-title" id="repoModalTitle">REPOSITORY IS ACTIVELY UPDATING IN REAL-TIME</h3>
+        <span class="repo-modal-kicker">// Before You Go</span>
+        <h3 class="repo-modal-title" id="repoModalTitle">THIS REPOSITORY IS UPDATED OFTEN</h3>
       </div>
       <p class="repo-notice-text">
-        Our official core repository is receiving <strong>continuous real-time updates</strong>. We are actively shipping code enhancements, optimizations, and internal features directly to the codebase on an ongoing basis.
+        The main repository gets <strong>new commits regularly</strong>. Fixes, improvements and new features are pushed straight to the code as soon as they're ready.
       </p>
       <div class="repo-notice-box">
         <div class="rnb-icon"><i class="fas fa-cloud-arrow-down"></i></div>
         <div class="rnb-content">
-          <strong>No need to wait for a future milestone!</strong>
-          <span>If you are comfortable with live rolling updates, you can clone or download the current working build right now without waiting for upcoming version releases.</span>
+          <strong>No need to wait for a release.</strong>
+          <span>If you're fine with a build that changes often, you can clone or download it right now instead of waiting for a versioned release.</span>
         </div>
       </div>
     </div>
     <div class="repo-modal-foot">
       <button type="button" class="btn btn-ghost" id="repoModalCancel">
-        Stay on Showcase
+        Stay Here
       </button>
       <button type="button" class="btn btn-primary" id="repoModalConfirm">
-        <i class="fab fa-github"></i> Proceed to Repository (OK) <i class="fas fa-arrow-right"></i>
+        <i class="fab fa-github"></i> Go to GitHub <i class="fas fa-arrow-right"></i>
       </button>
     </div>
   </div>
@@ -1486,19 +1486,19 @@ start.bat</pre>
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">ZOZ <span>ROUTER</span></div>
-  <p>Neural AI Multi-Engine &amp; Command Terminal Gateway — Ollama Cloud (Free) &amp; OpenRouter Cloud (Credit) Orchestrator.</p>
+  <p>AI gateway and web terminal. Free models from Ollama Cloud, paid models from OpenRouter.</p>
   
   <div class="footer-links">
     <a data-tab-target="overview">Overview</a>
     <a data-tab-target="features">Features</a>
-    <a data-tab-target="documentation">Documentation &amp; Visuals</a>
+    <a data-tab-target="documentation">Screenshots</a>
     <a data-tab-target="installation">Installation</a>
-    <a data-tab-target="developer">About</a>
+    <a data-tab-target="developer">Creator</a>
     <a href="https://www.linkedin.com/in/zozi-atul-azimi-656108404" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
     <a href="https://github.com/Zozi0999/zoz_router" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
   </div>
   
-  <p class="sig">Architected and Developed by <strong>Zozi Atul Azimi</strong> — <em>Code Sovereignty Engine</em>.</p>
+  <p class="sig">Designed and built by <strong>Zozi Atul Azimi</strong>.</p>
 </footer>
 
 <script>
@@ -1650,79 +1650,79 @@ function fallbackExecCopy(text, callback) {
 // =========================================================================
 const docItems = [
   {
-    src: 'docs_img/doc1_cockpit.png',
-    title: 'DOC #01 — ZOZ Router Cockpit & Gateway Interface',
-    desc: 'The primary neural gateway cockpit. Features instant model switching (Gemini 2.5 Flash, Ollama Cloud free models, OpenRouter credit flagships), real-time session telemetry, live engine status badges, and expandable sidebar navigation.'
+    src: "docs_img/doc1_cockpit.png",
+    title: "DOC #01 — Main Dashboard",
+    desc: "The main chat screen. Switch models instantly (Gemini 2.5 Flash, free Ollama Cloud models, paid OpenRouter models), see session stats and engine status at a glance, and open the sidebar for everything else."
   },
   {
-    src: 'docs_img/doc2_attachments.png',
-    title: 'DOC #02 — Multi-Modal Ingestion & Attachments Menu',
-    desc: 'Versatile media upload menu popover. Take live photos directly via connected hardware camera (Ambil Foto), upload images from your local system gallery (Galeri Foto), or inject codebase files and structured documents (Dokumen & File) directly into the model context.'
+    src: "docs_img/doc2_attachments.png",
+    title: "DOC #02 — File & Photo Uploads",
+    desc: "The attachment menu. Take a photo with your camera (Ambil Foto), pick one from your gallery (Galeri Foto), or attach code files and documents (Dokumen & File) so the model can read them."
   },
   {
-    src: 'docs_img/doc3_creativetools.png',
-    title: 'DOC #03 — Integrated Generative Creative AI Tools',
-    desc: 'Specialized rapid creative suite accessible straight from the prompt composer. Generate high-quality AI images (Buat Gambar AI), execute neural photo-to-photo editing (Edit Foto Img2Img), synthesize music tracks (Buat Musik AI), and perform deep YouTube video searches.'
+    src: "docs_img/doc3_creativetools.png",
+    title: "DOC #03 — Creative AI Tools",
+    desc: "Creative tools you can open right from the message box: generate images (Buat Gambar AI), edit a photo with img2img (Edit Foto Img2Img), make music (Buat Musik AI), and search YouTube."
   },
   {
-    src: 'docs_img/doc4_skills.png',
-    title: 'DOC #04 — Command Palette & Neural Skills Popover',
-    desc: 'Instant skill command invocation popover. Quickly trigger specialized neural pipelines: /diagram for Mermaid architecture charts, /website for responsive web generators, /dokumen for structured documentation, /deep-research for multi-source search, and /autonomous for multi-step agent execution.'
+    src: "docs_img/doc4_skills.png",
+    title: "DOC #04 — Slash Commands",
+    desc: "Type / to see the available skills: /diagram for Mermaid diagrams, /website to build a web page, /dokumen for documents, /deep-research for research across several sources, and /autonomous for multi-step agent tasks."
   },
   {
-    src: 'docs_img/doc5_websiteoutput.png',
-    title: 'DOC #05 — Dynamic Website Output Format Selector',
-    desc: 'Interactive code delivery modal. Select between instant sandboxed interactive live preview (File Siap Pratinjau) to test generated web applications in real-time, or formatted in-chat raw source code inspection (Tampilkan Kode di Percakapan) for developer audit.'
+    src: "docs_img/doc5_websiteoutput.png",
+    title: "DOC #05 — Website Output Options",
+    desc: "When the AI builds a website, you choose how to get it: open it as a live preview in a sandbox (File Siap Pratinjau), or show the source code in the chat (Tampilkan Kode di Percakapan)."
   },
   {
-    src: 'docs_img/doc6_customurl.png',
-    title: 'DOC #06 — Integrated Neural CLI & Web Terminal',
-    desc: 'Full-featured native Windows ConPTY terminal inside the browser over duplex Server-Sent Events. Includes multi-tab session management, font scaling (13px), sync modes (Auto Y, Win Sync), remote tunneling triggers, and execution without terminal freezes.'
+    src: "docs_img/doc6_customurl.png",
+    title: "DOC #06 — Web Terminal",
+    desc: "A full Windows terminal (ConPTY) in the browser, streamed over Server-Sent Events. It has multiple tabs, adjustable font size (13px here), sync options (Auto Y, Win Sync), a button to start the remote tunnel, and it doesn't freeze on long-running commands."
   },
   {
-    src: 'docs_img/doc7_settings.png',
-    title: 'DOC #07 — Cloudflare WAN Remote Access & PIN Gate',
-    desc: 'Zero-trust encrypted remote gateway. Automatically spins up Cloudflare HTTPS/WSS tunnels, guarded by a cryptographic 6-digit session security PIN and seamless mobile camera QR code auto-pairing to operate your home workstation on the move.'
+    src: "docs_img/doc7_settings.png",
+    title: "DOC #07 — Remote Access & PIN Lock",
+    desc: "Starts a Cloudflare tunnel (HTTPS/WSS) so you can reach your home computer from anywhere. Each session is locked with a 6-digit PIN, and you connect your phone by scanning a QR code. No port forwarding needed."
   },
   {
-    src: 'docs_img/doc8_canvasview.png',
-    title: 'DOC #08 — Dual-Pane Split Terminal Cockpit',
-    desc: 'High-productivity split terminal mode. Run concurrent PowerShell sessions side-by-side with zero-click Focus-Follows-Mouse (Hover-to-Focus), active pane neon borders, and synchronized background daemons.'
+    src: "docs_img/doc8_canvasview.png",
+    title: "DOC #08 — Split Terminal",
+    desc: "Run two PowerShell sessions side by side. The pane under your mouse gets focus automatically, the active pane is outlined so you always know where you're typing, and both sessions keep running in the background."
   },
   {
-    src: 'docs_img/doc9_livewebpreview.png',
-    title: 'DOC #09 — Live In-Chat Interactive Web Preview',
-    desc: 'Seamless inline web execution sandbox. Directly renders fully responsive HTML/CSS/JavaScript websites and web apps inside the conversational stream, with instant action buttons for Live Preview (Pratinjau), Export (Ekspor), Share, and dark/light mode toggle alongside the docked terminal.'
+    src: "docs_img/doc9_livewebpreview.png",
+    title: "DOC #09 — Website Preview in Chat",
+    desc: "Websites the AI builds show up right in the chat as a working preview. Buttons let you open the preview (Pratinjau), export it (Ekspor), share it, or switch between dark and light mode, with the terminal docked below."
   },
   {
-    src: 'docs_img/doc10_fullscreenstudio.png',
-    title: 'DOC #10 — Full-Screen Web Studio & AI Co-Pilot Canvas',
-    desc: 'Expansive professional web development studio. Inspect raw source code (</> Kode), test live responsive layouts (Pratinjau), iterate in real-time with AI assistant chat (Tanya AI), export production bundles, and monitor execution via docked native terminal.'
+    src: "docs_img/doc10_fullscreenstudio.png",
+    title: "DOC #10 — Full-Screen Web Studio",
+    desc: "A bigger workspace for web projects. Read the code (</> Kode), test the layout (Pratinjau), ask the AI for changes (Tanya AI), export the files, and watch the output in the docked terminal."
   },
   {
-    src: 'docs_img/doc11_modelcatalog.jpg',
-    title: 'DOC #11 — Real-Time Live Model Catalog & OpenRouter Credits',
-    desc: 'Direct API model catalog switcher. Live tab toggle between Model Ollama Cloud (31 free models) and Model OpenRouter (464 credit-based models). Displays live OpenRouter balance telemetry ($2.00 USD), quick category filters (Semua, Favorit, Free, Reasoning, Fast, Flagship), batch-inference selectors, and custom model ID prompt entry.'
+    src: "docs_img/doc11_modelcatalog.jpg",
+    title: "DOC #11 — Model Catalog & OpenRouter Credits",
+    desc: "Browse models straight from the providers' APIs. Switch between Ollama Cloud (31 free models) and OpenRouter (464 paid models), check your OpenRouter balance ($2.00 in this screenshot), filter by category (Semua, Favorit, Free, Reasoning, Fast, Flagship), select several models at once, or type in a model ID yourself."
   },
   {
-    src: 'docs_img/doc12_mobilechat.jpg',
-    title: 'DOC #12 — Mobile Responsive Cockpit & Gemma Cloud Chat',
-    desc: 'Ultra-responsive mobile viewport running seamless cloud inference via WAN Remote Access. Highlights Gemma 4:31b on Ollama Cloud with real-time latency indicators (1.18s, 29.7 tps), quick copy/edit message actions, conversational threading, and ergonomic bottom prompt input.'
+    src: "docs_img/doc12_mobilechat.jpg",
+    title: "DOC #12 — Mobile Chat with Gemma",
+    desc: "ZOZ ROUTER on a phone over remote access, chatting with Gemma 4:31b on Ollama Cloud. Each reply shows how fast it was (1.18 s, 29.7 tokens/s), with buttons to copy or edit messages and the input box at the bottom where your thumb can reach it."
   },
   {
-    src: 'docs_img/doc13_mobileskills.jpg',
-    title: 'DOC #13 — Mobile Slash Command Palette & Neural Skills Popover',
-    desc: 'Touch-optimized mobile command tray. Instantly invoke autonomous pipelines: /website for HTML/JS/3D landing page generation with live preview, /dokumen for PDF/Word exports, /deep-research for custom URL scraping, /web-search for Google real-time synthesis, /autonomous for zero-setup agent loops, and /gambar for Flux/SDXL high-res art.'
+    src: "docs_img/doc13_mobileskills.jpg",
+    title: "DOC #13 — Slash Commands on Mobile",
+    desc: "The skills menu, sized for touch: /website builds a landing page with live preview, /dokumen exports PDF or Word files, /deep-research reads custom URLs, /web-search searches Google, /autonomous runs an agent loop, and /gambar generates images with Flux or SDXL."
   },
   {
-    src: 'docs_img/doc14_mobileattachments.jpg',
-    title: 'DOC #14 — Mobile Hardware Camera & Multi-Modal Ingestion Popover',
-    desc: 'Touch-optimized multi-modal file ingestion drawer. Snap real-time photos straight from device hardware camera (Ambil Foto), upload images from phone storage gallery (Galeri Foto), or inject codebase scripts, JSON, and documents (Dokumen & File) into active neural context.'
+    src: "docs_img/doc14_mobileattachments.jpg",
+    title: "DOC #14 — Camera & Uploads on Mobile",
+    desc: "The attachment drawer on a phone. Take a photo with the camera (Ambil Foto), pick one from your gallery (Galeri Foto), or attach scripts, JSON and documents (Dokumen & File) to the conversation."
   },
   {
-    src: 'docs_img/doc15_mobileterminal.jpg',
-    title: 'DOC #15 — Mobile Native Windows ConPTY Terminal & Touch Keybar',
-    desc: 'Zero-compromise Windows PowerShell ConPTY terminal streaming directly to mobile browsers via duplex SSE. Features multi-tab session switching (Terminal 1, Terminal 2, + Tab Baru), live Leviathan Orbital Omega profile integration, and full ergonomic touch keybar (ESC, TAB, CTRL, ALT, arrows, ^C, ^L, Auto Y, Paste).'
+    src: "docs_img/doc15_mobileterminal.jpg",
+    title: "DOC #15 — Mobile Terminal & Touch Keybar",
+    desc: "The Windows PowerShell terminal running in a phone browser. Switch between tabs (Terminal 1, Terminal 2, + Tab Baru) and use the touch keybar for keys a phone keyboard doesn't have: ESC, TAB, CTRL, ALT, arrows, ^C, ^L, Auto Y and Paste. The screenshot also shows the custom Leviathan Orbital Omega shell profile."
   }
 ];
 

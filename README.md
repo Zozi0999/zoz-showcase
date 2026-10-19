@@ -1,38 +1,38 @@
-# ⚡ ZOZ ROUTER — Official Showcase & Landing Page Website
+# ⚡ ZOZ ROUTER — Showcase Website
 
-> **Lead Architect & Creator:** **Zozi Atul Azimi** (16-Year-Old SMK Student from Indonesia)  
-> **Official LinkedIn:** [`https://www.linkedin.com/in/zozi-atul-azimi-656108404`](https://www.linkedin.com/in/zozi-atul-azimi-656108404)  
-> **Official GitHub:** [`https://github.com/Zozi0999`](https://github.com/Zozi0999)  
-> **Core Repository:** [`https://github.com/Zozi0999/zoz_router`](https://github.com/Zozi0999/zoz_router)  
-> **Core Application Path:** `C:\Users\user\zoz-router`  
-> **Showcase Folder:** `C:\Users\user\zoz-showcase` (Standalone Showcase Website)
+> **Creator:** **Zozi Atul Azimi**, a 16-year-old SMK student from Indonesia  
+> **LinkedIn:** [`linkedin.com/in/zozi-atul-azimi-656108404`](https://www.linkedin.com/in/zozi-atul-azimi-656108404)  
+> **GitHub:** [`github.com/Zozi0999`](https://github.com/Zozi0999)  
+> **Main repository:** [`github.com/Zozi0999/zoz_router`](https://github.com/Zozi0999/zoz_router)  
+> **App folder:** `C:\Users\user\zoz-router`  
+> **This website's folder:** `C:\Users\user\zoz-showcase`
 
 ---
 
 ## 🌟 About This Website
 
-This website is the **official standalone showcase and landing page** decoupled from the core `zoz-router` daemon codebase. It is designed to present:
+This is the landing page for ZOZ ROUTER. It lives in its own repository, separate from the `zoz-router` app code. It contains:
 
-1. **Tab-Based SPA Architecture**: Modular view switching between Overview, Features, Documentation, Installation, Commands, and Developer without forced long scrolling.
-2. **System Definition & Philosophy**: Unified Cloud AI orchestration via Ollama Cloud (Free Tier open weights) and OpenRouter (Credit-based frontier models).
-3. **Feature Arsenal**: Native Windows ConPTY terminal, Cloudflare WAN Remote Access (mobile-to-desktop), Dual-Channel BioEndocrine 5-Pillar Health Matrix, Canvas Overview, Deep Careful Custom URL Website, and AI File Studio.
-4. **Visual Documentation & Gallery**: Comprehensive 15-screenshot interface tour showcasing the central Cockpit, Multi-Modal Ingestion, Creative AI Suite, Slash Skills Popover, Website Output Mode Selector, ConPTY CLI, Cloudflare Tunnel QR Pairing, Dual-Pane Split Terminal, In-Chat Live Website Preview Sandbox, Full-Screen Interactive Web Studio, Real-Time Live Model Catalog (Ollama Cloud 31 vs OpenRouter 464 with Credit Balance), Mobile WAN Responsive Chat (Gemma 4:31b), Mobile Command Palette, Mobile Camera Drawer, and Mobile ConPTY Terminal with Touch Keybar.
-5. **Installation & Deployment Guide**: Step-by-step setup guides with 1-click copy triggers (GitHub cloning, dependency install, launcher scripts, and CLI daemon).
-6. **Direct GitHub Redirects**: Instant links to the official GitHub repository (`https://github.com/Zozi0999/zoz_router`).
-7. **Lead Architect Profile**: **Zozi Atul Azimi** (16-year-old SMK student from Indonesia) featuring high-definition avatar portrait, direct LinkedIn, GitHub, and email contact links.
+1. **Tabbed layout**: Overview, Features, Screenshots, Install and Creator each have their own tab, so you don't have to scroll through one long page.
+2. **What ZOZ ROUTER is**: one place to use free Ollama Cloud models and paid OpenRouter models (pay-as-you-go credits).
+3. **Features**: a Windows terminal in the browser (ConPTY), remote access from your phone through Cloudflare, the BioEndocrine self-check, Canvas, Deep Research with custom URLs, and Auto Enter for AI CLI tools.
+4. **15 screenshots**: the main dashboard, file uploads, creative AI tools, slash commands, website output options, the web terminal, Cloudflare QR pairing, the split terminal, website preview in chat, the full-screen web studio, the model catalog (31 Ollama Cloud models and 464 OpenRouter models, with credit balance), mobile chat with Gemma 4:31b, slash commands on mobile, camera and uploads on mobile, and the mobile terminal with its touch keybar.
+5. **Install guide**: step-by-step instructions with copy buttons (clone, install dependencies, start the app).
+6. **GitHub links**: direct links to the main repository (`https://github.com/Zozi0999/zoz_router`).
+7. **Creator profile**: a short profile of **Zozi Atul Azimi** with his photo and links to LinkedIn, GitHub and email.
 
 ---
 
-## 🚀 How to Launch This Showcase Website
+## 🚀 How to Open This Website
 
-1. **1-Click Launcher**: Double-click `buka_website.bat`. The site will open directly in your default browser.
-2. **Direct Browser**: Double-click `index.html` in File Explorer.
-3. **Local HTTP Server (Optional)**:
+1. **Launcher**: Double-click `buka_website.bat`. The site opens in your default browser.
+2. **Open the file directly**: Double-click `index.html` in File Explorer.
+3. **Local HTTP server (optional)**:
    ```bash
    cd C:\Users\user\zoz-showcase
-   # Using Python:
+   # With Python:
    python -m http.server 8080
-   # Or using npx serve:
+   # Or with npx serve:
    npx serve .
    ```
-   Open `http://localhost:8080` in your web browser.
+   Then open `http://localhost:8080` in your browser.
