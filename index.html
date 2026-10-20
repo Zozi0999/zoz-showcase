@@ -722,7 +722,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
 .repo-modal-dialog{
   background:var(--card);border:1px solid var(--accent-line);
   box-shadow:0 24px 60px rgba(0,0,0,.75), 0 0 35px rgba(46,230,166,.12);
-  border-radius:14px;max-width:540px;width:100%;overflow:hidden;
+  border-radius:14px;max-width:540px;width:100%;max-height:92vh;overflow:hidden;
   animation:repoModalPop .25s cubic-bezier(.16,1,.3,1);
   display:flex;flex-direction:column;
 }
@@ -752,6 +752,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
 .repo-modal-close:hover{border-color:var(--accent);color:var(--accent)}
 .repo-modal-body{
   padding:22px 22px 18px;display:flex;flex-direction:column;gap:14px;
+  overflow-y:auto;
 }
 .repo-modal-kicker{
   font-family:var(--mono);font-size:.72rem;color:var(--accent);letter-spacing:1.5px;
@@ -1688,6 +1689,73 @@ start.bat</pre>
   </div>
 </div>
 
+<!-- ========================================================================= -->
+<!-- ZOZ ROUTER LICENSE & TERMS OF USE MODAL (BEFORE OPENING LIVE APP)         -->
+<!-- ========================================================================= -->
+<div class="repo-modal" id="tryLicenseModal" role="dialog" aria-modal="true" aria-labelledby="tryModalTitle">
+  <div class="repo-modal-dialog">
+    <div class="repo-modal-head">
+      <div class="repo-modal-brand">
+        <span class="repo-modal-mark">
+          <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" fill="#2ee6a6" aria-hidden="true">
+            <path d="M10 26V12h14M72 12h14v14M10 70v14h14M72 84h14V70" fill="none" stroke="#2ee6a6" stroke-opacity=".55" stroke-width="2"/>
+            <rect x="22" y="22" width="52" height="10"/>
+            <rect x="54" y="32" width="20" height="10"/>
+            <rect x="40" y="42" width="20" height="10"/>
+            <rect x="26" y="52" width="20" height="10"/>
+            <rect x="22" y="62" width="52" height="10"/>
+          </svg>
+        </span>
+        <span class="repo-modal-brand-text">ZOZ <span>ROUTER</span></span>
+      </div>
+      <button type="button" class="repo-modal-close" id="tryModalClose" aria-label="Close License">
+        <i class="fas fa-xmark"></i>
+      </button>
+    </div>
+    <div class="repo-modal-body">
+      <div class="repo-badge">
+        <span class="repo-dot"></span> 100% FREE APPLICATION • BRING YOUR OWN API KEY
+      </div>
+      <div>
+        <span class="repo-modal-kicker">// License &amp; Terms of Use</span>
+        <h3 class="repo-modal-title" id="tryModalTitle">TERMS OF USE &amp; API KEY REQUIREMENT</h3>
+      </div>
+      <p class="repo-notice-text">
+        Before opening the live <strong>ZOZ Router</strong> application, please review and accept the following usage terms:
+      </p>
+      <div class="repo-notice-box">
+        <div class="rnb-icon"><i class="fas fa-circle-check"></i></div>
+        <div class="rnb-content">
+          <strong>100% Free to Use</strong>
+          <span>Using the ZOZ Router application is completely free. There are no subscription fees, paywalls, or hidden charges to use the platform.</span>
+        </div>
+      </div>
+      <div class="repo-notice-box">
+        <div class="rnb-icon"><i class="fas fa-key"></i></div>
+        <div class="rnb-content">
+          <strong>Use Your Own API Key (BYOK)</strong>
+          <span>To chat with AI models, you must enter your own API key (such as your personal Ollama Cloud or OpenRouter API key) in the app settings. ZOZ Router does not provide shared API keys.</span>
+        </div>
+      </div>
+      <div class="repo-notice-box">
+        <div class="rnb-icon"><i class="fas fa-shield-halved"></i></div>
+        <div class="rnb-content">
+          <strong>Your Keys, Your Control</strong>
+          <span>Your API keys are used strictly for your own requests. You are responsible for your own API usage and any provider credits linked to your personal accounts.</span>
+        </div>
+      </div>
+    </div>
+    <div class="repo-modal-foot">
+      <button type="button" class="btn btn-ghost" id="tryModalCancel">
+        Cancel
+      </button>
+      <button type="button" class="btn btn-primary" id="tryModalConfirm">
+        <i class="fas fa-check"></i> I Agree &amp; Continue <i class="fas fa-arrow-up-right-from-square"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">ZOZ <span>ROUTER</span></div>
@@ -2155,6 +2223,66 @@ window.addEventListener('keydown', (e) => {
   window.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
       closeRepoModal();
+    }
+  });
+})();
+
+// =========================================================================
+// 6. ZOZ ROUTER LICENSE & TERMS OF USE MODAL (BEFORE REDIRECT TO LIVE APP)
+// =========================================================================
+(function(){
+  var modal = document.getElementById('tryLicenseModal');
+  var confirmBtn = document.getElementById('tryModalConfirm');
+  var cancelBtn = document.getElementById('tryModalCancel');
+  var closeBtn = document.getElementById('tryModalClose');
+  var targetUrl = 'https://z21.zozdocs.com/';
+
+  function openTryModal(url) {
+    if (url) targetUrl = url;
+    if (modal) {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeTryModal() {
+    if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Intercept all links targeting z21.zozdocs.com
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href');
+    if (href && (href.indexOf('z21.zozdocs.com') > -1)) {
+      e.preventDefault();
+      openTryModal(href);
+    }
+  });
+
+  if (confirmBtn) {
+    confirmBtn.addEventListener('click', function() {
+      var urlToOpen = targetUrl;
+      closeTryModal();
+      window.open(urlToOpen, '_blank', 'noopener,noreferrer');
+    });
+  }
+
+  if (cancelBtn) cancelBtn.addEventListener('click', closeTryModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeTryModal);
+
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeTryModal();
+    });
+  }
+
+  window.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+      closeTryModal();
     }
   });
 })();
