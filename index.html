@@ -121,22 +121,22 @@ nav{
 
 /* ===== TAB FOOTER NAV ===== */
 .tab-footer-nav{
-  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
   margin-top:56px;padding-top:24px;border-top:1px solid var(--border);
 }
 .tab-footer-nav-left,.tab-footer-nav-right{
-  flex:1 1 0;display:flex;
+  flex:1 1 0;display:flex;min-width:0;
 }
 .tab-footer-nav-left{justify-content:flex-start}
 .tab-footer-nav-right{justify-content:flex-end}
 .tab-footer-links{
-  display:inline-flex;align-items:center;gap:10px;justify-content:center;
+  display:inline-flex;align-items:center;gap:8px;justify-content:center;flex-shrink:0;
 }
 .tab-social-btn{
   background:rgba(255,255,255,.03);border:1px solid var(--border-strong);border-radius:6px;
   padding:8px 14px;color:var(--text);font-family:var(--mono);font-weight:500;
   font-size:.82rem;transition:.2s;display:inline-flex;align-items:center;gap:8px;
-  text-decoration:none;cursor:pointer;
+  text-decoration:none;cursor:pointer;white-space:nowrap;
 }
 .tab-social-btn:hover{
   border-color:var(--accent-line);color:var(--accent);background:var(--accent-dim);
@@ -145,25 +145,49 @@ nav{
 .tab-nav-btn{
   background:var(--card);border:1px solid var(--border-strong);border-radius:8px;
   padding:10px 18px;color:var(--text);font-family:var(--mono);font-weight:500;
-  font-size:.82rem;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:10px;
+  font-size:.82rem;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:8px;
   text-decoration:none;white-space:nowrap;
 }
 .tab-nav-btn:hover{border-color:var(--accent-line);color:var(--accent);background:var(--accent-dim)}
 
 @media(max-width:760px){
   .tab-footer-nav{
-    flex-direction:column;gap:14px;align-items:stretch;
+    gap:8px;
   }
-  .tab-footer-nav-left,.tab-footer-nav-right{
-    width:100%;justify-content:center;
+  .tab-social-btn{
+    padding:7px 10px;
+    font-size:.76rem;
+    gap:6px;
   }
-  .tab-footer-nav-left:empty{display:none}
-  .tab-footer-links{
-    order:2;width:100%;justify-content:center;flex-wrap:wrap;
+  .tab-nav-btn{
+    padding:8px 12px;
+    font-size:.76rem;
+    gap:6px;
   }
-  .tab-footer-nav-left{order:1}
-  .tab-footer-nav-right{order:3}
-  .tab-nav-btn{width:100%;justify-content:center}
+}
+
+@media(max-width:520px){
+  .tab-footer-nav{
+    gap:6px;
+  }
+  .tab-social-btn{
+    padding:6px 8px;
+    font-size:.72rem;
+    gap:5px;
+    border-radius:6px;
+  }
+  .tab-social-btn i{
+    font-size:.75rem;
+  }
+  .tab-nav-btn{
+    padding:6px 9px;
+    font-size:.72rem;
+    gap:5px;
+    border-radius:6px;
+  }
+  .tab-nav-btn .btn-dest{
+    display:none;
+  }
 }
 
 /* ===== HERO ===== */
@@ -857,7 +881,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       </div>
       <div class="tab-footer-nav-right">
         <button class="tab-nav-btn next" data-tab-target="features">
-          Next: Features <i class="fas fa-arrow-right"></i>
+          Next<span class="btn-dest">: Features</span> <i class="fas fa-arrow-right"></i>
         </button>
       </div>
     </div>
@@ -921,7 +945,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
     <div class="tab-footer-nav">
       <div class="tab-footer-nav-left">
         <button class="tab-nav-btn prev" data-tab-target="overview">
-          <i class="fas fa-arrow-left"></i> Previous: Overview
+          <i class="fas fa-arrow-left"></i> Previous<span class="btn-dest">: Overview</span>
         </button>
       </div>
       <div class="tab-footer-links">
@@ -934,7 +958,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       </div>
       <div class="tab-footer-nav-right">
         <button class="tab-nav-btn next" data-tab-target="documentation">
-          Next: Screenshots <i class="fas fa-arrow-right"></i>
+          Next<span class="btn-dest">: Screenshots</span> <i class="fas fa-arrow-right"></i>
         </button>
       </div>
     </div>
@@ -1244,7 +1268,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
     <div class="tab-footer-nav">
       <div class="tab-footer-nav-left">
         <button class="tab-nav-btn prev" data-tab-target="features">
-          <i class="fas fa-arrow-left"></i> Previous: Features
+          <i class="fas fa-arrow-left"></i> Previous<span class="btn-dest">: Features</span>
         </button>
       </div>
       <div class="tab-footer-links">
@@ -1257,7 +1281,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       </div>
       <div class="tab-footer-nav-right">
         <button class="tab-nav-btn next" data-tab-target="installation">
-          Next: Installation Guide <i class="fas fa-arrow-right"></i>
+          Next<span class="btn-dest">: Installation Guide</span> <i class="fas fa-arrow-right"></i>
         </button>
       </div>
     </div>
@@ -1365,7 +1389,7 @@ start.bat</pre>
     <div class="tab-footer-nav">
       <div class="tab-footer-nav-left">
         <button class="tab-nav-btn prev" data-tab-target="documentation">
-          <i class="fas fa-arrow-left"></i> Previous: Screenshots
+          <i class="fas fa-arrow-left"></i> Previous<span class="btn-dest">: Screenshots</span>
         </button>
       </div>
       <div class="tab-footer-links">
@@ -1378,7 +1402,7 @@ start.bat</pre>
       </div>
       <div class="tab-footer-nav-right">
         <button class="tab-nav-btn next" data-tab-target="developer">
-          Next: Creator <i class="fas fa-arrow-right"></i>
+          Next<span class="btn-dest">: Creator</span> <i class="fas fa-arrow-right"></i>
         </button>
       </div>
     </div>
@@ -1477,7 +1501,7 @@ start.bat</pre>
     <div class="tab-footer-nav">
       <div class="tab-footer-nav-left">
         <button class="tab-nav-btn prev" data-tab-target="installation">
-          <i class="fas fa-arrow-left"></i> Previous: Installation
+          <i class="fas fa-arrow-left"></i> Previous<span class="btn-dest">: Installation</span>
         </button>
       </div>
       <div class="tab-footer-links">
@@ -1490,7 +1514,7 @@ start.bat</pre>
       </div>
       <div class="tab-footer-nav-right">
         <button class="tab-nav-btn next" data-tab-target="overview">
-          Back to Overview <i class="fas fa-arrow-up"></i>
+          <span class="btn-dest">Back to </span>Overview <i class="fas fa-arrow-up"></i>
         </button>
       </div>
     </div>
