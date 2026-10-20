@@ -144,49 +144,54 @@ nav{
 .tab-social-btn i{font-size:.85rem}
 .tab-nav-btn{
   background:var(--card);border:1px solid var(--border-strong);border-radius:8px;
-  padding:10px 18px;color:var(--text);font-family:var(--mono);font-weight:500;
-  font-size:.82rem;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:8px;
+  padding:9px 15px;color:var(--text);font-family:var(--mono);font-weight:500;
+  font-size:.8rem;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:8px;
   text-decoration:none;white-space:nowrap;
 }
 .tab-nav-btn:hover{border-color:var(--accent-line);color:var(--accent);background:var(--accent-dim)}
+.tab-nav-btn .nav-btn-short{display:none}
+.tab-nav-btn .nav-btn-long{display:inline}
 
 @media(max-width:760px){
   .tab-footer-nav{
     gap:8px;
   }
+  .tab-nav-btn .nav-btn-long{display:none}
+  .tab-nav-btn .nav-btn-short{display:inline}
   .tab-social-btn{
-    padding:7px 10px;
-    font-size:.76rem;
+    padding:7px 11px;
+    font-size:.78rem;
     gap:6px;
-  }
-  .tab-nav-btn{
-    padding:8px 12px;
-    font-size:.76rem;
-    gap:6px;
-  }
-}
-
-@media(max-width:520px){
-  .tab-footer-nav{
-    gap:6px;
-  }
-  .tab-social-btn{
-    padding:6px 8px;
-    font-size:.72rem;
-    gap:5px;
     border-radius:6px;
   }
   .tab-social-btn i{
-    font-size:.75rem;
+    font-size:.82rem;
   }
   .tab-nav-btn{
-    padding:6px 9px;
-    font-size:.72rem;
+    padding:7px 11px;
+    font-size:.75rem;
     gap:5px;
     border-radius:6px;
+    flex-shrink:0;
   }
-  .tab-nav-btn .btn-dest{
-    display:none;
+  .tab-nav-btn i{
+    font-size:.76rem;
+  }
+}
+
+@media(max-width:400px){
+  .tab-footer-nav{
+    gap:5px;
+  }
+  .tab-social-btn{
+    padding:6px 9px;
+    font-size:.74rem;
+    gap:5px;
+  }
+  .tab-nav-btn{
+    padding:6px 8px;
+    font-size:.72rem;
+    gap:4px;
   }
 }
 
@@ -881,7 +886,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       </div>
       <div class="tab-footer-nav-right">
         <button class="tab-nav-btn next" data-tab-target="features">
-          Next<span class="btn-dest">: Features</span> <i class="fas fa-arrow-right"></i>
+          <span class="nav-btn-long">Next: Features </span><span class="nav-btn-short">Next </span><i class="fas fa-arrow-right"></i>
         </button>
       </div>
     </div>
@@ -945,7 +950,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
     <div class="tab-footer-nav">
       <div class="tab-footer-nav-left">
         <button class="tab-nav-btn prev" data-tab-target="overview">
-          <i class="fas fa-arrow-left"></i> Previous<span class="btn-dest">: Overview</span>
+          <i class="fas fa-arrow-left"></i> <span class="nav-btn-long">Previous: Overview</span><span class="nav-btn-short">Prev</span>
         </button>
       </div>
       <div class="tab-footer-links">
@@ -958,7 +963,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       </div>
       <div class="tab-footer-nav-right">
         <button class="tab-nav-btn next" data-tab-target="documentation">
-          Next<span class="btn-dest">: Screenshots</span> <i class="fas fa-arrow-right"></i>
+          <span class="nav-btn-long">Next: Screenshots </span><span class="nav-btn-short">Next </span><i class="fas fa-arrow-right"></i>
         </button>
       </div>
     </div>
@@ -1268,7 +1273,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
     <div class="tab-footer-nav">
       <div class="tab-footer-nav-left">
         <button class="tab-nav-btn prev" data-tab-target="features">
-          <i class="fas fa-arrow-left"></i> Previous<span class="btn-dest">: Features</span>
+          <i class="fas fa-arrow-left"></i> <span class="nav-btn-long">Previous: Features</span><span class="nav-btn-short">Prev</span>
         </button>
       </div>
       <div class="tab-footer-links">
@@ -1281,7 +1286,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       </div>
       <div class="tab-footer-nav-right">
         <button class="tab-nav-btn next" data-tab-target="installation">
-          Next<span class="btn-dest">: Installation Guide</span> <i class="fas fa-arrow-right"></i>
+          <span class="nav-btn-long">Next: Installation Guide </span><span class="nav-btn-short">Next </span><i class="fas fa-arrow-right"></i>
         </button>
       </div>
     </div>
@@ -1389,7 +1394,7 @@ start.bat</pre>
     <div class="tab-footer-nav">
       <div class="tab-footer-nav-left">
         <button class="tab-nav-btn prev" data-tab-target="documentation">
-          <i class="fas fa-arrow-left"></i> Previous<span class="btn-dest">: Screenshots</span>
+          <i class="fas fa-arrow-left"></i> <span class="nav-btn-long">Previous: Screenshots</span><span class="nav-btn-short">Prev</span>
         </button>
       </div>
       <div class="tab-footer-links">
@@ -1402,7 +1407,7 @@ start.bat</pre>
       </div>
       <div class="tab-footer-nav-right">
         <button class="tab-nav-btn next" data-tab-target="developer">
-          Next<span class="btn-dest">: Creator</span> <i class="fas fa-arrow-right"></i>
+          <span class="nav-btn-long">Next: Creator </span><span class="nav-btn-short">Next </span><i class="fas fa-arrow-right"></i>
         </button>
       </div>
     </div>
@@ -1501,7 +1506,7 @@ start.bat</pre>
     <div class="tab-footer-nav">
       <div class="tab-footer-nav-left">
         <button class="tab-nav-btn prev" data-tab-target="installation">
-          <i class="fas fa-arrow-left"></i> Previous<span class="btn-dest">: Installation</span>
+          <i class="fas fa-arrow-left"></i> <span class="nav-btn-long">Previous: Installation</span><span class="nav-btn-short">Prev</span>
         </button>
       </div>
       <div class="tab-footer-links">
@@ -1514,7 +1519,7 @@ start.bat</pre>
       </div>
       <div class="tab-footer-nav-right">
         <button class="tab-nav-btn next" data-tab-target="overview">
-          <span class="btn-dest">Back to </span>Overview <i class="fas fa-arrow-up"></i>
+          <span class="nav-btn-long">Back to Overview </span><span class="nav-btn-short">Overview </span><i class="fas fa-arrow-up"></i>
         </button>
       </div>
     </div>
