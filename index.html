@@ -1563,6 +1563,9 @@ start.bat</pre>
   <!-- TAB 6: DEVELOPER & SYSTEM ARCHITECT PROFILE                           -->
   <!-- ===================================================================== -->
   <div class="tab-pane" id="tab-developer">
+    <span id="developer"></span>
+    <span id="de"></span>
+    <span id="creator"></span>
     <div class="sec-head">
       <span class="kicker" data-i18n="creator_kicker">// Personal Profile &amp; Learning Journey</span>
       <h2 data-i18n="creator_title">MEET ZOZI ATUL AZIMI</h2>
@@ -1840,8 +1843,38 @@ start.bat</pre>
 // =========================================================================
 const validTabs = ['overview', 'features', 'documentation', 'installation', 'developer'];
 
+function resolveTabAlias(raw) {
+  if (!raw) return 'overview';
+  const clean = String(raw).toLowerCase().replace(/^[#/]+/, '').trim();
+  const aliases = {
+    de: 'developer',
+    dev: 'developer',
+    developer: 'developer',
+    creator: 'developer',
+    kreator: 'developer',
+    profile: 'developer',
+    profil: 'developer',
+    author: 'developer',
+    overview: 'overview',
+    ikhtisar: 'overview',
+    home: 'overview',
+    features: 'features',
+    fitur: 'features',
+    documentation: 'documentation',
+    docs: 'documentation',
+    screenshots: 'documentation',
+    screenshot: 'documentation',
+    installation: 'installation',
+    install: 'installation',
+    panduan: 'installation'
+  };
+  if (aliases[clean]) return aliases[clean];
+  if (validTabs.includes(clean)) return clean;
+  return 'overview';
+}
+
 function switchTab(tabId) {
-  if (!validTabs.includes(tabId)) tabId = 'overview';
+  tabId = resolveTabAlias(tabId);
 
   const targetPane = document.getElementById('tab-' + tabId);
   if (!targetPane) return;
@@ -1900,8 +1933,8 @@ document.querySelectorAll('[data-tab-target]').forEach(el => {
 // Handle initial URL hash on load
 window.addEventListener('DOMContentLoaded', () => {
   const hash = (window.location.hash || '').replace('#', '').trim();
-  if (validTabs.includes(hash)) {
-    switchTab(hash);
+  if (hash) {
+    switchTab(resolveTabAlias(hash));
   } else {
     switchTab('overview');
   }
@@ -1910,8 +1943,8 @@ window.addEventListener('DOMContentLoaded', () => {
 // Handle browser Back / Forward buttons
 window.addEventListener('hashchange', () => {
   const hash = (window.location.hash || '').replace('#', '').trim();
-  if (validTabs.includes(hash)) {
-    switchTab(hash);
+  if (hash) {
+    switchTab(resolveTabAlias(hash));
   }
 });
 
