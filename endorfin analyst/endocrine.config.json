@@ -1,0 +1,48 @@
+{
+  "version": "3.5.0",
+  "painSensitivity": 85,
+  "autoHeal": true,
+  "debounceMs": 150,
+  "runtimeGuard": {
+    "autoInterceptFetch": true,
+    "interceptNodeHttp": true,
+    "captureConsoleErrors": true,
+    "captureProcessExceptions": true
+  },
+  "probes": {
+    "enabled": false,
+    "intervalSec": 30,
+    "endpoints": []
+  },
+  "ignoredDirs": [
+    "node_modules",
+    ".git",
+    ".gemini",
+    "dist",
+    "build",
+    ".next",
+    "coverage",
+    ".cache",
+    "scratch",
+    "temp",
+    "tmp",
+    "profile",
+    "vendor",
+    "__pycache__",
+    "trauma-history.json"
+  ],
+  "watchedExtensions": [
+    ".js",
+    ".mjs",
+    ".cjs",
+    ".jsx",
+    ".ts",
+    ".tsx",
+    ".json",
+    ".py",
+    ".html",
+    ".css",
+    ".yaml",
+    ".yml"
+  ]
+}

@@ -1,6 +1,6 @@
 # ⚡ ZOZ ROUTER — Showcase Website
 
-> **Creator:** **Zozi Atul Azimi**, a 16-year-old SMK student from Indonesia  
+> **Creator:** **Zozi Atul Azimi**, a 16-year-old student from **SMK Negeri 1 Pringgabaya**, Nusa Tenggara Barat (NTB), Indonesia  
 > **LinkedIn:** [`linkedin.com/in/zozi-atul-azimi-656108404`](https://www.linkedin.com/in/zozi-atul-azimi-656108404)  
 > **GitHub:** [`github.com/Zozi0999`](https://github.com/Zozi0999)  
 > **Live App / Demo:** [`https://z21.zozdocs.com/`](https://z21.zozdocs.com/)  
@@ -20,7 +20,7 @@ This is the landing page for ZOZ ROUTER. It lives in its own repository, separat
 4. **15 screenshots**: the main dashboard, file uploads, creative AI tools, slash commands, website output options, the web terminal, Cloudflare QR pairing, the split terminal, website preview in chat, the full-screen web studio, the model catalog (31 Ollama Cloud models and 464 OpenRouter models, with credit balance), mobile chat with Gemma 4:31b, slash commands on mobile, camera and uploads on mobile, and the mobile terminal with its touch keybar.
 5. **Install guide**: step-by-step instructions with copy buttons (clone, install dependencies, start the app).
 6. **GitHub links**: direct links to the main repository (`https://github.com/Zozi0999/zoz_router`).
-7. **Creator profile**: a short profile of **Zozi Atul Azimi** with his photo and links to LinkedIn, GitHub and email.
+7. **Creator profile**: a dedicated profile of **Zozi Atul Azimi**, a student at SMK Negeri 1 Pringgabaya in Nusa Tenggara Barat, Indonesia, whose daily life is spent continuously learning, studying systems programming, and building software on his laptop.
 
 ---
 
