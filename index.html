@@ -110,6 +110,34 @@ nav{
 .nav-creator-btn:hover{background:var(--accent);color:#04120c;border-color:var(--accent)}
 .nav-creator-btn i{font-size:.82rem}
 
+/* ===== LANGUAGE SWITCHER BUTTON ===== */
+.lang-switch-btn{
+  height:36px;padding:0 10px;border-radius:6px;
+  background:rgba(255,255,255,.04);border:1px solid var(--border-strong);
+  color:var(--text);font-family:var(--mono);font-size:.78rem;font-weight:600;
+  cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.2s;
+  user-select:none;
+}
+.lang-switch-btn:hover{background:var(--accent-dim);border-color:var(--accent-line);color:var(--accent)}
+.lang-switch-btn i{font-size:.85rem;color:var(--accent)}
+.lang-pill-wrap{display:inline-flex;align-items:center;gap:3px}
+.lang-opt{padding:1px 5px;border-radius:3px;transition:.15s;opacity:.55;font-size:.74rem}
+.lang-opt.active{background:var(--accent);color:#04120c;opacity:1;font-weight:700}
+.lang-divider{opacity:.35;font-size:.7rem}
+
+.nav-lang-drawer-row{
+  display:none;margin-top:8px;padding-top:10px;border-top:1px solid var(--border);
+}
+.drawer-lang-btn{
+  width:100%;height:38px;border-radius:6px;
+  background:rgba(255,255,255,.04);border:1px solid var(--border-strong);
+  color:var(--text);font-family:var(--mono);font-size:.82rem;font-weight:600;
+  display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;
+  transition:.2s;
+}
+.drawer-lang-btn:hover{background:var(--accent-dim);border-color:var(--accent-line);color:var(--accent)}
+.drawer-lang-btn i{color:var(--accent)}
+
 /* ===== TAB PANES ===== */
 .tab-content-wrapper{margin-top:56px;min-height:calc(100vh - 160px);position:relative}
 .tab-pane{
@@ -621,6 +649,11 @@ footer .sig{color:var(--muted);margin-top:12px;font-size:.88rem}
   .nav-links a{padding:12px;font-size:.9rem;width:100%}
   .menu-btn{display:grid;place-items:center}
   .nav-creator-btn{display:inline-flex}
+  .nav-lang-drawer-row{display:block}
+}
+@media(max-width:480px){
+  .lang-switch-btn{padding:0 7px;font-size:.72rem}
+  .lang-opt{padding:1px 3px;font-size:.7rem}
 }
 @media(max-width:380px){
   .nav-creator-btn{padding:0 8px;font-size:.72rem;gap:4px}
@@ -825,17 +858,31 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
   </a>
   <ul class="nav-links" id="navLinks">
     <li class="nav-group">Menu</li>
-    <li><a class="nav-tab" data-tab="overview"><i class="fas fa-house"></i><span class="nl"><b>Overview</b><small>What is ZOZ Router</small></span></a></li>
-    <li><a class="nav-tab" data-tab="features"><i class="fas fa-layer-group"></i><span class="nl"><b>Features</b><small>What it can do</small></span></a></li>
-    <li><a class="nav-tab" data-tab="documentation"><i class="fas fa-images"></i><span class="nl"><b>Screenshots</b><small>See the interface</small></span></a></li>
-    <li><a class="nav-tab" data-tab="installation"><i class="fas fa-download"></i><span class="nl"><b>Install</b><small>Set up in minutes</small></span></a></li>
-    <li><a class="nav-tab" data-tab="developer"><i class="fas fa-user-graduate"></i><span class="nl"><b>Creator Profile</b><small>SMKN 1 Pringgabaya, NTB</small></span></a></li>
+    <li><a class="nav-tab" data-tab="overview"><i class="fas fa-house"></i><span class="nl"><b data-i18n="nav_overview">Overview</b><small data-i18n="nav_overview_sub">What is ZOZ Router</small></span></a></li>
+    <li><a class="nav-tab" data-tab="features"><i class="fas fa-layer-group"></i><span class="nl"><b data-i18n="nav_features">Features</b><small data-i18n="nav_features_sub">What it can do</small></span></a></li>
+    <li><a class="nav-tab" data-tab="documentation"><i class="fas fa-images"></i><span class="nl"><b data-i18n="nav_screenshots">Screenshots</b><small data-i18n="nav_screenshots_sub">See the interface</small></span></a></li>
+    <li><a class="nav-tab" data-tab="installation"><i class="fas fa-download"></i><span class="nl"><b data-i18n="nav_install">Install</b><small data-i18n="nav_install_sub">Set up in minutes</small></span></a></li>
+    <li><a class="nav-tab" data-tab="developer"><i class="fas fa-user-graduate"></i><span class="nl"><b data-i18n="nav_creator">Creator Profile</b><small data-i18n="nav_creator_sub">SMKN 1 Pringgabaya, NTB</small></span></a></li>
+    <li class="nav-lang-drawer-row">
+      <button type="button" class="drawer-lang-btn" id="langDrawerBtn" title="Switch Language / Ganti Bahasa">
+        <i class="fas fa-globe"></i>
+        <span id="drawerLangText">Language: English (EN)</span>
+      </button>
+    </li>
   </ul>
   <div class="nav-backdrop" id="navBackdrop"></div>
   <div class="nav-right">
+    <button type="button" class="lang-switch-btn" id="langSwitchBtn" aria-label="Switch Language (EN / ID)" title="Switch Language / Ganti Bahasa">
+      <i class="fas fa-globe"></i>
+      <span class="lang-pill-wrap">
+        <span class="lang-opt active" id="langOptEN">EN</span>
+        <span class="lang-divider">/</span>
+        <span class="lang-opt" id="langOptID">ID</span>
+      </span>
+    </button>
     <button type="button" class="nav-creator-btn" data-tab-target="developer" title="About the creator">
       <i class="fas fa-user-graduate"></i>
-      <span>Creator</span>
+      <span data-i18n="nav_creator_btn">Creator</span>
     </button>
     <button class="menu-btn" id="menuBtn" aria-label="Toggle Navigation"><i class="fas fa-bars"></i></button>
   </div>
@@ -854,7 +901,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
     <!-- HERO HEADER -->
     <header class="hero-box">
       <div class="hero-logo"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" fill="#2ee6a6" aria-hidden="true"><path d="M10 26V12h14M72 12h14v14M10 70v14h14M72 84h14V70" fill="none" stroke="#2ee6a6" stroke-opacity=".55" stroke-width="2"/><rect x="22" y="22" width="52" height="10"/><rect x="54" y="32" width="20" height="10"/><rect x="40" y="42" width="20" height="10"/><rect x="26" y="52" width="20" height="10"/><rect x="22" y="62" width="52" height="10"/></svg></div>
-      <div class="badge"><span class="dot"></span> No versioned release yet</div>
+      <div class="badge" data-i18n="hero_badge"><span class="dot"></span> No versioned release yet</div>
       <h1><span class="grad">ZOZ ROUTER</span></h1>
 
       <!-- TRY ZOZ ROUTER BUTTON -->
@@ -868,15 +915,15 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
             <rect x="22" y="62" width="52" height="10"/>
           </svg>
         </span>
-        <span class="try-label">Try ZOZ Router</span>
+        <span class="try-label" data-i18n="hero_try_label">Try ZOZ Router</span>
         <i class="fas fa-arrow-up-right-from-square try-arrow"></i>
       </a>
 
-      <p class="subtitle">
+      <p class="subtitle" data-i18n="hero_subtitle">
         One dashboard to chat with free <strong>Ollama Cloud</strong> models and paid <strong>OpenRouter</strong> models, plus a full <strong>Windows terminal</strong> in your browser, accessible from your phone via Cloudflare.
       </p>
       
-      <div class="author-pill">
+      <div class="author-pill" data-i18n="hero_author_pill">
         <i class="fas fa-crown" ></i>
         Made by <span class="author-name">Zozi Atul Azimi</span> <span style="color:var(--accent);font-family:var(--mono);font-size:.78rem;font-weight:600;margin-left:4px;">(16, SMK Negeri 1 Pringgabaya, NTB, Indonesia)</span>
         <div class="author-pill-links">
@@ -892,20 +939,20 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
       <div class="brand-strip" aria-label="Z21 Router, Google Antigravity, Google Chrome, and imagination"><div class="brand-track"><div class="brand-cell"><span class="brand-mark"><svg viewBox="22 22 52 50" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true"><rect x="22" y="22" width="52" height="10"/><rect x="54" y="32" width="20" height="10"/><rect x="40" y="42" width="20" height="10"/><rect x="26" y="52" width="20" height="10"/><rect x="22" y="62" width="52" height="10"/></svg></span><span class="brand-word">Z21 <span>ROUTER</span></span></div><div class="brand-cell"><span class="brand-mark brand-ag"><svg viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="5" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="3" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="4" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="5" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="6" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="2" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="3" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="4" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="5" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="6" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="7" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="2" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="3" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="6" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="7" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="1" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="2" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="7" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="8" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="1" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="2" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="7" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="8" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="0" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="0" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="7" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="7" width="1.02" height="1.02" fill="#4a8cf0"/></svg></span><span class="brand-word brand-word-ag">Google Antigravity</span></div><div class="brand-cell"><span class="brand-mark brand-sq"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#ea4335"/><g transform="rotate(120 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#fbbc04"/></g><g transform="rotate(240 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#34a853"/></g><circle cx="24" cy="24" r="11" fill="#fff"/><circle cx="24" cy="24" r="8.2" fill="#4285f4"/></svg></span><span class="brand-word brand-word-ag">Google Chrome</span></div><div class="brand-cell"><span class="brand-mark brand-imagination"><svg viewBox="0 0 240 252" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="234" height="246" rx="52" fill="#0d141e" stroke="#46f8af" stroke-width="4"/><rect x="75" y="43" width="43" height="17" fill="#46f8af"/><rect x="128" y="43" width="38" height="18" fill="#46f8af"/><rect x="53" y="61" width="21" height="24" fill="#46f8af"/><rect x="75" y="61" width="5" height="24" fill="#46f8af"/><rect x="128" y="61" width="16" height="2" fill="#46f8af"/><rect x="160" y="61" width="28" height="24" fill="#46f8af"/><rect x="128" y="63" width="15" height="13" fill="#46f8af"/><rect x="96" y="77" width="22" height="26" fill="#46f8af"/><rect x="160" y="85" width="11" height="17" fill="#46f8af"/><rect x="36" y="86" width="16" height="35" fill="#46f8af"/><rect x="80" y="86" width="15" height="17" fill="#46f8af"/><rect x="127" y="86" width="33" height="35" fill="#46f8af"/><rect x="188" y="86" width="16" height="35" fill="#46f8af"/><rect x="53" y="104" width="16" height="35" fill="#46f8af"/><rect x="171" y="104" width="17" height="35" fill="#46f8af"/><rect x="127" y="121" width="17" height="3" fill="#46f8af"/><rect x="69" y="122" width="49" height="17" fill="#46f8af"/><rect x="154" y="122" width="17" height="35" fill="#46f8af"/><rect x="127" y="124" width="16" height="34" fill="#46f8af"/><rect x="88" y="166" width="64" height="17" fill="#46f8af"/><rect x="95" y="191" width="50" height="17" fill="#46f8af"/></svg></span><span class="brand-word brand-word-imagination">imagination</span></div><div class="brand-cell"><span class="brand-mark"><svg viewBox="22 22 52 50" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true"><rect x="22" y="22" width="52" height="10"/><rect x="54" y="32" width="20" height="10"/><rect x="40" y="42" width="20" height="10"/><rect x="26" y="52" width="20" height="10"/><rect x="22" y="62" width="52" height="10"/></svg></span><span class="brand-word">Z21 <span>ROUTER</span></span></div><div class="brand-cell"><span class="brand-mark brand-ag"><svg viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="5" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="3" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="4" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="5" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="6" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="2" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="3" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="4" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="5" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="6" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="7" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="2" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="3" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="6" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="7" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="1" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="2" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="7" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="8" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="1" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="2" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="7" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="8" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="0" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="0" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="7" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="7" width="1.02" height="1.02" fill="#4a8cf0"/></svg></span><span class="brand-word brand-word-ag">Google Antigravity</span></div><div class="brand-cell"><span class="brand-mark brand-sq"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#ea4335"/><g transform="rotate(120 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#fbbc04"/></g><g transform="rotate(240 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#34a853"/></g><circle cx="24" cy="24" r="11" fill="#fff"/><circle cx="24" cy="24" r="8.2" fill="#4285f4"/></svg></span><span class="brand-word brand-word-ag">Google Chrome</span></div><div class="brand-cell"><span class="brand-mark brand-imagination"><svg viewBox="0 0 240 252" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="234" height="246" rx="52" fill="#0d141e" stroke="#46f8af" stroke-width="4"/><rect x="75" y="43" width="43" height="17" fill="#46f8af"/><rect x="128" y="43" width="38" height="18" fill="#46f8af"/><rect x="53" y="61" width="21" height="24" fill="#46f8af"/><rect x="75" y="61" width="5" height="24" fill="#46f8af"/><rect x="128" y="61" width="16" height="2" fill="#46f8af"/><rect x="160" y="61" width="28" height="24" fill="#46f8af"/><rect x="128" y="63" width="15" height="13" fill="#46f8af"/><rect x="96" y="77" width="22" height="26" fill="#46f8af"/><rect x="160" y="85" width="11" height="17" fill="#46f8af"/><rect x="36" y="86" width="16" height="35" fill="#46f8af"/><rect x="80" y="86" width="15" height="17" fill="#46f8af"/><rect x="127" y="86" width="33" height="35" fill="#46f8af"/><rect x="188" y="86" width="16" height="35" fill="#46f8af"/><rect x="53" y="104" width="16" height="35" fill="#46f8af"/><rect x="171" y="104" width="17" height="35" fill="#46f8af"/><rect x="127" y="121" width="17" height="3" fill="#46f8af"/><rect x="69" y="122" width="49" height="17" fill="#46f8af"/><rect x="154" y="122" width="17" height="35" fill="#46f8af"/><rect x="127" y="124" width="16" height="34" fill="#46f8af"/><rect x="88" y="166" width="64" height="17" fill="#46f8af"/><rect x="95" y="191" width="50" height="17" fill="#46f8af"/></svg></span><span class="brand-word brand-word-imagination">imagination</span></div><div class="brand-cell"><span class="brand-mark"><svg viewBox="22 22 52 50" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true"><rect x="22" y="22" width="52" height="10"/><rect x="54" y="32" width="20" height="10"/><rect x="40" y="42" width="20" height="10"/><rect x="26" y="52" width="20" height="10"/><rect x="22" y="62" width="52" height="10"/></svg></span><span class="brand-word">Z21 <span>ROUTER</span></span></div><div class="brand-cell"><span class="brand-mark brand-ag"><svg viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="5" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="3" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="4" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="5" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="6" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="2" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="3" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="4" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="5" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="6" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="7" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="2" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="3" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="6" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="7" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="1" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="2" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="7" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="8" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="1" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="2" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="7" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="8" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="0" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="0" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="7" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="7" width="1.02" height="1.02" fill="#4a8cf0"/></svg></span><span class="brand-word brand-word-ag">Google Antigravity</span></div><div class="brand-cell"><span class="brand-mark brand-sq"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#ea4335"/><g transform="rotate(120 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#fbbc04"/></g><g transform="rotate(240 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#34a853"/></g><circle cx="24" cy="24" r="11" fill="#fff"/><circle cx="24" cy="24" r="8.2" fill="#4285f4"/></svg></span><span class="brand-word brand-word-ag">Google Chrome</span></div><div class="brand-cell"><span class="brand-mark brand-imagination"><svg viewBox="0 0 240 252" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="234" height="246" rx="52" fill="#0d141e" stroke="#46f8af" stroke-width="4"/><rect x="75" y="43" width="43" height="17" fill="#46f8af"/><rect x="128" y="43" width="38" height="18" fill="#46f8af"/><rect x="53" y="61" width="21" height="24" fill="#46f8af"/><rect x="75" y="61" width="5" height="24" fill="#46f8af"/><rect x="128" y="61" width="16" height="2" fill="#46f8af"/><rect x="160" y="61" width="28" height="24" fill="#46f8af"/><rect x="128" y="63" width="15" height="13" fill="#46f8af"/><rect x="96" y="77" width="22" height="26" fill="#46f8af"/><rect x="160" y="85" width="11" height="17" fill="#46f8af"/><rect x="36" y="86" width="16" height="35" fill="#46f8af"/><rect x="80" y="86" width="15" height="17" fill="#46f8af"/><rect x="127" y="86" width="33" height="35" fill="#46f8af"/><rect x="188" y="86" width="16" height="35" fill="#46f8af"/><rect x="53" y="104" width="16" height="35" fill="#46f8af"/><rect x="171" y="104" width="17" height="35" fill="#46f8af"/><rect x="127" y="121" width="17" height="3" fill="#46f8af"/><rect x="69" y="122" width="49" height="17" fill="#46f8af"/><rect x="154" y="122" width="17" height="35" fill="#46f8af"/><rect x="127" y="124" width="16" height="34" fill="#46f8af"/><rect x="88" y="166" width="64" height="17" fill="#46f8af"/><rect x="95" y="191" width="50" height="17" fill="#46f8af"/></svg></span><span class="brand-word brand-word-imagination">imagination</span></div><div class="brand-cell"><span class="brand-mark"><svg viewBox="22 22 52 50" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true"><rect x="22" y="22" width="52" height="10"/><rect x="54" y="32" width="20" height="10"/><rect x="40" y="42" width="20" height="10"/><rect x="26" y="52" width="20" height="10"/><rect x="22" y="62" width="52" height="10"/></svg></span><span class="brand-word">Z21 <span>ROUTER</span></span></div><div class="brand-cell"><span class="brand-mark brand-ag"><svg viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="5" y="0" width="1.02" height="1.02" fill="#f47a3a"/><rect x="3" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="4" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="5" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="6" y="1" width="1.02" height="1.02" fill="#f58a3c"/><rect x="2" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="3" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="4" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="5" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="6" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="7" y="2" width="1.02" height="1.02" fill="#f0a040"/><rect x="2" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="3" y="3" width="1.02" height="1.02" fill="#7fc35a"/><rect x="6" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="7" y="3" width="1.02" height="1.02" fill="#9a78d0"/><rect x="1" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="2" y="4" width="1.02" height="1.02" fill="#4cc26b"/><rect x="7" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="8" y="4" width="1.02" height="1.02" fill="#8a70d6"/><rect x="1" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="2" y="5" width="1.02" height="1.02" fill="#44bfa0"/><rect x="7" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="8" y="5" width="1.02" height="1.02" fill="#6a80e6"/><rect x="0" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="6" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="6" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="0" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="1" y="7" width="1.02" height="1.02" fill="#3f9ae8"/><rect x="8" y="7" width="1.02" height="1.02" fill="#4a8cf0"/><rect x="9" y="7" width="1.02" height="1.02" fill="#4a8cf0"/></svg></span><span class="brand-word brand-word-ag">Google Antigravity</span></div><div class="brand-cell"><span class="brand-mark brand-sq"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#ea4335"/><g transform="rotate(120 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#fbbc04"/></g><g transform="rotate(240 24 24)"><path d="M24 2A22 22 0 0 1 43.05 13H24A11 11 0 0 0 14.47 18.5L4.95 13A22 22 0 0 1 24 2Z" fill="#34a853"/></g><circle cx="24" cy="24" r="11" fill="#fff"/><circle cx="24" cy="24" r="8.2" fill="#4285f4"/></svg></span><span class="brand-word brand-word-ag">Google Chrome</span></div><div class="brand-cell"><span class="brand-mark brand-imagination"><svg viewBox="0 0 240 252" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="234" height="246" rx="52" fill="#0d141e" stroke="#46f8af" stroke-width="4"/><rect x="75" y="43" width="43" height="17" fill="#46f8af"/><rect x="128" y="43" width="38" height="18" fill="#46f8af"/><rect x="53" y="61" width="21" height="24" fill="#46f8af"/><rect x="75" y="61" width="5" height="24" fill="#46f8af"/><rect x="128" y="61" width="16" height="2" fill="#46f8af"/><rect x="160" y="61" width="28" height="24" fill="#46f8af"/><rect x="128" y="63" width="15" height="13" fill="#46f8af"/><rect x="96" y="77" width="22" height="26" fill="#46f8af"/><rect x="160" y="85" width="11" height="17" fill="#46f8af"/><rect x="36" y="86" width="16" height="35" fill="#46f8af"/><rect x="80" y="86" width="15" height="17" fill="#46f8af"/><rect x="127" y="86" width="33" height="35" fill="#46f8af"/><rect x="188" y="86" width="16" height="35" fill="#46f8af"/><rect x="53" y="104" width="16" height="35" fill="#46f8af"/><rect x="171" y="104" width="17" height="35" fill="#46f8af"/><rect x="127" y="121" width="17" height="3" fill="#46f8af"/><rect x="69" y="122" width="49" height="17" fill="#46f8af"/><rect x="154" y="122" width="17" height="35" fill="#46f8af"/><rect x="127" y="124" width="16" height="34" fill="#46f8af"/><rect x="88" y="166" width="64" height="17" fill="#46f8af"/><rect x="95" y="191" width="50" height="17" fill="#46f8af"/></svg></span><span class="brand-word brand-word-imagination">imagination</span></div></div></div>
 
       <div class="engine-tags">
-        <button type="button" class="engine-tag tag-ollama" data-docs="0,10,11" title="See related screenshots"><i class="fas fa-hippo"></i> Ollama Cloud — free models <i class="fas fa-arrow-right tag-go"></i></button>
-        <button type="button" class="engine-tag tag-or" data-docs="0,3,10" title="See related screenshots"><i class="fas fa-bolt"></i> OpenRouter — paid credits <i class="fas fa-arrow-right tag-go"></i></button>
-        <button type="button" class="engine-tag tag-pty" data-docs="5,7,14" title="See related screenshots"><i class="fas fa-terminal"></i> Windows terminal (ConPTY) <i class="fas fa-arrow-right tag-go"></i></button>
-        <button type="button" class="engine-tag tag-tunnel" data-docs="6,11,14" title="See related screenshots"><i class="fas fa-cloud"></i> Remote access via Cloudflare <i class="fas fa-arrow-right tag-go"></i></button>
+        <button type="button" class="engine-tag tag-ollama" data-docs="0,10,11" title="See related screenshots" data-i18n="hero_tag_ollama"><i class="fas fa-hippo"></i> Ollama Cloud — free models <i class="fas fa-arrow-right tag-go"></i></button>
+        <button type="button" class="engine-tag tag-or" data-docs="0,3,10" title="See related screenshots" data-i18n="hero_tag_openrouter"><i class="fas fa-bolt"></i> OpenRouter — paid credits <i class="fas fa-arrow-right tag-go"></i></button>
+        <button type="button" class="engine-tag tag-pty" data-docs="5,7,14" title="See related screenshots" data-i18n="hero_tag_conpty"><i class="fas fa-terminal"></i> Windows terminal (ConPTY) <i class="fas fa-arrow-right tag-go"></i></button>
+        <button type="button" class="engine-tag tag-tunnel" data-docs="6,11,14" title="See related screenshots" data-i18n="hero_tag_cloudflare"><i class="fas fa-cloud"></i> Remote access via Cloudflare <i class="fas fa-arrow-right tag-go"></i></button>
       </div>
 
       <div class="cta-group">
-        <a href="https://github.com/Zozi0999/zoz_router" target="_blank" class="btn btn-github">
+        <a href="https://github.com/Zozi0999/zoz_router" target="_blank" class="btn btn-github" data-i18n="hero_btn_gh">
           <i class="fab fa-github"></i> View on GitHub
         </a>
-        <button class="btn btn-primary" data-tab-target="installation">
+        <button class="btn btn-primary" data-tab-target="installation" data-i18n="hero_btn_install">
           <i class="fas fa-download"></i> How to Install
         </button>
-        <button class="btn btn-ghost" data-tab-target="features">
+        <button class="btn btn-ghost" data-tab-target="features" data-i18n="hero_btn_features">
           <i class="fas fa-compass"></i> See Features
         </button>
       </div>
@@ -951,17 +998,17 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
 
     <div class="about-grid">
       <div class="about-card">
-        <h3><i class="fas fa-circle-nodes"></i> TWO TIERS OF CLOUD AI</h3>
-        <p><strong>ZOZ ROUTER</strong> is a personal project by <strong>Zozi Atul Azimi</strong>. He wanted one place to use free and paid AI models side by side, and to control his own computer from the same screen.</p>
-        <p>🦙 <strong>Ollama Cloud (free):</strong> Open models hosted in the cloud. They cost nothing and don't use your computer's CPU or GPU.</p>
-        <p>⚡ <strong>OpenRouter (paid credits):</strong> Hundreds of models, including the big commercial ones. You only pay for what you use, so they're available whenever a task needs more reasoning power.</p>
-        <p>💻 <strong>Terminal and remote access:</strong> A full Windows terminal inside the browser. You can open it from your phone through a Cloudflare tunnel, protected by a 6-digit PIN.</p>
+        <h3 data-i18n="about_heading"><i class="fas fa-circle-nodes"></i> TWO TIERS OF CLOUD AI</h3>
+        <p data-i18n="about_p1"><strong>ZOZ ROUTER</strong> is a personal project by <strong>Zozi Atul Azimi</strong>. He wanted one place to use free and paid AI models side by side, and to control his own computer from the same screen.</p>
+        <p data-i18n="about_p2">🦙 <strong>Ollama Cloud (free):</strong> Open models hosted in the cloud. They cost nothing and don't use your computer's CPU or GPU.</p>
+        <p data-i18n="about_p3">⚡ <strong>OpenRouter (paid credits):</strong> Hundreds of models, including the big commercial ones. You only pay for what you use, so they're available whenever a task needs more reasoning power.</p>
+        <p data-i18n="about_p4">💻 <strong>Terminal and remote access:</strong> A full Windows terminal inside the browser. You can open it from your phone through a Cloudflare tunnel, protected by a 6-digit PIN.</p>
       </div>
       <div class="stats">
-        <div class="stat"><span class="num">2</span><span class="lbl">AI Providers</span></div>
-        <div class="stat"><span class="num">405</span><span class="lbl">UI Health Checks</span></div>
-        <div class="stat"><span class="num">Free</span><span class="lbl">Ollama Cloud Models</span></div>
-        <div class="stat"><span class="num">Live</span><span class="lbl">human imaginations version</span></div>
+        <div class="stat"><span class="num">2</span><span class="lbl" data-i18n="stat_lbl_or">AI Providers</span></div>
+        <div class="stat"><span class="num">405</span><span class="lbl" data-i18n="stat_lbl_tabs">UI Health Checks</span></div>
+        <div class="stat"><span class="num">Free</span><span class="lbl" data-i18n="stat_lbl_free">Ollama Cloud Models</span></div>
+        <div class="stat"><span class="num">Live</span><span class="lbl" data-i18n="stat_lbl_live">human imaginations version</span></div>
       </div>
     </div>
 
@@ -989,58 +1036,58 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
   <!-- ===================================================================== -->
   <div class="tab-pane" id="tab-features">
     <div class="sec-head">
-      <span class="kicker">// Features</span>
-      <h2>WHAT IT CAN DO</h2>
-      <p>The main parts of ZOZ ROUTER and what each one is for.</p>
+      <span class="kicker" data-i18n="feat_kicker">// Features</span>
+      <h2 data-i18n="feat_title">WHAT IT CAN DO</h2>
+      <p data-i18n="feat_desc">The main parts of ZOZ ROUTER and what each one is for.</p>
     </div>
 
     <div class="feat-grid">
       <div class="feat">
         <div class="ico i-cyan"><i class="fas fa-terminal"></i></div>
-        <h4>Built-in Terminal</h4>
-        <p>A real Windows terminal (ConPTY through <code>node-pty</code>) streamed to the browser over SSE. It supports multiple tabs and a split view where the pane under your mouse gets focus automatically, so you don't have to click back and forth. Your sessions stay intact when you switch tabs.</p>
+        <h4 data-i18n="feat_1_title">Built-in Terminal</h4>
+        <p data-i18n="feat_1_desc">A real Windows terminal (ConPTY through <code>node-pty</code>) streamed to the browser over SSE. It supports multiple tabs and a split view where the pane under your mouse gets focus automatically, so you don't have to click back and forth. Your sessions stay intact when you switch tabs.</p>
         <span class="feat-tag">ConPTY • SSE • xterm.js</span>
       </div>
 
       <div class="feat">
         <div class="ico i-amber"><i class="fas fa-cloud"></i></div>
-        <h4>Remote Access with Cloudflare</h4>
-        <p>Use your laptop at home from your phone, wherever you are. ZOZ ROUTER starts <code>cloudflared</code> for you, locks the session with a 6-digit PIN, and pairs your phone when you scan a QR code. On mobile you also get a touch keybar (with vibration feedback) for keys like Ctrl, Tab and the arrows.</p>
+        <h4 data-i18n="feat_2_title">Remote Access with Cloudflare</h4>
+        <p data-i18n="feat_2_desc">Use your laptop at home from your phone, wherever you are. ZOZ ROUTER starts <code>cloudflared</code> for you, locks the session with a 6-digit PIN, and pairs your phone when you scan a QR code. On mobile you also get a touch keybar (with vibration feedback) for keys like Ctrl, Tab and the arrows.</p>
         <span class="feat-tag">Phone to PC • PIN lock</span>
       </div>
 
       <div class="feat">
         <div class="ico i-green"><i class="fas fa-dna"></i></div>
-        <h4>BioEndocrine Self-Check v2</h4>
-        <p>A background checker that keeps the interface working. It runs 405 checks on the page, catches model API errors, cleans up garbled text (mojibake) and leaked tags, stops the layout from spilling off the screen, and fixes buttons that end up hidden behind other elements.</p>
+        <h4 data-i18n="feat_3_title">BioEndocrine Self-Check v2</h4>
+        <p data-i18n="feat_3_desc">A background checker that keeps the interface working. It runs 405 checks on the page, catches model API errors, cleans up garbled text (mojibake) and leaked tags, stops the layout from spilling off the screen, and fixes buttons that end up hidden behind other elements.</p>
         <span class="feat-tag">5 check areas • Auto-fix</span>
       </div>
 
       <div class="feat">
         <div class="ico i-purple"><i class="fas fa-palette"></i></div>
-        <h4>Canvas</h4>
-        <p>A scratchpad for trying out HTML, CSS, SVG, Mermaid diagrams and small JavaScript widgets. The code runs in a sandbox and the preview updates right away. You can keep several scratch files open in tabs.</p>
+        <h4 data-i18n="feat_4_title">Canvas</h4>
+        <p data-i18n="feat_4_desc">A scratchpad for trying out HTML, CSS, SVG, Mermaid diagrams and small JavaScript widgets. The code runs in a sandbox and the preview updates right away. You can keep several scratch files open in tabs.</p>
         <span class="feat-tag">Live preview • Sandbox</span>
       </div>
 
       <div class="feat">
         <div class="ico i-magenta"><i class="fas fa-globe"></i></div>
-        <h4>Deep Research (Custom URLs)</h4>
-        <p>A research agent that searches several sources, reads the pages you point it to, collects citations, and writes everything up as a Markdown report.</p>
+        <h4 data-i18n="feat_5_title">Deep Research (Custom URLs)</h4>
+        <p data-i18n="feat_5_desc">A research agent that searches several sources, reads the pages you point it to, collects citations, and writes everything up as a Markdown report.</p>
         <span class="feat-tag">Multiple sources • Citations</span>
       </div>
 
       <div class="feat">
         <div class="ico i-cyan"><i class="fas fa-keyboard"></i></div>
-        <h4>Auto Enter for AI CLIs</h4>
-        <p>Spots confirmation prompts from AI coding tools like Claude Code, Gemini CLI and Antigravity CLI (for example <code>[Y/n]</code>, <code>Accept file edit?</code> or <code>Allow creation?</code>) and answers them for you, so long jobs don't stall waiting for a keypress.</p>
+        <h4 data-i18n="feat_6_title">Auto Enter for AI CLIs</h4>
+        <p data-i18n="feat_6_desc">Spots confirmation prompts from AI coding tools like Claude Code, Gemini CLI and Antigravity CLI (for example <code>[Y/n]</code>, <code>Accept file edit?</code> or <code>Allow creation?</code>) and answers them for you, so long jobs don't stall waiting for a keypress.</p>
         <span class="feat-tag">Auto Enter • Hands-free</span>
       </div>
 
       <div class="feat">
         <div class="ico i-green"><i class="fas fa-bolt"></i></div>
-        <h4>Built-in Slash Commands</h4>
-        <p>Quick commands you can run right from the chat: <code>/website</code> builds landing pages, interactive simulators, games, or Three.js 3D scenes with a live preview; <code>/dokumen</code> writes reports, papers, and proposals ready to download as PDF or Word (<code>.docx</code>); <code>/deep-research</code> reads and compares facts from custom URLs you give it; and <code>/web-search</code> runs real-time Google searches with a short, clear summary.</p>
+        <h4 data-i18n="feat_7_title">Built-in Slash Commands</h4>
+        <p data-i18n="feat_7_desc">Quick commands you can run right from the chat: <code>/website</code> builds landing pages, interactive simulators, games, or Three.js 3D scenes with a live preview; <code>/dokumen</code> writes reports, papers, and proposals ready to download as PDF or Word (<code>.docx</code>); <code>/deep-research</code> reads and compares facts from custom URLs you give it; and <code>/web-search</code> runs real-time Google searches with a short, clear summary.</p>
         <span class="feat-tag">/website • /dokumen • /deep-research • /web-search</span>
       </div>
     </div>
@@ -1073,9 +1120,9 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
   <!-- ===================================================================== -->
   <div class="tab-pane" id="tab-documentation">
     <div class="sec-head">
-      <span class="kicker">// Screenshots</span>
-      <h2>A LOOK AT THE INTERFACE</h2>
-      <p>15 screenshots from desktop and mobile: the main chat, file uploads, creative tools, the split terminal, and remote access from a phone running Ollama Cloud models. Click any image to see it full size.</p>
+      <span class="kicker" data-i18n="doc_kicker">// Screenshots</span>
+      <h2 data-i18n="doc_title">A LOOK AT THE INTERFACE</h2>
+      <p data-i18n="doc_sub">15 screenshots from desktop and mobile: the main chat, file uploads, creative tools, the split terminal, and remote access from a phone running Ollama Cloud models. Click any image to see it full size.</p>
     </div>
 
     <!-- DOCUMENTATION SCREENSHOT GALLERY GRID -->
@@ -1396,9 +1443,9 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
   <!-- ===================================================================== -->
   <div class="tab-pane" id="tab-installation">
     <div class="sec-head">
-      <span class="kicker">// Setup &amp; Deployment</span>
-      <h2>HOW TO INSTALL &amp; RUN</h2>
-      <p>Clone the repository, install the dependencies, and start the server. It only takes a few minutes.</p>
+      <span class="kicker" data-i18n="install_kicker">// Setup &amp; Deployment</span>
+      <h2 data-i18n="install_title">HOW TO INSTALL &amp; RUN</h2>
+      <p data-i18n="install_sub">Clone the repository, install the dependencies, and start the server. It only takes a few minutes.</p>
     </div>
 
     <div class="install-container">
@@ -1517,9 +1564,9 @@ start.bat</pre>
   <!-- ===================================================================== -->
   <div class="tab-pane" id="tab-developer">
     <div class="sec-head">
-      <span class="kicker">// Personal Profile &amp; Learning Journey</span>
-      <h2>MEET ZOZI ATUL AZIMI</h2>
-      <p>A 16-year-old student from SMK Negeri 1 Pringgabaya, Nusa Tenggara Barat, Indonesia, who combines relentless self-taught learning across modern platforms (Google Skills, Microsoft Learn, LinkedIn Learning, Dicoding) with heartfelt gratitude to the teachers who guide him.</p>
+      <span class="kicker" data-i18n="creator_kicker">// Personal Profile &amp; Learning Journey</span>
+      <h2 data-i18n="creator_title">MEET ZOZI ATUL AZIMI</h2>
+      <p data-i18n="creator_sub">A 16-year-old vocational student from SMK Negeri 1 Pringgabaya, Nusa Tenggara Barat, Indonesia, who combines relentless self-taught learning across modern platforms (Google Skills, Microsoft Learn, LinkedIn Learning, Dicoding) with heartfelt gratitude to the teachers who guide him.</p>
     </div>
 
     <div class="dev-section">
@@ -1529,11 +1576,11 @@ start.bat</pre>
             <img src="zoz.png" alt="Zozi Atul Azimi" class="avatar-img">
           </div>
         </div>
-        <span class="kicker">// The Mind &amp; Learning Habit</span>
+        <span class="kicker" data-i18n="creator_mind_kicker">// The Mind &amp; Learning Habit</span>
         <h2>ZOZI ATUL AZIMI</h2>
-        <div class="alias">⌁ SMKN 1 PRINGGABAYA · NUSA TENGGARA BARAT · BELAJAR OTODIDAK ⌁</div>
-        <p class="desc">
-          Meet <strong>Zozi Atul Azimi</strong>, a 16-year-old vocational student at <strong>SMK Negeri 1 Pringgabaya</strong> in <strong>Nusa Tenggara Barat (NTB), Indonesia</strong>. His daily life is defined by a true passion for <strong>belajar otodidak (self-taught learning)</strong>: every single day, he studies documentation and actively follows online courses across premier platforms like <strong>Google Skills</strong>, <strong>Microsoft Learn</strong>, <strong>LinkedIn Learning</strong>, and <strong>Dicoding</strong>. While continuously exploring technology on his laptop, Zozi holds the highest respect and gratitude for his teachers at <strong>SMK Negeri 1 Pringgabaya</strong>, whose guidance, values, and dedication have provided the foundation for his journey.
+        <div class="alias" data-i18n="creator_alias">⌁ SMKN 1 PRINGGABAYA · NUSA TENGGARA BARAT · SELF-TAUGHT LEARNER ⌁</div>
+        <p class="desc" data-i18n="creator_desc">
+          Meet <strong>Zozi Atul Azimi</strong>, a 16-year-old vocational student at <strong>SMK Negeri 1 Pringgabaya</strong> in <strong>Nusa Tenggara Barat (NTB), Indonesia</strong>. His daily life is defined by a true passion for <strong>self-taught learning (belajar otodidak)</strong>: every single day, he studies documentation and actively follows online courses across premier platforms like <strong>Google Skills</strong>, <strong>Microsoft Learn</strong>, <strong>LinkedIn Learning</strong>, and <strong>Dicoding</strong>. While continuously exploring technology on his laptop, Zozi holds the highest respect and gratitude for his teachers at <strong>SMK Negeri 1 Pringgabaya</strong>, whose guidance, values, and dedication have provided the foundation for his journey.
         </p>
 
         <!-- OFFICIAL LINKS WITH LINKEDIN & GITHUB -->
@@ -1555,8 +1602,8 @@ start.bat</pre>
         <div class="dev-chips">
           <span class="chip"><i class="fas fa-school"></i> SMK Negeri 1 Pringgabaya</span>
           <span class="chip"><i class="fas fa-location-dot"></i> Nusa Tenggara Barat, Indonesia</span>
-          <span class="chip"><i class="fas fa-chalkboard-user"></i> Penghormatan Guru SMKN 1</span>
-          <span class="chip"><i class="fas fa-book-open-reader"></i> Belajar Otodidak Setiap Hari</span>
+          <span class="chip"><i class="fas fa-chalkboard-user"></i> <span data-i18n="chip_tribute">Tribute to SMKN 1 Teachers</span></span>
+          <span class="chip"><i class="fas fa-book-open-reader"></i> <span data-i18n="chip_otodidak">Daily Self-Taught Learner</span></span>
           <span class="chip"><i class="fab fa-google"></i> Google Skills</span>
           <span class="chip"><i class="fab fa-microsoft"></i> Microsoft Learn</span>
           <span class="chip"><i class="fab fa-linkedin"></i> LinkedIn Learning</span>
@@ -1566,36 +1613,36 @@ start.bat</pre>
         <!-- PROFILE STORY CARD: ZOZI'S DAILY HABITS & TEACHER TRIBUTE -->
         <div class="creator-story-box">
           <div class="csb-item">
-            <h4><i class="fas fa-chalkboard-user"></i> Penghormatan Penuh untuk Guru SMK Negeri 1 Pringgabaya</h4>
-            <p>
-              Di balik setiap pemahaman dan kemampuan teknis yang dimiliki Zozi hari ini, ada rasa hormat dan terima kasih yang tak terhingga kepada <strong>Bapak dan Ibu Guru di SMK Negeri 1 Pringgabaya</strong>. Bimbingan, dedikasi, kesabaran, dan ilmu dasar yang ditanamkan oleh para guru di sekolah menjadi pondasi moral dan intelektual yang membakar semangatnya untuk terus melangkah maju.
+            <h4><i class="fas fa-chalkboard-user"></i> <span data-i18n="story_c1_h">Heartfelt Tribute to the Teachers of SMK Negeri 1 Pringgabaya</span></h4>
+            <p data-i18n="story_c1_p">
+              Behind all the technical understanding and skills Zozi has developed today, there is boundless respect and gratitude for the teachers at <strong>SMK Negeri 1 Pringgabaya</strong>. Their mentorship, dedication, patience, and the foundational knowledge instilled in school formed the moral and intellectual bedrock that drives his passion forward.
             </p>
           </div>
 
           <div class="csb-item">
-            <h4><i class="fas fa-laptop-code"></i> Belajar Otodidak: Menjelajahi Platform Edukasi Terkemuka</h4>
-            <p>
-              Zozi adalah pembelajar otodidak sejati. Selain materi sekolah, kebiasaan hariannya adalah menyelami platform pembelajaran online terkemuka—menyelesaikan modul dan membaca materi di <strong>Google Skills</strong>, <strong>Microsoft Learn</strong>, <strong>LinkedIn Learning</strong>, dan <strong>Dicoding</strong>. Baginya, membaca dokumentasi resmi dan materi kurikulum industri adalah cara terbaik memahami standar teknologi dunia.
+            <h4><i class="fas fa-laptop-code"></i> <span data-i18n="story_c2_h">Self-Taught Mastery: Exploring Premier Online Learning Platforms</span></h4>
+            <p data-i18n="story_c2_p">
+              Zozi is a true self-taught learner (otodidak). Alongside his vocational school lessons, his daily routine is to explore leading online learning platforms—completing modules and studying material on <strong>Google Skills</strong>, <strong>Microsoft Learn</strong>, <strong>LinkedIn Learning</strong>, and <strong>Dicoding</strong>. For him, reading official documentation and industry curriculums is the best way to understand world-class technology standards.
             </p>
           </div>
 
           <div class="csb-item">
-            <h4><i class="fas fa-book-open-reader"></i> Ritme Harian: Belajar dan Terus Belajar Tanpa Henti</h4>
-            <p>
-              Bagi Zozi, belajar bukan sekadar kewajiban melainkan kebutuhan harian. Di saat banyak remaja seusianya menghabiskan waktu luang untuk game atau media sosial, rutinitas harian Zozi di Pringgabaya adalah membuka laptop, membaca dokumentasi, mempraktikkan materi kursus yang baru dipelajari, dan mengulang kembali sampai benar-benar paham.
+            <h4><i class="fas fa-book-open-reader"></i> <span data-i18n="story_c3_h">Daily Rhythm: Studying and Learning Without End</span></h4>
+            <p data-i18n="story_c3_p">
+              For Zozi, learning is not an obligation, but a daily necessity. While many teenagers his age spend their free hours on gaming or social media, Zozi's daily habit in Pringgabaya is opening his laptop, studying documentation, putting newly learned course material into practice, and repeating until he truly masters it.
             </p>
           </div>
 
           <div class="csb-item">
-            <h4><i class="fas fa-flask"></i> Praktik Langsung di Laptop: Dari Teori Menjadi Pemahaman Nyata</h4>
-            <p>
-              Setiap konsep yang dipelajari dari Google Skills, Microsoft Learn, Dicoding, maupun guru-gurunya selalu diuji langsung melalui eksperimen kode di laptop. Zozi tidak pernah puas hanya dengan membaca teori; ia selalu menulis kode, menganalisis eror, dan membedah logika sampai mendapatkan pemahaman mendalam secara mandiri.
+            <h4><i class="fas fa-flask"></i> <span data-i18n="story_c4_h">Hands-On Laptop Practice: Turning Theory into Working Knowledge</span></h4>
+            <p data-i18n="story_c4_p">
+              Every concept learned from Google Skills, Microsoft Learn, Dicoding, or his teachers is immediately tested through code experiments on his laptop. Zozi is never satisfied with passive reading alone; he writes code, analyzes errors, and dissects logic until he gains deep firsthand understanding.
             </p>
           </div>
 
           <div class="csb-quote">
-            <p>"Belajar otodidak melalui platform seperti Google Skills, Microsoft Learn, LinkedIn Learning, dan Dicoding membuka cakrawala ilmu saya seluas-luasnya. Namun yang paling utama, rasa hormat dan terima kasih mendalam saya haturkan untuk Bapak dan Ibu Guru di SMK Negeri 1 Pringgabaya yang telah mendidik, membimbing, dan memberikan bekal ilmu yang sangat berharga bagi masa depan saya."</p>
-            <span>&mdash; <strong>Zozi Atul Azimi</strong>, Siswa SMK Negeri 1 Pringgabaya, Nusa Tenggara Barat</span>
+            <p data-i18n="creator_quote">"Learning independently through platforms like Google Skills, Microsoft Learn, LinkedIn Learning, and Dicoding has opened up a world of knowledge. But above all, I offer my deepest respect and gratitude to the teachers at SMK Negeri 1 Pringgabaya who have educated, guided, and given me invaluable knowledge for my future."</p>
+            <span data-i18n="creator_quote_cite">&mdash; <strong>Zozi Atul Azimi</strong>, Student at SMK Negeri 1 Pringgabaya, Nusa Tenggara Barat</span>
           </div>
         </div>
 
@@ -2012,6 +2059,69 @@ const docItems = [
   }
 ];
 
+const docTranslations_id = [
+  {
+    title: "DOC #01 — Dashboard Utama",
+    desc: "Layar chat utama. Ganti model secara instan (Gemini 2.5 Flash, model gratis Ollama Cloud, model OpenRouter), lihat statistik sesi dan status engine secara sekilas, dan buka sidebar untuk fitur lainnya."
+  },
+  {
+    title: "DOC #02 — Unggah File & Foto",
+    desc: "Menu lampiran multi-modal. Ambil foto dengan kamera hardware (Ambil Foto), pilih dari galeri sistem (Galeri Foto), atau sematkan file kode dan dokumen (Dokumen & File) agar dapat dibaca oleh model AI."
+  },
+  {
+    title: "DOC #03 — Creative AI Tools Terintegrasi",
+    desc: "Alat kreatif langsung dari kotak input pesan: buat gambar AI (Buat Gambar AI), edit foto dengan img2img (Edit Foto Img2Img), buat musik AI (Buat Musik AI), dan cari referensi YouTube."
+  },
+  {
+    title: "DOC #04 — Perintah Slash (Skills)",
+    desc: "Ketik / untuk memanggil skill: /website untuk membuat landing page web interaktif, /dokumen untuk ekspor file PDF/Word, /deep-research untuk riset multi-sumber, dan /autonomous untuk alur agen otonom."
+  },
+  {
+    title: "DOC #05 — Opsi Format Output Website",
+    desc: "Saat AI membangun website, Anda memilih cara penyajian: buka sebagai pratinjau langsung di sandbox (File Siap Pratinjau), atau tampilkan kode sumber di percakapan (Tampilkan Kode di Percakapan)."
+  },
+  {
+    title: "DOC #06 — Terminal Web ConPTY",
+    desc: "Terminal Windows asli (ConPTY) di dalam browser via Server-Sent Events. Memiliki multi-tab, ukuran font yang dapat diatur, sinkronisasi (Auto Y, Win Sync), dan tombol pemicu remote tunnel tanpa macet."
+  },
+  {
+    title: "DOC #07 — Akses Jarak Jauh & PIN Gate",
+    desc: "Mengaktifkan tunnel Cloudflare (HTTPS/WSS) sehingga Anda dapat mengakses komputer rumah dari mana saja. Sesi diamankan dengan PIN 6 digit dan pairing via pemindaian kode QR di ponsel."
+  },
+  {
+    title: "DOC #08 — Split Terminal Ganda",
+    desc: "Jalankan dua sesi PowerShell berdampingan. Panel di bawah kursor otomatis mendapatkan fokus, panel aktif memiliki bingkai menyala, dan kedua sesi tetap berjalan di latar belakang."
+  },
+  {
+    title: "DOC #09 — Pratinjau Web Langsung di Chat",
+    desc: "Website yang dibuat oleh AI tampil langsung di dalam aliran percakapan sebagai pratinjau interaktif, lengkap dengan tombol Live Preview, Ekspor, Bagikan, dan terminal yang tersemat di bawahnya."
+  },
+  {
+    title: "DOC #10 — Web Studio Layar Penuh",
+    desc: "Ruang kerja luas untuk pengembangan web. Periksa kode sumber (</> Kode), uji tata letak (Pratinjau), konsultasikan revisi dengan AI (Tanya AI), ekspor berkas, dan pantau via terminal."
+  },
+  {
+    title: "DOC #11 — Katalog Model & Saldo OpenRouter",
+    desc: "Jelajahi model langsung dari API provider. Beralih antara Ollama Cloud (31 model gratis) dan OpenRouter (464 model berbayar), pantau saldo kredit OpenRouter, dan filter berdasarkan kategori."
+  },
+  {
+    title: "DOC #12 — Chat Mobile dengan Gemma",
+    desc: "ZOZ ROUTER di layar ponsel via akses jarak jauh, berinteraksi dengan Gemma 4:31b di Ollama Cloud. Menampilkan kecepatan generasi (1.18 s, 29.7 token/detik) dengan navigasi ramah jempol."
+  },
+  {
+    title: "DOC #13 — Perintah Slash di Ponsel",
+    desc: "Menu skill yang dioptimalkan untuk sentuhan ponsel: /website untuk landing page, /dokumen untuk laporan, /deep-research untuk URL kustom, /web-search untuk Google, dan /gambar untuk Flux/SDXL."
+  },
+  {
+    title: "DOC #14 — Kamera & Unggahan di Mobile",
+    desc: "Laci lampiran di ponsel: ambil foto langsung dari kamera (Ambil Foto), pilih dari galeri ponsel (Galeri Foto), atau lampirkan skrip, JSON, dan dokumen ke dalam percakapan."
+  },
+  {
+    title: "DOC #15 — Terminal Mobile & Touch Keybar",
+    desc: "Terminal Windows PowerShell berjalan di browser ponsel. Beralih antar-tab dan gunakan Touch Keybar untuk tombol penting: ESC, TAB, CTRL, ALT, tombol panah, ^C, ^L, Auto Y, dan Paste."
+  }
+];
+
 function openLightbox(index) {
   const doc = docItems[index];
   if (!doc) return;
@@ -2021,10 +2131,16 @@ function openLightbox(index) {
   const desc = document.getElementById('lightboxDesc');
 
   if (img && title && desc && modal) {
+    const curLang = localStorage.getItem('zoz_lang') || 'en';
+    const isId = curLang === 'id';
+    const docId = (isId && docTranslations_id[index]) ? docTranslations_id[index] : null;
+    const finalTitle = docId ? docId.title : doc.title;
+    const finalDesc = docId ? docId.desc : doc.desc;
+
     img.src = doc.src;
-    img.alt = doc.title;
-    title.innerHTML = '<i class="fas fa-image"></i> ' + doc.title;
-    desc.textContent = doc.desc;
+    img.alt = finalTitle;
+    title.innerHTML = '<i class="fas fa-image"></i> ' + finalTitle;
+    desc.textContent = finalDesc;
 
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -2298,6 +2414,257 @@ window.addEventListener('keydown', (e) => {
       closeTryModal();
     }
   });
+})();
+
+// =========================================================================
+// 7. BILINGUAL I18N ENGINE (ENGLISH & INDONESIAN WITH LIVE SWITCHER)
+// =========================================================================
+(function(){
+  var translations = {
+    en: {
+      nav_overview: "Overview",
+      nav_overview_sub: "What is ZOZ Router",
+      nav_features: "Features",
+      nav_features_sub: "What it can do",
+      nav_screenshots: "Screenshots",
+      nav_screenshots_sub: "See the interface",
+      nav_install: "Install",
+      nav_install_sub: "Set up in minutes",
+      nav_creator: "Creator Profile",
+      nav_creator_sub: "SMKN 1 Pringgabaya, NTB",
+      nav_creator_btn: "Creator",
+
+      hero_badge: '<span class="dot"></span> No versioned release yet',
+      hero_try_label: "Try ZOZ Router",
+      hero_subtitle: "One dashboard to chat with free <strong>Ollama Cloud</strong> models and paid <strong>OpenRouter</strong> models, plus a full <strong>Windows terminal</strong> in your browser, accessible from your phone via Cloudflare.",
+      hero_author_pill: '<i class="fas fa-crown"></i> Made by <span class="author-name">Zozi Atul Azimi</span> <span style="color:var(--accent);font-family:var(--mono);font-size:.78rem;font-weight:600;margin-left:4px;">(16, SMK Negeri 1 Pringgabaya, NTB, Indonesia)</span><div class="author-pill-links"><a href="https://www.linkedin.com/in/zozi-atul-azimi-656108404" target="_blank" class="pill-social-link li"><i class="fa-brands fa-linkedin"></i> LinkedIn</a><a href="https://github.com/Zozi0999" target="_blank" class="pill-social-link gh"><i class="fab fa-github"></i> GitHub</a></div>',
+      hero_btn_gh: '<i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-up-right-from-square"></i>',
+      hero_btn_install: '<i class="fas fa-download"></i> Installation Guide',
+      hero_btn_features: '<i class="fas fa-layer-group"></i> Explore Features',
+      hero_tag_conpty: "Windows ConPTY",
+      hero_tag_cloudflare: "Cloudflare Tunnel",
+      hero_tag_ollama: "Ollama Cloud (Free)",
+      hero_tag_openrouter: "OpenRouter (BYOK)",
+
+      stat_lbl_free: "Free Cloud Models",
+      stat_lbl_or: "OpenRouter Models",
+      stat_lbl_tabs: "Simultaneous Terminals",
+      stat_lbl_live: "Remote Access",
+
+      about_heading: "WHY ZOZ ROUTER WAS BUILT",
+      about_p1: "ZOZ ROUTER was born out of a simple need: using free AI models from Ollama Cloud alongside paid ones from OpenRouter in one clean dashboard, without jumping between services.",
+      about_p2: "The standout feature is a <strong>real Windows terminal</strong> in the browser. Built on <code>node-pty</code> and Windows ConPTY, it behaves just like PowerShell on the desktop: interactive programs, multiple tabs, and background sessions work as expected.",
+      about_p3: "Everything is accessible remotely through a <strong>Cloudflare Tunnel</strong>. Open a secure URL on your phone, enter a 6-digit PIN, and you can chat with models or run commands on your home machine from anywhere.",
+      about_p4: "Designed and built by <strong>Zozi Atul Azimi</strong>, a 16-year-old student at <strong>SMK Negeri 1 Pringgabaya, Nusa Tenggara Barat, Indonesia</strong>.",
+
+      feat_kicker: "// Core Capabilities",
+      feat_title: "SYSTEM HIGHLIGHTS",
+      feat_desc: "Seven key features that make ZOZ ROUTER practical for day-to-day AI chat and remote administration.",
+      feat_1_title: "TWO AI PROVIDERS IN ONE PLACE",
+      feat_1_desc: "Access 31 free models from Ollama Cloud (Gemma 4:31b, Qwen 3:32b, DeepSeek-R1, Llama 3.3) and 464 paid models from OpenRouter (Claude 3.7, GPT-4o, Gemini 2.5 Pro). Switch between them right in the chat without losing your conversation.",
+      feat_2_title: "REAL WINDOWS TERMINAL IN BROWSER",
+      feat_2_desc: "Not a stripped-down log viewer. A real ConPTY terminal powered by <code>node-pty</code> and xterm.js over Server-Sent Events. Run interactive programs, open up to 4 tabs, and split the screen into two side-by-side sessions.",
+      feat_3_title: "REMOTE ACCESS WITH PIN LOCK",
+      feat_3_desc: "Reach your terminal and AI chat from your phone through a Cloudflare WAN Tunnel (HTTPS/WSS). Protected by a 6-digit PIN gate and QR-code pairing, so only you can connect to your machine.",
+      feat_4_title: "CREATIVE &amp; MULTI-MODAL TOOLS",
+      feat_4_desc: "Take photos with your camera or upload from your gallery for multi-modal analysis. Generate AI images directly, edit them with img2img, create AI music, and search YouTube for references.",
+      feat_5_title: "SLASH COMMANDS &amp; SKILLS",
+      feat_5_desc: "Type <code>/</code> to trigger specific workflows: <code>/website</code> builds interactive web pages with live preview, <code>/dokumen</code> exports Word and PDF files, <code>/deep-research</code> runs multi-source lookups, and <code>/autonomous</code> runs self-directed agent loops.",
+      feat_6_title: "LIVE WEBSITE BUILDER &amp; PREVIEW",
+      feat_6_desc: "Ask the AI to build a web page (HTML/CSS/JS) and see the result immediately in an interactive sandbox preview. Inspect the code in the full-screen Web Studio or download the HTML directly.",
+      feat_7_title: "LIGHTWEIGHT &amp; PRIVACY-FIRST (LOCAL)",
+      feat_7_desc: "Runs locally on your Windows machine with no third-party cloud relays reading your traffic. Efficient, event-driven architecture with low memory footprint on Node.js.",
+
+      doc_kicker: "// Screenshots",
+      doc_title: "A LOOK AT THE INTERFACE",
+      doc_sub: "15 screenshots from desktop and mobile: the main chat, file uploads, creative tools, the split terminal, and remote access from a phone running Ollama Cloud models. Click any image to see it full size.",
+
+      install_kicker: "// Setup & Deployment",
+      install_title: "HOW TO INSTALL & RUN",
+      install_sub: "Clone the repository, install the dependencies, and start the server. It only takes a few minutes.",
+
+      creator_kicker: "// Personal Profile & Learning Journey",
+      creator_title: "MEET ZOZI ATUL AZIMI",
+      creator_sub: "A 16-year-old vocational student from SMK Negeri 1 Pringgabaya, Nusa Tenggara Barat, Indonesia, who combines relentless self-taught learning across modern platforms (Google Skills, Microsoft Learn, LinkedIn Learning, Dicoding) with heartfelt gratitude to the teachers who guide him.",
+      creator_mind_kicker: "// The Mind & Learning Habit",
+      creator_alias: "⌁ SMKN 1 PRINGGABAYA · NUSA TENGGARA BARAT · SELF-TAUGHT LEARNER ⌁",
+      creator_desc: "Meet <strong>Zozi Atul Azimi</strong>, a 16-year-old vocational student at <strong>SMK Negeri 1 Pringgabaya</strong> in <strong>Nusa Tenggara Barat (NTB), Indonesia</strong>. His daily life is defined by a true passion for <strong>self-taught learning (belajar otodidak)</strong>: every single day, he studies documentation and actively follows online courses across premier platforms like <strong>Google Skills</strong>, <strong>Microsoft Learn</strong>, <strong>LinkedIn Learning</strong>, and <strong>Dicoding</strong>. While continuously exploring technology on his laptop, Zozi holds the highest respect and gratitude for his teachers at <strong>SMK Negeri 1 Pringgabaya</strong>, whose guidance, values, and dedication have provided the foundation for his journey.",
+      chip_tribute: "Tribute to SMKN 1 Teachers",
+      chip_otodidak: "Daily Self-Taught Learner",
+      story_c1_h: "Heartfelt Tribute to the Teachers of SMK Negeri 1 Pringgabaya",
+      story_c1_p: "Behind all the technical understanding and skills Zozi has developed today, there is boundless respect and gratitude for the teachers at <strong>SMK Negeri 1 Pringgabaya</strong>. Their mentorship, dedication, patience, and the foundational knowledge instilled in school formed the moral and intellectual bedrock that drives his passion forward.",
+      story_c2_h: "Self-Taught Mastery: Exploring Premier Online Learning Platforms",
+      story_c2_p: "Zozi is a true self-taught learner (otodidak). Alongside his vocational school lessons, his daily routine is to explore leading online learning platforms—completing modules and studying material on <strong>Google Skills</strong>, <strong>Microsoft Learn</strong>, <strong>LinkedIn Learning</strong>, and <strong>Dicoding</strong>. For him, reading official documentation and industry curriculums is the best way to understand world-class technology standards.",
+      story_c3_h: "Daily Rhythm: Studying and Learning Without End",
+      story_c3_p: "For Zozi, learning is not an obligation, but a daily necessity. While many teenagers his age spend their free hours on gaming or social media, Zozi's daily habit in Pringgabaya is opening his laptop, studying documentation, putting newly learned course material into practice, and repeating until he truly masters it.",
+      story_c4_h: "Hands-On Laptop Practice: Turning Theory into Working Knowledge",
+      story_c4_p: "Every concept learned from Google Skills, Microsoft Learn, Dicoding, or his teachers is immediately tested through code experiments on his laptop. Zozi is never satisfied with passive reading alone; he writes code, analyzes errors, and dissects logic until he gains deep firsthand understanding.",
+      creator_quote: '"Learning independently through platforms like Google Skills, Microsoft Learn, LinkedIn Learning, and Dicoding has opened up a world of knowledge. But above all, I offer my deepest respect and gratitude to the teachers at SMK Negeri 1 Pringgabaya who have educated, guided, and given me invaluable knowledge for my future."',
+      creator_quote_cite: "&mdash; <strong>Zozi Atul Azimi</strong>, Student at SMK Negeri 1 Pringgabaya, Nusa Tenggara Barat"
+    },
+    id: {
+      nav_overview: "Ikhtisar",
+      nav_overview_sub: "Apa itu ZOZ Router",
+      nav_features: "Fitur Unggulan",
+      nav_features_sub: "Kemampuan sistem",
+      nav_screenshots: "Tangkapan Layar",
+      nav_screenshots_sub: "Lihat antarmuka",
+      nav_install: "Instalasi",
+      nav_install_sub: "Siap dalam hitungan menit",
+      nav_creator: "Profil Kreator",
+      nav_creator_sub: "SMKN 1 Pringgabaya, NTB",
+      nav_creator_btn: "Kreator",
+
+      hero_badge: '<span class="dot"></span> Belum ada rilis versi resmi',
+      hero_try_label: "Coba ZOZ Router",
+      hero_subtitle: "Satu dashboard untuk berinteraksi dengan model gratis <strong>Ollama Cloud</strong> dan model berbayar <strong>OpenRouter</strong>, ditambah <strong>terminal Windows</strong> lengkap di browser Anda, dapat diakses dari ponsel melalui Cloudflare.",
+      hero_author_pill: '<i class="fas fa-crown"></i> Dibuat oleh <span class="author-name">Zozi Atul Azimi</span> <span style="color:var(--accent);font-family:var(--mono);font-size:.78rem;font-weight:600;margin-left:4px;">(16, SMK Negeri 1 Pringgabaya, NTB, Indonesia)</span><div class="author-pill-links"><a href="https://www.linkedin.com/in/zozi-atul-azimi-656108404" target="_blank" class="pill-social-link li"><i class="fa-brands fa-linkedin"></i> LinkedIn</a><a href="https://github.com/Zozi0999" target="_blank" class="pill-social-link gh"><i class="fab fa-github"></i> GitHub</a></div>',
+      hero_btn_gh: '<i class="fab fa-github"></i> Lihat di GitHub <i class="fas fa-arrow-up-right-from-square"></i>',
+      hero_btn_install: '<i class="fas fa-download"></i> Panduan Instalasi',
+      hero_btn_features: '<i class="fas fa-layer-group"></i> Jelajahi Fitur',
+      hero_tag_conpty: "Windows ConPTY",
+      hero_tag_cloudflare: "Cloudflare Tunnel",
+      hero_tag_ollama: "Ollama Cloud (Gratis)",
+      hero_tag_openrouter: "OpenRouter (BYOK)",
+
+      stat_lbl_free: "Model Cloud Gratis",
+      stat_lbl_or: "Model OpenRouter",
+      stat_lbl_tabs: "Terminal Sekaligus",
+      stat_lbl_live: "Akses Jarak Jauh",
+
+      about_heading: "MENGAPA ZOZ ROUTER DIBANGUN",
+      about_p1: "ZOZ ROUTER lahir dari kebutuhan praktis: menggunakan model AI gratis dari Ollama Cloud dan model berbayar dari OpenRouter dalam satu dashboard yang bersih, tanpa harus bolak-balik antar-layanan.",
+      about_p2: "Fitur uniknya adalah <strong>terminal Windows asli</strong> di dalam browser. Dibangun di atas <code>node-pty</code> dan Windows ConPTY, terminal ini berperilaku persis seperti PowerShell di desktop: mendukung program interaktif, multi-tab, dan sesi latar belakang.",
+      about_p3: "Semua ini dapat diakses dari jarak jauh melalui <strong>Cloudflare Tunnel</strong>. Kunjungi URL aman dari ponsel Anda, masukkan PIN 6 digit, dan Anda dapat berinteraksi dengan AI maupun menjalankan perintah di PC rumah Anda dari mana saja.",
+      about_p4: "Dibuat dan dirancang oleh <strong>Zozi Atul Azimi</strong>, siswa berusia 16 tahun di <strong>SMK Negeri 1 Pringgabaya, Nusa Tenggara Barat, Indonesia</strong>.",
+
+      feat_kicker: "// Kemampuan Utama",
+      feat_title: "FITUR UNGGULAN SISTEM",
+      feat_desc: "Tujuh kemampuan inti yang membuat ZOZ ROUTER praktis untuk percakapan AI harian dan administrasi sistem jarak jauh.",
+      feat_1_title: "DUA PROVIDER AI DALAM SATU TEMPAT",
+      feat_1_desc: "Akses 31 model gratis dari Ollama Cloud (Gemma 4:31b, Qwen 3:32b, DeepSeek-R1, Llama 3.3) dan 464 model berbayar dari OpenRouter (Claude 3.7, GPT-4o, Gemini 2.5 Pro). Ganti model kapan saja di layar chat tanpa kehilangan riwayat.",
+      feat_2_title: "TERMINAL WINDOWS ASLI DI BROWSER",
+      feat_2_desc: "Bukan sekadar penampil log. Terminal ConPTY nyata yang ditenagai oleh <code>node-pty</code> dan xterm.js melalui Server-Sent Events. Jalankan perintah interaktif, buka hingga 4 tab terpisah, dan pisahkan layar menjadi dua panel berdampingan.",
+      feat_3_title: "AKSES JARAK JAUH DENGAN PIN LOCK",
+      feat_3_desc: "Buka terminal dan percakapan AI dari ponsel Anda melalui Cloudflare WAN Tunnel (HTTPS/WSS). Akses dilindungi oleh PIN 6 digit dan pairing kode QR sehingga hanya Anda yang dapat terhubung ke komputer Anda.",
+      feat_4_title: "ALAT KREATIF &amp; MULTI-MODAL",
+      feat_4_desc: "Ambil foto dengan kamera hardware atau unggah dari galeri untuk analisis multi-modal. Buat gambar AI secara langsung, modifikasi dengan img2img, hasilkan musik AI, dan cari referensi video YouTube.",
+      feat_5_title: "PERINTAH SLASH &amp; SKILLS",
+      feat_5_desc: "Ketik <code>/</code> untuk memanggil kapabilitas spesifik: <code>/website</code> untuk membuat situs web interaktif dengan live preview, <code>/dokumen</code> untuk mengekspor dokumen Word dan PDF, <code>/deep-research</code> untuk riset multi-sumber, dan <code>/autonomous</code> untuk agen mandiri.",
+      feat_6_title: "PEMBUAT WEBSITE &amp; LIVE PREVIEW",
+      feat_6_desc: "Minta AI merancang website lengkap (HTML/CSS/JS). Lihat hasilnya langsung di pratinjau sandbox interaktif, edit kodenya di Web Studio layar penuh, atau unduh sebagai berkas HTML tunggal.",
+      feat_7_title: "RINGAN &amp; PRIVASI TOTAL (LOKAL)",
+      feat_7_desc: "Berjalan secara lokal di PC Windows Anda tanpa cloud relay pihak ketiga yang membaca data Anda. Menggunakan arsitektur event-driven yang efisien dan hemat memori pada Node.js.",
+
+      doc_kicker: "// Tangkapan Layar",
+      doc_title: "SEKILAS TAMPILAN ANTARMUKA",
+      doc_sub: "15 tangkapan layar dari desktop dan mobile: chat utama, unggah berkas, alat kreatif, split terminal, dan akses jarak jauh dari ponsel yang menjalankan model Ollama Cloud. Klik gambar apa pun untuk melihat ukuran penuh.",
+
+      install_kicker: "// Penyiapan & Penerapan",
+      install_title: "CARA INSTALASI & MENJALANKAN",
+      install_sub: "Klon repositori, instal dependensi, dan mulai server. Hanya membutuhkan beberapa menit.",
+
+      creator_kicker: "// Profil Pribadi & Perjalanan Belajar",
+      creator_title: "MENGENAL ZOZI ATUL AZIMI",
+      creator_sub: "Siswa SMK berusia 16 tahun dari SMK Negeri 1 Pringgabaya, Nusa Tenggara Barat, Indonesia, yang memadukan semangat belajar otodidak setiap hari melalui platform modern (Google Skills, Microsoft Learn, LinkedIn Learning, Dicoding) dengan rasa hormat mendalam kepada para guru yang membimbingnya.",
+      creator_mind_kicker: "// Pola Pikir & Kebiasaan Belajar",
+      creator_alias: "⌁ SMKN 1 PRINGGABAYA · NUSA TENGGARA BARAT · PEMBELAJAR OTODIDAK ⌁",
+      creator_desc: "Mengenal <strong>Zozi Atul Azimi</strong>, seorang pelajar berusia 16 tahun di <strong>SMK Negeri 1 Pringgabaya</strong> di <strong>Nusa Tenggara Barat (NTB), Indonesia</strong>. Kesehariannya dipenuhi dengan dedikasi tinggi pada <strong>belajar secara otodidak</strong>: setiap hari ia tekun membaca dokumentasi dan aktif mengikuti pembelajaran daring di berbagai platform ternama seperti <strong>Google Skills</strong>, <strong>Microsoft Learn</strong>, <strong>LinkedIn Learning</strong>, dan <strong>Dicoding</strong>. Di tengah kegigihannya mengulik teknologi melalui laptopnya, Zozi menaruh rasa hormat dan terima kasih yang tak terhingga kepada bapak dan ibu guru di <strong>SMK Negeri 1 Pringgabaya</strong> yang senantiasa membimbing, mendidik, dan menanamkan fondasi ilmu yang sangat berharga.",
+      chip_tribute: "Penghormatan Guru SMKN 1",
+      chip_otodidak: "Pembelajar Otodidak Setiap Hari",
+      story_c1_h: "Rasa Hormat Mendalam kepada Guru SMK Negeri 1 Pringgabaya",
+      story_c1_p: "Di balik keahlian teknis dan wawasan yang terus berkembang, tersimpan rasa hormat dan terima kasih yang begitu tulus kepada seluruh bapak dan ibu guru di <strong>SMK Negeri 1 Pringgabaya</strong>. Bimbingan, kesabaran, nilai-nilai, serta ilmu dasar yang diajarkan di sekolah menjadi fondasi kokoh yang mengarahkan langkah Zozi hingga saat ini.",
+      story_c2_h: "Pembelajar Otodidak: Menjelajahi Platform Pembelajaran Daring Kelas Dunia",
+      story_c2_p: "Zozi adalah pembelajar otodidak sejati. Melengkapi ilmu dari sekolah, ia setiap hari mengeksplorasi platform pembelajaran daring terkemuka—menyelesaikan materi dan sertifikasi di <strong>Google Skills</strong>, <strong>Microsoft Learn</strong>, <strong>LinkedIn Learning</strong>, dan <strong>Dicoding</strong>. Baginya, membaca dokumentasi resmi dan materi kurikulum industri internasional adalah cara terbaik memahami standar teknologi dunia.",
+      story_c3_h: "Kegiatan Harian: Tiada Hari Tanpa Belajar dan Membaca Dokumentasi",
+      story_c3_p: "Bagi Zozi, belajar bukanlah beban melainkan kebutuhan harian. Di saat remaja seusianya menghabiskan waktu luang dengan bermain game atau media sosial, kebiasaan Zozi setiap hari di Pringgabaya adalah membuka laptop, mendalami dokumentasi, mempraktikkan materi pembelajaran yang baru dibaca, dan terus mengulangnya hingga paham betul.",
+      story_c4_h: "Praktik Langsung di Laptop: Mengubah Teori Menjadi Pemahaman Nyata",
+      story_c4_p: "Setiap ilmu yang didapatkan dari Google Skills, Microsoft Learn, Dicoding, maupun guru-gurunya langsung diuji coba lewat baris kode di laptop. Zozi tidak pernah puas hanya dengan membaca teori; ia langsung mengimplementasikan, menganalisis eror yang muncul, dan membedah alur logika hingga tuntas.",
+      creator_quote: '"Belajar mandiri melalui platform seperti Google Skills, Microsoft Learn, LinkedIn Learning, dan Dicoding membuka cakrawala teknologi yang begitu luas. Namun di atas segalanya, rasa hormat dan terima kasih saya yang paling tulus saya persembahkan untuk bapak dan ibu guru SMK Negeri 1 Pringgabaya yang telah membimbing, mendidik, dan memberikan bekal ilmu yang tak ternilai bagi masa depan saya."',
+      creator_quote_cite: "&mdash; <strong>Zozi Atul Azimi</strong>, Siswa SMK Negeri 1 Pringgabaya, Nusa Tenggara Barat"
+    }
+  };
+
+  function applyLanguage(lang) {
+    if (lang !== 'id') lang = 'en';
+    try { localStorage.setItem('zoz_lang', lang); } catch(e){}
+
+    // Update active state on button pills
+    var optEN = document.getElementById('langOptEN');
+    var optID = document.getElementById('langOptID');
+    if (optEN && optID) {
+      if (lang === 'id') {
+        optEN.classList.remove('active');
+        optID.classList.add('active');
+      } else {
+        optEN.classList.add('active');
+        optID.classList.remove('active');
+      }
+    }
+
+    // Update drawer button label
+    var drawerText = document.getElementById('drawerLangText');
+    if (drawerText) {
+      drawerText.textContent = lang === 'id' ? 'Bahasa: Indonesia (ID)' : 'Language: English (EN)';
+    }
+
+    // Update html lang attribute
+    document.documentElement.lang = lang;
+
+    // Apply translations to data-i18n elements
+    var dict = translations[lang] || translations.en;
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) {
+        el.innerHTML = dict[key];
+      }
+    });
+
+    // Update doc-card headings and descriptions in the screenshots gallery
+    if (typeof docItems !== 'undefined' && typeof docTranslations_id !== 'undefined') {
+      document.querySelectorAll('.doc-card').forEach(function(card){
+        var idx = parseInt(card.getAttribute('data-doc-index'), 10);
+        if (isNaN(idx)) return;
+        var h3 = card.querySelector('.doc-body h3');
+        var p = card.querySelector('.doc-body p');
+        if (lang === 'id' && docTranslations_id[idx]) {
+          if (h3) h3.textContent = docTranslations_id[idx].title.replace(/^DOC #\d+ — /, '');
+          if (p) p.textContent = docTranslations_id[idx].desc;
+        } else if (docItems[idx]) {
+          if (h3) h3.textContent = docItems[idx].title.replace(/^DOC #\d+ — /, '');
+          if (p) p.textContent = docItems[idx].desc;
+        }
+      });
+    }
+  }
+
+  function toggleLanguage() {
+    var cur = 'en';
+    try { cur = localStorage.getItem('zoz_lang') || 'en'; } catch(e){}
+    var next = (cur === 'en') ? 'id' : 'en';
+    applyLanguage(next);
+  }
+
+  var btn = document.getElementById('langSwitchBtn');
+  if (btn) {
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      toggleLanguage();
+    });
+  }
+
+  var drawerBtn = document.getElementById('langDrawerBtn');
+  if (drawerBtn) {
+    drawerBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      toggleLanguage();
+    });
+  }
+
+  // Initial load
+  var initialLang = 'en';
+  try { initialLang = localStorage.getItem('zoz_lang') || 'en'; } catch(e){}
+  applyLanguage(initialLang);
 })();
 </script>
 </body>
