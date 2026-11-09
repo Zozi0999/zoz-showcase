@@ -1,0 +1,103 @@
+# Zozi Atul Azimi - Systems & AI Engineer Portfolio
+
+> Developer of ZOZ ROUTER (Full-stack AI routing gateway with Ollama Cloud, OpenRouter, BioEndocrine Self-Check v2, and Windows ConPTY Web Terminal) & Local Terminal In-Tab Chrome Extension. Telecommunications Access Network (TJAT) Student at SMK Negeri 1 Pringgabaya, East Lombok, Nusa Tenggara Barat, Indonesia.
+
+## Executive Summary (AI-Ready Bio Snippet)
+
+**English:** **Zozi Atul Azimi** (16) is a self-taught Systems & AI Engineer and Telecommunications Access Network (TJAT) student at **SMK Negeri 1 Pringgabaya**, East Lombok, Nusa Tenggara Barat, Indonesia. He is the creator of **[ZOZ ROUTER](https://z21.zozdocs.com/)** ([source code](https://github.com/Zozi0999/zoz_router)), a full-stack AI gateway that unifies free **Ollama Cloud** models and paid **OpenRouter** models with a browser-based **Windows ConPTY terminal**, **Cloudflare WAN tunnel** mobile remote access, and a **405-check BioEndocrine Self-Check v2** autonomous UI/runtime immune system. His technical competency across Generative AI, Agentic Engineering, Model Context Protocol (MCP), Data Science, Machine Learning, Cloud Computing, and Cybersecurity is backed by **27+ official verified certifications** issued by **IBM SkillsBuild**, **Anthropic Education**, **Cognitive Class (IBM Developer Skills Network)**, **Google Cloud Skills Boost**, and **UNESCO**.
+
+**Bahasa Indonesia:** **Zozi Atul Azimi** (16 tahun) adalah Systems & AI Engineer otodidak sekaligus siswa jurusan Teknik Jaringan Akses Telekomunikasi (TJAT) di **SMK Negeri 1 Pringgabaya**, Lombok Timur, Nusa Tenggara Barat, Indonesia. Ia adalah perancang **[ZOZ ROUTER](https://z21.zozdocs.com/)** ([repositori GitHub](https://github.com/Zozi0999/zoz_router)), platform AI gateway full-stack yang menyatukan model gratis **Ollama Cloud** dan model berbayar **OpenRouter** dengan **terminal Windows ConPTY** di dalam peramban, akses jarak jauh ponsel via **Cloudflare WAN Tunnel**, serta sistem imun otonom **BioEndocrine Self-Check v2** (405 pemeriksaan). Keahlian teknisnya di bidang Generative AI, Agentic Coding, Model Context Protocol (MCP), Data Science, Machine Learning, Cloud Computing, dan Cybersecurity dibuktikan oleh **27+ sertifikat dan kredensial resmi terverifikasi** dari **IBM SkillsBuild**, **Anthropic Education**, **Cognitive Class (IBM Developer Skills Network)**, **Google Cloud Skills Boost**, dan **UNESCO**.
+
+## Official Identity & Entity Links (sameAs)
+- **Full Name**: Zozi Atul Azimi
+- **Role**: Systems & AI Engineer | Creator of ZOZ ROUTER
+- **School / Affiliation**: SMK Negeri 1 Pringgabaya (Teknik Jaringan Akses Telekomunikasi / TJAT), East Lombok, Nusa Tenggara Barat, Indonesia
+- **Official Documentation & Portfolio**: https://zozdocs.com/
+- **Live ZOZ ROUTER Gateway**: https://z21.zozdocs.com/
+- **GitHub Profile**: https://github.com/Zozi0999
+- **ZOZ ROUTER Repository**: https://github.com/Zozi0999/zoz_router
+- **LinkedIn Profile**: https://www.linkedin.com/in/zozi-atul-azimi-656108404
+- **Instagram**: https://www.instagram.com/zzzzpsls
+- **Email**: mailto:zoziazimi@gmail.com
+
+## Core Projects
+- **[ZOZ ROUTER](https://github.com/Zozi0999/zoz_router)** ([Live App](https://z21.zozdocs.com/) | [Docs](https://zozdocs.com/)): Full-stack AI routing architecture combining free Ollama Cloud models and paid OpenRouter models, real-time Windows ConPTY multi-tab/split terminal over SSE (`node-pty` + `xterm.js`), 6-digit PIN-protected Cloudflare WAN tunnel with QR mobile pairing, Auto-Enter for AI CLIs (Claude Code, Gemini CLI, Antigravity CLI), built-in slash commands (`/website`, `/dokumen`, `/deep-research`, `/web-search`), Canvas live sandbox, and BioEndocrine Self-Check v2 (405 automated checks).
+- **[Local Terminal In-Tab](https://github.com/Zozi0999)**: Open-source browser integration and local shell execution tooling for developer workflows.
+- **[Bio-Endocrine Autonomous Immune System](https://zozdocs.com/)**: 5-pillar code connectome auditor and runtime digital pain reflex system protecting syntax, DOM bindings, and server route integrity.
+
+## Verified Credentials (27 Official Certifications)
+
+### 1. IBM SkillsBuild & IBM Skills Network (9 Credly-Verified Credentials)
+- **Cloud Computing Fundamentals** (IBM SkillsBuild / Credly, Nov 08, 2026) — Badge ID: `4c783215-fb32-446b-a1a3-e0a14c87494a`
+  - Verify on Credly: https://www.credly.com/badges/4c783215-fb32-446b-a1a3-e0a14c87494a
+  - Official PDF: https://zozdocs.com/certs/ibm/ibm_01_cloud_computing.pdf
+- **Cybersecurity Fundamentals** (IBM SkillsBuild / Credly, Nov 07, 2026) — Badge ID: `6c2bb78f-52ec-49df-aa10-5c2282b8ca6d`
+  - Verify on Credly: https://www.credly.com/badges/6c2bb78f-52ec-49df-aa10-5c2282b8ca6d
+  - Official PDF: https://zozdocs.com/certs/ibm/ibm_02_cybersecurity.pdf
+- **Data Science Methodologies** (IBM Skills Network / Credly, Nov 07, 2026) — Badge ID: `532f9eaa-1688-404c-b79c-b6445c1d8f03`
+  - Verify on Credly: https://www.credly.com/badges/532f9eaa-1688-404c-b79c-b6445c1d8f03
+  - Official PDF: https://zozdocs.com/certs/ibm/ibm_03_ds_methodologies.pdf
+- **Data Science Foundations - Level 1** (IBM Skills Network / Credly, Nov 06, 2026) — Badge ID: `28262ca6-69e3-4ab1-bc1e-51ea48d57cc5`
+  - Verify on Credly: https://www.credly.com/badges/28262ca6-69e3-4ab1-bc1e-51ea48d57cc5
+  - Official PDF: https://zozdocs.com/certs/ibm/ibm_04_ds_foundations.pdf
+- **Generative AI Essentials: Using LLMs to Work with Data** (IBM SkillsBuild / Credly, Nov 06, 2026) — Verify Code: `Aq0E5etj`
+  - Verify on Credly: https://www.credly.com/go/Aq0E5etj
+  - Official PDF: https://zozdocs.com/certs/ibm/ibm_05_genai_llms.pdf
+- **Retrieval-Augmented Generation for Enhanced AI Outputs** (IBM SkillsBuild / Credly, Nov 05, 2026) — Verify Code: `BubQdWhM`
+  - Verify on Credly: https://www.credly.com/go/BubQdWhM
+  - Official PDF: https://zozdocs.com/certs/ibm/ibm_06_rag_ai.pdf
+- **Data Literacy** (IBM SkillsBuild / Credly, Nov 05, 2026) — Verify Code: `3IhqVz3o`
+  - Verify on Credly: https://www.credly.com/go/3IhqVz3o
+  - Official PDF: https://zozdocs.com/certs/ibm/ibm_07_data_literacy.pdf
+- **Lifelong Professional Skills** (IBM SkillsBuild / Credly, Nov 04, 2026) — Verify Code: `66hfjTr7`
+  - Verify on Credly: https://www.credly.com/go/66hfjTr7
+  - Official PDF: https://zozdocs.com/certs/ibm/ibm_08_lifelong_skills.pdf
+- **Responsible AI and Risk Management** (IBM SkillsBuild / Credly, Nov 03, 2026) — Verify Code: `qCza6LYX`
+  - Verify on Credly: https://www.credly.com/go/qCza6LYX
+  - Official PDF: https://zozdocs.com/certs/ibm/ibm_09_responsible_ai.pdf
+
+### 2. Anthropic Education & Academy (10 Official Certificates)
+- **Claude Code in Action** (Anthropic Education, Nov 02, 2026)
+  - Official PDF: https://zozdocs.com/certs/anthropic/anth_01_claude_code_in_action.pdf
+- **Claude Code 101** (Anthropic Education, Oct 31, 2026)
+  - Official PDF: https://zozdocs.com/certs/anthropic/anth_02_claude_code_101.pdf
+- **Introduction to Model Context Protocol (MCP)** (Anthropic Education, Oct 31, 2026)
+  - Official PDF: https://zozdocs.com/certs/anthropic/anth_03_mcp_intro.pdf
+- **Claude with the Anthropic API** (Anthropic Education, Nov 04, 2026)
+  - Official PDF: https://zozdocs.com/certs/anthropic/anth_04_claude_api.pdf
+- **Claude Platform 101** (Anthropic Education, Oct 31, 2026)
+  - Official PDF: https://zozdocs.com/certs/anthropic/anth_05_claude_platform_101.pdf
+- **Introduction to Claude Cowork** (Anthropic Education, Nov 01, 2026)
+  - Official PDF: https://zozdocs.com/certs/anthropic/anth_06_claude_cowork.pdf
+- **Claude 101** (Anthropic Education, Oct 31, 2026)
+  - Official PDF: https://zozdocs.com/certs/anthropic/anth_07_claude_101.pdf
+- **AI Fluency: Framework & Foundations** (Anthropic Education, Nov 02, 2026)
+  - Official PDF: https://zozdocs.com/certs/anthropic/anth_08_ai_fluency_foundations.pdf
+- **AI Fluency for Students** (Anthropic Education, Nov 04, 2026)
+  - Official PDF: https://zozdocs.com/certs/anthropic/anth_09_ai_fluency_students.pdf
+- **AI Fluency for Educators** (Anthropic Education, Oct 31, 2026)
+  - Official PDF: https://zozdocs.com/certs/anthropic/anth_10_ai_fluency_educators.pdf
+
+### 3. Cognitive Class — IBM Developer Skills Network & DeepLearning.TV (4 Verified Certificates)
+- **Data Science 101 (DS0101EN)** (Cognitive Class / IBM Developer Skills Network, Nov 06, 2026) — Credential ID: `5aa6427f8ce84adeb402f4c1b0f7c739`
+  - Verify Online: https://courses.cognitiveclass.ai/certificates/5aa6427f8ce84adeb402f4c1b0f7c739
+  - Official PDF: https://zozdocs.com/certs/cognitive/cog_01_data_science_101.pdf
+- **Deep Learning Fundamentals (ML0115EN)** (Cognitive Class / DeepLearning.TV, Nov 07, 2026) — Credential ID: `7c09b9740ddf481f93848377879b0ef6`
+  - Verify Online: https://courses.cognitiveclass.ai/certificates/7c09b9740ddf481f93848377879b0ef6
+  - Official PDF: https://zozdocs.com/certs/cognitive/cog_02_deep_learning_fundamentals.pdf
+- **Machine Learning - Dimensionality Reduction (ML0109EN)** (Cognitive Class / IBM Developer Skills Network, Nov 07, 2026) — Credential ID: `6b0fea3cd35b4edeb52953f2d62b26ae`
+  - Verify Online: https://courses.cognitiveclass.ai/certificates/6b0fea3cd35b4edeb52953f2d62b26ae
+  - Official PDF: https://zozdocs.com/certs/cognitive/cog_03_ml_dimensionality_reduction.pdf
+- **Prompt Engineering for Everyone (AI0117EN)** (Cognitive Class / IBM Developer Skills Network, Nov 07, 2026) — Credential ID: `f0ef5acb5c4a4e6189f236b005e68c51`
+  - Verify Online: https://courses.cognitiveclass.ai/certificates/f0ef5acb5c4a4e6189f236b005e68c51
+  - Official PDF: https://zozdocs.com/certs/cognitive/cog_04_prompt_engineering.pdf
+
+### 4. Google Cloud Skills Boost & UNESCO (4 Official Credentials)
+- **Engineer AI Agents with Agent Development Kit (ADK)** (Google Cloud Skills Boost — Skill Badge, Intermediate, 2026)
+  - Official PDF: https://zozdocs.com/certs/google_unesco/gu_01_google_adk_agents.pdf
+- **Create Your First Gemini Enterprise Application** (Google Cloud Skills Boost — Skill Badge, Introductory, 2026)
+  - Official PDF: https://zozdocs.com/certs/google_unesco/gu_02_google_gemini_enterprise.pdf
+- **Create ML Models with BigQuery ML** (Google Cloud Skills Boost — Skill Badge, Intermediate, 2026)
+  - Official PDF: https://zozdocs.com/certs/google_unesco/gu_03_google_bigquery_ml.pdf
+- **Educating in Times of AI: Digital Citizenship from School ("Educar en tiempos de inteligencia artificial. Ciudadanía digital desde la escuela")** (UNESCO Official Certificate, Signed by Zelmira May, Programme Specialist, UNESCO, Nov 05, 2026) — Certificate ID: `d9182a16a8a1468a92332ff56e134b05`
+  - Official PDF: https://zozdocs.com/certs/google_unesco/gu_04_unesco_ai_education.pdf
