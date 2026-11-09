@@ -844,6 +844,341 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
   .repo-modal-foot{justify-content:stretch}
   .repo-modal-foot .btn{flex:1;justify-content:center}
 }
+
+/* ===== LICENSES & CERTIFICATIONS SECTION ===== */
+@media(min-width:961px) and (max-width:1200px){
+  .nav-links a{padding:6px 9px;font-size:.78rem;gap:6px;white-space:nowrap}
+}
+.cert-mode-bar{
+  max-width:1250px;margin:0 auto 24px;
+  background:var(--card);border:1px solid var(--border-strong);border-radius:12px;
+  padding:14px 20px;display:flex;justify-content:space-between;align-items:center;
+  gap:16px;flex-wrap:wrap;box-shadow:0 10px 28px rgba(0,0,0,.35);
+}
+.cert-mode-info{
+  display:flex;align-items:center;gap:12px;
+}
+.cert-mode-icon{
+  width:38px;height:38px;border-radius:8px;
+  background:var(--accent-dim);border:1px solid var(--accent-line);
+  color:var(--accent);display:grid;place-items:center;font-size:.95rem;flex-shrink:0;
+}
+.cert-mode-text strong{
+  display:block;font-family:var(--mono);font-size:.86rem;color:var(--text);letter-spacing:.2px;
+}
+.cert-mode-text span{
+  display:block;font-size:.78rem;color:var(--muted);margin-top:2px;
+}
+.cert-mode-tabs{
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+}
+.cert-mode-btn{
+  background:var(--bg2);border:1px solid var(--border-strong);border-radius:9px;
+  padding:9px 15px;color:var(--muted);font-family:var(--mono);font-size:.8rem;font-weight:600;
+  cursor:pointer;transition:all .2s ease;display:inline-flex;align-items:center;gap:9px;
+}
+.cert-mode-btn:hover{
+  color:var(--text);border-color:var(--accent-line);background:rgba(255,255,255,.05);
+  transform:translateY(-1px);
+}
+.cert-mode-btn.active{
+  background:var(--accent-dim);color:var(--accent);border-color:var(--accent);
+  box-shadow:0 0 18px rgba(46,230,166,.16);
+}
+.cert-mode-btn.mode-anth.active{
+  background:rgba(217,119,87,.15);color:#f29b7e;border-color:rgba(217,119,87,.55);
+  box-shadow:0 0 18px rgba(217,119,87,.18);
+}
+.cert-mode-btn.mode-cog.active{
+  background:rgba(56,189,248,.15);color:#5cd1ff;border-color:rgba(56,189,248,.55);
+  box-shadow:0 0 18px rgba(56,189,248,.18);
+}
+.cert-mode-btn.mode-gu.active{
+  background:rgba(251,191,36,.15);color:#fcd34d;border-color:rgba(251,191,36,.55);
+  box-shadow:0 0 18px rgba(251,191,36,.18);
+}
+.cert-mode-dot{
+  width:8px;height:8px;border-radius:50%;background:currentColor;opacity:.85;
+}
+.cert-mode-pill{
+  font-size:.68rem;padding:2px 7px;border-radius:999px;
+  background:rgba(255,255,255,.07);color:inherit;font-weight:700;
+}
+.cert-mode-section{
+  display:none;
+}
+.cert-mode-section.active{
+  display:block;animation:certFadeIn .26s ease;
+}
+.cert-mode-section.active + .cert-mode-section.active{
+  margin-top:38px;
+}
+@keyframes certFadeIn{
+  from{opacity:0;transform:translateY(6px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.cert-quick-switch-btn{
+  background:rgba(255,255,255,.04);border:1px solid var(--accent-line);
+  color:var(--accent);border-radius:7px;padding:7px 13px;
+  font-family:var(--mono);font-size:.74rem;font-weight:600;cursor:pointer;
+  transition:.2s;display:inline-flex;align-items:center;gap:7px;
+}
+.cert-quick-switch-btn:hover{
+  background:var(--accent);color:#04120c;border-color:var(--accent);
+}
+.cert-quick-switch-btn.to-anth{
+  border-color:rgba(217,119,87,.5);color:#f29b7e;background:rgba(217,119,87,.1);
+}
+.cert-quick-switch-btn.to-anth:hover{
+  background:#d97757;color:#090605;border-color:#d97757;
+}
+.cert-quick-switch-btn.to-cog{
+  border-color:rgba(56,189,248,.5);color:#5cd1ff;background:rgba(56,189,248,.1);
+}
+.cert-quick-switch-btn.to-cog:hover{
+  background:#38bdf8;color:#041017;border-color:#38bdf8;
+}
+.cert-quick-switch-btn.to-gu{
+  border-color:rgba(251,191,36,.5);color:#fcd34d;background:rgba(251,191,36,.1);
+}
+.cert-quick-switch-btn.to-gu:hover{
+  background:#fbbf24;color:#140e02;border-color:#fbbf24;
+}
+.cert-provider-block{
+  max-width:1250px;margin:0 auto 28px;
+  background:var(--card);border:1px solid var(--border-strong);border-radius:12px;
+  overflow:hidden;
+}
+.cert-provider-header{
+  padding:22px 26px;background:linear-gradient(135deg,rgba(15,98,254,.14),rgba(46,230,166,.06));
+  border-bottom:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+}
+.cert-provider-header.anth-header{
+  background:linear-gradient(135deg,rgba(217,119,87,.16),rgba(46,230,166,.05));
+}
+.cert-provider-header.cog-header{
+  background:linear-gradient(135deg,rgba(56,189,248,.16),rgba(15,98,254,.08));
+}
+.cert-provider-header.gu-header{
+  background:linear-gradient(135deg,rgba(251,191,36,.14),rgba(66,133,244,.12));
+}
+.cert-provider-brand{
+  display:flex;align-items:center;gap:16px;
+}
+.cert-ibm-logo{
+  width:72px;height:44px;border-radius:8px;
+  background:#05080d;border:1px solid rgba(70,140,255,.35);
+  display:grid;place-items:center;padding:6px 10px;flex-shrink:0;
+  color:#4589ff;box-shadow:0 0 18px rgba(15,98,254,.18);
+}
+.cert-ibm-logo svg{width:100%;height:100%;display:block;fill:currentColor}
+.cert-anth-logo{
+  width:72px;height:44px;border-radius:8px;
+  background:#0b0908;border:1px solid rgba(217,119,87,.45);
+  display:grid;place-items:center;padding:6px 10px;flex-shrink:0;
+  color:#e89274;box-shadow:0 0 18px rgba(217,119,87,.2);
+}
+.cert-anth-logo svg{width:100%;height:100%;display:block;fill:currentColor}
+.cert-cog-logo{
+  width:72px;height:44px;border-radius:8px;
+  background:#050a10;border:1px solid rgba(56,189,248,.45);
+  display:grid;place-items:center;padding:6px 10px;flex-shrink:0;
+  color:#5cd1ff;box-shadow:0 0 18px rgba(56,189,248,.2);
+}
+.cert-cog-logo svg{width:100%;height:100%;display:block;fill:currentColor}
+.cert-gu-logo{
+  width:72px;height:44px;border-radius:8px;
+  background:#08090d;border:1px solid rgba(251,191,36,.45);
+  display:grid;place-items:center;padding:6px 10px;flex-shrink:0;
+  color:#fcd34d;box-shadow:0 0 18px rgba(251,191,36,.2);
+}
+.cert-gu-logo svg{width:100%;height:100%;display:block}
+.cert-provider-badge.anth-badge{
+  background:rgba(217,119,87,.14);color:#f29b7e;border-color:rgba(217,119,87,.42);
+}
+.cert-provider-badge.cog-badge{
+  background:rgba(56,189,248,.14);color:#5cd1ff;border-color:rgba(56,189,248,.42);
+}
+.cert-provider-badge.gu-badge{
+  background:rgba(251,191,36,.14);color:#fcd34d;border-color:rgba(251,191,36,.42);
+}
+.cert-badge-num.anth-num{
+  color:#f29b7e;border-color:rgba(217,119,87,.42);
+}
+.cert-badge-num.cog-num{
+  color:#5cd1ff;border-color:rgba(56,189,248,.42);
+}
+.cert-badge-num.gu-num{
+  color:#fcd34d;border-color:rgba(251,191,36,.42);
+}
+.cert-provider-info h3{
+  font-family:var(--mono);font-size:1.12rem;font-weight:700;color:var(--text);
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px;
+}
+.cert-provider-badge{
+  font-family:var(--mono);font-size:.68rem;font-weight:600;
+  padding:2px 9px;border-radius:999px;
+  background:var(--accent-dim);color:var(--accent);border:1px solid var(--accent-line);
+}
+.cert-provider-info p{
+  color:var(--muted);font-size:.86rem;line-height:1.55;margin:0;
+}
+.cert-provider-stats{
+  display:flex;gap:10px;flex-wrap:wrap;
+}
+.cert-stat-pill{
+  background:rgba(7,11,17,.75);border:1px solid var(--border-strong);border-radius:8px;
+  padding:8px 14px;display:flex;flex-direction:column;align-items:center;min-width:96px;
+}
+.cert-stat-pill .cs-num{
+  font-family:var(--mono);font-size:1.1rem;font-weight:700;color:var(--accent);line-height:1.2;
+}
+.cert-stat-pill .cs-lbl{
+  font-family:var(--mono);font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-top:2px;
+}
+.cert-toolbar{
+  padding:14px 26px;background:var(--bg2);
+  display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.cert-filter-group{
+  display:flex;gap:8px;flex-wrap:wrap;align-items:center;
+}
+.cert-filter-btn{
+  background:rgba(255,255,255,.03);border:1px solid var(--border-strong);
+  color:var(--muted);border-radius:6px;padding:6px 12px;
+  font-family:var(--mono);font-size:.75rem;font-weight:500;cursor:pointer;
+  transition:.2s;display:inline-flex;align-items:center;gap:6px;
+}
+.cert-filter-btn:hover{
+  color:var(--text);border-color:var(--accent-line);background:rgba(255,255,255,.06);
+}
+.cert-filter-btn.active{
+  background:var(--accent-dim);color:var(--accent);border-color:var(--accent-line);font-weight:600;
+}
+.cert-filter-count{
+  font-size:.68rem;padding:1px 6px;border-radius:999px;
+  background:rgba(255,255,255,.06);color:inherit;
+}
+.cert-verified-note{
+  font-family:var(--mono);font-size:.74rem;color:var(--muted);
+  display:inline-flex;align-items:center;gap:6px;
+}
+.cert-verified-note i{color:var(--accent)}
+
+.cert-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:20px;
+  max-width:1250px;margin:0 auto;
+}
+.cert-card{
+  background:var(--card);border:1px solid var(--border);border-radius:10px;
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:border-color .22s ease, transform .22s ease, box-shadow .22s ease;
+  position:relative;
+}
+.cert-card:hover{
+  border-color:var(--accent-line);
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(0,0,0,.45);
+}
+.cert-card.cert-hidden{display:none !important}
+.cert-img-box{
+  position:relative;overflow:hidden;background:#05080d;
+  aspect-ratio:11 / 8.5;border-bottom:1px solid var(--border);cursor:pointer;
+}
+.cert-img-box img{
+  width:100%;height:100%;object-fit:contain;background:#05080d;
+  transition:transform .35s ease;display:block;
+}
+.cert-card:hover .cert-img-box img{transform:scale(1.025)}
+.cert-badge-num{
+  position:absolute;top:10px;left:10px;background:rgba(7,11,17,.92);
+  border:1px solid var(--border-strong);border-radius:5px;
+  padding:3px 9px;font-family:var(--mono);font-size:.68rem;font-weight:600;
+  color:var(--accent);letter-spacing:.5px;display:inline-flex;align-items:center;gap:5px;
+}
+.cert-badge-verified{
+  position:absolute;top:10px;right:10px;background:rgba(7,11,17,.92);
+  border:1px solid var(--accent-line);border-radius:5px;
+  padding:3px 9px;font-family:var(--mono);font-size:.68rem;font-weight:600;
+  color:var(--accent);display:inline-flex;align-items:center;gap:5px;
+}
+.cert-zoom-hint{
+  position:absolute;bottom:10px;right:10px;background:rgba(7,11,17,.92);
+  border:1px solid var(--border-strong);border-radius:6px;
+  padding:5px 10px;font-family:var(--mono);font-size:.72rem;
+  color:var(--text);display:flex;align-items:center;gap:6px;
+  opacity:0;transform:translateY(4px);transition:.2s;
+}
+.cert-card:hover .cert-zoom-hint{opacity:1;transform:translateY(0)}
+.cert-body{
+  padding:20px;display:flex;flex-direction:column;flex-grow:1;
+}
+.cert-issuer-row{
+  display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;
+  font-family:var(--mono);font-size:.72rem;color:var(--accent);font-weight:600;
+}
+.cert-issuer-row .cert-date{color:var(--muted);font-weight:500}
+.cert-body h3{
+  font-family:var(--mono);font-size:.96rem;font-weight:600;color:var(--text);
+  margin-bottom:8px;line-height:1.4;
+}
+.cert-body p{
+  color:var(--muted);font-size:.86rem;line-height:1.68;margin-bottom:14px;flex-grow:1;
+}
+.cert-meta{
+  background:var(--bg2);border:1px solid var(--border);border-radius:7px;
+  padding:9px 12px;margin-bottom:14px;display:flex;flex-direction:column;gap:4px;
+  font-family:var(--mono);font-size:.72rem;color:var(--muted);
+}
+.cert-meta-row{
+  display:flex;justify-content:space-between;align-items:center;gap:8px;
+}
+.cert-meta-row strong{color:var(--text);font-weight:600}
+.cert-meta-id{
+  color:var(--faint);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:210px;
+}
+.cert-pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.cert-pill{
+  font-family:var(--mono);font-size:.67rem;padding:2px 8px;border-radius:4px;
+  background:rgba(255,255,255,.03);color:var(--muted);border:1px solid var(--border);
+}
+.cert-actions{
+  display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:12px;border-top:1px solid var(--border);
+}
+.cert-btn{
+  flex:1;min-width:95px;padding:8px 10px;border-radius:6px;
+  font-family:var(--mono);font-size:.74rem;font-weight:600;
+  text-decoration:none;cursor:pointer;transition:.2s;
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  border:1px solid var(--border-strong);background:rgba(255,255,255,.03);color:var(--text);
+}
+.cert-btn:hover{
+  border-color:var(--accent-line);color:var(--accent);background:var(--accent-dim);
+}
+.cert-btn.cert-btn-verify{
+  background:var(--accent-dim);border-color:var(--accent-line);color:var(--accent);
+}
+.cert-btn.cert-btn-verify:hover{
+  background:var(--accent);color:#04120c;border-color:var(--accent);
+}
+.cert-lightbox-foot{
+  padding:12px 20px;background:var(--bg2);border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+}
+.cert-lightbox-meta{
+  color:var(--muted);font-size:.86rem;line-height:1.5;flex:1;min-width:220px;
+}
+.cert-lightbox-btns{
+  display:flex;gap:8px;flex-wrap:wrap;
+}
+@media(max-width:600px){
+  .cert-grid{grid-template-columns:1fr}
+  .cert-provider-header{padding:16px 18px}
+  .cert-toolbar{padding:12px 18px}
+  .cert-lightbox-foot{flex-direction:column;align-items:stretch}
+  .cert-lightbox-btns .cert-btn{flex:1}
+}
 </style>
 </head>
 <body>
@@ -859,6 +1194,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
   <ul class="nav-links" id="navLinks">
     <li class="nav-group">Menu</li>
     <li><a class="nav-tab" data-tab="overview"><i class="fas fa-house"></i><span class="nl"><b data-i18n="nav_overview">Overview</b><small data-i18n="nav_overview_sub">What is ZOZ Router</small></span></a></li>
+    <li><a class="nav-tab" data-tab="certifications"><i class="fas fa-award"></i><span class="nl"><b data-i18n="nav_certs">License &amp; Certification</b><small data-i18n="nav_certs_sub">Verified Credentials</small></span></a></li>
     <li><a class="nav-tab" data-tab="features"><i class="fas fa-layer-group"></i><span class="nl"><b data-i18n="nav_features">Features</b><small data-i18n="nav_features_sub">What it can do</small></span></a></li>
     <li><a class="nav-tab" data-tab="documentation"><i class="fas fa-images"></i><span class="nl"><b data-i18n="nav_screenshots">Screenshots</b><small data-i18n="nav_screenshots_sub">See the interface</small></span></a></li>
     <li><a class="nav-tab" data-tab="installation"><i class="fas fa-download"></i><span class="nl"><b data-i18n="nav_install">Install</b><small data-i18n="nav_install_sub">Set up in minutes</small></span></a></li>
@@ -1024,6 +1360,1597 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
         </a>
       </div>
       <div class="tab-footer-nav-right">
+        <button class="tab-nav-btn next" data-tab-target="certifications">
+          <span class="nav-btn-long" data-i18n="nav_btn_next_certs">Next: License &amp; Certification </span><span class="nav-btn-short">Next </span><i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- TAB 2: LICENSES & CERTIFICATIONS (IBM & ANTHROPIC)                    -->
+  <!-- ===================================================================== -->
+  <div class="tab-pane" id="tab-certifications">
+    <span id="certifications"></span>
+    <span id="license"></span>
+    <div class="sec-head">
+      <span class="kicker" data-i18n="cert_kicker">// Licenses &amp; Certifications</span>
+      <h2 data-i18n="cert_title">LICENSE &amp; CERTIFICATION ARCHIVE</h2>
+      <p data-i18n="cert_sub">Official professional certificates and digital credentials earned by Zozi Atul Azimi through global technology learning programs (IBM SkillsBuild &amp; Anthropic Education). Switch between certificate modes below or view all 19 credentials together.</p>
+    </div>
+
+    <!-- CERTIFICATE PROVIDER MODE SWITCHER BAR -->
+    <div class="cert-mode-bar" role="region" aria-label="Certificate Provider Mode Switcher">
+      <div class="cert-mode-info">
+        <div class="cert-mode-icon"><i class="fas fa-layer-group"></i></div>
+        <div class="cert-mode-text">
+          <strong data-i18n="cert_mode_title">Certificate Provider Mode</strong>
+          <span data-i18n="cert_mode_sub">Switch between IBM SkillsBuild, Anthropic Education, Cognitive Class, or view all certificates</span>
+        </div>
+      </div>
+      <div class="cert-mode-tabs" role="tablist" aria-label="Select Certificate Provider">
+        <button type="button" class="cert-mode-btn active" data-cert-mode-btn="ibm">
+          <span class="cert-mode-dot"></span>
+          <span data-i18n="cert_mode_ibm">IBM SkillsBuild</span>
+          <span class="cert-mode-pill">9</span>
+        </button>
+        <button type="button" class="cert-mode-btn mode-anth" data-cert-mode-btn="anthropic">
+          <span class="cert-mode-dot"></span>
+          <span data-i18n="cert_mode_anth">Anthropic Education</span>
+          <span class="cert-mode-pill">10</span>
+        </button>
+        <button type="button" class="cert-mode-btn mode-cog" data-cert-mode-btn="cognitive">
+          <span class="cert-mode-dot"></span>
+          <span data-i18n="cert_mode_cog">Cognitive Class</span>
+          <span class="cert-mode-pill">4</span>
+        </button>
+        <button type="button" class="cert-mode-btn mode-gu" data-cert-mode-btn="google-unesco">
+          <span class="cert-mode-dot"></span>
+          <span data-i18n="cert_mode_gu">Google Skills &amp; UNESCO</span>
+          <span class="cert-mode-pill">4</span>
+        </button>
+        <button type="button" class="cert-mode-btn" data-cert-mode-btn="all">
+          <i class="fas fa-border-all"></i>
+          <span data-i18n="cert_mode_all">All Certificates</span>
+          <span class="cert-mode-pill">27</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- =================================================================== -->
+    <!-- MODE 1: IBM SKILLSBUILD & IBM SKILLS NETWORK (9 CERTIFICATES)       -->
+    <!-- =================================================================== -->
+    <div class="cert-mode-section active" id="cert-mode-ibm" data-cert-mode-sec="ibm">
+    <div class="cert-provider-block" id="cert-provider-ibm">
+      <div class="cert-provider-header">
+        <div class="cert-provider-brand">
+          <div class="cert-ibm-logo" aria-label="IBM Logo">
+            <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <g fill="currentColor">
+                <rect x="4" y="4" width="18" height="2.6"/><rect x="4" y="8.2" width="18" height="2.6"/>
+                <rect x="8" y="12.4" width="10" height="2.6"/><rect x="8" y="16.6" width="10" height="2.6"/>
+                <rect x="8" y="20.8" width="10" height="2.6"/><rect x="8" y="25" width="10" height="2.6"/>
+                <rect x="4" y="29.2" width="18" height="2.6"/><rect x="4" y="33.4" width="18" height="2.6"/>
+                <path d="M26 4h22c4 0 7 1.2 8 2.6H26V4zm0 4.2h31c.8 1 .9 1.8.8 2.6H26V8.2zm4 4.2h10v2.6H30v-2.6zm17 0h10c-.3 1.1-1.2 2-2.6 2.6H47v-2.6zm-17 4.2h24v2.6H30v-2.6zm0 4.2h25.5c1.3.6 2.2 1.5 2.5 2.6H47v-2.6H30v-2.6zm0 4.2h10v2.6H30V25zm17 0h11c.2.9 0 1.8-.8 2.6H47V25zm-21 4.2h31c-1 1.4-4 2.6-8 2.6H26v-2.6zm0 4.2h22v2.6H26v-2.6z"/>
+                <path d="M62 4h12l4 9.5L82 4h12v2.6H62V4zm0 4.2h13.1l1.1 2.6H62V8.2zm21.8 0H94v2.6H80.8l1.1-2.6zM65 12.4h11.3l1.1 2.6H65v-2.6zm15.6 0H91v2.6H79.5l1.1-2.6zM65 16.6h9v2.6h-9v-2.6zm10.2 0h5.6l-1.1 2.6h-3.4l-1.1-2.6zm6.8 0h9v2.6h-9v-2.6zM65 20.8h9v2.6h-9v-2.6zm11.8 0h2.4l-1.2 2.6-1.2-2.6zm5.2 0h9v2.6h-9v-2.6zM65 25h9v2.6h-9V25zm17 0h9v2.6h-9V25zm-20 4.2h12v2.6H62v-2.6zm20 0h12v2.6H82v-2.6zm-20 4.2h12v2.6H62v-2.6zm20 0h12v2.6H82v-2.6z"/>
+              </g>
+            </svg>
+          </div>
+          <div class="cert-provider-info">
+            <h3>
+              <span data-i18n="cert_ibm_heading">IBM SkillsBuild &amp; IBM Skills Network</span>
+              <span class="cert-provider-badge" data-i18n="cert_ibm_badge"><i class="fas fa-shield-check"></i> 9 Official Credentials</span>
+            </h3>
+            <p data-i18n="cert_ibm_desc">Covering Artificial Intelligence (LLMs, RAG, Responsible AI), Data Science Foundations &amp; Methodologies, Cloud Computing, Cybersecurity, and Professional Skills.</p>
+          </div>
+        </div>
+        <div class="cert-provider-stats">
+          <div class="cert-stat-pill">
+            <span class="cs-num">9</span>
+            <span class="cs-lbl" data-i18n="cert_stat_total">Certificates</span>
+          </div>
+          <div class="cert-stat-pill">
+            <span class="cs-num">IBM</span>
+            <span class="cs-lbl" data-i18n="cert_stat_issuer">Official Issuer</span>
+          </div>
+          <div class="cert-stat-pill">
+            <span class="cs-num">100%</span>
+            <span class="cs-lbl" data-i18n="cert_stat_verified">Credly Verified</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATEGORY FILTER BAR -->
+      <div class="cert-toolbar">
+        <div class="cert-filter-group" role="tablist" aria-label="Filter IBM Certificates by Category">
+          <button type="button" class="cert-filter-btn active" data-cert-filter="all">
+            <i class="fas fa-border-all"></i> <span data-i18n="cert_flt_all">All IBM</span> <span class="cert-filter-count">9</span>
+          </button>
+          <button type="button" class="cert-filter-btn" data-cert-filter="ai-genai">
+            <i class="fas fa-brain"></i> <span data-i18n="cert_flt_ai">AI &amp; Generative AI</span> <span class="cert-filter-count">3</span>
+          </button>
+          <button type="button" class="cert-filter-btn" data-cert-filter="data-science">
+            <i class="fas fa-chart-network"></i> <span data-i18n="cert_flt_ds">Data Science &amp; Literacy</span> <span class="cert-filter-count">3</span>
+          </button>
+          <button type="button" class="cert-filter-btn" data-cert-filter="cloud-security">
+            <i class="fas fa-cloud-bolt"></i> <span data-i18n="cert_flt_cloud">Cloud &amp; Cybersecurity</span> <span class="cert-filter-count">2</span>
+          </button>
+          <button type="button" class="cert-filter-btn" data-cert-filter="professional">
+            <i class="fas fa-briefcase"></i> <span data-i18n="cert_flt_prof">Professional Skills</span> <span class="cert-filter-count">1</span>
+          </button>
+        </div>
+        <button type="button" class="cert-quick-switch-btn to-anth" data-switch-cert-mode="anthropic">
+          <i class="fas fa-arrow-right-arrow-left"></i>
+          <span data-i18n="cert_switch_to_anth">Switch to Anthropic (10)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- IBM CERTIFICATES GRID (9 VERIFIED CERTIFICATES) -->
+    <div class="cert-grid" id="ibmCertGrid">
+
+      <!-- CERT 01: Cloud Computing Fundamentals -->
+      <article class="cert-card" data-cert-index="0" data-cert-cat="cloud-security">
+        <div class="cert-img-box" data-cert-preview="0">
+          <img src="certs/ibm/ibm_01_cloud_computing.png" alt="Cloud Computing Fundamentals — IBM SkillsBuild Certificate" loading="lazy" decoding="async">
+          <div class="cert-badge-num">IBM // 01</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span><i class="fas fa-building-columns"></i> IBM SkillsBuild</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Nov 08, 2026</span>
+          </div>
+          <h3 data-i18n="cert_0_title">Cloud Computing Fundamentals</h3>
+          <p data-i18n="cert_0_desc">Core principles of cloud architecture, service models (IaaS, PaaS, SaaS), deployment strategies (public, private, hybrid, multicloud), containerization, and modern cloud infrastructure operations.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Badge ID:</span>
+              <span class="cert-meta-id" title="4c783215-fb32-446b-a1a3-e0a14c87494a">4c783215-fb32-446b...</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">Cloud Architecture</span>
+            <span class="cert-pill">IaaS / PaaS / SaaS</span>
+            <span class="cert-pill">Hybrid Cloud</span>
+            <span class="cert-pill">Containers</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="0">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/ibm/ibm_01_cloud_computing.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="https://www.credly.com/badges/4c783215-fb32-446b-a1a3-e0a14c87494a" target="_blank" rel="noopener noreferrer" class="cert-btn cert-btn-verify">
+              <i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="cert_btn_verify">Verify</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CERT 02: Cybersecurity Fundamentals -->
+      <article class="cert-card" data-cert-index="1" data-cert-cat="cloud-security">
+        <div class="cert-img-box" data-cert-preview="1">
+          <img src="certs/ibm/ibm_02_cybersecurity.png" alt="Cybersecurity Fundamentals — IBM SkillsBuild Certificate" loading="lazy" decoding="async">
+          <div class="cert-badge-num">IBM // 02</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span><i class="fas fa-building-columns"></i> IBM SkillsBuild</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Nov 07, 2026</span>
+          </div>
+          <h3 data-i18n="cert_1_title">Cybersecurity Fundamentals</h3>
+          <p data-i18n="cert_1_desc">Foundational cybersecurity concepts, threat landscape analysis, CIA triad (Confidentiality, Integrity, Availability), cryptography, network defense, and incident response frameworks.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Badge ID:</span>
+              <span class="cert-meta-id" title="6c2bb78f-52ec-49df-aa10-5c2282b8ca6d">6c2bb78f-52ec-49df...</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">Cyber Defense</span>
+            <span class="cert-pill">CIA Triad</span>
+            <span class="cert-pill">Threat Analysis</span>
+            <span class="cert-pill">Cryptography</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="1">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/ibm/ibm_02_cybersecurity.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="https://www.credly.com/badges/6c2bb78f-52ec-49df-aa10-5c2282b8ca6d" target="_blank" rel="noopener noreferrer" class="cert-btn cert-btn-verify">
+              <i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="cert_btn_verify">Verify</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CERT 03: Data Science Methodologies -->
+      <article class="cert-card" data-cert-index="2" data-cert-cat="data-science">
+        <div class="cert-img-box" data-cert-preview="2">
+          <img src="certs/ibm/ibm_03_ds_methodologies.png" alt="Data Science Methodologies — IBM Certificate" loading="lazy" decoding="async">
+          <div class="cert-badge-num">IBM // 03</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span><i class="fas fa-building-columns"></i> IBM • Skills Network</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Nov 07, 2026</span>
+          </div>
+          <h3 data-i18n="cert_2_title">Data Science Methodologies</h3>
+          <p data-i18n="cert_2_desc">End-to-end data science workflow: business understanding, analytic approach selection, data requirements, collection, preparation, modeling, evaluation, deployment, and feedback loops.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Badge ID:</span>
+              <span class="cert-meta-id" title="532f9eaa-1688-404c-b79c-b6445c1d8f03">532f9eaa-1688-404c...</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">CRISP-DM</span>
+            <span class="cert-pill">Data Modeling</span>
+            <span class="cert-pill">Evaluation</span>
+            <span class="cert-pill">Pipeline</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="2">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/ibm/ibm_03_ds_methodologies.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="https://www.credly.com/badges/532f9eaa-1688-404c-b79c-b6445c1d8f03" target="_blank" rel="noopener noreferrer" class="cert-btn cert-btn-verify">
+              <i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="cert_btn_verify">Verify</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CERT 04: Data Science Foundations - Level 1 -->
+      <article class="cert-card" data-cert-index="3" data-cert-cat="data-science">
+        <div class="cert-img-box" data-cert-preview="3">
+          <img src="certs/ibm/ibm_04_ds_foundations.png" alt="Data Science Foundations - Level 1 — IBM Certificate" loading="lazy" decoding="async">
+          <div class="cert-badge-num">IBM // 04</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span><i class="fas fa-building-columns"></i> IBM • Skills Network</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Nov 06, 2026</span>
+          </div>
+          <h3 data-i18n="cert_3_title">Data Science Foundations - Level 1</h3>
+          <p data-i18n="cert_3_desc">Foundational concepts in data science, big data ecosystems, statistical analysis, machine learning applications, and modern data engineering tools used by data scientists.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Badge ID:</span>
+              <span class="cert-meta-id" title="28262ca6-69e3-4ab1-bc1e-51ea48d57cc5">28262ca6-69e3-4ab1...</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">Data Science</span>
+            <span class="cert-pill">Big Data</span>
+            <span class="cert-pill">Analytics</span>
+            <span class="cert-pill">Level 1</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="3">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/ibm/ibm_04_ds_foundations.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="https://www.credly.com/badges/28262ca6-69e3-4ab1-bc1e-51ea48d57cc5" target="_blank" rel="noopener noreferrer" class="cert-btn cert-btn-verify">
+              <i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="cert_btn_verify">Verify</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CERT 05: Generative AI Essentials: Using LLMs to Work with Data -->
+      <article class="cert-card" data-cert-index="4" data-cert-cat="ai-genai">
+        <div class="cert-img-box" data-cert-preview="4">
+          <img src="certs/ibm/ibm_05_genai_llms.png" alt="Generative AI Essentials: Using LLMs to Work with Data — IBM SkillsBuild Certificate" loading="lazy" decoding="async">
+          <div class="cert-badge-num">IBM // 05</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span><i class="fas fa-building-columns"></i> IBM SkillsBuild</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Nov 06, 2026</span>
+          </div>
+          <h3 data-i18n="cert_4_title">Generative AI Essentials: Using LLMs to Work with Data</h3>
+          <p data-i18n="cert_4_desc">Applying Large Language Models (LLMs) and prompt engineering techniques to synthesize, transform, clean, and extract structured insights from complex datasets.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Verify Code:</span>
+              <span class="cert-meta-id" title="credly.com/go/Aq0E5etj">credly.com/go/Aq0E5etj</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">Generative AI</span>
+            <span class="cert-pill">LLMs</span>
+            <span class="cert-pill">Prompt Engineering</span>
+            <span class="cert-pill">Data Workflows</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="4">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/ibm/ibm_05_genai_llms.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="https://www.credly.com/go/Aq0E5etj" target="_blank" rel="noopener noreferrer" class="cert-btn cert-btn-verify">
+              <i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="cert_btn_verify">Verify</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CERT 06: Retrieval-Augmented Generation for Enhanced AI Outputs -->
+      <article class="cert-card" data-cert-index="5" data-cert-cat="ai-genai">
+        <div class="cert-img-box" data-cert-preview="5">
+          <img src="certs/ibm/ibm_06_rag_ai.png" alt="Retrieval-Augmented Generation for Enhanced AI Outputs — IBM SkillsBuild Certificate" loading="lazy" decoding="async">
+          <div class="cert-badge-num">IBM // 06</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span><i class="fas fa-building-columns"></i> IBM SkillsBuild</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Nov 05, 2026</span>
+          </div>
+          <h3 data-i18n="cert_5_title">Retrieval-Augmented Generation for Enhanced AI Outputs</h3>
+          <p data-i18n="cert_5_desc">Designing RAG pipelines that ground LLM responses in authoritative external knowledge bases using vector embeddings, semantic retrieval, and context augmentation to reduce hallucinations.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Verify Code:</span>
+              <span class="cert-meta-id" title="credly.com/go/BubQdWhM">credly.com/go/BubQdWhM</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">RAG Architecture</span>
+            <span class="cert-pill">Vector Search</span>
+            <span class="cert-pill">Grounded AI</span>
+            <span class="cert-pill">Embeddings</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="5">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/ibm/ibm_06_rag_ai.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="https://www.credly.com/go/BubQdWhM" target="_blank" rel="noopener noreferrer" class="cert-btn cert-btn-verify">
+              <i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="cert_btn_verify">Verify</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CERT 07: Data Literacy -->
+      <article class="cert-card" data-cert-index="6" data-cert-cat="data-science">
+        <div class="cert-img-box" data-cert-preview="6">
+          <img src="certs/ibm/ibm_07_data_literacy.png" alt="Data Literacy — IBM SkillsBuild Certificate" loading="lazy" decoding="async">
+          <div class="cert-badge-num">IBM // 07</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span><i class="fas fa-building-columns"></i> IBM SkillsBuild</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Nov 05, 2026</span>
+          </div>
+          <h3 data-i18n="cert_6_title">Data Literacy</h3>
+          <p data-i18n="cert_6_desc">Reading, interpreting, analyzing, and communicating with data effectively—understanding data types, quality metrics, visualization principles, and evidence-based decision-making.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Verify Code:</span>
+              <span class="cert-meta-id" title="credly.com/go/3IhqVz3o">credly.com/go/3IhqVz3o</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">Data Literacy</span>
+            <span class="cert-pill">Data Visualization</span>
+            <span class="cert-pill">Data Quality</span>
+            <span class="cert-pill">Interpretation</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="6">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/ibm/ibm_07_data_literacy.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="https://www.credly.com/go/3IhqVz3o" target="_blank" rel="noopener noreferrer" class="cert-btn cert-btn-verify">
+              <i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="cert_btn_verify">Verify</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CERT 08: Lifelong Professional Skills -->
+      <article class="cert-card" data-cert-index="7" data-cert-cat="professional">
+        <div class="cert-img-box" data-cert-preview="7">
+          <img src="certs/ibm/ibm_08_lifelong_skills.png" alt="Lifelong Professional Skills — IBM SkillsBuild Certificate" loading="lazy" decoding="async">
+          <div class="cert-badge-num">IBM // 08</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span><i class="fas fa-building-columns"></i> IBM SkillsBuild</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Nov 04, 2026</span>
+          </div>
+          <h3 data-i18n="cert_7_title">Lifelong Professional Skills</h3>
+          <p data-i18n="cert_7_desc">Essential workplace and engineering competencies: critical thinking, structured problem solving, agile collaboration, adaptability, communication, and continuous self-directed learning.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Verify Code:</span>
+              <span class="cert-meta-id" title="credly.com/go/66hfjTr7">credly.com/go/66hfjTr7</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">Critical Thinking</span>
+            <span class="cert-pill">Problem Solving</span>
+            <span class="cert-pill">Agile Mindset</span>
+            <span class="cert-pill">Collaboration</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="7">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/ibm/ibm_08_lifelong_skills.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="https://www.credly.com/go/66hfjTr7" target="_blank" rel="noopener noreferrer" class="cert-btn cert-btn-verify">
+              <i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="cert_btn_verify">Verify</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CERT 09: Responsible AI and Risk Management -->
+      <article class="cert-card" data-cert-index="8" data-cert-cat="ai-genai">
+        <div class="cert-img-box" data-cert-preview="8">
+          <img src="certs/ibm/ibm_09_responsible_ai.png" alt="Responsible AI and Risk Management — IBM SkillsBuild Certificate" loading="lazy" decoding="async">
+          <div class="cert-badge-num">IBM // 09</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span><i class="fas fa-building-columns"></i> IBM SkillsBuild</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Nov 03, 2026</span>
+          </div>
+          <h3 data-i18n="cert_8_title">Responsible AI and Risk Management</h3>
+          <p data-i18n="cert_8_desc">AI ethics principles, fairness, transparency, explainability, privacy protection, bias mitigation, and governance frameworks for deploying trustworthy AI systems responsibly.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Verify Code:</span>
+              <span class="cert-meta-id" title="credly.com/go/qCza6LYX">credly.com/go/qCza6LYX</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">AI Ethics</span>
+            <span class="cert-pill">Risk Management</span>
+            <span class="cert-pill">AI Governance</span>
+            <span class="cert-pill">Trustworthy AI</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="8">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/ibm/ibm_09_responsible_ai.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="https://www.credly.com/go/qCza6LYX" target="_blank" rel="noopener noreferrer" class="cert-btn cert-btn-verify">
+              <i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="cert_btn_verify">Verify</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    </div><!-- /#cert-mode-ibm -->
+
+    <!-- =================================================================== -->
+    <!-- MODE 2: ANTHROPIC EDUCATION & ACADEMY (10 OFFICIAL CERTIFICATES)    -->
+    <!-- =================================================================== -->
+    <div class="cert-mode-section" id="cert-mode-anthropic" data-cert-mode-sec="anthropic">
+    <div class="cert-provider-block" id="cert-provider-anthropic">
+      <div class="cert-provider-header anth-header">
+        <div class="cert-provider-brand">
+          <div class="cert-anth-logo" aria-label="Anthropic Logo">
+            <svg viewBox="0 0 100 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <g fill="currentColor">
+                <path d="M29.2 8L15 36h6.4l3.1-6.5h12.2l3.1 6.5h6.5L32.1 8h-2.9zm-2.3 16l3.7-8 3.7 8h-7.4z"/>
+                <path d="M58.4 8h6.2l14.2 28h-6.4L58.4 8z"/>
+                <rect x="79" y="8" width="5.6" height="28" rx="1"/>
+              </g>
+            </svg>
+          </div>
+          <div class="cert-provider-info">
+            <h3>
+              <span data-i18n="cert_anth_heading">Anthropic Education &amp; Academy</span>
+              <span class="cert-provider-badge anth-badge" data-i18n="cert_anth_badge"><i class="fas fa-certificate"></i> 10 Official Certificates</span>
+            </h3>
+            <p data-i18n="cert_anth_desc">Covering Claude Code &amp; Agentic Workflows, Model Context Protocol (MCP), Anthropic API Engineering, Claude Platform &amp; Cowork, and the Academic AI Fluency Curriculum.</p>
+          </div>
+        </div>
+        <div class="cert-provider-stats">
+          <div class="cert-stat-pill">
+            <span class="cs-num" style="color:#f29b7e">10</span>
+            <span class="cs-lbl" data-i18n="cert_stat_total">Certificates</span>
+          </div>
+          <div class="cert-stat-pill">
+            <span class="cs-num" style="color:#f29b7e">ANTHROP\C</span>
+            <span class="cs-lbl" data-i18n="cert_stat_issuer">Official Issuer</span>
+          </div>
+          <div class="cert-stat-pill">
+            <span class="cs-num" style="color:#f29b7e">Claude</span>
+            <span class="cs-lbl" data-i18n="cert_anth_stat_focus">Code • MCP • API</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ANTHROPIC CATEGORY FILTER BAR -->
+      <div class="cert-toolbar">
+        <div class="cert-filter-group" role="tablist" aria-label="Filter Anthropic Certificates by Category">
+          <button type="button" class="cert-filter-btn active" data-anth-filter="all">
+            <i class="fas fa-border-all"></i> <span data-i18n="cert_anth_flt_all">All Anthropic</span> <span class="cert-filter-count">10</span>
+          </button>
+          <button type="button" class="cert-filter-btn" data-anth-filter="anth-dev">
+            <i class="fas fa-terminal"></i> <span data-i18n="cert_anth_flt_dev">Claude Code, MCP &amp; API</span> <span class="cert-filter-count">4</span>
+          </button>
+          <button type="button" class="cert-filter-btn" data-anth-filter="anth-platform">
+            <i class="fas fa-cubes"></i> <span data-i18n="cert_anth_flt_plat">Claude Platform &amp; Cowork</span> <span class="cert-filter-count">3</span>
+          </button>
+          <button type="button" class="cert-filter-btn" data-anth-filter="anth-fluency">
+            <i class="fas fa-graduation-cap"></i> <span data-i18n="cert_anth_flt_fluency">AI Fluency Series</span> <span class="cert-filter-count">3</span>
+          </button>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button type="button" class="cert-quick-switch-btn" data-switch-cert-mode="ibm">
+            <i class="fas fa-arrow-left"></i>
+            <span data-i18n="cert_switch_to_ibm">IBM SkillsBuild (9)</span>
+          </button>
+          <button type="button" class="cert-quick-switch-btn to-cog" data-switch-cert-mode="cognitive">
+            <span data-i18n="cert_switch_to_cog">Cognitive Class (4)</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANTHROPIC CERTIFICATES GRID (10 OFFICIAL CERTIFICATES) -->
+    <div class="cert-grid" id="anthropicCertGrid">
+
+      <!-- ANTH 01: Claude Code in Action -->
+      <article class="cert-card" data-cert-index="9" data-anth-cat="anth-dev">
+        <div class="cert-img-box" data-cert-preview="9">
+          <img src="certs/anthropic/anth_01_claude_code_in_action.png" alt="Claude Code in Action — Anthropic Certificate of Completion" loading="lazy" decoding="async">
+          <div class="cert-badge-num anth-num">ANTHROPIC // 01</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span style="color:#f29b7e"><i class="fas fa-Sparkles fa-wand-magic-sparkles"></i> Anthropic Education</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Nov 02, 2026</span>
+          </div>
+          <h3 data-i18n="cert_9_title">Claude Code in Action</h3>
+          <p data-i18n="cert_9_desc">Agentic command-line software engineering with Claude Code: multi-file codebase navigation, autonomous test execution, Git workflows, custom slash commands, hooks, and MCP tool integration.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Credential:</span>
+              <span class="cert-meta-id" title="Anthropic Certificate of Completion">Anthropic Education Official</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">Claude Code</span>
+            <span class="cert-pill">Agentic Coding</span>
+            <span class="cert-pill">CLI Workflows</span>
+            <span class="cert-pill">Codebase Automation</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="9">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/anthropic/anth_01_claude_code_in_action.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="certs/anthropic/anth_01_claude_code_in_action.pdf" download="Claude_Code_in_Action_Zozi_Atul_Azimi.pdf" class="cert-btn cert-btn-verify">
+              <i class="fas fa-download"></i> <span data-i18n="cert_btn_download">Download</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ANTH 02: Claude Code 101 -->
+      <article class="cert-card" data-cert-index="10" data-anth-cat="anth-dev">
+        <div class="cert-img-box" data-cert-preview="10">
+          <img src="certs/anthropic/anth_02_claude_code_101.png" alt="Claude Code 101 — Anthropic Certificate of Completion" loading="lazy" decoding="async">
+          <div class="cert-badge-num anth-num">ANTHROPIC // 02</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span style="color:#f29b7e"><i class="fas fa-wand-magic-sparkles"></i> Anthropic Education</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Oct 31, 2026</span>
+          </div>
+          <h3 data-i18n="cert_10_title">Claude Code 101</h3>
+          <p data-i18n="cert_10_desc">Foundations of terminal-native AI pair programming using Claude Code: environment setup, project memory (CLAUDE.md), permission management, iterative debugging, and safe command execution.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Credential:</span>
+              <span class="cert-meta-id" title="Anthropic Certificate of Completion">Anthropic Education Official</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">Claude Code 101</span>
+            <span class="cert-pill">CLAUDE.md</span>
+            <span class="cert-pill">Terminal AI</span>
+            <span class="cert-pill">Pair Programming</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="10">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/anthropic/anth_02_claude_code_101.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="certs/anthropic/anth_02_claude_code_101.pdf" download="Claude_Code_101_Zozi_Atul_Azimi.pdf" class="cert-btn cert-btn-verify">
+              <i class="fas fa-download"></i> <span data-i18n="cert_btn_download">Download</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ANTH 03: Introduction to Model Context Protocol -->
+      <article class="cert-card" data-cert-index="11" data-anth-cat="anth-dev">
+        <div class="cert-img-box" data-cert-preview="11">
+          <img src="certs/anthropic/anth_03_mcp_intro.png" alt="Introduction to Model Context Protocol — Anthropic Certificate of Completion" loading="lazy" decoding="async">
+          <div class="cert-badge-num anth-num">ANTHROPIC // 03</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span style="color:#f29b7e"><i class="fas fa-wand-magic-sparkles"></i> Anthropic Education</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Oct 31, 2026</span>
+          </div>
+          <h3 data-i18n="cert_11_title">Introduction to Model Context Protocol</h3>
+          <p data-i18n="cert_11_desc">Architecting and building standardized Model Context Protocol (MCP) servers and clients to connect LLMs securely with external tools, local resources, databases, and prompt templates.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Credential:</span>
+              <span class="cert-meta-id" title="Anthropic Certificate of Completion">Anthropic Education Official</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">MCP</span>
+            <span class="cert-pill">MCP Servers</span>
+            <span class="cert-pill">Tool Calling</span>
+            <span class="cert-pill">Context Protocol</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="11">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/anthropic/anth_03_mcp_intro.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="certs/anthropic/anth_03_mcp_intro.pdf" download="Introduction_to_MCP_Zozi_Atul_Azimi.pdf" class="cert-btn cert-btn-verify">
+              <i class="fas fa-download"></i> <span data-i18n="cert_btn_download">Download</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ANTH 04: Claude with the Anthropic API -->
+      <article class="cert-card" data-cert-index="12" data-anth-cat="anth-dev">
+        <div class="cert-img-box" data-cert-preview="12">
+          <img src="certs/anthropic/anth_04_claude_api.png" alt="Claude with the Anthropic API — Anthropic Certificate of Completion" loading="lazy" decoding="async">
+          <div class="cert-badge-num anth-num">ANTHROPIC // 04</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span style="color:#f29b7e"><i class="fas fa-wand-magic-sparkles"></i> Anthropic Education</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Nov 04, 2026</span>
+          </div>
+          <h3 data-i18n="cert_12_title">Claude with the Anthropic API</h3>
+          <p data-i18n="cert_12_desc">Building production AI applications with the Anthropic Messages API: system prompts, streaming responses, structured outputs, tool use, extended thinking, prompt caching, and multimodal vision.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Credential:</span>
+              <span class="cert-meta-id" title="Anthropic Certificate of Completion">Anthropic Education Official</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">Anthropic API</span>
+            <span class="cert-pill">Tool Use</span>
+            <span class="cert-pill">Prompt Caching</span>
+            <span class="cert-pill">Extended Thinking</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="12">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/anthropic/anth_04_claude_api.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="certs/anthropic/anth_04_claude_api.pdf" download="Claude_with_the_Anthropic_API_Zozi_Atul_Azimi.pdf" class="cert-btn cert-btn-verify">
+              <i class="fas fa-download"></i> <span data-i18n="cert_btn_download">Download</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ANTH 05: Claude Platform 101 -->
+      <article class="cert-card" data-cert-index="13" data-anth-cat="anth-platform">
+        <div class="cert-img-box" data-cert-preview="13">
+          <img src="certs/anthropic/anth_05_claude_platform_101.png" alt="Claude Platform 101 — Anthropic Certificate of Completion" loading="lazy" decoding="async">
+          <div class="cert-badge-num anth-num">ANTHROPIC // 05</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span style="color:#f29b7e"><i class="fas fa-wand-magic-sparkles"></i> Anthropic Education</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Oct 31, 2026</span>
+          </div>
+          <h3 data-i18n="cert_13_title">Claude Platform 101</h3>
+          <p data-i18n="cert_13_desc">Comprehensive guide to the Claude developer platform and console: workbench experimentation, prompt evaluation suites, model selection across Haiku/Sonnet/Opus, and API governance.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Credential:</span>
+              <span class="cert-meta-id" title="Anthropic Certificate of Completion">Anthropic Education Official</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">Claude Console</span>
+            <span class="cert-pill">Workbench</span>
+            <span class="cert-pill">Prompt Evaluations</span>
+            <span class="cert-pill">Model Selection</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="13">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/anthropic/anth_05_claude_platform_101.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="certs/anthropic/anth_05_claude_platform_101.pdf" download="Claude_Platform_101_Zozi_Atul_Azimi.pdf" class="cert-btn cert-btn-verify">
+              <i class="fas fa-download"></i> <span data-i18n="cert_btn_download">Download</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ANTH 06: Introduction to Claude Cowork -->
+      <article class="cert-card" data-cert-index="14" data-anth-cat="anth-platform">
+        <div class="cert-img-box" data-cert-preview="14">
+          <img src="certs/anthropic/anth_06_claude_cowork.png" alt="Introduction to Claude Cowork — Anthropic Certificate of Completion" loading="lazy" decoding="async">
+          <div class="cert-badge-num anth-num">ANTHROPIC // 06</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span style="color:#f29b7e"><i class="fas fa-wand-magic-sparkles"></i> Anthropic Education</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Nov 01, 2026</span>
+          </div>
+          <h3 data-i18n="cert_14_title">Introduction to Claude Cowork</h3>
+          <p data-i18n="cert_14_desc">Collaborative AI workflows with Claude Cowork: organizing shared projects, interactive artifacts, knowledge bases, connected workspace integrations, and team productivity automation.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Credential:</span>
+              <span class="cert-meta-id" title="Anthropic Certificate of Completion">Anthropic Education Official</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">Claude Cowork</span>
+            <span class="cert-pill">Projects &amp; Artifacts</span>
+            <span class="cert-pill">Team Workflows</span>
+            <span class="cert-pill">AI Collaboration</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="14">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/anthropic/anth_06_claude_cowork.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="certs/anthropic/anth_06_claude_cowork.pdf" download="Introduction_to_Claude_Cowork_Zozi_Atul_Azimi.pdf" class="cert-btn cert-btn-verify">
+              <i class="fas fa-download"></i> <span data-i18n="cert_btn_download">Download</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ANTH 07: Claude 101 -->
+      <article class="cert-card" data-cert-index="15" data-anth-cat="anth-platform">
+        <div class="cert-img-box" data-cert-preview="15">
+          <img src="certs/anthropic/anth_07_claude_101.png" alt="Claude 101 — Anthropic Certificate of Completion" loading="lazy" decoding="async">
+          <div class="cert-badge-num anth-num">ANTHROPIC // 07</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span style="color:#f29b7e"><i class="fas fa-wand-magic-sparkles"></i> Anthropic Education</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Oct 31, 2026</span>
+          </div>
+          <h3 data-i18n="cert_15_title">Claude 101</h3>
+          <p data-i18n="cert_15_desc">Core mastery of Claude AI: effective prompt structuring, multi-turn reasoning, document synthesis, interactive Artifact generation, and Constitutional AI safety principles.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Credential:</span>
+              <span class="cert-meta-id" title="Anthropic Certificate of Completion">Anthropic Education Official</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">Claude 101</span>
+            <span class="cert-pill">Prompt Design</span>
+            <span class="cert-pill">Artifacts</span>
+            <span class="cert-pill">Constitutional AI</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="15">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/anthropic/anth_07_claude_101.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="certs/anthropic/anth_07_claude_101.pdf" download="Claude_101_Zozi_Atul_Azimi.pdf" class="cert-btn cert-btn-verify">
+              <i class="fas fa-download"></i> <span data-i18n="cert_btn_download">Download</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ANTH 08: AI Fluency: Framework & Foundations -->
+      <article class="cert-card" data-cert-index="16" data-anth-cat="anth-fluency">
+        <div class="cert-img-box" data-cert-preview="16">
+          <img src="certs/anthropic/anth_08_ai_fluency_foundations.png" alt="AI Fluency: Framework &amp; Foundations — Anthropic Certificate of Completion" loading="lazy" decoding="async">
+          <div class="cert-badge-num anth-num">ANTHROPIC // 08</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span style="color:#f29b7e"><i class="fas fa-wand-magic-sparkles"></i> Anthropic Education</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Nov 02, 2026</span>
+          </div>
+          <h3 data-i18n="cert_16_title">AI Fluency: Framework &amp; Foundations</h3>
+          <p data-i18n="cert_16_desc">The 4D AI Fluency Framework (Delegation, Description, Discernment, Diligence) developed with academic partners to collaborate with generative AI effectively, critically, and ethically.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Credential:</span>
+              <span class="cert-meta-id" title="Anthropic Education &amp; Academic Partners">Anthropic • UCC • Ringling • HEA</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">4D Framework</span>
+            <span class="cert-pill">Delegation &amp; Description</span>
+            <span class="cert-pill">Discernment</span>
+            <span class="cert-pill">Diligence</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="16">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/anthropic/anth_08_ai_fluency_foundations.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="certs/anthropic/anth_08_ai_fluency_foundations.pdf" download="AI_Fluency_Framework_Foundations_Zozi_Atul_Azimi.pdf" class="cert-btn cert-btn-verify">
+              <i class="fas fa-download"></i> <span data-i18n="cert_btn_download">Download</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ANTH 09: AI Fluency for Students -->
+      <article class="cert-card" data-cert-index="17" data-anth-cat="anth-fluency">
+        <div class="cert-img-box" data-cert-preview="17">
+          <img src="certs/anthropic/anth_09_ai_fluency_students.png" alt="AI Fluency for Students — Anthropic Certificate of Completion" loading="lazy" decoding="async">
+          <div class="cert-badge-num anth-num">ANTHROPIC // 09</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span style="color:#f29b7e"><i class="fas fa-wand-magic-sparkles"></i> Anthropic Education</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Nov 04, 2026</span>
+          </div>
+          <h3 data-i18n="cert_17_title">AI Fluency for Students</h3>
+          <p data-i18n="cert_17_desc">Using AI as a Socratic learning partner rather than a shortcut: deepening conceptual mastery, verifying sources, maintaining academic integrity, and building career-ready AI skills.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Credential:</span>
+              <span class="cert-meta-id" title="Anthropic Education &amp; Academic Partners">Anthropic • UCC • Ringling • HEA</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">Student AI Fluency</span>
+            <span class="cert-pill">Socratic Learning</span>
+            <span class="cert-pill">Critical Verification</span>
+            <span class="cert-pill">Academic Integrity</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="17">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/anthropic/anth_09_ai_fluency_students.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="certs/anthropic/anth_09_ai_fluency_students.pdf" download="AI_Fluency_for_Students_Zozi_Atul_Azimi.pdf" class="cert-btn cert-btn-verify">
+              <i class="fas fa-download"></i> <span data-i18n="cert_btn_download">Download</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ANTH 10: AI Fluency for Educators -->
+      <article class="cert-card" data-cert-index="18" data-anth-cat="anth-fluency">
+        <div class="cert-img-box" data-cert-preview="18">
+          <img src="certs/anthropic/anth_10_ai_fluency_educators.png" alt="AI Fluency for Educators — Anthropic Certificate of Completion" loading="lazy" decoding="async">
+          <div class="cert-badge-num anth-num">ANTHROPIC // 10</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span style="color:#f29b7e"><i class="fas fa-wand-magic-sparkles"></i> Anthropic Education</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Oct 31, 2026</span>
+          </div>
+          <h3 data-i18n="cert_18_title">AI Fluency for Educators</h3>
+          <p data-i18n="cert_18_desc">Pedagogical frameworks for integrating AI into curriculum design, assessment strategies, personalized instruction, and guiding learners toward responsible AI literacy.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Credential:</span>
+              <span class="cert-meta-id" title="Anthropic Education &amp; Academic Partners">Anthropic • UCC • Ringling • HEA</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">AI Pedagogy</span>
+            <span class="cert-pill">Curriculum Design</span>
+            <span class="cert-pill">Instructional AI</span>
+            <span class="cert-pill">AI Literacy</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="18">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/anthropic/anth_10_ai_fluency_educators.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="certs/anthropic/anth_10_ai_fluency_educators.pdf" download="AI_Fluency_for_Educators_Zozi_Atul_Azimi.pdf" class="cert-btn cert-btn-verify">
+              <i class="fas fa-download"></i> <span data-i18n="cert_btn_download">Download</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    </div><!-- /#cert-mode-anthropic -->
+
+    <!-- =================================================================== -->
+    <!-- MODE 3: COGNITIVE CLASS • IBM DEVELOPER SKILLS NETWORK (4 CERTS)    -->
+    <!-- =================================================================== -->
+    <div class="cert-mode-section" id="cert-mode-cognitive" data-cert-mode-sec="cognitive">
+    <div class="cert-provider-block" id="cert-provider-cognitive">
+      <div class="cert-provider-header cog-header">
+        <div class="cert-provider-brand">
+          <div class="cert-cog-logo" aria-label="Cognitive Class Logo">
+            <svg viewBox="0 0 100 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <g fill="currentColor">
+                <circle cx="24" cy="22" r="5"/>
+                <circle cx="44" cy="11" r="4"/>
+                <circle cx="44" cy="33" r="4"/>
+                <circle cx="64" cy="22" r="4.5"/>
+                <path d="M24 22L44 11M24 22L44 33M44 11L64 22M44 33L64 22M44 11L44 33" stroke="currentColor" stroke-width="2.4" fill="none"/>
+                <text x="72" y="27" font-family="JetBrains Mono, monospace" font-weight="800" font-size="14" fill="currentColor">AI</text>
+              </g>
+            </svg>
+          </div>
+          <div class="cert-provider-info">
+            <h3>
+              <span data-i18n="cert_cog_heading">Cognitive Class (cognitiveclass.ai)</span>
+              <span class="cert-provider-badge cog-badge" data-i18n="cert_cog_badge"><i class="fas fa-shield-check"></i> 4 Verified Certificates</span>
+            </h3>
+            <p data-i18n="cert_cog_desc">Powered by IBM Developer Skills Network &amp; DeepLearning.TV. Covering Data Science 101, Deep Learning Fundamentals, Machine Learning Dimensionality Reduction, and Prompt Engineering.</p>
+          </div>
+        </div>
+        <div class="cert-provider-stats">
+          <div class="cert-stat-pill">
+            <span class="cs-num" style="color:#5cd1ff">4</span>
+            <span class="cs-lbl" data-i18n="cert_stat_total">Certificates</span>
+          </div>
+          <div class="cert-stat-pill">
+            <span class="cs-num" style="color:#5cd1ff">IBM DSN</span>
+            <span class="cs-lbl" data-i18n="cert_stat_issuer">Official Issuer</span>
+          </div>
+          <div class="cert-stat-pill">
+            <span class="cs-num" style="color:#5cd1ff">100%</span>
+            <span class="cs-lbl" data-i18n="cert_cog_stat_verified">Online Verified</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COGNITIVE CLASS CATEGORY FILTER BAR -->
+      <div class="cert-toolbar">
+        <div class="cert-filter-group" role="tablist" aria-label="Filter Cognitive Class Certificates by Category">
+          <button type="button" class="cert-filter-btn active" data-cog-filter="all">
+            <i class="fas fa-border-all"></i> <span data-i18n="cert_cog_flt_all">All Cognitive Class</span> <span class="cert-filter-count">4</span>
+          </button>
+          <button type="button" class="cert-filter-btn" data-cog-filter="cog-ds-ml">
+            <i class="fas fa-chart-scatter"></i> <span data-i18n="cert_cog_flt_dsml">Data Science &amp; ML</span> <span class="cert-filter-count">2</span>
+          </button>
+          <button type="button" class="cert-filter-btn" data-cog-filter="cog-dl-ai">
+            <i class="fas fa-network-wired"></i> <span data-i18n="cert_cog_flt_dlai">Deep Learning &amp; Prompt Eng</span> <span class="cert-filter-count">2</span>
+          </button>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button type="button" class="cert-quick-switch-btn to-anth" data-switch-cert-mode="anthropic">
+            <i class="fas fa-arrow-left"></i>
+            <span data-i18n="cert_switch_to_anth">Anthropic (10)</span>
+          </button>
+          <button type="button" class="cert-quick-switch-btn to-gu" data-switch-cert-mode="google-unesco">
+            <span data-i18n="cert_switch_to_gu">Google &amp; UNESCO (4)</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- COGNITIVE CLASS CERTIFICATES GRID (4 VERIFIED CERTIFICATES) -->
+    <div class="cert-grid" id="cognitiveCertGrid">
+
+      <!-- COG 01: Data Science 101 (DS0101EN) -->
+      <article class="cert-card" data-cert-index="19" data-cog-cat="cog-ds-ml">
+        <div class="cert-img-box" data-cert-preview="19">
+          <img src="certs/cognitive/cog_01_data_science_101.png" alt="Data Science 101 (DS0101EN) — Cognitive Class Certificate" loading="lazy" decoding="async">
+          <div class="cert-badge-num cog-num">COGNITIVE // 01</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span style="color:#5cd1ff"><i class="fas fa-graduation-cap"></i> Cognitive Class • IBM</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Nov 06, 2026</span>
+          </div>
+          <h3 data-i18n="cert_19_title">Data Science 101 (DS0101EN)</h3>
+          <p data-i18n="cert_19_desc">Introduction to modern data science powered by IBM Developer Skills Network: data science applications, big data algorithms, exploratory analysis, and real-world industry case studies.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Credential:</span>
+              <span class="cert-meta-id" title="5aa6427f8ce84adeb402f4c1b0f7c739">DS0101EN • 5aa6427f8ce84ade...</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">DS0101EN</span>
+            <span class="cert-pill">Data Science 101</span>
+            <span class="cert-pill">IBM Skills Network</span>
+            <span class="cert-pill">Analytics</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="19">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/cognitive/cog_01_data_science_101.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="https://courses.cognitiveclass.ai/certificates/5aa6427f8ce84adeb402f4c1b0f7c739" target="_blank" rel="noopener noreferrer" class="cert-btn cert-btn-verify">
+              <i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="cert_btn_verify">Verify</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- COG 02: Deep Learning Fundamentals (ML0115EN) -->
+      <article class="cert-card" data-cert-index="20" data-cog-cat="cog-dl-ai">
+        <div class="cert-img-box" data-cert-preview="20">
+          <img src="certs/cognitive/cog_02_deep_learning_fundamentals.png" alt="Deep Learning Fundamentals (ML0115EN) — Cognitive Class Certificate" loading="lazy" decoding="async">
+          <div class="cert-badge-num cog-num">COGNITIVE // 02</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span style="color:#5cd1ff"><i class="fas fa-graduation-cap"></i> Cognitive Class • DeepLearning.TV</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Nov 07, 2026</span>
+          </div>
+          <h3 data-i18n="cert_20_title">Deep Learning Fundamentals (ML0115EN)</h3>
+          <p data-i18n="cert_20_desc">Core architectures of deep neural networks: feedforward perceptrons, backpropagation, convolutional neural networks (CNNs), recurrent neural networks (RNNs), autoencoders, and GPU acceleration.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Credential:</span>
+              <span class="cert-meta-id" title="7c09b9740ddf481f93848377879b0ef6">ML0115EN • 7c09b9740ddf481f...</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">ML0115EN</span>
+            <span class="cert-pill">Deep Learning</span>
+            <span class="cert-pill">Neural Networks</span>
+            <span class="cert-pill">CNN &amp; RNN</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="20">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/cognitive/cog_02_deep_learning_fundamentals.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="https://courses.cognitiveclass.ai/certificates/7c09b9740ddf481f93848377879b0ef6" target="_blank" rel="noopener noreferrer" class="cert-btn cert-btn-verify">
+              <i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="cert_btn_verify">Verify</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- COG 03: Machine Learning - Dimensionality Reduction (ML0109EN) -->
+      <article class="cert-card" data-cert-index="21" data-cog-cat="cog-ds-ml">
+        <div class="cert-img-box" data-cert-preview="21">
+          <img src="certs/cognitive/cog_03_ml_dimensionality_reduction.png" alt="Machine Learning - Dimensionality Reduction (ML0109EN) — Cognitive Class Certificate" loading="lazy" decoding="async">
+          <div class="cert-badge-num cog-num">COGNITIVE // 03</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span style="color:#5cd1ff"><i class="fas fa-graduation-cap"></i> Cognitive Class • IBM</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Nov 07, 2026</span>
+          </div>
+          <h3 data-i18n="cert_21_title">Machine Learning - Dimensionality Reduction (ML0109EN)</h3>
+          <p data-i18n="cert_21_desc">High-dimensional feature engineering and representation learning: Principal Component Analysis (PCA), Linear Discriminant Analysis (LDA), manifold learning, and singular value decomposition (SVD).</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Credential:</span>
+              <span class="cert-meta-id" title="6b0fea3cd35b4edeb52953f2d62b26ae">ML0109EN • 6b0fea3cd35b4ede...</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">ML0109EN</span>
+            <span class="cert-pill">Machine Learning</span>
+            <span class="cert-pill">PCA &amp; SVD</span>
+            <span class="cert-pill">Feature Reduction</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="21">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/cognitive/cog_03_ml_dimensionality_reduction.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="https://courses.cognitiveclass.ai/certificates/6b0fea3cd35b4edeb52953f2d62b26ae" target="_blank" rel="noopener noreferrer" class="cert-btn cert-btn-verify">
+              <i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="cert_btn_verify">Verify</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- COG 04: Prompt Engineering for Everyone (AI0117EN) -->
+      <article class="cert-card" data-cert-index="22" data-cog-cat="cog-dl-ai">
+        <div class="cert-img-box" data-cert-preview="22">
+          <img src="certs/cognitive/cog_04_prompt_engineering.png" alt="Prompt Engineering for Everyone (AI0117EN) — Cognitive Class Certificate" loading="lazy" decoding="async">
+          <div class="cert-badge-num cog-num">COGNITIVE // 04</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span style="color:#5cd1ff"><i class="fas fa-graduation-cap"></i> Cognitive Class • IBM Skills Network</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Nov 07, 2026</span>
+          </div>
+          <h3 data-i18n="cert_22_title">Prompt Engineering for Everyone (AI0117EN)</h3>
+          <p data-i18n="cert_22_desc">Systematic prompt engineering methodologies for Large Language Models: zero-shot &amp; few-shot prompting, Chain-of-Thought (CoT) reasoning, Tree-of-Thoughts, persona framing, and output control.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Credential:</span>
+              <span class="cert-meta-id" title="f0ef5acb5c4a4e6189f236b005e68c51">AI0117EN • f0ef5acb5c4a4e61...</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">AI0117EN</span>
+            <span class="cert-pill">Prompt Engineering</span>
+            <span class="cert-pill">Chain-of-Thought</span>
+            <span class="cert-pill">LLM Reasoning</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="22">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/cognitive/cog_04_prompt_engineering.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="https://courses.cognitiveclass.ai/certificates/f0ef5acb5c4a4e6189f236b005e68c51" target="_blank" rel="noopener noreferrer" class="cert-btn cert-btn-verify">
+              <i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="cert_btn_verify">Verify</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    </div><!-- /#cert-mode-cognitive -->
+
+    <!-- =================================================================== -->
+    <!-- MODE 4: GOOGLE CLOUD SKILLS & UNESCO (4 OFFICIAL CREDENTIALS)       -->
+    <!-- =================================================================== -->
+    <div class="cert-mode-section" id="cert-mode-google-unesco" data-cert-mode-sec="google-unesco">
+    <div class="cert-provider-block" id="cert-provider-google-unesco">
+      <div class="cert-provider-header gu-header">
+        <div class="cert-provider-brand">
+          <div class="cert-gu-logo" aria-label="Google Cloud &amp; UNESCO Logo">
+            <svg viewBox="0 0 100 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M26 22v3.8h6.4c-.3 1.7-1.9 4.9-6.4 4.9-3.9 0-7-3.2-7-7.2s3.1-7.2 7-7.2c2.2 0 3.7.9 4.5 1.7l3.1-3C31.6 13.1 29.1 12 26 12c-6.1 0-11 4.9-11 11s4.9 11 11 11c6.4 0 10.6-4.5 10.6-10.8 0-.7-.1-1.3-.2-1.8H26z" fill="#4285f4"/>
+              <line x1="48" y1="10" x2="48" y2="34" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/>
+              <g fill="#fcd34d">
+                <polygon points="72,10 57,16 87,16"/>
+                <rect x="59" y="17.5" width="26" height="2"/>
+                <rect x="61" y="20.5" width="3" height="9.5"/>
+                <rect x="67.5" y="20.5" width="3" height="9.5"/>
+                <rect x="73.5" y="20.5" width="3" height="9.5"/>
+                <rect x="80" y="20.5" width="3" height="9.5"/>
+                <rect x="57" y="31" width="30" height="2.4"/>
+              </g>
+            </svg>
+          </div>
+          <div class="cert-provider-info">
+            <h3>
+              <span data-i18n="cert_gu_heading">Google Cloud Skills &amp; UNESCO</span>
+              <span class="cert-provider-badge gu-badge" data-i18n="cert_gu_badge"><i class="fas fa-award"></i> 4 Official Credentials</span>
+            </h3>
+            <p data-i18n="cert_gu_desc">Combining Google Cloud Skill Badges (Agent Development Kit ADK, Gemini Enterprise Apps, BigQuery ML) and the official UNESCO Certificate on AI &amp; Digital Citizenship in Education.</p>
+          </div>
+        </div>
+        <div class="cert-provider-stats">
+          <div class="cert-stat-pill">
+            <span class="cs-num" style="color:#fcd34d">3</span>
+            <span class="cs-lbl" data-i18n="cert_gu_stat_google">Google Badges</span>
+          </div>
+          <div class="cert-stat-pill">
+            <span class="cs-num" style="color:#fcd34d">1</span>
+            <span class="cs-lbl" data-i18n="cert_gu_stat_unesco">UNESCO Cert</span>
+          </div>
+          <div class="cert-stat-pill">
+            <span class="cs-num" style="color:#fcd34d">AI &amp; ML</span>
+            <span class="cs-lbl" data-i18n="cert_gu_stat_focus">ADK • Gemini • Ethics</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GOOGLE SKILLS & UNESCO CATEGORY FILTER BAR -->
+      <div class="cert-toolbar">
+        <div class="cert-filter-group" role="tablist" aria-label="Filter Google &amp; UNESCO Credentials">
+          <button type="button" class="cert-filter-btn active" data-gu-filter="all">
+            <i class="fas fa-border-all"></i> <span data-i18n="cert_gu_flt_all">All Google &amp; UNESCO</span> <span class="cert-filter-count">4</span>
+          </button>
+          <button type="button" class="cert-filter-btn" data-gu-filter="gu-google">
+            <i class="fab fa-google"></i> <span data-i18n="cert_gu_flt_google">Google Cloud Skills</span> <span class="cert-filter-count">3</span>
+          </button>
+          <button type="button" class="cert-filter-btn" data-gu-filter="gu-unesco">
+            <i class="fas fa-landmark"></i> <span data-i18n="cert_gu_flt_unesco">UNESCO Official</span> <span class="cert-filter-count">1</span>
+          </button>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button type="button" class="cert-quick-switch-btn to-cog" data-switch-cert-mode="cognitive">
+            <i class="fas fa-arrow-left"></i>
+            <span data-i18n="cert_switch_to_cog">Cognitive Class (4)</span>
+          </button>
+          <button type="button" class="cert-quick-switch-btn" data-switch-cert-mode="ibm">
+            <span data-i18n="cert_switch_to_ibm">IBM SkillsBuild (9)</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- GOOGLE SKILLS & UNESCO CERTIFICATES GRID (4 CREDENTIALS) -->
+    <div class="cert-grid" id="googleUnescoCertGrid">
+
+      <!-- GU 01: Engineer AI Agents with Agent Development Kit (ADK) -->
+      <article class="cert-card" data-cert-index="23" data-gu-cat="gu-google">
+        <div class="cert-img-box" data-cert-preview="23">
+          <img src="certs/google_unesco/gu_01_google_adk_agents.png" alt="Engineer AI Agents with Agent Development Kit (ADK) — Google Cloud Skill Badge" loading="lazy" decoding="async">
+          <div class="cert-badge-num gu-num">GOOGLE // 01</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span style="color:#fcd34d"><i class="fab fa-google"></i> Google Cloud Skills</span>
+            <span class="cert-date"><i class="fas fa-signal"></i> Intermediate</span>
+          </div>
+          <h3 data-i18n="cert_23_title">Engineer AI Agents with Agent Development Kit (ADK)</h3>
+          <p data-i18n="cert_23_desc">Designing, orchestrating, and deploying autonomous multi-agent AI systems on Google Cloud using the Agent Development Kit (ADK), tool integration, memory management, and Vertex AI.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Credential:</span>
+              <span class="cert-meta-id" title="Google Cloud Skill Badge • Intermediate">Skill Badge • Intermediate</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">Google ADK</span>
+            <span class="cert-pill">AI Agents</span>
+            <span class="cert-pill">Multi-Agent</span>
+            <span class="cert-pill">Google Cloud</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="23">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/google_unesco/gu_01_google_adk_agents.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="certs/google_unesco/gu_01_google_adk_agents.pdf" download="Google_Cloud_ADK_AI_Agents_Zozi_Atul_Azimi.pdf" class="cert-btn cert-btn-verify">
+              <i class="fas fa-download"></i> <span data-i18n="cert_btn_download">Download</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- GU 02: Create Your First Gemini Enterprise Application -->
+      <article class="cert-card" data-cert-index="24" data-gu-cat="gu-google">
+        <div class="cert-img-box" data-cert-preview="24">
+          <img src="certs/google_unesco/gu_02_google_gemini_enterprise.png" alt="Create Your First Gemini Enterprise Application — Google Cloud Skill Badge" loading="lazy" decoding="async">
+          <div class="cert-badge-num gu-num">GOOGLE // 02</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span style="color:#fcd34d"><i class="fab fa-google"></i> Google Cloud Skills</span>
+            <span class="cert-date"><i class="fas fa-signal"></i> Introductory</span>
+          </div>
+          <h3 data-i18n="cert_24_title">Create Your First Gemini Enterprise Application</h3>
+          <p data-i18n="cert_24_desc">Building enterprise-grade generative AI applications powered by Google Gemini models on Vertex AI: multimodal prompting, grounding, safety filters, and cloud deployment workflows.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Credential:</span>
+              <span class="cert-meta-id" title="Google Cloud Skill Badge • Introductory">Skill Badge • Introductory</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">Google Gemini</span>
+            <span class="cert-pill">Enterprise AI</span>
+            <span class="cert-pill">Vertex AI</span>
+            <span class="cert-pill">GenAI Apps</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="24">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/google_unesco/gu_02_google_gemini_enterprise.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="certs/google_unesco/gu_02_google_gemini_enterprise.pdf" download="Google_Cloud_Gemini_Enterprise_App_Zozi_Atul_Azimi.pdf" class="cert-btn cert-btn-verify">
+              <i class="fas fa-download"></i> <span data-i18n="cert_btn_download">Download</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- GU 03: Create ML Models with BigQuery ML -->
+      <article class="cert-card" data-cert-index="25" data-gu-cat="gu-google">
+        <div class="cert-img-box" data-cert-preview="25">
+          <img src="certs/google_unesco/gu_03_google_bigquery_ml.png" alt="Create ML Models with BigQuery ML — Google Cloud Skill Badge" loading="lazy" decoding="async">
+          <div class="cert-badge-num gu-num">GOOGLE // 03</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span style="color:#fcd34d"><i class="fab fa-google"></i> Google Cloud Skills</span>
+            <span class="cert-date"><i class="fas fa-signal"></i> Intermediate</span>
+          </div>
+          <h3 data-i18n="cert_25_title">Create ML Models with BigQuery ML</h3>
+          <p data-i18n="cert_25_desc">Training, evaluating, and executing machine learning models directly inside Google BigQuery using standard SQL queries across massive cloud datasets without complex data movement.</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Credential:</span>
+              <span class="cert-meta-id" title="Google Cloud Skill Badge • Intermediate">Skill Badge • Intermediate</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">BigQuery ML</span>
+            <span class="cert-pill">Machine Learning</span>
+            <span class="cert-pill">Cloud SQL ML</span>
+            <span class="cert-pill">Predictive Modeling</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="25">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/google_unesco/gu_03_google_bigquery_ml.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="certs/google_unesco/gu_03_google_bigquery_ml.pdf" download="Google_Cloud_BigQuery_ML_Zozi_Atul_Azimi.pdf" class="cert-btn cert-btn-verify">
+              <i class="fas fa-download"></i> <span data-i18n="cert_btn_download">Download</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- GU 04: UNESCO — Educar en tiempos de inteligencia artificial -->
+      <article class="cert-card" data-cert-index="26" data-gu-cat="gu-unesco">
+        <div class="cert-img-box" data-cert-preview="26">
+          <img src="certs/google_unesco/gu_04_unesco_ai_education.png" alt="Educar en tiempos de inteligencia artificial. Ciudadanía digital desde la escuela — UNESCO Certificate" loading="lazy" decoding="async">
+          <div class="cert-badge-num gu-num">UNESCO // 04</div>
+          <div class="cert-badge-verified"><i class="fas fa-circle-check"></i> <span data-i18n="cert_lbl_verified">Verified</span></div>
+          <div class="cert-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> <span data-i18n="cert_lbl_zoom">Preview Certificate</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer-row">
+            <span style="color:#fcd34d"><i class="fas fa-landmark"></i> UNESCO Official</span>
+            <span class="cert-date"><i class="far fa-calendar-check"></i> Nov 05, 2026</span>
+          </div>
+          <h3 data-i18n="cert_26_title">Educating in Times of AI: Digital Citizenship from School</h3>
+          <p data-i18n="cert_26_desc">Official course by the United Nations Educational, Scientific and Cultural Organization (UNESCO): "Educar en tiempos de inteligencia artificial. Ciudadanía digital desde la escuela" (Signed by Zelmira May, Programme Specialist).</p>
+          <div class="cert-meta">
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_recipient">Recipient:</span>
+              <strong>Zozi Atul Azimi</strong>
+            </div>
+            <div class="cert-meta-row">
+              <span data-i18n="cert_meta_id">Credential:</span>
+              <span class="cert-meta-id" title="d9182a16a8a1468a92332ff56e134b05">d9182a16a8a1468a92332ff56e134b05</span>
+            </div>
+          </div>
+          <div class="cert-pills">
+            <span class="cert-pill">UNESCO</span>
+            <span class="cert-pill">AI in Education</span>
+            <span class="cert-pill">Digital Citizenship</span>
+            <span class="cert-pill">Global Ethics</span>
+          </div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert-preview="26">
+              <i class="fas fa-expand"></i> <span data-i18n="cert_btn_preview">Preview</span>
+            </button>
+            <a href="certs/google_unesco/gu_04_unesco_ai_education.pdf" target="_blank" rel="noopener" class="cert-btn">
+              <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_pdf">PDF</span>
+            </a>
+            <a href="certs/google_unesco/gu_04_unesco_ai_education.pdf" download="UNESCO_AI_Digital_Citizenship_Zozi_Atul_Azimi.pdf" class="cert-btn cert-btn-verify">
+              <i class="fas fa-download"></i> <span data-i18n="cert_btn_download">Download</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    </div><!-- /#cert-mode-google-unesco -->
+
+    <!-- TAB FOOTER NAVIGATION -->
+    <div class="tab-footer-nav">
+      <div class="tab-footer-nav-left">
+        <button class="tab-nav-btn prev" data-tab-target="overview">
+          <i class="fas fa-arrow-left"></i> <span class="nav-btn-long" data-i18n="nav_btn_prev_overview">Previous: Overview</span><span class="nav-btn-short">Prev</span>
+        </button>
+      </div>
+      <div class="tab-footer-links">
+        <a href="https://github.com/Zozi0999/zoz_router" target="_blank" rel="noopener" class="tab-social-btn gh">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/zozi-atul-azimi-656108404" target="_blank" rel="noopener" class="tab-social-btn li">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+      <div class="tab-footer-nav-right">
         <button class="tab-nav-btn next" data-tab-target="features">
           <span class="nav-btn-long" data-i18n="nav_btn_next_feat">Next: Features </span><span class="nav-btn-short">Next </span><i class="fas fa-arrow-right"></i>
         </button>
@@ -1032,7 +2959,7 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
   </div>
 
   <!-- ===================================================================== -->
-  <!-- TAB 2: FEATURES ARSENAL                                               -->
+  <!-- TAB 3: FEATURES ARSENAL                                               -->
   <!-- ===================================================================== -->
   <div class="tab-pane" id="tab-features">
     <div class="sec-head">
@@ -1095,8 +3022,8 @@ button.engine-tag:hover .tag-go{color:var(--accent);transform:translateX(3px)}
     <!-- TAB FOOTER NAVIGATION -->
     <div class="tab-footer-nav">
       <div class="tab-footer-nav-left">
-        <button class="tab-nav-btn prev" data-tab-target="overview">
-          <i class="fas fa-arrow-left"></i> <span class="nav-btn-long" data-i18n="nav_btn_prev_overview">Previous: Overview</span><span class="nav-btn-short">Prev</span>
+        <button class="tab-nav-btn prev" data-tab-target="certifications">
+          <i class="fas fa-arrow-left"></i> <span class="nav-btn-long" data-i18n="nav_btn_prev_certs">Previous: Certifications</span><span class="nav-btn-short">Prev</span>
         </button>
       </div>
       <div class="tab-footer-links">
@@ -1700,6 +3627,40 @@ start.bat</pre>
 </div>
 
 <!-- ========================================================================= -->
+<!-- LIGHTBOX MODAL VIEWER FOR OFFICIAL CERTIFICATES                           -->
+<!-- ========================================================================= -->
+<div class="doc-lightbox" id="certLightbox" role="dialog" aria-modal="true" aria-labelledby="certLightboxTitle">
+  <div class="doc-lightbox-dialog">
+    <div class="doc-lightbox-head">
+      <div class="doc-lightbox-title" id="certLightboxTitle">
+        <i class="fas fa-award"></i> Certificate Preview
+      </div>
+      <button type="button" class="doc-lightbox-close" id="certLightboxClose" aria-label="Close Certificate Preview">
+        <i class="fas fa-xmark"></i>
+      </button>
+    </div>
+    <div class="doc-lightbox-content">
+      <button type="button" class="lb-nav lb-prev" id="certLbPrev" aria-label="Previous certificate"><i class="fas fa-chevron-left"></i></button>
+      <button type="button" class="lb-nav lb-next" id="certLbNext" aria-label="Next certificate"><i class="fas fa-chevron-right"></i></button>
+      <img id="certLightboxImg" src="" alt="Official Certificate Preview">
+    </div>
+    <div class="cert-lightbox-foot">
+      <div class="cert-lightbox-meta" id="certLightboxDesc">
+        Official IBM SkillsBuild credential earned by Zozi Atul Azimi.
+      </div>
+      <div class="cert-lightbox-btns">
+        <a id="certLightboxPdf" href="#" target="_blank" rel="noopener" class="cert-btn">
+          <i class="fas fa-file-pdf"></i> <span data-i18n="cert_btn_open_pdf">Open PDF</span>
+        </a>
+        <a id="certLightboxVerify" href="#" target="_blank" rel="noopener noreferrer" class="cert-btn cert-btn-verify">
+          <i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="cert_btn_verify_credly">Verify on Credly</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================================================= -->
 <!-- REAL-TIME REPOSITORY ACTIVE UPDATE NOTICE MODAL                            -->
 <!-- ========================================================================= -->
 <div class="repo-modal" id="repoNoticeModal" role="dialog" aria-modal="true" aria-labelledby="repoModalTitle">
@@ -1826,6 +3787,7 @@ start.bat</pre>
   
   <div class="footer-links">
     <a data-tab-target="overview" data-i18n="nav_overview">Overview</a>
+    <a data-tab-target="certifications" data-i18n="nav_certs">License &amp; Certification</a>
     <a data-tab-target="features" data-i18n="nav_features">Features</a>
     <a data-tab-target="documentation" data-i18n="nav_screenshots">Screenshots</a>
     <a data-tab-target="installation" data-i18n="nav_install">Installation</a>
@@ -1841,7 +3803,7 @@ start.bat</pre>
 // =========================================================================
 // 1. TAB-BASED SPA NAVIGATION ENGINE (CLICK TABS - NO FORCED SCROLL)
 // =========================================================================
-const validTabs = ['overview', 'features', 'documentation', 'installation', 'developer'];
+const validTabs = ['overview', 'certifications', 'features', 'documentation', 'installation', 'developer'];
 
 function resolveTabAlias(raw) {
   if (!raw) return 'overview';
@@ -1858,6 +3820,25 @@ function resolveTabAlias(raw) {
     overview: 'overview',
     ikhtisar: 'overview',
     home: 'overview',
+    certifications: 'certifications',
+    certification: 'certifications',
+    cert: 'certifications',
+    certs: 'certifications',
+    license: 'certifications',
+    licence: 'certifications',
+    licenses: 'certifications',
+    sertifikasi: 'certifications',
+    sertifikat: 'certifications',
+    lisensi: 'certifications',
+    ibm: 'certifications',
+    anthropic: 'certifications',
+    claude: 'certifications',
+    cognitive: 'certifications',
+    cognitiveclass: 'certifications',
+    google: 'certifications',
+    googleskills: 'certifications',
+    unesco: 'certifications',
+    'google-unesco': 'certifications',
     features: 'features',
     fitur: 'features',
     documentation: 'documentation',
@@ -1874,7 +3855,14 @@ function resolveTabAlias(raw) {
 }
 
 function switchTab(tabId) {
+  const rawClean = String(tabId || '').toLowerCase().replace(/^[#/]+/, '').trim();
   tabId = resolveTabAlias(tabId);
+  if (typeof switchCertMode === 'function') {
+    if (rawClean === 'anthropic' || rawClean === 'claude') switchCertMode('anthropic');
+    else if (rawClean === 'cognitive' || rawClean === 'cognitiveclass') switchCertMode('cognitive');
+    else if (rawClean === 'google' || rawClean === 'googleskills' || rawClean === 'unesco' || rawClean === 'google-unesco') switchCertMode('google-unesco');
+    else if (rawClean === 'ibm') switchCertMode('ibm');
+  }
 
   const targetPane = document.getElementById('tab-' + tabId);
   if (!targetPane) return;
@@ -2450,6 +4438,476 @@ window.addEventListener('keydown', (e) => {
 })();
 
 // =========================================================================
+// 6B. OFFICIAL CERTIFICATES FILTER & LIGHTBOX PREVIEW ENGINE
+// =========================================================================
+var certItems = [
+  {
+    src: "certs/ibm/ibm_01_cloud_computing.png",
+    pdf: "certs/ibm/ibm_01_cloud_computing.pdf",
+    verify: "https://www.credly.com/badges/4c783215-fb32-446b-a1a3-e0a14c87494a",
+    title_en: "IBM // 01 — Cloud Computing Fundamentals",
+    title_id: "IBM // 01 — Cloud Computing Fundamentals",
+    desc_en: "Issued to Zozi Atul Azimi by IBM SkillsBuild on Nov 08, 2026. Credential ID: 4c783215-fb32-446b-a1a3-e0a14c87494a.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh IBM SkillsBuild pada 08 Nov 2026. ID Kredensial: 4c783215-fb32-446b-a1a3-e0a14c87494a."
+  },
+  {
+    src: "certs/ibm/ibm_02_cybersecurity.png",
+    pdf: "certs/ibm/ibm_02_cybersecurity.pdf",
+    verify: "https://www.credly.com/badges/6c2bb78f-52ec-49df-aa10-5c2282b8ca6d",
+    title_en: "IBM // 02 — Cybersecurity Fundamentals",
+    title_id: "IBM // 02 — Cybersecurity Fundamentals",
+    desc_en: "Issued to Zozi Atul Azimi by IBM SkillsBuild on Nov 07, 2026. Credential ID: 6c2bb78f-52ec-49df-aa10-5c2282b8ca6d.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh IBM SkillsBuild pada 07 Nov 2026. ID Kredensial: 6c2bb78f-52ec-49df-aa10-5c2282b8ca6d."
+  },
+  {
+    src: "certs/ibm/ibm_03_ds_methodologies.png",
+    pdf: "certs/ibm/ibm_03_ds_methodologies.pdf",
+    verify: "https://www.credly.com/badges/532f9eaa-1688-404c-b79c-b6445c1d8f03",
+    title_en: "IBM // 03 — Data Science Methodologies",
+    title_id: "IBM // 03 — Data Science Methodologies",
+    desc_en: "Issued to Zozi Atul Azimi by IBM (Skills Network) on Nov 07, 2026. Credential ID: 532f9eaa-1688-404c-b79c-b6445c1d8f03.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh IBM (Skills Network) pada 07 Nov 2026. ID Kredensial: 532f9eaa-1688-404c-b79c-b6445c1d8f03."
+  },
+  {
+    src: "certs/ibm/ibm_04_ds_foundations.png",
+    pdf: "certs/ibm/ibm_04_ds_foundations.pdf",
+    verify: "https://www.credly.com/badges/28262ca6-69e3-4ab1-bc1e-51ea48d57cc5",
+    title_en: "IBM // 04 — Data Science Foundations - Level 1",
+    title_id: "IBM // 04 — Data Science Foundations - Level 1",
+    desc_en: "Issued to Zozi Atul Azimi by IBM (Skills Network) on Nov 06, 2026. Credential ID: 28262ca6-69e3-4ab1-bc1e-51ea48d57cc5.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh IBM (Skills Network) pada 06 Nov 2026. ID Kredensial: 28262ca6-69e3-4ab1-bc1e-51ea48d57cc5."
+  },
+  {
+    src: "certs/ibm/ibm_05_genai_llms.png",
+    pdf: "certs/ibm/ibm_05_genai_llms.pdf",
+    verify: "https://www.credly.com/go/Aq0E5etj",
+    title_en: "IBM // 05 — Generative AI Essentials: Using LLMs to Work with Data",
+    title_id: "IBM // 05 — Generative AI Essentials: Using LLMs to Work with Data",
+    desc_en: "Issued to Zozi Atul Azimi by IBM SkillsBuild on Nov 06, 2026. Verification URL: credly.com/go/Aq0E5etj.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh IBM SkillsBuild pada 06 Nov 2026. Tautan Verifikasi: credly.com/go/Aq0E5etj."
+  },
+  {
+    src: "certs/ibm/ibm_06_rag_ai.png",
+    pdf: "certs/ibm/ibm_06_rag_ai.pdf",
+    verify: "https://www.credly.com/go/BubQdWhM",
+    title_en: "IBM // 06 — Retrieval-Augmented Generation for Enhanced AI Outputs",
+    title_id: "IBM // 06 — Retrieval-Augmented Generation for Enhanced AI Outputs",
+    desc_en: "Issued to Zozi Atul Azimi by IBM SkillsBuild on Nov 05, 2026. Verification URL: credly.com/go/BubQdWhM.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh IBM SkillsBuild pada 05 Nov 2026. Tautan Verifikasi: credly.com/go/BubQdWhM."
+  },
+  {
+    src: "certs/ibm/ibm_07_data_literacy.png",
+    pdf: "certs/ibm/ibm_07_data_literacy.pdf",
+    verify: "https://www.credly.com/go/3IhqVz3o",
+    title_en: "IBM // 07 — Data Literacy",
+    title_id: "IBM // 07 — Data Literacy",
+    desc_en: "Issued to Zozi Atul Azimi by IBM SkillsBuild on Nov 05, 2026. Verification URL: credly.com/go/3IhqVz3o.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh IBM SkillsBuild pada 05 Nov 2026. Tautan Verifikasi: credly.com/go/3IhqVz3o."
+  },
+  {
+    src: "certs/ibm/ibm_08_lifelong_skills.png",
+    pdf: "certs/ibm/ibm_08_lifelong_skills.pdf",
+    verify: "https://www.credly.com/go/66hfjTr7",
+    title_en: "IBM // 08 — Lifelong Professional Skills",
+    title_id: "IBM // 08 — Lifelong Professional Skills",
+    desc_en: "Issued to Zozi Atul Azimi by IBM SkillsBuild on Nov 04, 2026. Verification URL: credly.com/go/66hfjTr7.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh IBM SkillsBuild pada 04 Nov 2026. Tautan Verifikasi: credly.com/go/66hfjTr7."
+  },
+  {
+    src: "certs/ibm/ibm_09_responsible_ai.png",
+    pdf: "certs/ibm/ibm_09_responsible_ai.pdf",
+    verify: "https://www.credly.com/go/qCza6LYX",
+    title_en: "IBM // 09 — Responsible AI and Risk Management",
+    title_id: "IBM // 09 — Responsible AI and Risk Management",
+    desc_en: "Issued to Zozi Atul Azimi by IBM SkillsBuild on Nov 03, 2026. Verification URL: credly.com/go/qCza6LYX.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh IBM SkillsBuild pada 03 Nov 2026. Tautan Verifikasi: credly.com/go/qCza6LYX."
+  },
+  {
+    src: "certs/anthropic/anth_01_claude_code_in_action.png",
+    pdf: "certs/anthropic/anth_01_claude_code_in_action.pdf",
+    verify: "certs/anthropic/anth_01_claude_code_in_action.pdf",
+    title_en: "ANTHROPIC // 01 — Claude Code in Action",
+    title_id: "ANTHROPIC // 01 — Claude Code in Action",
+    desc_en: "Issued to Zozi Atul Azimi by Anthropic Education on Nov 02, 2026. Official Anthropic Certificate of Completion.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh Anthropic Education pada 02 Nov 2026. Sertifikat Penyelesaian Resmi Anthropic."
+  },
+  {
+    src: "certs/anthropic/anth_02_claude_code_101.png",
+    pdf: "certs/anthropic/anth_02_claude_code_101.pdf",
+    verify: "certs/anthropic/anth_02_claude_code_101.pdf",
+    title_en: "ANTHROPIC // 02 — Claude Code 101",
+    title_id: "ANTHROPIC // 02 — Claude Code 101",
+    desc_en: "Issued to Zozi Atul Azimi by Anthropic Education on Oct 31, 2026. Official Anthropic Certificate of Completion.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh Anthropic Education pada 31 Okt 2026. Sertifikat Penyelesaian Resmi Anthropic."
+  },
+  {
+    src: "certs/anthropic/anth_03_mcp_intro.png",
+    pdf: "certs/anthropic/anth_03_mcp_intro.pdf",
+    verify: "certs/anthropic/anth_03_mcp_intro.pdf",
+    title_en: "ANTHROPIC // 03 — Introduction to Model Context Protocol",
+    title_id: "ANTHROPIC // 03 — Introduction to Model Context Protocol",
+    desc_en: "Issued to Zozi Atul Azimi by Anthropic Education on Oct 31, 2026. Official Anthropic Certificate of Completion.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh Anthropic Education pada 31 Okt 2026. Sertifikat Penyelesaian Resmi Anthropic."
+  },
+  {
+    src: "certs/anthropic/anth_04_claude_api.png",
+    pdf: "certs/anthropic/anth_04_claude_api.pdf",
+    verify: "certs/anthropic/anth_04_claude_api.pdf",
+    title_en: "ANTHROPIC // 04 — Claude with the Anthropic API",
+    title_id: "ANTHROPIC // 04 — Claude with the Anthropic API",
+    desc_en: "Issued to Zozi Atul Azimi by Anthropic Education on Nov 04, 2026. Official Anthropic Certificate of Completion.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh Anthropic Education pada 04 Nov 2026. Sertifikat Penyelesaian Resmi Anthropic."
+  },
+  {
+    src: "certs/anthropic/anth_05_claude_platform_101.png",
+    pdf: "certs/anthropic/anth_05_claude_platform_101.pdf",
+    verify: "certs/anthropic/anth_05_claude_platform_101.pdf",
+    title_en: "ANTHROPIC // 05 — Claude Platform 101",
+    title_id: "ANTHROPIC // 05 — Claude Platform 101",
+    desc_en: "Issued to Zozi Atul Azimi by Anthropic Education on Oct 31, 2026. Official Anthropic Certificate of Completion.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh Anthropic Education pada 31 Okt 2026. Sertifikat Penyelesaian Resmi Anthropic."
+  },
+  {
+    src: "certs/anthropic/anth_06_claude_cowork.png",
+    pdf: "certs/anthropic/anth_06_claude_cowork.pdf",
+    verify: "certs/anthropic/anth_06_claude_cowork.pdf",
+    title_en: "ANTHROPIC // 06 — Introduction to Claude Cowork",
+    title_id: "ANTHROPIC // 06 — Introduction to Claude Cowork",
+    desc_en: "Issued to Zozi Atul Azimi by Anthropic Education on Nov 01, 2026. Official Anthropic Certificate of Completion.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh Anthropic Education pada 01 Nov 2026. Sertifikat Penyelesaian Resmi Anthropic."
+  },
+  {
+    src: "certs/anthropic/anth_07_claude_101.png",
+    pdf: "certs/anthropic/anth_07_claude_101.pdf",
+    verify: "certs/anthropic/anth_07_claude_101.pdf",
+    title_en: "ANTHROPIC // 07 — Claude 101",
+    title_id: "ANTHROPIC // 07 — Claude 101",
+    desc_en: "Issued to Zozi Atul Azimi by Anthropic Education on Oct 31, 2026. Official Anthropic Certificate of Completion.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh Anthropic Education pada 31 Okt 2026. Sertifikat Penyelesaian Resmi Anthropic."
+  },
+  {
+    src: "certs/anthropic/anth_08_ai_fluency_foundations.png",
+    pdf: "certs/anthropic/anth_08_ai_fluency_foundations.pdf",
+    verify: "certs/anthropic/anth_08_ai_fluency_foundations.pdf",
+    title_en: "ANTHROPIC // 08 — AI Fluency: Framework & Foundations",
+    title_id: "ANTHROPIC // 08 — AI Fluency: Framework & Foundations",
+    desc_en: "Issued to Zozi Atul Azimi by Anthropic Education on Nov 02, 2026 (in partnership with UCC, Ringling College, HEA, and National Forum T&L).",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh Anthropic Education pada 02 Nov 2026 (bekerja sama dengan UCC, Ringling College, HEA, dan National Forum T&L)."
+  },
+  {
+    src: "certs/anthropic/anth_09_ai_fluency_students.png",
+    pdf: "certs/anthropic/anth_09_ai_fluency_students.pdf",
+    verify: "certs/anthropic/anth_09_ai_fluency_students.pdf",
+    title_en: "ANTHROPIC // 09 — AI Fluency for Students",
+    title_id: "ANTHROPIC // 09 — AI Fluency for Students",
+    desc_en: "Issued to Zozi Atul Azimi by Anthropic Education on Nov 04, 2026 (in partnership with UCC, Ringling College, HEA, and National Forum T&L).",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh Anthropic Education pada 04 Nov 2026 (bekerja sama dengan UCC, Ringling College, HEA, dan National Forum T&L)."
+  },
+  {
+    src: "certs/anthropic/anth_10_ai_fluency_educators.png",
+    pdf: "certs/anthropic/anth_10_ai_fluency_educators.pdf",
+    verify: "certs/anthropic/anth_10_ai_fluency_educators.pdf",
+    title_en: "ANTHROPIC // 10 — AI Fluency for Educators",
+    title_id: "ANTHROPIC // 10 — AI Fluency for Educators",
+    desc_en: "Issued to Zozi Atul Azimi by Anthropic Education on Oct 31, 2026 (in partnership with UCC, Ringling College, HEA, and National Forum T&L).",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh Anthropic Education pada 31 Okt 2026 (bekerja sama dengan UCC, Ringling College, HEA, dan National Forum T&L)."
+  },
+  {
+    src: "certs/cognitive/cog_01_data_science_101.png",
+    pdf: "certs/cognitive/cog_01_data_science_101.pdf",
+    verify: "https://courses.cognitiveclass.ai/certificates/5aa6427f8ce84adeb402f4c1b0f7c739",
+    title_en: "COGNITIVE // 01 — Data Science 101 (DS0101EN)",
+    title_id: "COGNITIVE // 01 — Data Science 101 (DS0101EN)",
+    desc_en: "Issued to Zozi Atul Azimi by Cognitive Class (IBM Developer Skills Network) on Nov 06, 2026. Credential ID: 5aa6427f8ce84adeb402f4c1b0f7c739.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh Cognitive Class (IBM Developer Skills Network) pada 06 Nov 2026. ID Kredensial: 5aa6427f8ce84adeb402f4c1b0f7c739."
+  },
+  {
+    src: "certs/cognitive/cog_02_deep_learning_fundamentals.png",
+    pdf: "certs/cognitive/cog_02_deep_learning_fundamentals.pdf",
+    verify: "https://courses.cognitiveclass.ai/certificates/7c09b9740ddf481f93848377879b0ef6",
+    title_en: "COGNITIVE // 02 — Deep Learning Fundamentals (ML0115EN)",
+    title_id: "COGNITIVE // 02 — Deep Learning Fundamentals (ML0115EN)",
+    desc_en: "Issued to Zozi Atul Azimi by Cognitive Class (DeepLearning.TV & IBM Developer Skills Network) on Nov 07, 2026. Credential ID: 7c09b9740ddf481f93848377879b0ef6.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh Cognitive Class (DeepLearning.TV & IBM Developer Skills Network) pada 07 Nov 2026. ID Kredensial: 7c09b9740ddf481f93848377879b0ef6."
+  },
+  {
+    src: "certs/cognitive/cog_03_ml_dimensionality_reduction.png",
+    pdf: "certs/cognitive/cog_03_ml_dimensionality_reduction.pdf",
+    verify: "https://courses.cognitiveclass.ai/certificates/6b0fea3cd35b4edeb52953f2d62b26ae",
+    title_en: "COGNITIVE // 03 — Machine Learning - Dimensionality Reduction (ML0109EN)",
+    title_id: "COGNITIVE // 03 — Machine Learning - Dimensionality Reduction (ML0109EN)",
+    desc_en: "Issued to Zozi Atul Azimi by Cognitive Class (IBM Developer Skills Network) on Nov 07, 2026. Credential ID: 6b0fea3cd35b4edeb52953f2d62b26ae.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh Cognitive Class (IBM Developer Skills Network) pada 07 Nov 2026. ID Kredensial: 6b0fea3cd35b4edeb52953f2d62b26ae."
+  },
+  {
+    src: "certs/cognitive/cog_04_prompt_engineering.png",
+    pdf: "certs/cognitive/cog_04_prompt_engineering.pdf",
+    verify: "https://courses.cognitiveclass.ai/certificates/f0ef5acb5c4a4e6189f236b005e68c51",
+    title_en: "COGNITIVE // 04 — Prompt Engineering for Everyone (AI0117EN)",
+    title_id: "COGNITIVE // 04 — Prompt Engineering for Everyone (AI0117EN)",
+    desc_en: "Issued to Zozi Atul Azimi by Cognitive Class (IBM Developer Skills Network) on Nov 07, 2026. Credential ID: f0ef5acb5c4a4e6189f236b005e68c51.",
+    desc_id: "Diterbitkan untuk Zozi Atul Azimi oleh Cognitive Class (IBM Developer Skills Network) pada 07 Nov 2026. ID Kredensial: f0ef5acb5c4a4e6189f236b005e68c51."
+  },
+  {
+    src: "certs/google_unesco/gu_01_google_adk_agents.png",
+    pdf: "certs/google_unesco/gu_01_google_adk_agents.pdf",
+    verify: "certs/google_unesco/gu_01_google_adk_agents.pdf",
+    title_en: "GOOGLE // 01 — Engineer AI Agents with Agent Development Kit (ADK)",
+    title_id: "GOOGLE // 01 — Engineer AI Agents with Agent Development Kit (ADK)",
+    desc_en: "Google Cloud Skill Badge (Intermediate) earned by Zozi Atul Azimi via Google Cloud Skills Boost.",
+    desc_id: "Google Cloud Skill Badge (Intermediate) yang diraih oleh Zozi Atul Azimi melalui Google Cloud Skills Boost."
+  },
+  {
+    src: "certs/google_unesco/gu_02_google_gemini_enterprise.png",
+    pdf: "certs/google_unesco/gu_02_google_gemini_enterprise.pdf",
+    verify: "certs/google_unesco/gu_02_google_gemini_enterprise.pdf",
+    title_en: "GOOGLE // 02 — Create Your First Gemini Enterprise Application",
+    title_id: "GOOGLE // 02 — Create Your First Gemini Enterprise Application",
+    desc_en: "Google Cloud Skill Badge (Introductory) earned by Zozi Atul Azimi via Google Cloud Skills Boost.",
+    desc_id: "Google Cloud Skill Badge (Introductory) yang diraih oleh Zozi Atul Azimi melalui Google Cloud Skills Boost."
+  },
+  {
+    src: "certs/google_unesco/gu_03_google_bigquery_ml.png",
+    pdf: "certs/google_unesco/gu_03_google_bigquery_ml.pdf",
+    verify: "certs/google_unesco/gu_03_google_bigquery_ml.pdf",
+    title_en: "GOOGLE // 03 — Create ML Models with BigQuery ML",
+    title_id: "GOOGLE // 03 — Create ML Models with BigQuery ML",
+    desc_en: "Google Cloud Skill Badge (Intermediate) earned by Zozi Atul Azimi via Google Cloud Skills Boost.",
+    desc_id: "Google Cloud Skill Badge (Intermediate) yang diraih oleh Zozi Atul Azimi melalui Google Cloud Skills Boost."
+  },
+  {
+    src: "certs/google_unesco/gu_04_unesco_ai_education.png",
+    pdf: "certs/google_unesco/gu_04_unesco_ai_education.pdf",
+    verify: "certs/google_unesco/gu_04_unesco_ai_education.pdf",
+    title_en: "UNESCO // 04 — Educating in Times of AI: Digital Citizenship from School",
+    title_id: "UNESCO // 04 — Educating in Times of AI: Digital Citizenship from School",
+    desc_en: "Official UNESCO Certificate issued to Zozi Atul Azimi on Nov 05, 2026 (Signed by Zelmira May, Programme Specialist, UNESCO). Certificate ID: d9182a16a8a1468a92332ff56e134b05.",
+    desc_id: "Sertifikat Resmi UNESCO yang diterbitkan untuk Zozi Atul Azimi pada 05 Nov 2026 (Ditandatangani oleh Zelmira May, Programme Specialist, UNESCO). ID Sertifikat: d9182a16a8a1468a92332ff56e134b05."
+  }
+];
+
+var activeCertIndex = 0;
+
+function openCertLightbox(index) {
+  var idx = parseInt(index, 10);
+  if (isNaN(idx) || idx < 0 || idx >= certItems.length) return;
+  activeCertIndex = idx;
+  var cert = certItems[idx];
+  var modal = document.getElementById('certLightbox');
+  var img = document.getElementById('certLightboxImg');
+  var title = document.getElementById('certLightboxTitle');
+  var desc = document.getElementById('certLightboxDesc');
+  var pdfBtn = document.getElementById('certLightboxPdf');
+  var verifyBtn = document.getElementById('certLightboxVerify');
+
+  if (modal && img && title && desc) {
+    var curLang = 'en';
+    try { curLang = localStorage.getItem('zoz_lang') || 'en'; } catch(e){}
+    var isId = (curLang === 'id');
+    var finalTitle = isId ? cert.title_id : cert.title_en;
+    var finalDesc = isId ? cert.desc_id : cert.desc_en;
+
+    img.src = cert.src;
+    img.alt = finalTitle;
+    title.innerHTML = '<i class="fas fa-award" style="color:var(--accent)"></i> ' + finalTitle;
+    desc.textContent = finalDesc;
+    if (pdfBtn) pdfBtn.href = cert.pdf;
+    if (verifyBtn) {
+      verifyBtn.href = cert.verify;
+      var isCredly = cert.verify.indexOf('credly.com') !== -1;
+      var isCog = cert.verify.indexOf('cognitiveclass.ai') !== -1;
+      if (isCredly) {
+        verifyBtn.removeAttribute('download');
+        verifyBtn.innerHTML = '<i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="cert_btn_verify_credly">' + (isId ? 'Verifikasi di Credly' : 'Verify on Credly') + '</span>';
+      } else if (isCog) {
+        verifyBtn.removeAttribute('download');
+        verifyBtn.innerHTML = '<i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="cert_btn_verify_cog">' + (isId ? 'Verifikasi di Cognitive Class' : 'Verify on Cognitive Class') + '</span>';
+      } else {
+        verifyBtn.setAttribute('download', '');
+        verifyBtn.innerHTML = '<i class="fas fa-download"></i> <span data-i18n="cert_btn_download_pdf">' + (isId ? 'Unduh Sertifikat PDF' : 'Download Official PDF') + '</span>';
+      }
+    }
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeCertLightbox() {
+  var modal = document.getElementById('certLightbox');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+function switchCertMode(mode) {
+  if (mode !== 'ibm' && mode !== 'anthropic' && mode !== 'cognitive' && mode !== 'google-unesco' && mode !== 'all') mode = 'ibm';
+  document.querySelectorAll('[data-cert-mode-btn]').forEach(function(btn) {
+    if (btn.getAttribute('data-cert-mode-btn') === mode) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+  document.querySelectorAll('[data-cert-mode-sec]').forEach(function(sec) {
+    var secMode = sec.getAttribute('data-cert-mode-sec');
+    if (mode === 'all' || secMode === mode) {
+      sec.classList.add('active');
+    } else {
+      sec.classList.remove('active');
+    }
+  });
+}
+
+(function(){
+  // Wire Certificate Provider Mode Switcher buttons
+  document.querySelectorAll('[data-cert-mode-btn]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var mode = btn.getAttribute('data-cert-mode-btn');
+      switchCertMode(mode);
+    });
+  });
+
+  // Wire quick switch buttons inside each provider toolbar
+  document.querySelectorAll('[data-switch-cert-mode]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var mode = btn.getAttribute('data-switch-cert-mode');
+      switchCertMode(mode);
+      var bar = document.querySelector('.cert-mode-bar');
+      if (bar) {
+        window.scrollTo({ top: Math.max(0, bar.getBoundingClientRect().top + window.scrollY - 85), behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Wire preview triggers
+  document.querySelectorAll('[data-cert-preview]').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
+      var idx = el.getAttribute('data-cert-preview');
+      openCertLightbox(idx);
+    });
+  });
+
+  // Wire IBM category filter buttons
+  var filterBtns = document.querySelectorAll('[data-cert-filter]');
+  var certCards = document.querySelectorAll('#ibmCertGrid .cert-card');
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var cat = btn.getAttribute('data-cert-filter') || 'all';
+      filterBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      certCards.forEach(function(card) {
+        var cardCat = card.getAttribute('data-cert-cat');
+        if (cat === 'all' || cardCat === cat) {
+          card.classList.remove('cert-hidden');
+        } else {
+          card.classList.add('cert-hidden');
+        }
+      });
+    });
+  });
+
+  // Wire Anthropic category filter buttons
+  var anthFilterBtns = document.querySelectorAll('[data-anth-filter]');
+  var anthCertCards = document.querySelectorAll('#anthropicCertGrid .cert-card');
+  anthFilterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var cat = btn.getAttribute('data-anth-filter') || 'all';
+      anthFilterBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      anthCertCards.forEach(function(card) {
+        var cardCat = card.getAttribute('data-anth-cat');
+        if (cat === 'all' || cardCat === cat) {
+          card.classList.remove('cert-hidden');
+        } else {
+          card.classList.add('cert-hidden');
+        }
+      });
+    });
+  });
+
+  // Wire Cognitive Class category filter buttons
+  var cogFilterBtns = document.querySelectorAll('[data-cog-filter]');
+  var cogCertCards = document.querySelectorAll('#cognitiveCertGrid .cert-card');
+  cogFilterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var cat = btn.getAttribute('data-cog-filter') || 'all';
+      cogFilterBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      cogCertCards.forEach(function(card) {
+        var cardCat = card.getAttribute('data-cog-cat');
+        if (cat === 'all' || cardCat === cat) {
+          card.classList.remove('cert-hidden');
+        } else {
+          card.classList.add('cert-hidden');
+        }
+      });
+    });
+  });
+
+  // Wire Google Skills & UNESCO category filter buttons
+  var guFilterBtns = document.querySelectorAll('[data-gu-filter]');
+  var guCertCards = document.querySelectorAll('#googleUnescoCertGrid .cert-card');
+  guFilterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var cat = btn.getAttribute('data-gu-filter') || 'all';
+      guFilterBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      guCertCards.forEach(function(card) {
+        var cardCat = card.getAttribute('data-gu-cat');
+        if (cat === 'all' || cardCat === cat) {
+          card.classList.remove('cert-hidden');
+        } else {
+          card.classList.add('cert-hidden');
+        }
+      });
+    });
+  });
+
+  // Lightbox controls (close, backdrop, prev, next, keyboard, touch swipe)
+  var modal = document.getElementById('certLightbox');
+  var closeBtn = document.getElementById('certLightboxClose');
+  var prevBtn = document.getElementById('certLbPrev');
+  var nextBtn = document.getElementById('certLbNext');
+
+  function stepCert(d) {
+    var n = certItems.length;
+    activeCertIndex = (activeCertIndex + d + n) % n;
+    openCertLightbox(activeCertIndex);
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeCertLightbox);
+  if (prevBtn) prevBtn.addEventListener('click', function(e) { e.stopPropagation(); stepCert(-1); });
+  if (nextBtn) nextBtn.addEventListener('click', function(e) { e.stopPropagation(); stepCert(1); });
+
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeCertLightbox();
+    });
+    var contentBox = modal.querySelector('.doc-lightbox-content');
+    var sx = null;
+    if (contentBox) {
+      contentBox.addEventListener('touchstart', function(e) { sx = e.touches[0].clientX; }, { passive: true });
+      contentBox.addEventListener('touchend', function(e) {
+        if (sx === null) return;
+        var dx = e.changedTouches[0].clientX - sx;
+        sx = null;
+        if (Math.abs(dx) > 60) stepCert(dx < 0 ? 1 : -1);
+      });
+    }
+  }
+
+  window.addEventListener('keydown', function(e) {
+    if (!modal || !modal.classList.contains('active')) return;
+    if (e.key === 'Escape') closeCertLightbox();
+    else if (e.key === 'ArrowLeft') stepCert(-1);
+    else if (e.key === 'ArrowRight') stepCert(1);
+  });
+})();
+
+// =========================================================================
 // 7. BILINGUAL I18N ENGINE (ENGLISH & INDONESIAN WITH LIVE SWITCHER)
 // =========================================================================
 (function(){
@@ -2458,6 +4916,8 @@ window.addEventListener('keydown', (e) => {
       // Navigation
       nav_overview: "Overview",
       nav_overview_sub: "What is ZOZ Router",
+      nav_certs: "License & Certification",
+      nav_certs_sub: "Verified Credentials",
       nav_features: "Features",
       nav_features_sub: "What it can do",
       nav_screenshots: "Screenshots",
@@ -2467,6 +4927,124 @@ window.addEventListener('keydown', (e) => {
       nav_creator: "Creator Profile",
       nav_creator_sub: "SMKN 1 Pringgabaya, NTB",
       nav_creator_btn: "Creator",
+
+      // Licenses & Certifications (IBM, Anthropic, Cognitive Class & Google Skills / UNESCO Section)
+      cert_kicker: "// Licenses & Certifications",
+      cert_title: "LICENSE & CERTIFICATION ARCHIVE",
+      cert_sub: "Official professional certificates and digital credentials earned by Zozi Atul Azimi through global technology learning programs (IBM SkillsBuild, Anthropic Education, Cognitive Class, Google Cloud Skills Boost & UNESCO). Switch between certificate modes below or view all 27 credentials together.",
+      cert_mode_title: "Certificate Provider Mode",
+      cert_mode_sub: "Switch between IBM SkillsBuild, Anthropic Education, Cognitive Class, Google Skills & UNESCO, or view all certificates",
+      cert_mode_ibm: "IBM SkillsBuild",
+      cert_mode_anth: "Anthropic Education",
+      cert_mode_cog: "Cognitive Class",
+      cert_mode_gu: "Google Skills & UNESCO",
+      cert_mode_all: "All Certificates",
+      cert_switch_to_anth: "Anthropic (10)",
+      cert_switch_to_ibm: "IBM SkillsBuild (9)",
+      cert_switch_to_cog: "Cognitive Class (4)",
+      cert_switch_to_gu: "Google & UNESCO (4)",
+      cert_ibm_heading: "IBM SkillsBuild & IBM Skills Network",
+      cert_ibm_badge: '<i class="fas fa-shield-check"></i> 9 Official Credentials',
+      cert_ibm_desc: "Covering Artificial Intelligence (LLMs, RAG, Responsible AI), Data Science Foundations & Methodologies, Cloud Computing, Cybersecurity, and Professional Skills.",
+      cert_anth_heading: "Anthropic Education & Academy",
+      cert_anth_badge: '<i class="fas fa-certificate"></i> 10 Official Certificates',
+      cert_anth_desc: "Covering Claude Code & Agentic Workflows, Model Context Protocol (MCP), Anthropic API Engineering, Claude Platform & Cowork, and the Academic AI Fluency Curriculum.",
+      cert_anth_stat_focus: "Code • MCP • API",
+      cert_anth_flt_all: "All Anthropic",
+      cert_anth_flt_dev: "Claude Code, MCP & API",
+      cert_anth_flt_plat: "Claude Platform & Cowork",
+      cert_anth_flt_fluency: "AI Fluency Series",
+      cert_cog_heading: "Cognitive Class (cognitiveclass.ai)",
+      cert_cog_badge: '<i class="fas fa-shield-check"></i> 4 Verified Certificates',
+      cert_cog_desc: "Powered by IBM Developer Skills Network & DeepLearning.TV. Covering Data Science 101, Deep Learning Fundamentals, Machine Learning Dimensionality Reduction, and Prompt Engineering.",
+      cert_cog_stat_verified: "Online Verified",
+      cert_cog_flt_all: "All Cognitive Class",
+      cert_cog_flt_dsml: "Data Science & ML",
+      cert_cog_flt_dlai: "Deep Learning & Prompt Eng",
+      cert_gu_heading: "Google Cloud Skills Boost & UNESCO",
+      cert_gu_badge: '<i class="fas fa-globe"></i> 4 Official Credentials',
+      cert_gu_desc: "Combining Google Cloud Skill Badges (Agent Development Kit ADK, Gemini Enterprise, BigQuery ML) with UNESCO's official certification on Artificial Intelligence & Digital Citizenship in Education.",
+      cert_gu_stat_google: "Google Skill Badges",
+      cert_gu_stat_unesco: "UNESCO Certificate",
+      cert_gu_stat_focus: "ADK • Gemini • AI Edu",
+      cert_gu_flt_all: "All Combined",
+      cert_gu_flt_google: "Google Cloud Skills",
+      cert_gu_flt_unesco: "UNESCO Official",
+      cert_stat_total: "Certificates",
+      cert_stat_issuer: "Official Issuer",
+      cert_stat_verified: "Credly Verified",
+      cert_flt_all: "All IBM",
+      cert_flt_ai: "AI & Generative AI",
+      cert_flt_ds: "Data Science & Literacy",
+      cert_flt_cloud: "Cloud & Cybersecurity",
+      cert_flt_prof: "Professional Skills",
+      cert_verify_hint: "Click any certificate to preview full screen or verify via Credly",
+      cert_lbl_verified: "Verified",
+      cert_lbl_zoom: "Preview Certificate",
+      cert_meta_recipient: "Recipient:",
+      cert_meta_id: "Credential:",
+      cert_btn_preview: "Preview",
+      cert_btn_pdf: "PDF",
+      cert_btn_verify: "Verify",
+      cert_btn_download: "Download",
+      cert_btn_open_pdf: "Open PDF",
+      cert_btn_verify_credly: "Verify on Credly",
+      cert_btn_verify_cog: "Verify on Cognitive Class",
+      cert_btn_download_pdf: "Download Official PDF",
+      cert_0_title: "Cloud Computing Fundamentals",
+      cert_0_desc: "Core principles of cloud architecture, service models (IaaS, PaaS, SaaS), deployment strategies (public, private, hybrid, multicloud), containerization, and modern cloud infrastructure operations.",
+      cert_1_title: "Cybersecurity Fundamentals",
+      cert_1_desc: "Foundational cybersecurity concepts, threat landscape analysis, CIA triad (Confidentiality, Integrity, Availability), cryptography, network defense, and incident response frameworks.",
+      cert_2_title: "Data Science Methodologies",
+      cert_2_desc: "End-to-end data science workflow: business understanding, analytic approach selection, data requirements, collection, preparation, modeling, evaluation, deployment, and feedback loops.",
+      cert_3_title: "Data Science Foundations - Level 1",
+      cert_3_desc: "Foundational concepts in data science, big data ecosystems, statistical analysis, machine learning applications, and modern data engineering tools used by data scientists.",
+      cert_4_title: "Generative AI Essentials: Using LLMs to Work with Data",
+      cert_4_desc: "Applying Large Language Models (LLMs) and prompt engineering techniques to synthesize, transform, clean, and extract structured insights from complex datasets.",
+      cert_5_title: "Retrieval-Augmented Generation for Enhanced AI Outputs",
+      cert_5_desc: "Designing RAG pipelines that ground LLM responses in authoritative external knowledge bases using vector embeddings, semantic retrieval, and context augmentation to reduce hallucinations.",
+      cert_6_title: "Data Literacy",
+      cert_6_desc: "Reading, interpreting, analyzing, and communicating with data effectively—understanding data types, quality metrics, visualization principles, and evidence-based decision-making.",
+      cert_7_title: "Lifelong Professional Skills",
+      cert_7_desc: "Essential workplace and engineering competencies: critical thinking, structured problem solving, agile collaboration, adaptability, communication, and continuous self-directed learning.",
+      cert_8_title: "Responsible AI and Risk Management",
+      cert_8_desc: "AI ethics principles, fairness, transparency, explainability, privacy protection, bias mitigation, and governance frameworks for deploying trustworthy AI systems responsibly.",
+      cert_9_title: "Claude Code in Action",
+      cert_9_desc: "Agentic command-line software engineering with Claude Code: multi-file codebase navigation, autonomous test execution, Git workflows, custom slash commands, hooks, and MCP tool integration.",
+      cert_10_title: "Claude Code 101",
+      cert_10_desc: "Foundations of terminal-native AI pair programming using Claude Code: environment setup, project memory (CLAUDE.md), permission management, iterative debugging, and safe command execution.",
+      cert_11_title: "Introduction to Model Context Protocol",
+      cert_11_desc: "Architecting and building standardized Model Context Protocol (MCP) servers and clients to connect LLMs securely with external tools, local resources, databases, and prompt templates.",
+      cert_12_title: "Claude with the Anthropic API",
+      cert_12_desc: "Building production AI applications with the Anthropic Messages API: system prompts, streaming responses, structured outputs, tool use, extended thinking, prompt caching, and multimodal vision.",
+      cert_13_title: "Claude Platform 101",
+      cert_13_desc: "Comprehensive guide to the Claude developer platform and console: workbench experimentation, prompt evaluation suites, model selection across Haiku/Sonnet/Opus, and API governance.",
+      cert_14_title: "Introduction to Claude Cowork",
+      cert_14_desc: "Collaborative AI workflows with Claude Cowork: organizing shared projects, interactive artifacts, knowledge bases, connected workspace integrations, and team productivity automation.",
+      cert_15_title: "Claude 101",
+      cert_15_desc: "Core mastery of Claude AI: effective prompt structuring, multi-turn reasoning, document synthesis, interactive Artifact generation, and Constitutional AI safety principles.",
+      cert_16_title: "AI Fluency: Framework & Foundations",
+      cert_16_desc: "The 4D AI Fluency Framework (Delegation, Description, Discernment, Diligence) developed with academic partners to collaborate with generative AI effectively, critically, and ethically.",
+      cert_17_title: "AI Fluency for Students",
+      cert_17_desc: "Using AI as a Socratic learning partner rather than a shortcut: deepening conceptual mastery, verifying sources, maintaining academic integrity, and building career-ready AI skills.",
+      cert_18_title: "AI Fluency for Educators",
+      cert_18_desc: "Pedagogical frameworks for integrating AI into curriculum design, assessment strategies, personalized instruction, and guiding learners toward responsible AI literacy.",
+      cert_19_title: "Data Science 101 (DS0101EN)",
+      cert_19_desc: "Introduction to modern data science powered by IBM Developer Skills Network: data science applications, big data algorithms, exploratory analysis, and real-world industry case studies.",
+      cert_20_title: "Deep Learning Fundamentals (ML0115EN)",
+      cert_20_desc: "Core architectures of deep neural networks: feedforward perceptrons, backpropagation, convolutional neural networks (CNNs), recurrent neural networks (RNNs), autoencoders, and GPU acceleration.",
+      cert_21_title: "Machine Learning - Dimensionality Reduction (ML0109EN)",
+      cert_21_desc: "High-dimensional feature engineering and representation learning: Principal Component Analysis (PCA), Linear Discriminant Analysis (LDA), manifold learning, and singular value decomposition (SVD).",
+      cert_22_title: "Prompt Engineering for Everyone (AI0117EN)",
+      cert_22_desc: "Systematic prompt engineering methodologies for Large Language Models: zero-shot & few-shot prompting, Chain-of-Thought (CoT) reasoning, Tree-of-Thoughts, persona framing, and output control.",
+      cert_23_title: "Engineer AI Agents with Agent Development Kit (ADK)",
+      cert_23_desc: "Intermediate Google Cloud Skill Badge covering multi-agent orchestration, custom tool integration, state management, and deploying production AI agents with Google's Agent Development Kit (ADK).",
+      cert_24_title: "Create Your First Gemini Enterprise Application",
+      cert_24_desc: "Introductory Google Cloud Skill Badge demonstrating how to build, ground, and deploy enterprise generative AI applications powered by Google Gemini models on Vertex AI.",
+      cert_25_title: "Create ML Models with BigQuery ML",
+      cert_25_desc: "Intermediate Google Cloud Skill Badge on training, evaluating, and running predictive machine learning models directly inside Google BigQuery using standard SQL queries.",
+      cert_26_title: "Educating in Times of AI: Digital Citizenship from School",
+      cert_26_desc: "Official UNESCO course certification ('Educar en tiempos de inteligencia artificial. Ciudadanía digital desde la escuela') focusing on AI ethics, digital citizenship, and responsible educational transformation.",
 
       // Hero
       hero_badge: '<span class="dot"></span> No versioned release yet',
@@ -2547,6 +5125,8 @@ window.addEventListener('keydown', (e) => {
       gh_banner_star_btn: '<i class="fas fa-star" ></i> Star on GitHub',
 
       // Tab Navigation Buttons
+      nav_btn_next_certs: "Next: License & Certification ",
+      nav_btn_prev_certs: "Previous: Certifications",
       nav_btn_next_feat: "Next: Features ",
       nav_btn_prev_overview: "Previous: Overview",
       nav_btn_next_doc: "Next: Screenshots ",
@@ -2608,6 +5188,8 @@ window.addEventListener('keydown', (e) => {
       // Navigation
       nav_overview: "Ikhtisar",
       nav_overview_sub: "Apa itu ZOZ Router",
+      nav_certs: "Lisensi & Sertifikasi",
+      nav_certs_sub: "Sertifikat Terverifikasi",
       nav_features: "Fitur Unggulan",
       nav_features_sub: "Kemampuan sistem",
       nav_screenshots: "Tangkapan Layar",
@@ -2617,6 +5199,124 @@ window.addEventListener('keydown', (e) => {
       nav_creator: "Profil Kreator",
       nav_creator_sub: "SMKN 1 Pringgabaya, NTB",
       nav_creator_btn: "Kreator",
+
+      // Licenses & Certifications (IBM, Anthropic, Cognitive Class & Google Skills / UNESCO Section)
+      cert_kicker: "// Lisensi & Sertifikasi Resmi",
+      cert_title: "ARSIP LISENSI & SERTIFIKASI",
+      cert_sub: "Sertifikat profesional dan kredensial digital resmi yang diraih oleh Zozi Atul Azimi melalui program pembelajaran teknologi global (IBM SkillsBuild, Anthropic Education, Cognitive Class, Google Cloud Skills Boost & UNESCO). Beralih antar mode penyedia sertifikat di bawah ini atau tampilkan seluruh 27 kredensial sekaligus.",
+      cert_mode_title: "Mode Penyedia Sertifikat",
+      cert_mode_sub: "Beralih antara IBM SkillsBuild, Anthropic Education, Cognitive Class, Google Skills & UNESCO, atau tampilkan semua sertifikat",
+      cert_mode_ibm: "IBM SkillsBuild",
+      cert_mode_anth: "Anthropic Education",
+      cert_mode_cog: "Cognitive Class",
+      cert_mode_gu: "Google Skills & UNESCO",
+      cert_mode_all: "Semua Sertifikat",
+      cert_switch_to_anth: "Anthropic (10)",
+      cert_switch_to_ibm: "IBM SkillsBuild (9)",
+      cert_switch_to_cog: "Cognitive Class (4)",
+      cert_switch_to_gu: "Google & UNESCO (4)",
+      cert_ibm_heading: "IBM SkillsBuild & IBM Skills Network",
+      cert_ibm_badge: '<i class="fas fa-shield-check"></i> 9 Kredensial Resmi',
+      cert_ibm_desc: "Mencakup Kecerdasan Buatan (LLM, RAG, Responsible AI), Fondasi & Metodologi Data Science, Cloud Computing, Keamanan Siber (Cybersecurity), serta Keahlian Profesional.",
+      cert_anth_heading: "Anthropic Education & Academy",
+      cert_anth_badge: '<i class="fas fa-certificate"></i> 10 Sertifikat Resmi',
+      cert_anth_desc: "Mencakup Claude Code & Alur Kerja Agen Otonom, Model Context Protocol (MCP), Rekayasa Anthropic API, Claude Platform & Cowork, serta Kurikulum Akademik AI Fluency.",
+      cert_anth_stat_focus: "Code • MCP • API",
+      cert_anth_flt_all: "Semua Anthropic",
+      cert_anth_flt_dev: "Claude Code, MCP & API",
+      cert_anth_flt_plat: "Claude Platform & Cowork",
+      cert_anth_flt_fluency: "Seri AI Fluency",
+      cert_cog_heading: "Cognitive Class (cognitiveclass.ai)",
+      cert_cog_badge: '<i class="fas fa-shield-check"></i> 4 Sertifikat Terverifikasi',
+      cert_cog_desc: "Didukung oleh IBM Developer Skills Network & DeepLearning.TV. Mencakup Data Science 101, Deep Learning Fundamentals, Machine Learning Dimensionality Reduction, dan Prompt Engineering.",
+      cert_cog_stat_verified: "Verifikasi Online",
+      cert_cog_flt_all: "Semua Cognitive Class",
+      cert_cog_flt_dsml: "Data Science & ML",
+      cert_cog_flt_dlai: "Deep Learning & Prompt Eng",
+      cert_gu_heading: "Google Cloud Skills Boost & UNESCO",
+      cert_gu_badge: '<i class="fas fa-globe"></i> 4 Kredensial Resmi',
+      cert_gu_desc: "Menggabungkan Google Cloud Skill Badges (Agent Development Kit ADK, Gemini Enterprise, BigQuery ML) dengan sertifikasi resmi UNESCO di bidang Kecerdasan Buatan & Kewarganegaraan Digital dalam Pendidikan.",
+      cert_gu_stat_google: "Google Skill Badges",
+      cert_gu_stat_unesco: "Sertifikat UNESCO",
+      cert_gu_stat_focus: "ADK • Gemini • AI Edu",
+      cert_gu_flt_all: "Semua Gabungan",
+      cert_gu_flt_google: "Google Cloud Skills",
+      cert_gu_flt_unesco: "Resmi UNESCO",
+      cert_stat_total: "Sertifikat",
+      cert_stat_issuer: "Penerbit Resmi",
+      cert_stat_verified: "Terverifikasi Credly",
+      cert_flt_all: "Semua IBM",
+      cert_flt_ai: "AI & Generative AI",
+      cert_flt_ds: "Data Science & Literasi",
+      cert_flt_cloud: "Cloud & Keamanan Siber",
+      cert_flt_prof: "Keahlian Profesional",
+      cert_verify_hint: "Klik sertifikat untuk melihat pratinjau layar penuh atau verifikasi via Credly",
+      cert_lbl_verified: "Terverifikasi",
+      cert_lbl_zoom: "Lihat Sertifikat",
+      cert_meta_recipient: "Penerima:",
+      cert_meta_id: "Kredensial:",
+      cert_btn_preview: "Pratinjau",
+      cert_btn_pdf: "PDF",
+      cert_btn_verify: "Verifikasi",
+      cert_btn_download: "Unduh",
+      cert_btn_open_pdf: "Buka PDF",
+      cert_btn_verify_credly: "Verifikasi di Credly",
+      cert_btn_verify_cog: "Verifikasi di Cognitive Class",
+      cert_btn_download_pdf: "Unduh Sertifikat PDF",
+      cert_0_title: "Cloud Computing Fundamentals",
+      cert_0_desc: "Prinsip inti arsitektur komputasi awan, model layanan (IaaS, PaaS, SaaS), strategi penerapan (publik, privat, hibrida, multicloud), kontainerisasi, dan operasional infrastruktur cloud modern.",
+      cert_1_title: "Cybersecurity Fundamentals",
+      cert_1_desc: "Konsep fundamental keamanan siber, analisis lanskap ancaman, prinsip CIA Triad (Confidentiality, Integrity, Availability), kriptografi, pertahanan jaringan, dan kerangka respons insiden.",
+      cert_2_title: "Data Science Methodologies",
+      cert_2_desc: "Alur kerja data science menyeluruh: pemahaman bisnis, pendekatan analitik, kebutuhan & pengumpulan data, persiapan data, pemodelan, evaluasi, penerapan, dan siklus umpan balik.",
+      cert_3_title: "Data Science Foundations - Level 1",
+      cert_3_desc: "Konsep dasar sains data, ekosistem big data, analisis statistik, penerapan machine learning, serta perangkat rekayasa data modern yang digunakan oleh praktisi data scientist.",
+      cert_4_title: "Generative AI Essentials: Using LLMs to Work with Data",
+      cert_4_desc: "Penerapan Large Language Models (LLM) dan teknik prompt engineering untuk mensintesis, mentransformasi, membersihkan, serta mengekstrak wawasan terstruktur dari kumpulan data kompleks.",
+      cert_5_title: "Retrieval-Augmented Generation for Enhanced AI Outputs",
+      cert_5_desc: "Perancangan pipeline RAG yang menghubungkan respons LLM dengan basis pengetahuan eksternal terpercaya menggunakan vector embeddings, pencarian semantik, dan augmentasi konteks untuk mencegah halusinasi.",
+      cert_6_title: "Data Literacy",
+      cert_6_desc: "Kemampuan membaca, menafsirkan, menganalisis, dan mengomunikasikan data secara efektif—memahami tipe data, metrik kualitas data, prinsip visualisasi, serta pengambilan keputusan berbasis bukti.",
+      cert_7_title: "Lifelong Professional Skills",
+      cert_7_desc: "Kompetensi esensial dunia kerja dan rekayasa: berpikir kritis, pemecahan masalah terstruktur, kolaborasi tangkas (agile), adaptabilitas, komunikasi efektif, dan pembelajaran mandiri berkelanjutan.",
+      cert_8_title: "Responsible AI and Risk Management",
+      cert_8_desc: "Prinsip etika AI, keadilan (fairness), transparansi, explainability, perlindungan privasi, mitigasi bias, serta kerangka tata kelola untuk menerapkan sistem AI yang aman dan bertanggung jawab.",
+      cert_9_title: "Claude Code in Action",
+      cert_9_desc: "Rekayasa perangkat lunak berbasis agen di terminal dengan Claude Code: navigasi codebase multi-file, eksekusi pengujian otonom, alur kerja Git, perintah slash kustom, hooks, dan integrasi MCP.",
+      cert_10_title: "Claude Code 101",
+      cert_10_desc: "Fondasi pair programming AI langsung di terminal menggunakan Claude Code: penyiapan lingkungan, memori proyek (CLAUDE.md), manajemen izin akses, debugging iteratif, dan eksekusi perintah aman.",
+      cert_11_title: "Introduction to Model Context Protocol",
+      cert_11_desc: "Merancang dan membangun server serta klien Model Context Protocol (MCP) terstandarisasi untuk menghubungkan LLM secara aman dengan tool eksternal, sumber daya lokal, database, dan template prompt.",
+      cert_12_title: "Claude with the Anthropic API",
+      cert_12_desc: "Membangun aplikasi AI skala produksi menggunakan Anthropic Messages API: system prompt, streaming respons, output terstruktur, tool use, extended thinking, prompt caching, dan visi multimodal.",
+      cert_13_title: "Claude Platform 101",
+      cert_13_desc: "Panduan menyeluruh platform developer dan konsol Claude: eksperimen di Workbench, evaluasi kualitas prompt, pemilihan model (Haiku/Sonnet/Opus), serta tata kelola penggunaan API.",
+      cert_14_title: "Introduction to Claude Cowork",
+      cert_14_desc: "Alur kerja AI kolaboratif dengan Claude Cowork: pengelolaan proyek bersama, pembuatan Artifacts interaktif, basis pengetahuan terpusat, integrasi ruang kerja, dan otomatisasi produktivitas tim.",
+      cert_15_title: "Claude 101",
+      cert_15_desc: "Penguasaan inti interaksi Claude AI: perancangan prompt efektif, penalaran multi-tahap, sintesis dokumen kompleks, pembuatan Artifact interaktif, dan prinsip keamanan Constitutional AI.",
+      cert_16_title: "AI Fluency: Framework & Foundations",
+      cert_16_desc: "Kerangka Kerja AI Fluency 4D (Delegation, Description, Discernment, Diligence) bersama mitra akademik untuk berkolaborasi dengan AI generatif secara efektif, kritis, dan beretika.",
+      cert_17_title: "AI Fluency for Students",
+      cert_17_desc: "Menggunakan AI sebagai mitra belajar Sokratik: memperdalam penguasaan konsep, memverifikasi kebenaran sumber, menjaga integritas akademik, dan membangun keahlian AI siap kerja.",
+      cert_18_title: "AI Fluency for Educators",
+      cert_18_desc: "Kerangka pedagogis untuk mengintegrasikan AI ke dalam perancangan kurikulum, strategi asesmen, pembelajaran personal, serta membimbing peserta didik menuju literasi AI yang bertanggung jawab.",
+      cert_19_title: "Data Science 101 (DS0101EN)",
+      cert_19_desc: "Pengantar sains data modern bersama IBM Developer Skills Network: penerapan data science, algoritma big data, analisis eksploratif, dan studi kasus industri dunia nyata.",
+      cert_20_title: "Deep Learning Fundamentals (ML0115EN)",
+      cert_20_desc: "Arsitektur inti jaringan saraf tiruan dalam (deep neural networks): feedforward perceptron, backpropagation, Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN), autoencoder, dan akselerasi GPU.",
+      cert_21_title: "Machine Learning - Dimensionality Reduction (ML0109EN)",
+      cert_21_desc: "Rekayasa fitur berdimensi tinggi dan representation learning: Principal Component Analysis (PCA), Linear Discriminant Analysis (LDA), manifold learning, serta Singular Value Decomposition (SVD).",
+      cert_22_title: "Prompt Engineering for Everyone (AI0117EN)",
+      cert_22_desc: "Metodologi prompt engineering sistematis untuk Large Language Models: zero-shot & few-shot prompting, penalaran Chain-of-Thought (CoT), Tree-of-Thoughts, persona framing, dan kendali output.",
+      cert_23_title: "Engineer AI Agents with Agent Development Kit (ADK)",
+      cert_23_desc: "Google Cloud Skill Badge tingkat menengah (Intermediate) yang mencakup orkestrasi multi-agen, integrasi custom tool, manajemen state, dan penerapan agen AI produksi dengan Agent Development Kit (ADK).",
+      cert_24_title: "Create Your First Gemini Enterprise Application",
+      cert_24_desc: "Google Cloud Skill Badge tingkat dasar (Introductory) tentang perancangan, grounding data, dan penerapan aplikasi AI generatif tingkat enterprise menggunakan model Google Gemini di Vertex AI.",
+      cert_25_title: "Create ML Models with BigQuery ML",
+      cert_25_desc: "Google Cloud Skill Badge tingkat menengah (Intermediate) dalam melatih, mengevaluasi, dan menjalankan model prediksi machine learning langsung di dalam Google BigQuery menggunakan kueri SQL standar.",
+      cert_26_title: "Educating in Times of AI: Digital Citizenship from School",
+      cert_26_desc: "Sertifikat kursus resmi UNESCO ('Educar en tiempos de inteligencia artificial. Ciudadanía digital desde la escuela') yang berfokus pada etika AI, kewarganegaraan digital, dan transformasi pendidikan yang bertanggung jawab.",
 
       // Hero
       hero_badge: '<span class="dot"></span> Belum ada rilis versi resmi',
@@ -2697,6 +5397,8 @@ window.addEventListener('keydown', (e) => {
       gh_banner_star_btn: '<i class="fas fa-star" ></i> Beri Bintang di GitHub',
 
       // Tab Navigation Buttons
+      nav_btn_next_certs: "Selanjutnya: Lisensi & Sertifikasi ",
+      nav_btn_prev_certs: "Sebelumnya: Sertifikasi",
       nav_btn_next_feat: "Selanjutnya: Fitur ",
       nav_btn_prev_overview: "Sebelumnya: Ikhtisar",
       nav_btn_next_doc: "Selanjutnya: Tangkapan Layar ",
@@ -2818,6 +5520,12 @@ window.addEventListener('keydown', (e) => {
       var lb = document.getElementById('docLightbox');
       if (lb && lb.classList.contains('active')) {
         openLightbox(activeDocIndex);
+      }
+    }
+    if (typeof activeCertIndex !== 'undefined' && activeCertIndex >= 0 && typeof openCertLightbox === 'function') {
+      var clb = document.getElementById('certLightbox');
+      if (clb && clb.classList.contains('active')) {
+        openCertLightbox(activeCertIndex);
       }
     }
   }
