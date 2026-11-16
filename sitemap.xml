@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://zozdocs.com/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://zozdocs.com/llms.txt</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url><loc>https://zozdocs.com/certs/ibm/ibm_01_cloud_computing.pdf</loc><lastmod>2026-11-08</lastmod><priority>0.8</priority></url>
@@ -38,5 +38,6 @@
   <url><loc>https://zozdocs.com/certs/google_unesco/gu_01_google_adk_agents.pdf</loc><lastmod>2026-11-08</lastmod><priority>0.8</priority></url>
   <url><loc>https://zozdocs.com/certs/google_unesco/gu_02_google_gemini_enterprise.pdf</loc><lastmod>2026-11-08</lastmod><priority>0.8</priority></url>
   <url><loc>https://zozdocs.com/certs/google_unesco/gu_03_google_bigquery_ml.pdf</loc><lastmod>2026-11-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://zozdocs.com/certs/google_unesco/gu_04_unesco_ai_education.pdf</loc><lastmod>2026-11-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/google_unesco/gu_04_unesco_ai_education.pdf</loc><lastmod>2026-11-16</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/hp_life/hp_01_strategic_planning_ai_age.pdf</loc><lastmod>2026-11-16</lastmod><priority>0.8</priority></url>
 </urlset>
