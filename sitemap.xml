@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://zozdocs.com/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://zozdocs.com/llms.txt</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
@@ -39,5 +39,23 @@
   <url><loc>https://zozdocs.com/certs/google_unesco/gu_02_google_gemini_enterprise.pdf</loc><lastmod>2026-11-08</lastmod><priority>0.8</priority></url>
   <url><loc>https://zozdocs.com/certs/google_unesco/gu_03_google_bigquery_ml.pdf</loc><lastmod>2026-11-08</lastmod><priority>0.8</priority></url>
   <url><loc>https://zozdocs.com/certs/google_unesco/gu_04_unesco_ai_education.pdf</loc><lastmod>2026-11-16</lastmod><priority>0.8</priority></url>
-  <url><loc>https://zozdocs.com/certs/hp_life/hp_01_strategic_planning_ai_age.pdf</loc><lastmod>2026-11-16</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/hp_life/hp_01_strategic_planning_ai_age.pdf</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/hp_life/hp_02_effective_leadership.pdf</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/hp_life/hp_03_cx_business_success.pdf</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/hp_life/hp_04_data_science_analytics.pdf</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/hp_life/hp_05_agile_project_management.pdf</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/hp_life/hp_06_cybersecurity_awareness.pdf</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/hp_life/hp_07_ai_for_beginners.pdf</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/hp_life/hp_08_professional_networking.pdf</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/hp_life/hp_09_business_email.pdf</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/saylor/saylor_01_engl102_composition_ii.pdf</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/saylor/saylor_02_cs101_programming_i.pdf</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/saylor/saylor_03_esl002_intermediate_esl.pdf</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/saylor/saylor_04_ma007_algebra.pdf</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/ibm/ibm_10_future_cloud_computing.pdf</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/hp_life/hp_10_critical_thinking_ai_era.pdf</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/saylor/saylor_05_esl001_elementary_esl.pdf</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/saylor/saylor_06_bio101_molecular_biology.pdf</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/saylor/saylor_07_ma122_calculus_i.pdf</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://zozdocs.com/certs/saylor/saylor_08_prdv433_spreadsheets_genai.pdf</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
 </urlset>

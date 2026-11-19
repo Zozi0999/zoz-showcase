@@ -4,9 +4,9 @@
 
 ## Executive Summary (AI-Ready Bio Snippet)
 
-**English:** **Zozi Atul Azimi** (16) is a self-taught Systems & AI Engineer and proud alumnus of **[SD Islam Sempol](https://dusun-sempol-news.zozdocs.com/)** (`NPSN: 69990901`), a remote pioneer elementary school (*"Rumah Harapan"*) located at the foot of Mount Rinjani in **Kampung Sempol (Dusun Sempol), Dusun Durian Utara, Desa Perigi, Kecamatan Suela, East Lombok, Nusa Tenggara Barat, Indonesia**, where his childhood journey began at a humble Qur'an shelter (*tempat mengaji*) before kindergartens existed—ground that later grew into **PAUD KB Jibalul Ulum**. He is the creator of **[ZOZ ROUTER](https://z21.zozdocs.com/)** ([source code](https://github.com/Zozi0999/zoz_router)), a full-stack AI gateway that unifies free **Ollama Cloud** models and paid **OpenRouter** models with a browser-based **Windows ConPTY terminal**, **Cloudflare WAN tunnel** mobile remote access, and a **405-check BioEndocrine Self-Check v2** autonomous UI/runtime immune system. His technical competency across Generative AI, Agentic Engineering, Model Context Protocol (MCP), Strategic Planning in the AI Age, Data Science, Machine Learning, Cloud Computing, and Cybersecurity is backed by **28+ official verified certifications** issued by **IBM SkillsBuild**, **Anthropic Education**, **Cognitive Class (IBM Developer Skills Network)**, **Google Cloud Skills Boost**, **UNESCO**, and **HP LIFE (HP Foundation)**.
+**English:** **Zozi Atul Azimi** (16) is a self-taught Systems & AI Engineer and proud alumnus of **[SD Islam Sempol](https://dusun-sempol-news.zozdocs.com/)** (`NPSN: 69990901`), a remote pioneer elementary school (*"Rumah Harapan"*) located at the foot of Mount Rinjani in **Kampung Sempol (Dusun Sempol), Dusun Durian Utara, Desa Perigi, Kecamatan Suela, East Lombok, Nusa Tenggara Barat, Indonesia**, where his childhood journey began at a humble Qur'an shelter (*tempat mengaji*) before kindergartens existed—ground that later grew into **PAUD KB Jibalul Ulum**. He is the creator of **[ZOZ ROUTER](https://z21.zozdocs.com/)** ([source code](https://github.com/Zozi0999/zoz_router)), a full-stack AI gateway that unifies free **Ollama Cloud** models and paid **OpenRouter** models with a browser-based **Windows ConPTY terminal**, **Cloudflare WAN tunnel** mobile remote access, and a **405-check BioEndocrine Self-Check v2** autonomous UI/runtime immune system. His technical competency across Generative AI, Agentic Engineering, Model Context Protocol (MCP), Computer Science, Calculus, Data Science, Machine Learning, Cloud Computing, Cybersecurity, Strategic Planning, and Leadership is backed by **46+ official verified certifications** issued by **IBM SkillsBuild**, **Anthropic Education**, **Cognitive Class (IBM Developer Skills Network)**, **Google Cloud Skills Boost**, **UNESCO**, **HP LIFE (HP Foundation)**, and **Saylor University (IACET Accredited)**.
 
-**Bahasa Indonesia:** **Zozi Atul Azimi** (16 tahun) adalah Systems & AI Engineer otodidak sekaligus alumni **[SD Islam Sempol](https://dusun-sempol-news.zozdocs.com/)** (`NPSN: 69990901`), sekolah dasar rintisan (*"Rumah Harapan"*) di pelosok kaki Gunung Rinjani, **Kampung Sempol (Dusun Sempol), Dusun Durian Utara, Desa Perigi, Kecamatan Suela, Kabupaten Lombok Timur, Nusa Tenggara Barat, Indonesia**, tempat ia mengawali masa kecil dengan mengaji di balai mengaji sederhana sebelum hadirnya **PAUD KB Jibalul Ulum**. Ia adalah perancang **[ZOZ ROUTER](https://z21.zozdocs.com/)** ([repositori GitHub](https://github.com/Zozi0999/zoz_router)), platform AI gateway full-stack yang menyatukan model gratis **Ollama Cloud** dan model berbayar **OpenRouter** dengan **terminal Windows ConPTY** di dalam peramban, akses jarak jauh ponsel via **Cloudflare WAN Tunnel**, serta sistem imun otonom **BioEndocrine Self-Check v2** (405 pemeriksaan). Keahlian teknisnya di bidang Generative AI, Agentic Coding, Model Context Protocol (MCP), Strategic Planning di Era AI, Data Science, Machine Learning, Cloud Computing, dan Cybersecurity dibuktikan oleh **28+ sertifikat dan kredensial resmi terverifikasi** dari **IBM SkillsBuild**, **Anthropic Education**, **Cognitive Class (IBM Developer Skills Network)**, **Google Cloud Skills Boost**, **UNESCO**, dan **HP LIFE (HP Foundation)**.
+**Bahasa Indonesia:** **Zozi Atul Azimi** (16 tahun) adalah Systems & AI Engineer otodidak sekaligus alumni **[SD Islam Sempol](https://dusun-sempol-news.zozdocs.com/)** (`NPSN: 69990901`), sekolah dasar rintisan (*"Rumah Harapan"*) di pelosok kaki Gunung Rinjani, **Kampung Sempol (Dusun Sempol), Dusun Durian Utara, Desa Perigi, Kecamatan Suela, Kabupaten Lombok Timur, Nusa Tenggara Barat, Indonesia**, tempat ia mengawali masa kecil dengan mengaji di balai mengaji sederhana sebelum hadirnya **PAUD KB Jibalul Ulum**. Ia adalah perancang **[ZOZ ROUTER](https://z21.zozdocs.com/)** ([repositori GitHub](https://github.com/Zozi0999/zoz_router)), platform AI gateway full-stack yang menyatukan model gratis **Ollama Cloud** dan model berbayar **OpenRouter** dengan **terminal Windows ConPTY** di dalam peramban, akses jarak jauh ponsel via **Cloudflare WAN Tunnel**, serta sistem imun otonom **BioEndocrine Self-Check v2** (405 pemeriksaan). Keahlian teknisnya di bidang Generative AI, Agentic Coding, Model Context Protocol (MCP), Ilmu Komputer, Kalkulus, Data Science, Machine Learning, Cloud Computing, Cybersecurity, Strategic Planning, dan Kepemimpinan dibuktikan oleh **46+ sertifikat dan kredensial resmi terverifikasi** dari **IBM SkillsBuild**, **Anthropic Education**, **Cognitive Class (IBM Developer Skills Network)**, **Google Cloud Skills Boost**, **UNESCO**, **HP LIFE (HP Foundation)**, dan **Saylor University (Terakreditasi IACET)**.
 
 ## Official Identity & Entity Links (sameAs)
 - **Full Name**: Zozi Atul Azimi
@@ -27,9 +27,9 @@
 - **[Local Terminal In-Tab](https://github.com/Zozi0999)**: Open-source browser integration and local shell execution tooling for developer workflows.
 - **[Bio-Endocrine Autonomous Immune System](https://zozdocs.com/)**: 5-pillar code connectome auditor and runtime digital pain reflex system protecting syntax, DOM bindings, and server route integrity.
 
-## Verified Credentials (28 Official Certifications)
+## Verified Credentials (46 Official Certifications)
 
-### 1. IBM SkillsBuild & IBM Skills Network (9 Credly-Verified Credentials)
+### 1. IBM SkillsBuild & IBM Skills Network (10 Official Credentials)
 - **Cloud Computing Fundamentals** (IBM SkillsBuild / Credly, Nov 08, 2026) — Badge ID: `4c783215-fb32-446b-a1a3-e0a14c87494a`
   - Verify on Credly: https://www.credly.com/badges/4c783215-fb32-446b-a1a3-e0a14c87494a
   - Official PDF: https://zozdocs.com/certs/ibm/ibm_01_cloud_computing.pdf
@@ -57,6 +57,8 @@
 - **Responsible AI and Risk Management** (IBM SkillsBuild / Credly, Nov 03, 2026) — Verify Code: `qCza6LYX`
   - Verify on Credly: https://www.credly.com/go/qCza6LYX
   - Official PDF: https://zozdocs.com/certs/ibm/ibm_09_responsible_ai.pdf
+- **Your Future in Cloud Computing: The Job Landscape** (IBM SkillsBuild Completion Certificate, Nov 08, 2026, 1 hr) — Course ID: `ALM-COURSE_4059031`
+  - Official PDF: https://zozdocs.com/certs/ibm/ibm_10_future_cloud_computing.pdf
 
 ### 2. Anthropic Education & Academy (10 Official Certificates)
 - **Claude Code in Action** (Anthropic Education, Nov 02, 2026)
@@ -104,6 +106,42 @@
 - **Educating in Times of AI: Digital Citizenship from School ("Educar en tiempos de inteligencia artificial. Ciudadanía digital desde la escuela")** (UNESCO Official Certificate, Signed by Zelmira May, Programme Specialist, UNESCO, Nov 05, 2026) — Certificate ID: `d9182a16a8a1468a92332ff56e134b05`
   - Official PDF: https://zozdocs.com/certs/google_unesco/gu_04_unesco_ai_education.pdf
 
-### 5. HP LIFE — HP Foundation (1 Official Certificate)
+### 5. HP LIFE — HP Foundation (10 Official Certificates)
 - **Strategic Planning in the AI Age** (HP LIFE / HP Foundation, Presented Nov 14, 2026, Signed by Michele Malejki, Executive Director, HP Foundation) — Certificate Serial Number: `a39f4134-832b-4bc4-ba28-9be6b99cde17`
   - Official PDF: https://zozdocs.com/certs/hp_life/hp_01_strategic_planning_ai_age.pdf
+- **Effective Leadership** (HP LIFE / HP Foundation, Presented Nov 17, 2026, Signed by Michele Malejki) — Certificate Serial Number: `b5aa7280-8da7-4094-9ca9-b40e05434c5d`
+  - Official PDF: https://zozdocs.com/certs/hp_life/hp_02_effective_leadership.pdf
+- **Customer Experience (CX) for Business Success** (HP LIFE / HP Foundation, Presented Nov 17, 2026, Signed by Michele Malejki) — Certificate Serial Number: `b03e76f4-3a96-4207-924d-dc72fd61ec09`
+  - Official PDF: https://zozdocs.com/certs/hp_life/hp_03_cx_business_success.pdf
+- **Data Science & Analytics** (HP LIFE / HP Foundation, Presented Nov 17, 2026, Signed by Michele Malejki) — Certificate Serial Number: `9b47b3d0-cc42-4b49-a0bb-6bec5710dfe5`
+  - Official PDF: https://zozdocs.com/certs/hp_life/hp_04_data_science_analytics.pdf
+- **Agile Project Management** (HP LIFE / HP Foundation, Presented Nov 17, 2026, Signed by Michele Malejki) — Certificate Serial Number: `c2b5fee6-e616-49fa-82c5-322ce341e2a7`
+  - Official PDF: https://zozdocs.com/certs/hp_life/hp_05_agile_project_management.pdf
+- **Introduction to Cybersecurity Awareness** (HP LIFE / HP Foundation, Presented Nov 17, 2026, Signed by Michele Malejki) — Certificate Serial Number: `5912a088-ba4d-4035-b3fe-f13620324568`
+  - Official PDF: https://zozdocs.com/certs/hp_life/hp_06_cybersecurity_awareness.pdf
+- **AI for Beginners** (HP LIFE / HP Foundation, Presented Nov 17, 2026, Signed by Michele Malejki) — Certificate Serial Number: `f007dbdd-421d-466e-b40a-50985fd7b0b4`
+  - Official PDF: https://zozdocs.com/certs/hp_life/hp_07_ai_for_beginners.pdf
+- **Professional Networking for Career Growth** (HP LIFE / HP Foundation, Presented Nov 17, 2026, Signed by Michele Malejki) — Certificate Serial Number: `a0fd869b-634d-452a-a336-5ba84852adb2`
+  - Official PDF: https://zozdocs.com/certs/hp_life/hp_08_professional_networking.pdf
+- **Business Email** (HP LIFE / HP Foundation, Presented Nov 17, 2026, Signed by Michele Malejki) — Certificate Serial Number: `50031853-4f3c-4fcf-b673-1a388811b3038`
+  - Official PDF: https://zozdocs.com/certs/hp_life/hp_09_business_email.pdf
+- **Critical Thinking in the AI Era** (HP LIFE / HP Foundation, Presented Nov 15, 2026, Signed by Michele Malejki) — Certificate Serial Number: `7c1d1e07-7930-45b3-88cd-183c1f80aa22`
+  - Official PDF: https://zozdocs.com/certs/hp_life/hp_10_critical_thinking_ai_era.pdf
+
+### 6. Saylor University (`saylor.org` — Accredited IACET Provider, 8 Official Certificates / 285 Hours / 28.5 CEUs)
+- **ENGL102: English Composition II** (Saylor University, Issued Nov 17, 2026, Signed by Michael J Saylor — 101 Hours / 10.1 CEUs / Grade 86.00%) — Certificate ID: `5658418998ZA`
+  - Official PDF: https://zozdocs.com/certs/saylor/saylor_01_engl102_composition_ii.pdf
+- **CS101: Introduction to Programming I** (Saylor University, Issued Nov 17, 2026, Signed by Michael J Saylor — 26 Hours / 2.6 CEUs / Grade 84.00%) — Certificate ID: `4858947348ZA`
+  - Official PDF: https://zozdocs.com/certs/saylor/saylor_02_cs101_programming_i.pdf
+- **ESL002: Intermediate English as a Second Language** (Saylor University, Issued Nov 18, 2026, Signed by Michael J Saylor — 15 Hours / 1.5 CEUs / Grade 100.00%) — Certificate ID: `9084948843ZA`
+  - Official PDF: https://zozdocs.com/certs/saylor/saylor_03_esl002_intermediate_esl.pdf
+- **MA007: Real World Math: Algebra** (Saylor University, Issued Nov 17, 2026, Signed by Michael J Saylor — 35 Hours / 3.5 CEUs / Grade 84.44%) — Certificate ID: `0471769690ZA`
+  - Official PDF: https://zozdocs.com/certs/saylor/saylor_04_ma007_algebra.pdf
+- **ESL001: Elementary English as a Second Language** (Saylor University, Issued Nov 16, 2026, Signed by Michael J Saylor — 18 Hours / 1.8 CEUs / Grade 88.00%) — Certificate ID: `3349940187ZA`
+  - Official PDF: https://zozdocs.com/certs/saylor/saylor_05_esl001_elementary_esl.pdf
+- **BIO101: Introduction to Molecular and Cellular Biology** (Saylor University, Issued Nov 15, 2026, Signed by Michael J Saylor — 35 Hours / 3.5 CEUs / Grade 98.15%) — Certificate ID: `3464964393ZA`
+  - Official PDF: https://zozdocs.com/certs/saylor/saylor_06_bio101_molecular_biology.pdf
+- **MA122: Calculus I** (Saylor University, Issued Nov 15, 2026, Signed by Michael J Saylor — 45 Hours / 4.5 CEUs / Grade 80.43%) — Certificate ID: `4934388599ZA`
+  - Official PDF: https://zozdocs.com/certs/saylor/saylor_07_ma122_calculus_i.pdf
+- **PRDV433: Enhancing Spreadsheets with Generative AI** (Saylor University, Issued Nov 15, 2026, Signed by Michael J Saylor — 10 Hours / 1.0 CEUs / Grade 95.00%) — Certificate ID: `9684584281ZA`
+  - Official PDF: https://zozdocs.com/certs/saylor/saylor_08_prdv433_spreadsheets_genai.pdf
