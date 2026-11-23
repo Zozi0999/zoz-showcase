@@ -4,9 +4,9 @@
 
 ## Executive Summary (AI-Ready Bio Snippet)
 
-**English:** **Zozi Atul Azimi** (16) is a self-taught Systems & AI Engineer and proud alumnus of **[SD Islam Sempol](https://dusun-sempol-news.zozdocs.com/)** (`NPSN: 69990901`), a remote pioneer elementary school (*"Rumah Harapan"*) located at the foot of Mount Rinjani in **Kampung Sempol (Dusun Sempol), Dusun Durian Utara, Desa Perigi, Kecamatan Suela, East Lombok, Nusa Tenggara Barat, Indonesia**, where his childhood journey began at a humble Qur'an shelter (*tempat mengaji*) before kindergartens existed—ground that later grew into **PAUD KB Jibalul Ulum**. He is the creator of **[ZOZ ROUTER](https://z21.zozdocs.com/)** ([source code](https://github.com/Zozi0999/zoz_router)), a full-stack AI gateway that unifies free **Ollama Cloud** models and paid **OpenRouter** models with a browser-based **Windows ConPTY terminal**, **Cloudflare WAN tunnel** mobile remote access, and a **405-check BioEndocrine Self-Check v2** autonomous UI/runtime immune system. His technical competency across Generative AI, Agentic Engineering, Model Context Protocol (MCP), Computer Science, Calculus, Data Science, Machine Learning, Cloud Computing, Cybersecurity, Strategic Planning, and Leadership is backed by **46+ official verified certifications** issued by **IBM SkillsBuild**, **Anthropic Education**, **Cognitive Class (IBM Developer Skills Network)**, **Google Cloud Skills Boost**, **UNESCO**, **HP LIFE (HP Foundation)**, and **Saylor University (IACET Accredited)**.
+**English:** **Zozi Atul Azimi** (16) is a self-taught Systems & AI Engineer and proud alumnus of **[SD Islam Sempol](https://dusun-sempol-news.zozdocs.com/)** (`NPSN: 69990901`), a remote pioneer elementary school (*"Rumah Harapan"*) located at the foot of Mount Rinjani in **Kampung Sempol (Dusun Sempol), Dusun Durian Utara, Desa Perigi, Kecamatan Suela, East Lombok, Nusa Tenggara Barat, Indonesia**, where his childhood journey began at a humble Qur'an shelter (*tempat mengaji*) before kindergartens existed—ground that later grew into **PAUD KB Jibalul Ulum**. He is the creator of **[ZOZ ROUTER](https://z21.zozdocs.com/)** ([source code](https://github.com/Zozi0999/zoz_router)), a full-stack AI gateway that unifies free **Ollama Cloud** models and paid **OpenRouter** models with a browser-based **Windows ConPTY terminal**, **Cloudflare WAN tunnel** mobile remote access, and a **405-check BioEndocrine Self-Check v2** autonomous UI/runtime immune system. His technical competency across Generative AI, Agentic Engineering, Model Context Protocol (MCP), Computer Science, Calculus, Data Science, Machine Learning, Cloud Computing, Cybersecurity, Strategic Planning, and Leadership is backed by **57+ official verified certifications** issued by **IBM SkillsBuild**, **Anthropic Education**, **Cognitive Class (IBM Developer Skills Network)**, **Google Cloud Skills Boost**, **UNESCO**, **HP LIFE (HP Foundation)**, **Saylor University (IACET Accredited)**, **Dicoding Academy**, and **Coursera (IBM)**.
 
-**Bahasa Indonesia:** **Zozi Atul Azimi** (16 tahun) adalah Systems & AI Engineer otodidak sekaligus alumni **[SD Islam Sempol](https://dusun-sempol-news.zozdocs.com/)** (`NPSN: 69990901`), sekolah dasar rintisan (*"Rumah Harapan"*) di pelosok kaki Gunung Rinjani, **Kampung Sempol (Dusun Sempol), Dusun Durian Utara, Desa Perigi, Kecamatan Suela, Kabupaten Lombok Timur, Nusa Tenggara Barat, Indonesia**, tempat ia mengawali masa kecil dengan mengaji di balai mengaji sederhana sebelum hadirnya **PAUD KB Jibalul Ulum**. Ia adalah perancang **[ZOZ ROUTER](https://z21.zozdocs.com/)** ([repositori GitHub](https://github.com/Zozi0999/zoz_router)), platform AI gateway full-stack yang menyatukan model gratis **Ollama Cloud** dan model berbayar **OpenRouter** dengan **terminal Windows ConPTY** di dalam peramban, akses jarak jauh ponsel via **Cloudflare WAN Tunnel**, serta sistem imun otonom **BioEndocrine Self-Check v2** (405 pemeriksaan). Keahlian teknisnya di bidang Generative AI, Agentic Coding, Model Context Protocol (MCP), Ilmu Komputer, Kalkulus, Data Science, Machine Learning, Cloud Computing, Cybersecurity, Strategic Planning, dan Kepemimpinan dibuktikan oleh **46+ sertifikat dan kredensial resmi terverifikasi** dari **IBM SkillsBuild**, **Anthropic Education**, **Cognitive Class (IBM Developer Skills Network)**, **Google Cloud Skills Boost**, **UNESCO**, **HP LIFE (HP Foundation)**, dan **Saylor University (Terakreditasi IACET)**.
+**Bahasa Indonesia:** **Zozi Atul Azimi** (16 tahun) adalah Systems & AI Engineer otodidak sekaligus alumni **[SD Islam Sempol](https://dusun-sempol-news.zozdocs.com/)** (`NPSN: 69990901`), sekolah dasar rintisan (*"Rumah Harapan"*) di pelosok kaki Gunung Rinjani, **Kampung Sempol (Dusun Sempol), Dusun Durian Utara, Desa Perigi, Kecamatan Suela, Kabupaten Lombok Timur, Nusa Tenggara Barat, Indonesia**, tempat ia mengawali masa kecil dengan mengaji di balai mengaji sederhana sebelum hadirnya **PAUD KB Jibalul Ulum**. Ia adalah perancang **[ZOZ ROUTER](https://z21.zozdocs.com/)** ([repositori GitHub](https://github.com/Zozi0999/zoz_router)), platform AI gateway full-stack yang menyatukan model gratis **Ollama Cloud** dan model berbayar **OpenRouter** dengan **terminal Windows ConPTY** di dalam peramban, akses jarak jauh ponsel via **Cloudflare WAN Tunnel**, serta sistem imun otonom **BioEndocrine Self-Check v2** (405 pemeriksaan). Keahlian teknisnya di bidang Generative AI, Agentic Coding, Model Context Protocol (MCP), Ilmu Komputer, Kalkulus, Data Science, Machine Learning, Cloud Computing, Cybersecurity, Strategic Planning, Kepemimpinan, serta Rekayasa Perangkat Lunak multi-bahasa (Python, Java, C, Haskell, SOLID, AWS) dibuktikan oleh **57+ sertifikat dan kredensial resmi terverifikasi** dari **IBM SkillsBuild**, **Anthropic Education**, **Cognitive Class (IBM Developer Skills Network)**, **Google Cloud Skills Boost**, **UNESCO**, **HP LIFE (HP Foundation)**, **Saylor University (Terakreditasi IACET)**, **Dicoding Academy**, dan **Coursera (IBM)**.
 
 ## Official Identity & Entity Links (sameAs)
 - **Full Name**: Zozi Atul Azimi
@@ -27,7 +27,7 @@
 - **[Local Terminal In-Tab](https://github.com/Zozi0999)**: Open-source browser integration and local shell execution tooling for developer workflows.
 - **[Bio-Endocrine Autonomous Immune System](https://zozdocs.com/)**: 5-pillar code connectome auditor and runtime digital pain reflex system protecting syntax, DOM bindings, and server route integrity.
 
-## Verified Credentials (46 Official Certifications)
+## Verified Credentials (57 Official Certifications)
 
 ### 1. IBM SkillsBuild & IBM Skills Network (10 Official Credentials)
 - **Cloud Computing Fundamentals** (IBM SkillsBuild / Credly, Nov 08, 2026) — Badge ID: `4c783215-fb32-446b-a1a3-e0a14c87494a`
@@ -145,3 +145,40 @@
   - Official PDF: https://zozdocs.com/certs/saylor/saylor_07_ma122_calculus_i.pdf
 - **PRDV433: Enhancing Spreadsheets with Generative AI** (Saylor University, Issued Nov 15, 2026, Signed by Michael J Saylor — 10 Hours / 1.0 CEUs / Grade 95.00%) — Certificate ID: `9684584281ZA`
   - Official PDF: https://zozdocs.com/certs/saylor/saylor_08_prdv433_spreadsheets_genai.pdf
+
+### 7. Dicoding Academy (`dicoding.com` — 10 Verified Competency Certificates / 259 Hours)
+- **Belajar Dasar AI** (Dicoding Academy, Aug 18, 2026 – Aug 18, 2029, 10 Hours) — Certificate ID: `L4PQWMRW4PO1`
+  - Verify Online: https://www.dicoding.com/certificates/L4PQWMRW4PO1
+  - Official PDF: https://zozdocs.com/certs/dicoding/dic_01_belajar_dasar_ai.pdf
+- **Belajar Machine Learning untuk Pemula** (Dicoding Academy, Nov 01, 2026 – Nov 01, 2029, 90 Hours incl. Tabular ML Project) — Certificate ID: `1OP874E81ZQK`
+  - Verify Online: https://www.dicoding.com/certificates/1OP874E81ZQK
+  - Official PDF: https://zozdocs.com/certs/dicoding/dic_02_machine_learning_pemula.pdf
+- **Belajar Dasar Cloud dan Gen AI di AWS** (Dicoding Academy, Oct 31, 2026 – Oct 31, 2029, 13 Hours) — Certificate ID: `MEPJM93EJP3V`
+  - Verify Online: https://www.dicoding.com/certificates/MEPJM93EJP3V
+  - Official PDF: https://zozdocs.com/certs/dicoding/dic_03_cloud_genai_aws.pdf
+- **Spec-Driven Development dengan Kiro** (Dicoding Academy, Oct 28, 2026 – Oct 28, 2029, 10 Hours) — Certificate ID: `EYX4OJKEWXDL`
+  - Verify Online: https://www.dicoding.com/certificates/EYX4OJKEWXDL
+  - Official PDF: https://zozdocs.com/certs/dicoding/dic_04_sdd_kiro.pdf
+- **Memulai Pemrograman dengan Python** (Dicoding Academy, Nov 01, 2026 – Nov 01, 2029, 60 Hours) — Certificate ID: `1RXYD2J7MXVM`
+  - Verify Online: https://www.dicoding.com/certificates/1RXYD2J7MXVM
+  - Official PDF: https://zozdocs.com/certs/dicoding/dic_05_pemrograman_python.pdf
+- **Memulai Pemrograman Dengan Java** (Dicoding Academy, Nov 03, 2026 – Nov 03, 2029, 15 Hours) — Certificate ID: `1OP874891ZQK`
+  - Verify Online: https://www.dicoding.com/certificates/1OP874891ZQK
+  - Official PDF: https://zozdocs.com/certs/dicoding/dic_06_pemrograman_java.pdf
+- **Memulai Pemrograman Dengan C** (Dicoding Academy, Nov 02, 2026 – Nov 02, 2029, 15 Hours) — Certificate ID: `QLZ9NV0NDZ5D`
+  - Verify Online: https://www.dicoding.com/certificates/QLZ9NV0NDZ5D
+  - Official PDF: https://zozdocs.com/certs/dicoding/dic_07_pemrograman_c.pdf
+- **Memulai Pemrograman dengan Haskell** (Dicoding Academy / STEI ITB Curriculum, Nov 03, 2026 – Nov 03, 2029, 20 Hours) — Certificate ID: `KEXLMY6QRZG2`
+  - Verify Online: https://www.dicoding.com/certificates/KEXLMY6QRZG2
+  - Official PDF: https://zozdocs.com/certs/dicoding/dic_08_pemrograman_haskell.pdf
+- **Belajar Prinsip Pemrograman SOLID** (Dicoding Academy, Nov 02, 2026 – Nov 02, 2029, 15 Hours) — Certificate ID: `98XW857V0PM3`
+  - Verify Online: https://www.dicoding.com/certificates/98XW857V0PM3
+  - Official PDF: https://zozdocs.com/certs/dicoding/dic_09_prinsip_solid.pdf
+- **Belajar Dasar Manajemen Proyek** (Dicoding Academy, Nov 04, 2026 – Nov 04, 2029, 11 Hours) — Certificate ID: `1OP874K48ZQK`
+  - Verify Online: https://www.dicoding.com/certificates/1OP874K48ZQK
+  - Official PDF: https://zozdocs.com/certs/dicoding/dic_10_manajemen_proyek.pdf
+
+### 8. Coursera × IBM (1 Verified Course Certificate)
+- **Exploratory Data Analysis for Machine Learning** (Authorized by IBM, Offered through Coursera, Nov 21, 2026; Signed by Joseph Santarcangelo & Svitlana Kramar) — Verify ID: `7OI5YJHIUVD8`
+  - Verify Online: https://coursera.org/verify/7OI5YJHIUVD8
+  - Official PDF: https://zozdocs.com/certs/coursera/coursera_01_ibm_eda_machine_learning.pdf
